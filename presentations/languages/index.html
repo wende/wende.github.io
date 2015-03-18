@@ -47,7 +47,7 @@ class: center, middle
 
 - Not so important in XXI
 - Low level for embedded systems / virtual machines
-- High level for pretty much everything else
+- High level for pretty much everything else  
 
 ![alt tag](http://sanremo.com.au/wp-content/uploads/2013/05/lasagna.jpg)
 
@@ -56,19 +56,29 @@ class: center, middle
 # Type system
 
 - Dynamic (aka Weak)
+```dynamic 
+  [] == 0    #=> true
+  "0" == !undefined  #=> false
+  "0" == undefined #=> false
+  [] == ![]      #=> true
+```
 - Static (aka Strong)
+```java 
+  ArrayList<ArrayList<System.Nullable<Integer>>> builder = new ArrayList<ArrayList<System.Nullable<Integer>>>() 
+```
 
 ---
 
 # Dynamic
 
 
+
 ---
 
 # Static 
 ## What is static typing?
 
-```
+```remark
     "strong type system" is described as one in which there is no possibility of an unchecked runtime type error.
     Luca Cardelli
 ```
@@ -77,14 +87,17 @@ class: center, middle
 # Static 
 ## What is static typing?
 
-```
-    "strong type system" is described as one in which there is no possibility of an unchecked runtime type error.
+```remark
+    "strong type system" is described as one in which there is no possibility
+    of an unchecked runtime type error.
     Luca Cardelli
 ```
 
   ![alt tag](http://www.quotewerks.com/kbase/db/graphics/6396_SFFaultCode0JavaLang.JPG)
   
   Right?
+---
+# Static
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
