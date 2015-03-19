@@ -61,6 +61,8 @@ class: center, middle
   "0" == !undefined   #=> false
   "0" == undefined    #=> false
   [] == ![]           #=> true
+  0  == !0            #=> false
+  "0" == !"0"         #=> true
 ```
 - Static (aka Strong)
 ```java 
@@ -70,16 +72,22 @@ class: center, middle
 ---
 
 # Dynamic
-
-
-
+   ### Advantages:
+   - Fast iteration
+   - Easiness of development
+   - Allows injecting code at runtime
+   
+   ### Disadvantages:
+   - Where the F# did that bug come from? 
+   
 ---
 
 # Static 
 ## What is static typing?
 
-```remark
-    "strong type system" is described as one in which there is no possibility of an unchecked runtime type error.
+```
+    "strong type system" is described as one in which there
+    is no possibility of an unchecked runtime type error.
     Luca Cardelli
 ```
 
@@ -88,8 +96,8 @@ class: center, middle
 ## What is static typing?
 
 ```remark
-    "strong type system" is described as one in which there is no possibility
-    of an unchecked runtime type error.
+    "strong type system" is described as one in which there
+    is no possibility of an unchecked runtime type error.
     Luca Cardelli
 ```
 
@@ -98,6 +106,8 @@ class: center, middle
   Right?
 ---
 # Static
+  # Advantages
+    -
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
