@@ -77,8 +77,8 @@ class: center, middle
   - Easiness of development
   - Allows injecting code at runtime  
   
-  ### Disadvantages:
-   - Where the F# did that bug come from? 
+### Disadvantages:
+  - Where the F# did that bug come from? 
    
 ---
 
@@ -117,12 +117,12 @@ class: center, middle
     - A lot of typing
     - But is it?...  
     
-   ---
+---
    
 # Static - Appendix - Type Inference
   ## What is type inference?
   
-  ---
+---
   
 # Static - Appendix - Type Inference
   ## What is type inference?
@@ -132,7 +132,54 @@ class: center, middle
   
   ---
 # Paradigms
+  - Imperative - How?
+  - Functional - What?
+  - Object oriented - By whom?
+---
 
+.left-column[
+# Imperative
+  
+```
+var dogsWithOwners = []
+var dog, owner
+
+for(var di=0; di < dogs.length; di++) {
+  dog = dogs[di]
+
+  for(var oi=0; oi < owners.length; oi++) {
+    owner = owners[oi]
+    if (owner && dog.owner_id == owner.id) {
+      dogsWithOwners.push({
+        dog: dog,
+        owner: owner
+      })
+    }
+  }}
+}]
+.right-column[
+# Imperative
+  
+```
+var dogsWithOwners = []
+var dog, owner
+
+for(var di=0; di < dogs.length; di++) {
+  dog = dogs[di]
+
+  for(var oi=0; oi < owners.length; oi++) {
+    owner = owners[oi]
+    if (owner && dog.owner_id == owner.id) {
+      dogsWithOwners.push({
+        dog: dog,
+        owner: owner
+      })
+    }
+  }}
+}]
+]
+
+```
   
 
 
