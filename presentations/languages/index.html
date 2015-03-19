@@ -134,13 +134,14 @@ class: center, middle
 
 # Paradigms
   - Imperative - How?
-  - Functional - What?
-  - Object oriented - By whom?
+    - Object oriented - By whom?
+  - Declarative - What?
+    - Functional - Using what?
   
 ---
 layout: false
 # Imperative
-```
+```javascript
 var dogsWithOwners = []
 var dog, owner
 
@@ -158,21 +159,27 @@ for(var di=0; di < dogs.length; di++) {
   }}
 }
 ```
-]
+
 ---
 # Functional
-####CoffeeScript  
+#### CoffeeScript  
 ```coffeescript
-dogsWithOwners = owners.map( (owner) -> owner dogs.filter( (dog) -> dog.owner_id == owner.id)) 
+dogsWithOwners = 
+  owners.map( (owner) -> owner dogs.filter( (dog) -> dog.owner_id == owner.id)) 
 ```
-####Scala
+#### Scala
 ```scala
-val dogsWithOwners = owners.map { owner => (owner, dogs.filter { _.owner_id == owner.id }) }
+val dogsWithOwners = owners.map { owner => 
+  (owner, dogs.filter { _.owner_id == owner.id }) 
+}
 ```
 
-####Erlang
+#### Erlang
 ```
-DogsWithOwners = [(Owner, Dog) | Owner <- Owners, Dog <- Dogs | Dog#dog.owner_id == Owner#owner.id}
+DogsWithOwners = 
+  [ (Owner, Dog)
+  | Owner <- Owners, Dog <- Dogs
+  | Dog#dog.owner_id == Owner#owner.id]
 ```
 #### SQL
 ```sql
@@ -180,10 +187,61 @@ SELECT * from dogs
 INNER JOIN owners
 WHERE dogs.owner_id = owners.id
 ```
+---
 
+# Imperative 
+#### Advantages
+  - Best performance
+  - Wide control of what's going on
+### Disadvantages
+  - Verbose / redundant / tedious
+  - More code = bigger chance for bugs
+  - Less expressive
+  - Not self descriptive
+---
 
+# Imperative 
+#### Advantages
+  - Best performance
+  - Wide control of what's going on
+### Disadvantages
+  - Verbose / redundant / tedious
+  - More code = bigger chance for bugs
+  - Less expressive
+  - Not self descriptive
+  
+### Languages embracing imperative paradigm
+  - C/C++
+  - Ruby
+  - Python
+  - Java
   
 
+---
+
+# Object Oriented
+#### Advantages
+  - Modular
+  - Close to the way people think
+  - Reusable
+  - Popular
+  - Treats everything in similar way
+#### Disadvantages
+  - High layer of abstraction
+  - Introduces unnecessary compexity to simple tasks
+  - Not as resuable as it was intended to be
+---
+
+# Functional
+#### Advantages
+  - Very expressive
+  - Easy to scale out
+  - Truly modular and reusable
+  - Much less code than in imperatvie equivalent
+#### Disadvantages
+  - Unpopular
+  - Hard to learn
+  - In some cases slower than imperative
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
