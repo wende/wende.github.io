@@ -269,6 +269,16 @@ template: inverse
 
 #### JavaScript
 ```javascript
+var User = function(name, surname, age){
+  this.user = user;
+  this.surname = surname;
+  this.age = age;
+}
+var Wende = function(){ this.awesome = true}
+for(var property in User.prototype){
+  Wende.prototype[property] = User.prototype[property]
+}
+
 var oldEnoughUsers
 for(var i = 0 ; i < users.length; i++){
   if( user[i].age > 18) oldEnoughUsers.push(user[i])
@@ -278,6 +288,11 @@ var lastFullAgeUser = oldEnoughUsers[oldEnoughtUsers.length-1]
 
 #### CoffeeScript equivalent
 ```coffeescript
+  class User
+    @constructor(@name, @surname, @age) : ->
+  
+  class Wende extends User
+
   oldEnoughUsers = (user for user in users when user.age > 18)
   [... , lastFullAgeUser] = oldEnoughUsers
 ```
@@ -318,7 +333,7 @@ val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 #### Erlang - on my laptop
 
 ---
-#Who's using functional languages
+#Who's using functional languages?
 - Scala
   - Twitter
   - Quora
@@ -328,14 +343,25 @@ val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
   - WhatsApp
   - Amazon EC2
   - T-Mobile (SMSes) 
-- CoffeeScript
-  - A lot of people
 - Clojure
   - Amazon
   - Twitter (BackType)
 - F#
   - MSDN ( Microsoft)
   - Kaggle
+-Haskell 
+  - AT&T
+  - Bank of America
+  - Intel
+  - NVIDIA
+
+---
+# Where to go from here?
+  - Seven Languages In Seven Weeks (Clojure, Haskell, Io, Prolog, Scala, Erlang, and Ruby)
+  - Learn You Some Erlang For Great Good (http://learnyousomeerlang.com/) 
+  - Learn You a Haskell For Great Good (http://learnyouahaskell.com/)
+  - CoffeeScript in Action
+
   
 
     </textarea>
