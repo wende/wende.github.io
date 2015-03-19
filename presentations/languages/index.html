@@ -175,11 +175,10 @@ val dogsWithOwners = owners.map { owner =>
 ```
 
 #### Erlang
-```
-DogsWithOwners = 
-  [ (Owner, Dog)
-  | Owner <- Owners, Dog <- Dogs
-  | Dog#dog.owner_id == Owner#owner.id]
+```erlang
+DogsWithOwners =  [ (Owner, Dog)
+                  | Owner <- Owners, Dog <- Dogs
+                  | Dog#dog.owner_id == Owner#owner.id]
 ```
 #### SQL
 ```sql
@@ -261,22 +260,47 @@ WHERE dogs.owner_id = owners.id
   
 
 ---
-layout: false
-name: test
-template : inverse
-class: inverse
+template: inverse
 
 # Why choose unpopular language?
 
 ---
-layout: false
-.right-column[
-### test
-]
-.left-column[
-### test2
-]
+### CoffeeScript
+
+#### JavaScript
+```javascript
+var oldEnoughUsers
+for(var i = 0 ; i < users.length; i++){
+  if( user[i].age > 18) oldEnoughUsers.push(user[i])
+}
+var lastFullAgeUser = oldEnoughUsers[oldEnoughtUsers.length-1]
+```
+
+#### CoffeeScript equivalent
+```coffeescript
+  oldEnoughUsers = (user for user in users when user.age > 18)
+  [... , lastFullAgeUser] = oldEnoughUsers
+```
 ---
+
+### Scala
+#### Java
+```java
+Collections.sort( user, new Comparator<User> {
+    @Override
+    public int compare(User o1, User o2) {
+        return o1.age > o2.age);
+    }
+})
+List<User> firstTen = ArrayList<User>()
+int i = 10
+while(--i)firstTen.add(users[i])
+```
+#### Scala
+```scala
+users.sorted{ _.age > _.age }.take(10)
+```
+
 
 
     </textarea>
