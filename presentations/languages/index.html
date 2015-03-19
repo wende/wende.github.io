@@ -28,7 +28,7 @@ class: center, middle
 
 # Classification
 
-1. Abstraction level (not so relevant in XXI century)
+1. Abstraction level
 2. Type system
 3. Paradigm
 4. Purpose
@@ -37,9 +37,9 @@ class: center, middle
 
 # Abstraction
 
-- Not so important in XXI
 - Low level for embedded systems / virtual machines
 - High level for pretty much everything else
+- Not so important in XXI century
 
 ---
 
@@ -180,19 +180,13 @@ DogsWithOwners =  [ (Owner, Dog)
                   | Owner <- Owners, Dog <- Dogs
                   | Dog#dog.owner_id == Owner#owner.id]
 ```
-#### SQL
-```sql
-SELECT * from dogs
-INNER JOIN owners
-WHERE dogs.owner_id = owners.id
-```
 ---
 
 # Imperative 
 #### Advantages
   - Best performance
   - Wide control of what's going on
-### Disadvantages
+#### Disadvantages
   - Verbose / redundant / tedious
   - More code = bigger chance for bugs
   - Less expressive
@@ -251,7 +245,7 @@ WHERE dogs.owner_id = owners.id
   - Hard to learn
   - In some cases slower than imperative
 
-#### Common purely functional languages by purity
+#### Common functional languages by purity
   - Haskell / Lisp / Clojure
   - Erlang / Elixir / F# 
   - Scala
@@ -265,8 +259,6 @@ template: inverse
 # Why choose unpopular language?
 
 ---
-### CoffeeScript
-
 #### JavaScript
 ```javascript
 var User = function(name, surname, age){
@@ -292,6 +284,7 @@ var lastFullAgeUser = oldEnoughUsers[oldEnoughtUsers.length-1]
     @constructor(@name, @surname, @age) : ->
   
   class Wende extends User
+    awesome : true
 
   oldEnoughUsers = (user for user in users when user.age > 18)
   [... , lastFullAgeUser] = oldEnoughUsers
@@ -325,7 +318,7 @@ val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 ---
 ### Erlang
 
-##### PHP - Netty performance C20k amazing benchmark
+#### PHP - Netty performance C20k amazing benchmark
 ![](http://nguyentantrieu.info/blog/wp-content/uploads/Screenshot-from-2013-04-09-235708.png)
 
 ---
@@ -349,6 +342,7 @@ val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 - F#
   - MSDN ( Microsoft)
   - Kaggle
+  
 -Haskell 
   - AT&T
   - Bank of America
@@ -358,11 +352,16 @@ val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 ---
 # Where to go from here?
   - Seven Languages In Seven Weeks (Clojure, Haskell, Io, Prolog, Scala, Erlang, and Ruby)
-  - Learn You Some Erlang For Great Good (http://learnyousomeerlang.com/) 
-  - Learn You a Haskell For Great Good (http://learnyouahaskell.com/)
-  - CoffeeScript in Action
-
   
+  - Learn You Some Erlang For Great Good (http://learnyousomeerlang.com/) 
+  
+  - Learn You a Haskell For Great Good (http://learnyouahaskell.com/)
+  
+  - CoffeeScript in Action
+  
+  - Functional programming concepts in Scala (Coursera interactive course)
+  
+  -
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
