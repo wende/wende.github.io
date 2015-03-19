@@ -121,11 +121,23 @@ class: center, middle
    
 # Static - Appendix - Type Inference
   ## What is type inference?
+  ```scala
+  val listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  val string          = listOfIntegers.get(0)   // #=> String 
+  val firstLetter     = string.getCharAt(0)     // #=> Character
+  val length          = string.length           // #=> Integer
+  ```
   
 ---
   
 # Static - Appendix - Type Inference
   ## What is type inference?
+  ```scala
+  val listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  val string          = listOfIntegers.get(0)   // #=> String 
+  val firstLetter     = string.getCharAt(0)     // #=> Character
+  val length          = string.length           // #=> Integer
+  ```
   
   ## Languages using type inference:
   Scala, Haskell, F#, Swift, C#, Rust
