@@ -50,11 +50,12 @@ class: center, middle
 
 # Abstraction
 
-- Not so important in XXI
-
 - Low level for embedded systems / virtual machines
 
 - High level for pretty much everything else  
+
+- Not so important in XXI
+
 
 ![alt tag](http://sanremo.com.au/wp-content/uploads/2013/05/lasagna.jpg)
 
@@ -144,10 +145,14 @@ class: center, middle
 # Static - Appendix - Type Inference
   ## What is type inference?
   ```scala
-  val listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
-  val string          = listOfIntegers.get(0)   // #=> String 
-  val firstLetter     = string.getCharAt(0)     // #=> Character
-  val length          = string.length           // #=> Integer
+  var listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  var string          = listOfIntegers.get(0)   // #=> String 
+  var firstLetter     = string.getCharAt(0)     // #=> Character
+  var length          = string.length           // #=> Integer
+  
+  def add (a : Int, b: Int) = {
+    a + b
+  }                                             // #=> (Int, Int) => Int
   ```
   
   ## Languages using type inference:
@@ -213,6 +218,7 @@ DogsWithOwners =  [ (Owner, Dog)
 #### Advantages
   - Best performance
   - Wide control of what's going on
+
 #### Disadvantages
   - Verbose / redundant / tedious
   - More code = bigger chance for bugs
