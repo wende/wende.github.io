@@ -286,7 +286,7 @@ var lastFullAgeUser = oldEnoughUsers[oldEnoughtUsers.length-1]
 ### Scala
 #### Java
 ```java
-Collections.sort( user, new Comparator<User> {
+List<User> sortedUsers = Collections.sort( users, new Comparator<User> {
     @Override
     public int compare(User o1, User o2) {
         return o1.age > o2.age);
@@ -294,11 +294,18 @@ Collections.sort( user, new Comparator<User> {
 })
 List<User> firstTen = ArrayList<User>()
 int i = 10
-while(--i)firstTen.add(users[i])
+while(--i > 0) firstTen.add(sortedUsers[i])
+List<String> likedPages = new ArrayList[LikedPages]()
+for(User user  : firstTen ){
+   for(String page : user.likedPages){
+      likedPages.add( page)
+   }
+}
+Set<String> pages = new HashSet<String>(likedPages)
 ```
 #### Scala
 ```scala
-users.sorted{ _.age > _.age }.take(10)
+users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 ```
 
 
