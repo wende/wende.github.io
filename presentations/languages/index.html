@@ -115,17 +115,21 @@ class: center, middle
     - A lot of typing
     - A lot of typing
     - A lot of typing
-    - But is it?...  
+    - Or is it?...  
     
 ---
    
 # Static - Appendix - Type Inference
   ## What is type inference?
   ```scala
-  val listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
-  val string          = listOfIntegers.get(0)   // #=> String 
-  val firstLetter     = string.getCharAt(0)     // #=> Character
-  val length          = string.length           // #=> Integer
+  var listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  var string          = listOfIntegers.get(0)   // #=> String 
+  var firstLetter     = string.getCharAt(0)     // #=> Character
+  var length          = string.length           // #=> Integer
+  
+  def add (a : Int, b: Int) = {
+    a + b
+  }                                             // #=> (Int, Int) => Int
   ```
   
 ---
