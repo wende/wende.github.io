@@ -305,10 +305,14 @@ Set<String> pages = new HashSet<String>(likedPages)
 ```
 #### Scala
 ```scala
-users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
+val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
 ```
+---
+### Elixir
 
-
+#### PHP
+![](http://nguyentantrieu.info/blog/wp-content/uploads/Screenshot-from-2013-04-09-235708.png)
+#### Erlang
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
