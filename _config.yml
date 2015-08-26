@@ -1,14 +1,14 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://example.com" # the base hostname & protocol for your site
+url: "http://iraasta.github.io" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: Type Theme
+  title: I hate Monads
   avatar: avatar.png
-  gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  gravatar: "12f67aabca627218095be932158d11c7"# Email MD5 hash
+  description: "How to function in a [dys]functional world" # used by search engines
 
   # Header and footer text
   header_text: >
@@ -21,13 +21,13 @@ theme:
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "chris@neontree.pl"# Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  github: "rohanchandra/type-theme"
+  github: "iraasta"
   google_plus:
   instagram:
   linkedin:  # Full URL
@@ -37,7 +37,7 @@ theme:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter: "iraasta"
   wordpress:
   youtube:
 
