@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Programming Languages
+##### And why we hate each other
+
+---
+
+# Classification
+
+1. Abstraction level
+
+2. Type system
+
+3. Paradigm
+
+4. Purpose
+
+---
+
+# Abstraction
+
+- Low level for embedded systems / virtual machines
+
+- High level for pretty much everything else
+
+- Not so important in XXI century
+
+---
+
+# Abstraction
+
+- Low level for embedded systems / virtual machines
+
+- High level for pretty much everything else  
+
+- Not so important in XXI
+
+
+![alt tag](http://sanremo.com.au/wp-content/uploads/2013/05/lasagna.jpg)
+
+---
+
+# Type system
+
+- Dynamic (aka Weak)
+```dynamic 
+  [] == 0             #=> true
+  "0" == !undefined   #=> false
+  "0" == undefined    #=> false
+  [] == ![]           #=> true
+  0  == !0            #=> false
+  "0" == !"0"         #=> true
+```
+- Static (aka Strong)
+```java 
+  ArrayList<ArrayList<System.Nullable<Integer>>> builder = new ArrayList<ArrayList<System.Nullable<Integer>>>() 
+```
+
+---
+
+# Dynamic
+  ### Advantages:
+  - Fast iteration
+  - Easiness of development
+  - Allows injecting code at runtime  
+  
+### Disadvantages:
+  - Where the F# did that bug come from? 
+   
+---
+
+# Static 
+## What is static typing?
+
+```
+    "strong type system" is described as one in which there
+    is no possibility of an unchecked runtime type error.
+    Luca Cardelli
+```
+
+---
+# Static 
+## What is static typing?
+
+```
+    "strong type system" is described as one in which there
+    is no possibility of an unchecked runtime type error.
+    Luca Cardelli
+```
+
+  ![alt tag](http://www.quotewerks.com/kbase/db/graphics/6396_SFFaultCode0JavaLang.JPG)
+  
+  Right?
+---
+# Static
+  ## Advantages
+    - Error prone
+    - Verbose about Your mistakes
+    - Smarter code editors  
+    
+  ## Disadvantages
+    - A lot of typing
+    - A lot of typing
+    - A lot of typing
+    - Or is it?...  
+    
+---
+   
+# Static - Appendix - Type Inference
+  ## What is type inference?
+  ```scala
+  var listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  var string          = listOfIntegers.get(0)   // #=> String 
+  var firstLetter     = string.getCharAt(0)     // #=> Character
+  var length          = string.length           // #=> Integer
+  
+  def add (a : Int, b: Int) = {
+    a + b
+  }                                             // #=> (Int, Int) => Int
+  ```
+  
+---
+  
+# Static - Appendix - Type Inference
+  ## What is type inference?
+  ```scala
+  var listOfIntegers  = List(1,2,3,4,5,6)       // #=> List[Int]
+  var string          = listOfIntegers.get(0)   // #=> String 
+  var firstLetter     = string.getCharAt(0)     // #=> Character
+  var length          = string.length           // #=> Integer
+  
+  def add (a : Int, b: Int) = {
+    a + b
+  }                                             // #=> (Int, Int) => Int
+  ```
+  
+  ## Languages using type inference:
+  Scala, Haskell, F#, Swift, C#, Rust
+  
+---
+
+# Paradigms
+  - Imperative - How?
+  
+    - Object oriented - By whom?
+    
+  - Declarative - What?
+  
+    - Functional - Using what?
+    
+  
+---
+layout: false
+# Imperative
+```javascript
+var dogsWithOwners = []
+var dog, owner
+
+for(var di=0; di < dogs.length; di++) {
+  dog = dogs[di]
+
+  for(var oi=0; oi < owners.length; oi++) {
+    owner = owners[oi]
+    if (owner && dog.owner_id == owner.id) {
+      dogsWithOwners.push({
+        dog: dog,
+        owner: owner
+      })
+    }
+  }}
+}
+```
+
+---
+# Functional
+#### CoffeeScript  
+```coffeescript
+dogsWithOwners = 
+  owners.map( (owner) -> owner dogs.filter( (dog) -> dog.owner_id == owner.id)) 
+```
+#### Scala
+```scala
+val dogsWithOwners = owners.map { owner => 
+  (owner, dogs.filter { _.owner_id == owner.id }) 
+}
+```
+
+#### Erlang
+```erlang
+DogsWithOwners =  [ (Owner, Dog)
+                  | Owner <- Owners, Dog <- Dogs
+                  | Dog#dog.owner_id == Owner#owner.id]
+```
+---
+
+# Imperative 
+#### Advantages
+  - Best performance
+  - Wide control of what's going on
+
+#### Disadvantages
+  - Verbose / redundant / tedious
+  - More code = bigger chance for bugs
+  - Less expressive
+  - Not self descriptive
+---
+
+# Imperative 
+#### Advantages
+  - Best performance
+  - Wide control of what's going on
+
+#### Disadvantages
+  - Verbose / redundant / tedious
+  - More code = bigger chance for bugs
+  - Less expressive
+  - Not self descriptive
+  
+### Common languages embracing imperative paradigm
+  - C/C++
+  - Perl
+  - Ruby
+  - Python
+  - Java
+  - PHP
+---
+
+# Object Oriented
+#### Advantages
+  - Modular
+  - Close to the way people think
+  - Reusable
+  - Popular
+  - Treats everything in similar way
+
+#### Disadvantages
+  - High layer of abstraction
+  - Introduces unnecessary compexity to simple tasks
+  - Not as resuable as it was intended to be
+  
+#### Object oriented languages by purity
+  - Scala / Ruby
+  - Java / C# / Dart / TypeScript / ActionScript 3.0
+  - C++ / Python / PHP
+  - JavaScript / ActionScript 2.0
+---
+
+# Functional
+#### Advantages
+  - Very expressive
+  - Easy to scale out
+  - Truly modular and reusable
+  - Much less code than in imperatvie equivalent
+
+#### Disadvantages
+  - Unpopular
+  - Hard to learn
+  - In some cases slower than imperative
+
+#### Common functional languages by purity
+  - Haskell / Lisp / Clojure
+  - Erlang / Elixir / F# 
+  - Scala
+  - C# / Java 8
+  - Python / Ruby / JavaScript / PHP
+
+
+---
+template: inverse
+
+# Why choose unpopular language?
+
+---
+#### JavaScript
+```javascript
+var User = function(name, surname, age){
+  this.user = user;
+  this.surname = surname;
+  this.age = age;
+}
+var Wende = function(){ this.awesome = true}
+for(var property in User.prototype){
+  Wende.prototype[property] = User.prototype[property]
+}
+
+var oldEnoughUsers
+for(var i = 0 ; i < users.length; i++){
+  if( user[i].age > 18) oldEnoughUsers.push(user[i])
+}
+var lastFullAgeUser = oldEnoughUsers[oldEnoughtUsers.length-1]
+```
+
+#### CoffeeScript equivalent
+```coffeescript
+  class User
+    @constructor(@name, @surname, @age) : ->
+  
+  class Wende extends User
+    awesome : true
+
+  oldEnoughUsers = (user for user in users when user.age > 18)
+  [... , lastFullAgeUser] = oldEnoughUsers
+```
+---
+
+### Scala
+#### Java
+```java
+List<User> sortedUsers = Collections.sort( users, new Comparator<User> {
+    @Override
+    public int compare(User o1, User o2) {
+        return o1.age > o2.age);
+    }
+})
+List<User> firstTen = ArrayList<User>()
+int i = 10
+while(--i > 0) firstTen.add(sortedUsers[i])
+List<String> likedPages = new ArrayList[LikedPages]()
+for(User user  : firstTen ){
+   for(String page : user.likedPages){
+      likedPages.add( page)
+   }
+}
+Set<String> pages = new HashSet<String>(likedPages)
+```
+#### Scala
+```scala
+val pages = users.sorted{ _.age > _.age }.take(10).flatMap { _.likedPages}.toSet
+```
+---
+### Erlang
+
+#### PHP - Netty performance C20k amazing benchmark
+![](http://nguyentantrieu.info/blog/wp-content/uploads/Screenshot-from-2013-04-09-235708.png)
+
+---
+### Erlang
+#### Erlang - on my laptop
+![](https://dl-web.dropbox.com/get/Public/processes.png?_subject_uid=101933264&w=AAAVzdEEZXWQf5ooZsopoWEY_f-BYf2R_VjZ1DF6fJQlhw)
+---
+#Who's using functional languages?
+- Scala
+  - Twitter
+  - Quora
+  - LinkedIn
+- Erlang
+  - Facebook (chat server)
+  - WhatsApp
+  - Amazon EC2
+  - T-Mobile (SMSes) 
+- Clojure
+  - Amazon
+  - Twitter (BackType)
+- F#
+  - MSDN ( Microsoft)
+  - Kaggle
+- Haskell 
+  - AT&T
+  - Bank of America
+  - Intel
+  - NVIDIA
+
+---
+# Where to go from here?
+  - Seven Languages In Seven Weeks (Clojure, Haskell, Io, Prolog, Scala, Erlang, and Ruby)
+  
+  - Learn You Some Erlang For Great Good (http://learnyousomeerlang.com/) 
+  
+  - Learn You a Haskell For Great Good (http://learnyouahaskell.com/)
+  
+  - CoffeeScript in Action
+  
+  - Functional programming concepts in Scala (Coursera interactive course)
+  
+  - "What is the best programming to learn in 2014" @ Quora http://www.quora.com/What-is-the-best-programming-language-to-learn-in-2014
+
+---
+class: center, middle
+
+# Thank You
+# Krzysztof Wende [@iraasta](https://twitter.com/iraasta)
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

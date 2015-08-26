@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title> I hate Monads</title>
+	<meta name="description" content="How to function in a [dys]functional world">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://iraasta.github.io/">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="I hate Monads" href="http://iraasta.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">I hate Monads</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:chris@neontree.pl" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/iraasta" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://plus.google.com/https://plus.google.com/+KrzysztofWendeIraasta" title="Follow on Google+">
+		<i class="fa fa-fw fa-google-plus"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/iraasta" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <div class="home">
+  
+  <div class="call-out" 
+  style="background-image: url('/')">
+    <p>How to function in a [dys]functional world</p>
+
+  </div>
+  
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2015/08/26/Test_of_blog_features.html">
+            Test Of Blog Features
+          </a>
+        </h1>
+        <p class="meta">
+          August 26, 2015
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>```elixir
+defmodule Hedwig.Handlers.Echo do
+@moduledoc “””
+A completely useless echo script.
+This script simply echoes the same message back.
+“””</p>
+
+
+        <a class="button" href="/2015/08/26/Test_of_blog_features.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+    <div class="post-teaser">
+      <header>
+        <h1>
+          <a class="post-link" href="/2014/11/28/markdown-and-html.html">
+            Markdown and HTML
+          </a>
+        </h1>
+        <p class="meta">
+          November 28, 2014
+        </p>
+      </header>
+      <div class="excerpt">
+        <p>Jeykll supports the use of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</p>
+
+
+        <a class="button" href="/2014/11/28/markdown-and-html.html">
+          Continue reading
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  
+</div>
+
+<script>
+	var invocation = new XMLHttpRequest();
+	var url = 'http://bar.other/resources/credentialed-content/';
+
+        xdr(url, "POST", {}, handler, function(a){ console.warn(a)});
+	function handler(result) {
+	   var r = JSON.parse(result)
+	   document.getElementById("quote").innerText = r.quote 
+	}
+	function xdr(url, method, data, callback, errback) {
+		var req;
+
+		if(XMLHttpRequest) {
+			req = new XMLHttpRequest();
+
+			if('withCredentials' in req) {
+				req.open(method, url, true);
+				req.onerror = errback;
+				req.onreadystatechange = function() {
+					if (req.readyState === 4) {
+						if (req.status >= 200 && req.status < 400) {
+							callback(req.responseText);
+						} else {
+							errback(new Error('Response returned with non-OK status'));
+						}
+					}
+				};
+				req.send(data);
+			}
+		} else if(XDomainRequest) {
+			req = new XDomainRequest();
+			req.open(method, url);
+			req.onerror = errback;
+			req.onload = function() {
+				callback(req.responseText);
+			};
+			req.send(data);
+		} else {
+			errback(new Error('CORS not supported'));
+		}
+	}
+	
+</script>
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>
