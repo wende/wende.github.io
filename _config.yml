@@ -7,14 +7,13 @@ theme:
   # Meta
   title: I hate Monads
   avatar: avatar.png
-  gravatar: "12f67aabca627218095be932158d11c7"# Email MD5 hash
+  gravatar: "502d830e6e95833ce07efc51f89a38e6"# Email MD5 hash
   description: "How to function in a [dys]functional world" # used by search engines
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+     <p>How to function in a [dys]functional world</p>
 
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
