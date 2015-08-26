@@ -27,7 +27,7 @@ theme:
   facebook:
   flickr:
   github: "iraasta"
-  google_plus:
+  google_plus: "https://plus.google.com/+KrzysztofWendeIraasta"
   instagram:
   linkedin:  # Full URL
   pinterest:
@@ -35,14 +35,14 @@ theme:
   soundcloud:
   stack_exchange:  # Full URL
   steam:
-  tumblr:
+  tumblr: 
   twitter: "iraasta"
   wordpress:
-  youtube:
+  youtube: 
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
+  disqus_shortname: "iraasta"
   katex: true # Enable if using math markup
 
   # Localization strings

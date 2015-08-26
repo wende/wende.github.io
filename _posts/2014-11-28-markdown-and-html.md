@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Markdown and HTML
+comments: true
+
 ---
 
 Jeykll supports the use of [Markdown](http://daringfireball.net/projects/markdown/syntax) with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.
@@ -18,7 +20,7 @@ Here's an example of an image, which is included using Markdown:
 
 Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Pygments by default.
 
-{% highlight js %}
+{% highlight js linenos%}
 // count to ten
 for (var i = 1; i <= 10; i++) {
     console.log(i);
@@ -31,6 +33,8 @@ while (j < 20) {
     console.log(j);
 }
 {% endhighlight %}
+asdasd
+{% gist 6f185a2c805e04598cb9%}
 
 Type Theme uses KaTeX to display maths. Equations such as $$S_n = a \times \frac{1-r^n}{1-r}$$ can be displayed inline.
 
