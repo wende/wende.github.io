@@ -142,9 +142,9 @@
     <div class="content">
       <div class="home">
   
-  <div class="call-out" 
+  <div class="call-out" id="quote"
   style="background-image: url('/')">
-    <p>How to function in a [dys]functional world</p>
+    <p id="quote">How to function in a [dys]functional world</p>
 
   </div>
   
@@ -154,45 +154,21 @@
     <div class="post-teaser">
       <header>
         <h1>
-          <a class="post-link" href="/2015/08/26/Test_of_blog_features.html">
-            Test Of Blog Features
+          <a class="post-link" href="/2015/08/30/Cool-language-tips-series.html">
+            Cool language features You've never heard about -
           </a>
         </h1>
         <p class="meta">
-          August 26, 2015
+          August 30, 2015
         </p>
       </header>
       <div class="excerpt">
-        <p>```elixir
-defmodule Hedwig.Handlers.Echo do
-@moduledoc “””
-A completely useless echo script.
-This script simply echoes the same message back.
-“””</p>
+        <p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. </p>
 
 
-        <a class="button" href="/2015/08/26/Test_of_blog_features.html">
-          Continue reading
-        </a>
-      </div>
-    </div>
-    
-    <div class="post-teaser">
-      <header>
-        <h1>
-          <a class="post-link" href="/2014/11/28/markdown-and-html.html">
-            Markdown and HTML
-          </a>
-        </h1>
-        <p class="meta">
-          November 28, 2014
-        </p>
-      </header>
-      <div class="excerpt">
-        <p>Jeykll supports the use of <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</p>
-
-
-        <a class="button" href="/2014/11/28/markdown-and-html.html">
+        <a class="button" href="/2015/08/30/Cool-language-tips-series.html">
           Continue reading
         </a>
       </div>
@@ -204,47 +180,17 @@ This script simply echoes the same message back.
 </div>
 
 <script>
-	var invocation = new XMLHttpRequest();
-	var url = 'http://bar.other/resources/credentialed-content/';
+var link = "http://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json"
 
-        xdr(url, "POST", {}, handler, function(a){ console.warn(a)});
-	function handler(result) {
-	   var r = JSON.parse(result)
-	   document.getElementById("quote").innerText = r.quote 
-	}
-	function xdr(url, method, data, callback, errback) {
-		var req;
+var r = JSON.parse(httpGet(link));
+document.getElementById("quote").innerHTML = "<p>" + r.quote + "\n</p><p>--- "+r.author+" ---</p>" 
+function httpGet(theUrl){
+	var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	xmlHttp.send( null );
+        return xmlHttp.responseText;
+}
 
-		if(XMLHttpRequest) {
-			req = new XMLHttpRequest();
-
-			if('withCredentials' in req) {
-				req.open(method, url, true);
-				req.onerror = errback;
-				req.onreadystatechange = function() {
-					if (req.readyState === 4) {
-						if (req.status >= 200 && req.status < 400) {
-							callback(req.responseText);
-						} else {
-							errback(new Error('Response returned with non-OK status'));
-						}
-					}
-				};
-				req.send(data);
-			}
-		} else if(XDomainRequest) {
-			req = new XDomainRequest();
-			req.open(method, url);
-			req.onerror = errback;
-			req.onload = function() {
-				callback(req.responseText);
-			};
-			req.send(data);
-		} else {
-			errback(new Error('CORS not supported'));
-		}
-	}
-	
 </script>
 
     </div>

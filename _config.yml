@@ -12,7 +12,7 @@ theme:
 
   # Header and footer text
   header_text: >
-     <p>How to function in a [dys]functional world</p>
+     <p id="quote">How to function in a [dys]functional world</p>
 
   header_text_feature_image:
   footer_text: >
@@ -41,7 +41,7 @@ theme:
   youtube: 
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-56241713-9" # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname: "iraasta"
   katex: true # Enable if using math markup
 

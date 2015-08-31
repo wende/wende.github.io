@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
   {% if site.theme.header_text %}
-  <div class="call-out" 
+  <div class="call-out" id="quote"
   style="background-image: url('{{ site.baseurl }}/{{ site.theme.header_text_feature_image }}')">
     {{ site.theme.header_text }}
   </div>
@@ -52,45 +52,15 @@ layout: default
 </div>
 
 <script>
-	var invocation = new XMLHttpRequest();
-	var url = 'http://bar.other/resources/credentialed-content/';
+var link = "http://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json"
 
-        xdr(url, "POST", {}, handler, function(a){ console.warn(a)});
-	function handler(result) {
-	   var r = JSON.parse(result)
-	   document.getElementById("quote").innerText = r.quote 
-	}
-	function xdr(url, method, data, callback, errback) {
-		var req;
+var r = JSON.parse(httpGet(link));
+document.getElementById("quote").innerHTML = "<p>" + r.quote + "\n</p><p>--- "+r.author+" ---</p>" 
+function httpGet(theUrl){
+	var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	xmlHttp.send( null );
+        return xmlHttp.responseText;
+}
 
-		if(XMLHttpRequest) {
-			req = new XMLHttpRequest();
-
-			if('withCredentials' in req) {
-				req.open(method, url, true);
-				req.onerror = errback;
-				req.onreadystatechange = function() {
-					if (req.readyState === 4) {
-						if (req.status >= 200 && req.status < 400) {
-							callback(req.responseText);
-						} else {
-							errback(new Error('Response returned with non-OK status'));
-						}
-					}
-				};
-				req.send(data);
-			}
-		} else if(XDomainRequest) {
-			req = new XDomainRequest();
-			req.open(method, url);
-			req.onerror = errback;
-			req.onload = function() {
-				callback(req.responseText);
-			};
-			req.send(data);
-		} else {
-			errback(new Error('CORS not supported'));
-		}
-	}
-	
 </script>

@@ -5,93 +5,46 @@
     <atom:link href="http://iraasta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://iraasta.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Wed, 26 Aug 2015 15:52:46 +0200</pubDate>
+    <pubDate>Mon, 31 Aug 2015 09:27:14 +0200</pubDate>
     
       <item>
-        <title>Test Of Blog Features</title>
-        <link>http://iraasta.github.io/2015/08/26/Test_of_blog_features.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2015/08/26/Test_of_blog_features.html</guid>
-        <description>&lt;p&gt;```elixir
-defmodule Hedwig.Handlers.Echo do
-@moduledoc “””
-A completely useless echo script.
-This script simply echoes the same message back.
-“””&lt;/p&gt;
+        <title>Cool language features You&#39;ve never heard about -</title>
+        <link>http://iraasta.github.io/2015/08/30/Cool-language-tips-series.html</link>
+        <guid isPermaLink="true">http://iraasta.github.io/2015/08/30/Cool-language-tips-series.html</guid>
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
 
-&lt;p&gt;@usage nil&lt;/p&gt;
+&lt;h2 id=&quot;scala&quot;&gt;Scala&lt;/h2&gt;
 
-&lt;p&gt;use Hedwig.Handler&lt;/p&gt;
+&lt;p&gt;Scala has absolutely wicked collections API. Almost any List/Set/Array operation can be made without wondering about implementation details.&lt;/p&gt;
 
-&lt;p&gt;def handle_event(%Message{} = msg, opts) do
-reply(msg, msg.body)&lt;/p&gt;
-&lt;p&gt;end&lt;/p&gt;
+&lt;p&gt;There has been a problem to solve for Java program on Quora once:&lt;/p&gt;
 
-&lt;p&gt;def handle_event(_, opts), do: {:ok, opts}
-end
-```&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;How can I write a program on Java that outputs the most common digit in an integer?&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;../master/tutorial/resources/step7.gif?raw=true&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Imagine Java code that would solve that. We’d have to loop through all characters of String representation, make a Map with values and their count… You can imagine how much time It’d take.&lt;/p&gt;
+
+&lt;p&gt;Now how would we solve that with Scala Collection Api?&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span class=&quot;mf&quot;&gt;112123123.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;identity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapValues&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxBy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And that’s all.
+First we convert to String, then to list of Chars. Then we group by identity ({a =&amp;gt; a}) to List of digits (List(1,1,1,1), List(2,2,2) and so on). Then we squash that to values the lists hold. At the end we cast that to list, and we find the maximum value by tuple’s second field.&lt;/p&gt;
+
+&lt;p&gt;And we’re left with the result:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(Char, Int) = (1,4)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Where 1 is the most common digit, and 4 is the quantity.&lt;/p&gt;
+
+&lt;p&gt;Scala FTW!&lt;/p&gt;
 </description>
-        <pubDate>Wed, 26 Aug 2015 00:00:00 +0200</pubDate>
-      </item>
-    
-      <item>
-        <title>Markdown and HTML</title>
-        <link>http://iraasta.github.io/2014/11/28/markdown-and-html.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2014/11/28/markdown-and-html.html</guid>
-        <description>&lt;p&gt;Jeykll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
-
-&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Pygments by default.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt; 
-&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt;     &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt;     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;asdasd&lt;/p&gt;
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/6f185a2c805e04598cb9.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt; f(x) = \int \frac{2x^2+4x+6}{x-2} &lt;/script&gt;
-</description>
-        <pubDate>Fri, 28 Nov 2014 00:00:00 +0100</pubDate>
+        <pubDate>Sun, 30 Aug 2015 00:00:00 +0200</pubDate>
       </item>
     
   </channel>
