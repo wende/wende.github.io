@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cool language features You've never heard about - #1 - Scala
+title: Cool language features You've never heard about - Part 1 - Scala
 comments: true
 
 ---
@@ -22,7 +22,11 @@ Imagine Java code that would solve that. We'd have to loop through all character
 Now how would we solve that with Scala Collection Api?
 
 {% highlight Scala%}
- 112123123.toString.toList.groupBy{ identity }.mapValues { _.length }.toList.maxBy { _._2 }
+112123123
+.toString.toList
+.groupBy{ identity }
+.mapValues { _.length }
+.toList.maxBy { _._2 }
 {%endhighlight%}
 
 And that's all.
