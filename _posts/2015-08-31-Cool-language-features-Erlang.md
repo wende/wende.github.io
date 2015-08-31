@@ -3,6 +3,7 @@ layout: post
 title: Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching
 comments: true
 tags: Erlang, Cool
+next: 
 ---
 
 For the next few weeks I'm gonna list cool features and tips for every programming language You can imagine.
@@ -156,4 +157,4 @@ We've made the whole solution using 5 simple statements
 4. If first and second elements are the same return true AND result of the same logic on the rest of the list
 5. If none of the above applies, the statement is false
 
-You may argue which solution is better in different dimensions. But in my opinion Erlang version is much easier to undesrstand.
+You may argue which solution is better in different dimensions. But in my opinion Erlang version is much easier to understand.
