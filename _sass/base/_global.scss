@@ -127,3 +127,10 @@ p code {
     font-size: 1em;
     font-family: monospace;
 }
+
+sub {
+    margin: -10px auto 0 auto;
+    text-align: center;
+    color: grey;
+    display: table;
+}

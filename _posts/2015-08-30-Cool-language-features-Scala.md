@@ -11,13 +11,15 @@ which were designed years ago but still fullfil their niche f.i Lisp, Erlang or 
 
 ## Scala
 
+[Scala](https://en.wikipedia.org/wiki/Scala_(programming_language)) is a modern language designed to run on [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine). It's being developed by former designer of Java - Martin Odersky and [Typesafe company](https://www.typesafe.com/). It focuses on merging Functional Programming with Object Oriented concepts, and fixes inherently irreparable flaws of Java.
+
 Scala has absolutely wicked collections API. Almost any List/Set/Array operation can be made without wondering about implementation details.
 
-There has been a problem to solve for Java program on Quora once:
+I've bumped onto a problem to solve for Java program on Quora once:
 
 > How can I write a program on Java that outputs the most common digit in an integer?
 
-Imagine Java code that would solve that. We'd have to loop through all characters of String representation, make a Map with values and their count... You can imagine how much time It'd take.
+Imagine Java code that would solve that. We'd have to loop through all characters of String representation, make a Hash with values and their count... You can imagine how much time It'd take.
 
 Now how would we solve that with Scala Collection Api?
 

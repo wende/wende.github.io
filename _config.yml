@@ -33,7 +33,7 @@ theme:
   pinterest:
   reddit:
   soundcloud:
-  stack_exchange:  # Full URL
+  stack_exchange: "http://stackoverflow.com/users/2086804/krzysztof-wende" # Full URL
   steam:
   tumblr: 
   twitter: "iraasta"

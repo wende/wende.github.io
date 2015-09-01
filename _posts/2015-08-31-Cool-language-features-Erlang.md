@@ -151,10 +151,10 @@ Imperative version is probably understandable for programming folks so I will ju
 
 We've made the whole solution using 5 simple statements
 
-1. If A is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.
-2. If A hasn't got even length we know the statement is false.
+1. If `A` is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.
+2. If `A` hasn't got even length we know the statement is false.
 3. If parameter is empty list the statement is true
-4. If first and second elements are the same return true AND result of the same logic on the rest of the list
+4. If first and second elements are the same return true `AND` result of the same logic on the rest of the list
 5. If none of the above applies, the statement is false
 
 You may argue which solution is better in different dimensions. But in my opinion Erlang version is much easier to understand.
