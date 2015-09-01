@@ -2,7 +2,7 @@
 layout: post
 title: Cool language features You've never heard about - Part 3 - Elixir's Macros
 comments: true
-tags: Elixir, Cool
+tags: elixir, cool, languages
 
 ---
 

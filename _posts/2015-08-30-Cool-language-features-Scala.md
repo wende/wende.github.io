@@ -2,7 +2,7 @@
 layout: post
 title: Cool language features You've never heard about - Part 1 - Scala's Collections API
 comments: true
-tags: Scala, Cool
+tags: scala, cool, languages
 ---
 
 For the next few weeks I'm gonna list cool features and tips for every programming language You can imagine.
