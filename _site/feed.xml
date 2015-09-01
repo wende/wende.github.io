@@ -5,7 +5,7 @@
     <atom:link href="http://iraasta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://iraasta.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Tue, 01 Sep 2015 11:00:05 +0200</pubDate>
+    <pubDate>Tue, 01 Sep 2015 11:27:18 +0200</pubDate>
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 3 - Elixir&#39;s Macros</title>
@@ -30,7 +30,7 @@ Jose and co-creators done their best to implement all of the coolest features fr
 &lt;span class=&quot;nv&quot;&gt;acc&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;factorial&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;acc&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;sub&gt; Lisp naive factorial implementation &amp;lt;/sub   &lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt; Lisp naive factorial implementation &lt;/sub&gt;&lt;/p&gt;
 
 &lt;p&gt;That means the code is the data strucutre itself.&lt;/p&gt;
 

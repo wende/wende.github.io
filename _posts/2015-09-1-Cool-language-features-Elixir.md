@@ -26,7 +26,7 @@ Macros has been widely known in Lisp-like languages - [Lisp itself](https://en.w
 acc
    (factorial (- n 1) (* acc n))))
 {% endhighlight %}
-<sub> Lisp naive factorial implementation </sub   
+<sub> Lisp naive factorial implementation </sub>
 
 That means the code is the data strucutre itself.
 
