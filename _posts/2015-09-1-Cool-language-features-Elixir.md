@@ -28,7 +28,7 @@ acc
 {% endhighlight %}
 <sub> Lisp naive factorial implementation </sub   
 
-That mean the code is the data strucutre itself.
+That means the code is the data strucutre itself.
 
 Elixir however uses regular syntax, nonetheless they made metaprogramming easy to grasp and very usable.
 

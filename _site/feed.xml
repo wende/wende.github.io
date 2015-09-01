@@ -5,7 +5,7 @@
     <atom:link href="http://iraasta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://iraasta.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Tue, 01 Sep 2015 10:45:37 +0200</pubDate>
+    <pubDate>Tue, 01 Sep 2015 11:00:05 +0200</pubDate>
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 3 - Elixir&#39;s Macros</title>
@@ -32,7 +32,7 @@ Jose and co-creators done their best to implement all of the coolest features fr
 
 &lt;p&gt;&lt;sub&gt; Lisp naive factorial implementation &amp;lt;/sub   &lt;/sub&gt;&lt;/p&gt;
 
-&lt;p&gt;That mean the code is the data strucutre itself.&lt;/p&gt;
+&lt;p&gt;That means the code is the data strucutre itself.&lt;/p&gt;
 
 &lt;p&gt;Elixir however uses regular syntax, nonetheless they made metaprogramming easy to grasp and very usable.&lt;/p&gt;
 
