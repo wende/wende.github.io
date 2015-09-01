@@ -134,3 +134,10 @@ sub {
     color: grey;
     display: table;
 }
+
+@media (max-width:960px) {
+    #post-nav a {
+        padding: 0 !important;
+    }
+} //nothing with screen size bigger than 960px
+                                    

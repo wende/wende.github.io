@@ -11,7 +11,7 @@ layout: default
     </p>
   </header>
   <section class="post-content">{{ content }}</section>
-
+</article>
 <!-- Post navigation -->
 {% if site.theme.post_navigation %}
 <div id="post-nav">
@@ -35,6 +35,7 @@ layout: default
 {% endif %}
 
 <!-- Similar -->
+<article>
 {% assign hasSimilar = '' %}
 {% for post in site.related_posts %}
 {% assign postHasSimilar = false %}
