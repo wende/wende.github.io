@@ -5,7 +5,68 @@
     <atom:link href="http://iraasta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://iraasta.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Tue, 01 Sep 2015 14:17:03 +0200</pubDate>
+    <pubDate>Thu, 03 Sep 2015 11:21:48 +0200</pubDate>
+    
+      <item>
+        <title>Cool language features You&#39;ve never heard about - Part 4 - F#&#39;s Type Providers</title>
+        <link>http://iraasta.github.io/2015/09/02/Cool-language-features-FSharp.html</link>
+        <guid isPermaLink="true">http://iraasta.github.io/2015/09/02/Cool-language-features-FSharp.html</guid>
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+which were designed years ago but still fulfill their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
+
+&lt;h2 id=&quot;f&quot;&gt;F#&lt;/h2&gt;
+
+&lt;p&gt;If You’ve ever programmed in a static-typed language You probably know that any type-system has it’s boundaries.
+There is a lot of situations where hard typing is a blessing, but there always are exceptions when it starts to become
+a preposterous curse.
+Throughout the years many sharp minds were doing they’re best to make programming easier without losing the type safety.&lt;/p&gt;
+
+&lt;p&gt;You can imagine the struggle when a type was completely strict and nothing else but the datatype it represented.&lt;/p&gt;
+
+&lt;p&gt;First approach was type union introduced by COBOL, however it doesn’t really make the case any better, type unions make the type definition more broad and by that it sacrifices the type safety, which is a purpose of static-typing in a first place. &lt;/p&gt;
+
+&lt;p&gt;The first step forward was the invention of polymorphism. It was first named like that in 1985 yet it was successfully implemented about 20 years earlier in Simula programming language.&lt;/p&gt;
+
+&lt;p&gt;Polymorphism is a concept where a type can be also represented by it’s superset - integer can represented as a number, so can be the float, but we are allowed to make use of only the parts that are shared by both.&lt;/p&gt;
+
+&lt;p&gt;The next huge revolution were generic types - aka type variables. First introduced in &lt;a href=&quot;https://en.wikipedia.org/wiki/ML_(programming_language)&quot;&gt;ML&lt;/a&gt; it finally made available to write fragments of code in which it wasn’t particularly important to know the exact type.
+Parallely to that Damas, Hindley and Milner introduced their &lt;a href=&quot;https://en.wikipedia.org/wiki/Type_inference&quot;&gt;type inference&lt;/a&gt; algorithm which finally made type programming twice less verbose. It allowed the compiler to guess the type by the way the variable was used inside the code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/hZhjl.png&quot; alt=&quot;Hindley-Milner Type Inference rules&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt; Type inference rules by Hindley-Milner. &lt;br /&gt; Also one of the favorite t-shirt pattern for functional programmers, because 99.999% of the population doesn’t understand a thing from this &lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;Type inference despite being proven and implemented in ’70s is still not that widely used by static-typed languages.
+- Java doesn’t have it at all
+- C# has it, but it’s way more crude
+- Scala uses type inference but it works only backwards.&lt;/p&gt;
+
+&lt;p&gt;Finally the languages that successfully implemented type inference are: OCaml, ML, F#, Haskell, Idris, Elm, and not that many more. But that’d be far from true to call any of these languages popular.&lt;/p&gt;
+
+&lt;h3 id=&quot;type-providers&quot;&gt;Type Providers&lt;/h3&gt;
+
+&lt;p&gt;But what does it have to do with F#?&lt;/p&gt;
+
+&lt;p&gt;The thing is there are situations where the type cannot be inferred. For instance when extracting the data from outside source, like XML, Atom or JSON.
+In situations like that You either have to make precautions for failure or try to cast everything by hand, which in most cases is a horrible work to do.
+F#’s creators found another solution to this problem.
+Type provider is a metaprogramming feature, which creates a type based on the example data it is given during compile time.
+For example when we want to receive a JSON data regarding our bank user.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-fsharp&quot; data-lang=&quot;fsharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BankData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonProvider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; {&amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;, &amp;quot;accounts&amp;quot;: [{ &amp;quot;number&amp;quot;: 1234, &amp;quot;balance&amp;quot;: 10.20}]}&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mark&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;BankData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; {&amp;quot;name&amp;quot;: &amp;quot;Mark&amp;quot;, &amp;quot;accounts&amp;quot;: [{ &amp;quot;number&amp;quot;: 1235, &amp;quot;balance&amp;quot;: 220.20}]}&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; &amp;quot;Mark&amp;quot; :: String&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accounts&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; [{###}] :: List&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;account1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;mark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accounts&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;account1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//=&amp;gt; 220.20 :: Float&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This way we can get the type safety during the development by just providing the exemplar input.&lt;/p&gt;
+
+&lt;p&gt;How cool is that!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Sep 2015 00:00:00 +0200</pubDate>
+      </item>
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 3 - Elixir&#39;s Macros</title>
@@ -29,7 +90,6 @@ Jose and co-creators done their best to implement all of the coolest features fr
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;acc&lt;/span&gt;
    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;factorial&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;acc&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;&lt;sub&gt; Lisp naive factorial implementation &lt;/sub&gt;&lt;/p&gt;
 
 &lt;p&gt;That means the code is the data strucutre itself.&lt;/p&gt;

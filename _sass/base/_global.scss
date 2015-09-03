@@ -128,16 +128,24 @@ p code {
     font-family: monospace;
 }
 
-sub {
+p sub {
     margin: -10px auto 0 auto;
+}
+sub {
+    margin: 0px auto 0 auto;
     text-align: center;
     color: grey;
     display: table;
+    line-height: normal;
 }
 
 @media (max-width:960px) {
     #post-nav a {
         padding: 0 !important;
     }
-} //nothing with screen size bigger than 960px
-                                    
+}
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
