@@ -2,6 +2,20 @@
 layout: default
 
 ---
+<!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+
+
+
 <article {% if page.feature-img %}class="feature-image"{% endif %}>
   <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
     <h1 class="title">{{ page.title }}</h1>
@@ -9,8 +23,13 @@ layout: default
     {{ page.date | date: "%B %-d, %Y" }}
     {% if page.author %} - {{ page.author }}{% endif %}
     </p>
+    {% include shares.html %}
   </header>
   <section class="post-content">{{ content }}</section>
+  <br>
+  {% include shares.html %}
+  
+  
 </article>
 <!-- Post navigation -->
 {% if site.theme.post_navigation %}
