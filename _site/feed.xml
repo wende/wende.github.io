@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Mon, 07 Sep 2015 22:52:08 +0200</pubDate>
+    <pubDate>Mon, 07 Sep 2015 22:54:03 +0200</pubDate>
     
       <item>
         <title>n prime numbers in Elixir</title>

@@ -23,6 +23,7 @@ layout: default
     {{ page.date | date: "%B %-d, %Y" }}
     {% if page.author %} - {{ page.author }}{% endif %}
     </p>
+    <br>
     {% include shares.html %}
   </header>
   <section class="post-content">{{ content }}</section>
