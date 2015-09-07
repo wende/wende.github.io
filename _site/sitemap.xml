@@ -1,376 +1,380 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://iraasta.github.io/2015/09/02/Cool-language-features-FSharp.html</loc>
+    <loc>http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html</loc>
+    <lastmod>2015-09-07T00:00:00+02:00</lastmod>
+  </url>
+  <url>
+    <loc>http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html</loc>
     <lastmod>2015-09-02T00:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/2015/09/01/Cool-language-features-Elixir.html</loc>
+    <loc>http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html</loc>
     <lastmod>2015-09-01T00:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/2015/08/31/Cool-language-features-Erlang.html</loc>
+    <loc>http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html</loc>
     <lastmod>2015-08-31T00:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/2015/08/30/Cool-language-features-Scala.html</loc>
+    <loc>http://wende.github.io/2015/08/30/Cool-language-features-Scala.html</loc>
     <lastmod>2015-08-30T00:00:00+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/404.html</loc>
+    <loc>http://wende.github.io/404.html</loc>
   </url>
   <url>
-    <loc>http://iraasta.github.io/about/</loc>
+    <loc>http://wende.github.io/about/</loc>
   </url>
   <url>
-    <loc>http://iraasta.github.io/</loc>
+    <loc>http://wende.github.io/</loc>
   </url>
   <url>
-    <loc>http://iraasta.github.io/google242ae070998d9084.html</loc>
+    <loc>http://wende.github.io/google242ae070998d9084.html</loc>
     <lastmod>2015-09-01T11:53:10+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/stat_charts.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/stat_charts.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/form_validation.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/form_validation.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/special_404.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/special_404.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/ui_tabs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/ui_tabs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/ui_buttons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/ui_buttons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/form_elements.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/form_elements.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_calendar.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_calendar.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/stat_charts.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/stat_charts.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/form_validation.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/form_validation.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/special_404.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/special_404.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/ui_tabs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/ui_tabs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/ui_buttons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/ui_buttons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/form_elements.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/form_elements.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/component_calendar.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/component_calendar.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/ui_dialogs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/ui_dialogs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/tables_static.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/tables_static.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/stat_statistics.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/stat_statistics.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/stat_realtime.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/stat_realtime.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/tables_dynamic.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/tables_dynamic.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/component_fileupload.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/component_fileupload.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/special_search.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/special_search.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/index.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/index.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/form_article.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/form_article.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/grid.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/grid.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/login.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/login.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/ui_icons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/ui_icons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/component_gallery.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/component_gallery.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/form_wizard.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/form_wizard.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/form_account.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/form_account.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/ui_accordion.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/ui_accordion.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/documentation/component_maps.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/documentation/component_maps.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/ui_dialogs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/ui_dialogs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_list_groups.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_list_groups.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/tables_static.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/tables_static.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/stat_statistics.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/stat_statistics.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/special_invoice.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/special_invoice.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/stat_realtime.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/stat_realtime.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/tables_dynamic.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/tables_dynamic.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_fileupload.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_fileupload.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/special_search.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/special_search.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/index.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/index.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/special_inbox.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/special_inbox.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_bootstrap.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_bootstrap.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/presentations/languages/index.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/presentations/languages/index.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/presentations/jezyk_internetu/index.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/presentations/jezyk_internetu/index.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/form_article.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/form_article.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/stat_charts.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/stat_charts.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/form_validation.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/form_validation.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/special_404.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/special_404.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/ui_tabs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/ui_tabs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/ui_buttons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/ui_buttons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/form_elements.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/form_elements.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_calendar.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_calendar.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/ui_dialogs.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/ui_dialogs.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_list_groups.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_list_groups.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/tables_static.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/tables_static.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/stat_statistics.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/stat_statistics.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/special_invoice.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/special_invoice.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/stat_realtime.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/stat_realtime.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/tables_dynamic.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/tables_dynamic.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_fileupload.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_fileupload.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/special_search.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/special_search.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/index.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/index.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/special_inbox.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/special_inbox.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_bootstrap.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_bootstrap.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/form_article.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/form_article.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/grid.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/grid.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/login.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/login.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/ui_icons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/ui_icons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_gallery.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_gallery.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/form_wizard.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/form_wizard.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/form_account.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/form_account.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/grid_live.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/grid_live.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/ui_accordion.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/ui_accordion.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/white/component_maps.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/white/component_maps.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/grid.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/grid.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/login.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/login.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/ui_icons.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/ui_icons.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/landing.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/landing.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_gallery.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_gallery.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/form_wizard.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/form_wizard.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/form_account.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/form_account.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/grid_live.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/grid_live.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/ui_accordion.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/ui_accordion.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/lightbluetemplate/component_maps.html</loc>
+    <loc>http://wende.github.io/lightbluetemplate/component_maps.html</loc>
     <lastmod>2015-08-26T09:21:14+02:00</lastmod>
   </url>
   <url>
-    <loc>http://iraasta.github.io/cv/index.html</loc>
+    <loc>http://wende.github.io/cv/index.html</loc>
     <lastmod>2015-08-25T20:01:00+02:00</lastmod>
   </url>
 </urlset>

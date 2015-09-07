@@ -2,15 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>I hate Monads</title>
-    <atom:link href="http://iraasta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://iraasta.github.io/</link>
+    <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Thu, 03 Sep 2015 12:50:05 +0200</pubDate>
+    <pubDate>Mon, 07 Sep 2015 19:47:23 +0200</pubDate>
+    
+      <item>
+        <title>n prime numbers in Elixir</title>
+        <link>http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html</guid>
+        <description>&lt;p&gt;I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.
+Because the language required was JavaScript I did some horribly ugly imperative function.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/0562a5f61128013ea9ed.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;As You can see it’s almost impossible to decode it after writing.
+But then I started wondering how would it look in Elixir.
+So I implemented my first try. With prime number test and simple iterator function.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/1060a14b9e8680bbe73c.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Not bad but still not dope.
+Then I recalled there was a new thing going on around Elixir called Streams.&lt;/p&gt;
+
+&lt;p&gt;Stream is an implementation of an [possibly] endless enumerable.
+So I gave it a try with it. This is the effect:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/51600fab1f7a1d1bfbd1.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Prime number in 2 still pretty readable lines of code. That’s neat. Isn’t it?&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 07 Sep 2015 00:00:00 +0200</pubDate>
+      </item>
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 4 - F#&#39;s Type Providers</title>
-        <link>http://iraasta.github.io/2015/09/02/Cool-language-features-FSharp.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2015/09/02/Cool-language-features-FSharp.html</guid>
+        <link>http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html</guid>
         <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
 which were designed years ago but still fulfill their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
@@ -74,8 +109,8 @@ For example when we want to receive a JSON data regarding our bank user.&lt;/p&g
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 3 - Elixir&#39;s Macros</title>
-        <link>http://iraasta.github.io/2015/09/01/Cool-language-features-Elixir.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2015/09/01/Cool-language-features-Elixir.html</guid>
+        <link>http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html</guid>
         <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
@@ -182,8 +217,8 @@ That way our code will look like:&lt;/p&gt;
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 2 - Erlang&#39;s Pattern Matching</title>
-        <link>http://iraasta.github.io/2015/08/31/Cool-language-features-Erlang.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2015/08/31/Cool-language-features-Erlang.html</guid>
+        <link>http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html</guid>
         <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
@@ -326,8 +361,8 @@ Now let’s try Erlang equivalent&lt;/p&gt;
     
       <item>
         <title>Cool language features You&#39;ve never heard about - Part 1 - Scala&#39;s Collections API</title>
-        <link>http://iraasta.github.io/2015/08/30/Cool-language-features-Scala.html</link>
-        <guid isPermaLink="true">http://iraasta.github.io/2015/08/30/Cool-language-features-Scala.html</guid>
+        <link>http://wende.github.io/2015/08/30/Cool-language-features-Scala.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/08/30/Cool-language-features-Scala.html</guid>
         <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;

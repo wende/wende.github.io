@@ -2,8 +2,8 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>Cool language features You've never heard about - Part 1 - Scala's Collections API | I hate Monads</title>
-	<meta name="description" content="For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.From most popular like Java or Python, through ne...">
+	<title>n prime numbers in Elixir | I hate Monads</title>
+	<meta name="description" content="I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.Because the language required was JavaScript I did ...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
@@ -16,7 +16,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="http://wende.github.io/2015/08/30/Cool-language-features-Scala.html">
+	<link rel="canonical" href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html">
 
 	<!-- RSS -->
 	<link rel="alternate" type="application/atom+xml" title="I hate Monads" href="http://wende.github.io/feed.xml" />
@@ -158,68 +158,52 @@
     <div class="content">
       <article >
   <header style="background-image: url('/')">
-    <h1 class="title">Cool language features You've never heard about - Part 1 - Scala's Collections API</h1>
+    <h1 class="title">n prime numbers in Elixir</h1>
     <p class="meta">
-    August 30, 2015
+    September 7, 2015
     
     </p>
   </header>
-  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
-which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. </p>
+  <section class="post-content"><p>I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.
+Because the language required was JavaScript I did some horribly ugly imperative function.</p>
 
-<h2 id="scala">Scala</h2>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/0562a5f61128013ea9ed.js"> </script>
 
-<p><a href="https://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a> is a modern language designed to run on <a href="https://en.wikipedia.org/wiki/Java_virtual_machine">JVM</a>. It’s being developed by former designer of Java - Martin Odersky and <a href="https://www.typesafe.com/">Typesafe company</a>. It focuses on merging Functional Programming with Object Oriented concepts, and fixes inherently irreparable flaws of Java.</p>
+<p>As You can see it’s almost impossible to decode it after writing.
+But then I started wondering how would it look in Elixir.
+So I implemented my first try. With prime number test and simple iterator function.</p>
 
-<p>Scala has absolutely wicked collections API. Almost any List/Set/Array operation can be made without wondering about implementation details.</p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/1060a14b9e8680bbe73c.js"> </script>
 
-<p>I’ve bumped onto a problem to solve for Java program on Quora once:</p>
+<p>Not bad but still not dope.
+Then I recalled there was a new thing going on around Elixir called Streams.</p>
 
-<blockquote>
-  <p>How can I write a program on Java that outputs the most common digit in an integer?</p>
-</blockquote>
+<p>Stream is an implementation of an [possibly] endless enumerable.
+So I gave it a try with it. This is the effect:</p>
 
-<p>Imagine Java code that would solve that. We’d have to loop through all characters of String representation, make a Hash with values and their count… You can imagine how much time It’d take.</p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/51600fab1f7a1d1bfbd1.js"> </script>
 
-<p>Now how would we solve that with Scala Collection Api?</p>
+<p>Prime number in 2 still pretty readable lines of code. That’s neat. Isn’t it?</p>
 
-<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="mi">112123123</span>
-<span class="o">.</span><span class="n">toString</span><span class="o">.</span><span class="n">toList</span>
-<span class="o">.</span><span class="n">groupBy</span><span class="o">{</span> <span class="n">identity</span> <span class="o">}</span>
-<span class="o">.</span><span class="n">mapValues</span> <span class="o">{</span> <span class="k">_</span><span class="o">.</span><span class="n">length</span> <span class="o">}</span>
-<span class="o">.</span><span class="n">toList</span><span class="o">.</span><span class="n">maxBy</span> <span class="o">{</span> <span class="k">_</span><span class="o">.</span><span class="n">_2</span> <span class="o">}</span></code></pre></div>
-
-<p>And that’s all.
-First we convert to String, then to list of Chars.<br />
-Then we group by identity ({a =&gt; a}) to List of 
-digits (List(1,1,1,1), List(2,2,2) and so on).<br />
-Then we squash that to values the lists hold.<br />
-At the end we cast that to list,
-and we find the maximum value by tuple’s second field.  </p>
-
-<p>And we’re left with the result:</p>
-
-<blockquote>
-  <p>(Char, Int) = (1,4)</p>
-</blockquote>
-
-<p>Where 1 is the most common digit, and 4 is the quantity.</p>
-
-<p>Scala FTW!</p>
 </section>
 </article>
 <!-- Post navigation -->
 
 <div id="post-nav">
     
+    <a id="prev-post" href="/2015/09/02/Cool-language-features-FSharp.html">
+      <span class="page-title">Cool language features You've never heard about - Part 4 - F#'s Type Providers</span>
+      <span class="nav-label">
+        <i class="fa fa-chevron-left"></i> Prev
+      </span>
+    </a>
     
-    <a id="next-post" href="/2015/08/31/Cool-language-features-Erlang.html">
-       <span class="page-title">Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching</span>
-       <span class="nav-label">
-        Next <i class="fa fa-chevron-right"></i>
-       </span>
-     </a>
     
 </div>
 
@@ -235,23 +219,8 @@ and we find the maximum value by tuple’s second field.  </p>
                                                       
 
                                                       
-
-                                                      
                                                       
 
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
 
                                                       
 
@@ -260,47 +229,18 @@ and we find the maximum value by tuple’s second field.  </p>
 
 
                                                       
+
+                                                      
+                                                      
+                                                      
+
+
+
 
                                                     
                                                     <h4>Similar Posts</h4>
                                                     <ul>
                                                       
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html">Cool language features You've never heard about - Part 4 - F#'s Type Providers
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
                                                       <li class="relatedPost">
                                                         <a href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html">Cool language features You've never heard about - Part 3 - Elixir's Macros
                                                           
@@ -318,6 +258,31 @@ and we find the maximum value by tuple’s second field.  </p>
                                                       
 
                                                       
+                                                      
+
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
 
                                                       
                                                       
@@ -329,29 +294,14 @@ and we find the maximum value by tuple’s second field.  </p>
                                                       
 
                                                       
-
-                                                      
                                                       
 
 
                                                       
 
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html">Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
                                                       
                                                       
 
-                                                      
-                                                      
-
-
-                                                      
 
                                                       
 
