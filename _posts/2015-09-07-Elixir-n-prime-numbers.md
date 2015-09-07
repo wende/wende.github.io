@@ -25,3 +25,12 @@ So I gave it a try with it. This is the effect:
 
 Prime number in 2 still pretty readable lines of code. That's neat. Isn't it?
 
+
+### /Edit Scala Bonus
+
+{% highlight scala %}
+def nPrime(n){
+   Stream.from(2).filter{a => Range(2,a).filter(a % _ == 0).length == 0}.take(n).toList
+}
+{% endhighlight %}
+
