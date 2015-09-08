@@ -5,31 +5,280 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Mon, 07 Sep 2015 22:54:03 +0200</pubDate>
+    <pubDate>Tue, 08 Sep 2015 15:06:51 +0200</pubDate>
+    
+      <item>
+        <title>Functional programming basics on Elixir&#39;s example - Part 1</title>
+        <link>http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html</guid>
+        <description>&lt;p&gt;I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they did’t yet get to know.&lt;br /&gt;
+ In this post I’ll try to describe what is functional programming, what’s it’s history, present and future, why You really should start to learn it, and how it really works in practice.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-bother-with-functional-programming&quot;&gt;Why bother with functional programming?&lt;/h3&gt;
+&lt;p&gt;To start with, I’ve got to emphasize: Functional programming is not anything new. The first language that could be named functional (&lt;a href=&quot;https://en.wikipedia.org/wiki/Lambda_calculus&quot;&gt;Lambda calculus&lt;/a&gt;) is as old as 80 years old (Yes. It’s from 1935). But now it’s getting it’s new life thanks to emerging era of cloud computing.&lt;/p&gt;
+
+&lt;h4 id=&quot;so-why-didnt-i-hear-about-it-before&quot;&gt;So why didn’t I hear about it before?&lt;/h4&gt;
+&lt;p&gt;Functional languages never practically went mainstream. They always were a bizarre way of coding that weren’t as easy to understand as series of steps in imperative programming.&lt;br /&gt;
+What’s more most of imperative languages have a huge marketing backup by a company or a product like:&lt;br /&gt;
+- Java - Sun then Oracle&lt;br /&gt;
+- C# - Microsoft&lt;br /&gt;
+- C - Linux&lt;br /&gt;
+and so on.&lt;/p&gt;
+
+&lt;h4 id=&quot;so-why-should-i-start-caring-now&quot;&gt;So why should I start caring now?&lt;/h4&gt;
+&lt;p&gt;I hear many times people saying that they don’t need functional programming. They feel safe in Java, C# or Python.&lt;br /&gt;
+But they don’t really realize that these languages slowly adapt ideas from functional languages that were present in&lt;br /&gt;
+functional world for more than 30 years. They do it because they make problem solving easier and embrace not reinventing of the wheel.&lt;br /&gt;
+Here are some functional concepts You might have bumped on before.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Anonymous_function&quot;&gt;Lambda expressions&lt;/a&gt; - C# 3.0, Java 8, JavaScript, Ruby, Python, C++11&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Symbol_(programming)&quot;&gt;Symbols/Atoms&lt;/a&gt; - Ruby, Objective-C, ES6 &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_comprehension&quot;&gt;List comprehensions&lt;/a&gt; - Python, C#, JavaScript 1.7, Perl &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Tail_call&quot;&gt;Tail recursion&lt;/a&gt; - ES 6, Lua, Python&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Higher-order_function&quot;&gt;Higher order functions&lt;/a&gt;( map, fold, reduce) - JavaScript, Ruby, Python, Perl, Matlab&lt;br /&gt;
+And probably many, many more.&lt;br /&gt;
+You might wait till Your language finally implement rest of the ideas, or You could learn a functional language Yourself.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;but-why-did-it-now-started-to-matter&quot;&gt;But why did it now started to matter&lt;/h3&gt;
+&lt;p&gt;Formerly the only significant difference between a functional and an imperative programmer was just one. Functional programmer accomplished his task faster.&lt;br /&gt;
+That was a trade-off which wasn’t really profitable for corporations. Maybe functional programmer was 5 times faster, but there was 50 times less functional programmers to hire, which big companies couldn’t really afford.&lt;br /&gt;
+But now we’re in the middle of the era when computational power started to change it’s meaning. We no longer double processor’s power every two years as &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;Gordon E. Moore was predicting&lt;/a&gt;. Now we add more processors and more machines.&lt;br /&gt;
+And that means we need to learn a new way of handling these processors.&lt;br /&gt;
+Surprisingly it appears that the solution wasn’t that new. It’s good old functional programming. And there is a single reason to that: When programming multi-threaded systems there is a problem with simultaneous access to the state.&lt;br /&gt;
+But when there is no state - there is no problem.&lt;br /&gt;
+That’s why functional programming started to shine again.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-languages-are-functional&quot;&gt;What languages are functional?&lt;/h3&gt;
+
+&lt;p&gt;Now what are some cool languages You could think about getting to know:&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Haskell_(programming_language)&quot;&gt;Haskell&lt;/a&gt; (Static) - absolute king of functional languages. Fully* pure and absolutely ingenious&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/OCaml&quot;&gt;OCaml&lt;/a&gt; (Static) - Haskell’s non-lazy brother with object oriented concepts. &lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Scala_(programming_language)&quot;&gt;Scala&lt;/a&gt; (Static) - Runs on JVM, Interops with Java, Although not strictly functional it takes a lot of functional world. It’s a “Java meets functional” language&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Clojure&quot;&gt;Clojure&lt;/a&gt; (Dynamic) - An almighty Lisp descendant. Runs on JVM and shares all Lisp’s great features (Macros rule!)&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Erlang_(programming_language)&quot;&gt;Erlang&lt;/a&gt; (Dynamic) - A language to control a beast called BEAM virtual machine, which is made with distributed never stopping systems in mind. Prolog syntax&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Elixir_(programming_language)&quot;&gt;Elixir&lt;/a&gt; (Dynamic) - Erlang’s machone, Lisp’s macros, Ruby’s syntax and tooling&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/Elm_(programming_language)&quot;&gt;Elm&lt;/a&gt; - Haskell inspired web programming language. Great for learning functional thinking with web development.&lt;br /&gt;
+- &lt;a href=&quot;https://en.wikipedia.org/wiki/F_Sharp_(programming_language)&quot;&gt;F#&lt;/a&gt;(Static) - Microsoft’s child from 2005, which at the beginning didn’t get any interest, but now is getting it’s new life &lt;/p&gt;
+
+&lt;h3 id=&quot;but-what-is-that-functional-programming-after-all&quot;&gt;But what is that functional programming after all?&lt;/h3&gt;
+&lt;p&gt;There are quite few rules that characterize functional programming: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Function is a first class building block.&lt;/li&gt;
+  &lt;li&gt;Single responsibility for single function&lt;/li&gt;
+  &lt;li&gt;Avoid side effects (changes of state) by any mean&lt;/li&gt;
+  &lt;li&gt;Variables don’t vary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That might not seem as a big change but it really is.&lt;br /&gt;
+Lack of side-effects drastically changes the way we reason about our program.&lt;br /&gt;
+There are no loops as You know them, no global variables.&lt;br /&gt;
+But all the magic is in a paradoxical phenomenon, that although we can do less, we might achieve much more.&lt;/p&gt;
+
+&lt;p&gt;Although examples showed in this tutorial will be in Elixir, almost every concept has a simple equivalent in one of the above languages.&lt;/p&gt;
+
+&lt;h3 id=&quot;tuples&quot;&gt;Tuples&lt;/h3&gt;
+
+&lt;p&gt;The first and probably the simplest construct in functional programming is a tuple.&lt;br /&gt;
+Tuples are like objects in JavaScript, but their properties aren’t named.&lt;br /&gt;
+They’re like in Math a representation of an ordered list.&lt;/p&gt;
+
+&lt;p&gt;JavaScript point: &lt;code&gt;{x: 10, y: 200}&lt;/code&gt;&lt;br /&gt;
+Functional point: &lt;code&gt;{10, 200}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript person: &lt;code&gt;{name: &quot;Jack&quot;, age: 20, gender: &quot;male&quot;}&lt;/code&gt;&lt;br /&gt;
+Functional person: &lt;code&gt;{&quot;Jack&quot;, 20, &quot;male&quot;}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It has nothing to do with the programming itself, it’s just an old convention which is still being continued.&lt;/p&gt;
+
+&lt;h3 id=&quot;pattern-matching&quot;&gt;Pattern matching&lt;/h3&gt;
+&lt;p&gt;The main friend of the functional programmer is the pattern matching. What is it?&lt;br /&gt;
+It’s a destructuring assignment which allows You to assign many variables to values based on a pattern.&lt;br /&gt;
+You’ll understand with an example.&lt;/p&gt;
+
+&lt;p&gt;Here we’ve got a simple assignment&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello there&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But what if we wanted to get each value of the list into separate variables&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello there&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# a = 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# b = 2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# hello = &amp;quot;Hello there&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That’s easy isn’t it?&lt;/p&gt;
+
+&lt;p&gt;But what if we wanted to go further, and we had a list with tuples in it&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;list_of_points&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list_of_points&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# a = {1,2}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# b = {2,2}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# c_x = 3&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# c_y = 4&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But what if we wanted to extract only some variables leaving the others.&lt;br /&gt;
+In Elixir (derived from Erlang) there is a syntactic sugar for an unwanted variable.&lt;br /&gt;
+We note it as an &lt;code&gt;_&lt;/code&gt; (underscore). For example if we wanted to get just the first variable of a list&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# a = 1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But that way, if our list was 10 elements long, or even unknown length we would have to write a lot of underscores.&lt;br /&gt;
+That’s why there is incredibly useful &lt;strong&gt;tail notation&lt;/strong&gt;: &lt;code&gt;[ head | tail]&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# a = 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# tail = [2,3,4]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or we could also take two first elements&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# a = 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# b = 2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# t = [3,4]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Why is it useful? You’ll understand that when You’ll feel a need to use a recursion.&lt;/p&gt;
+
+&lt;p&gt;Let’s make a simple functional/imperative comparison of a function summing up all list elements.&lt;br /&gt;
+For imperative examples we will use JavaScript. It’s supposed to be multiparadigm,&lt;br /&gt;
+but we can write imperative code in it and it’s probably the widest understandable language we could find.&lt;/p&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0&quot;&gt;
+Elixir
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/td&gt;&lt;td style=&quot;padding:0 0&quot;&gt;
+JavaScript
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;sumList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sumList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;What we’ve done is we take a list as an argument. If it’s empty we return zero, if it has more than one element we take the first element and add it to the sum of elements of the rest.&lt;br /&gt;
+If You didn’t do many recursions in Your life it might seem quite counter-intuitive. But don’t worry, You’ll get used to it.&lt;br /&gt;
+Let’s examine what does happen to our list when we call &lt;code&gt;sum_list([1,2,3,4])&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;          &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But to be completely honest with You, the code we just wrote is a bullcrap.&lt;br /&gt;
+Let’s make it better.&lt;/p&gt;
+
+&lt;h3 id=&quot;pattern-matching-and-overloaded-functions&quot;&gt;Pattern matching and overloaded functions&lt;/h3&gt;
+
+&lt;p&gt;Pattern matching has another neat functionality. It can fail.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;n&quot;&gt;iex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;MatchError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The good thing about it is that we can use it in an overloaded function.&lt;br /&gt;
+For instance&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;describe_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Yay. A perfect one two three list&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;describe_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;anything_else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Boo, It&amp;#39;s not it&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now if we called &lt;code&gt;describe_list([1,2,3])&lt;/code&gt; we would get:&lt;br /&gt;
+“Yay. A perfect one two three list”.&lt;br /&gt;
+But with any other argument passed we’d get:&lt;br /&gt;
+“Boo, It’s not it”&lt;/p&gt;
+
+&lt;p&gt;Let’s try another dummy example&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;zero&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;one&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;two&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;three&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;four&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;five&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Not 1-5&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Yay! That’s amazingly useless!&lt;br /&gt;
+But it presents an amazingly powerful concept. Now we can try to modernize our previous snippet.&lt;/p&gt;
+
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0&quot;&gt;
+Elixir
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]),&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/td&gt;&lt;td style=&quot;padding:0 0&quot;&gt;
+JavaScript
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sumList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Well now that’s significantly better isn’t it?&lt;/p&gt;
+
+&lt;p&gt;In the next part we will learn how to write some fully usable program.&lt;/p&gt;
+
+&lt;!-- Compare table --&gt;
+
+</description>
+        <pubDate>Tue, 08 Sep 2015 00:00:00 +0200</pubDate>
+      </item>
     
       <item>
         <title>n prime numbers in Elixir</title>
         <link>http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html</link>
         <guid isPermaLink="true">http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html</guid>
-        <description>&lt;p&gt;I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.
+        <description>&lt;p&gt;I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.&lt;br /&gt;
 Because the language required was JavaScript I did some horribly ugly imperative function.&lt;/p&gt;
 
 &lt;noscript&gt;&lt;pre&gt;400: Invalid request
 &lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/0562a5f61128013ea9ed.js&quot;&gt; &lt;/script&gt;
 
-&lt;p&gt;As You can see it’s almost impossible to decode it after writing.
-But then I started wondering how would it look in Elixir.
+&lt;p&gt;As You can see it’s almost impossible to decode it after writing.&lt;br /&gt;
+But then I started wondering how would it look in Elixir.&lt;br /&gt;
 So I implemented my first try. With prime number test and simple iterator function.&lt;/p&gt;
 
 &lt;noscript&gt;&lt;pre&gt;400: Invalid request
 &lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/1060a14b9e8680bbe73c.js&quot;&gt; &lt;/script&gt;
 
-&lt;p&gt;Not bad but still not dope.
+&lt;p&gt;Not bad but still not dope.&lt;br /&gt;
 Then I recalled there was a new thing going on around Elixir called Streams.&lt;/p&gt;
 
-&lt;p&gt;Stream is an implementation of an [possibly] endless enumerable.
+&lt;p&gt;Stream is an implementation of an [possibly] endless enumerable.&lt;br /&gt;
 So I gave it a try with it. This is the effect:&lt;/p&gt;
 
 &lt;noscript&gt;&lt;pre&gt;400: Invalid request
@@ -54,15 +303,15 @@ So I gave it a try with it. This is the effect:&lt;/p&gt;
         <title>Cool language features You&#39;ve never heard about - Part 4 - F#&#39;s Type Providers</title>
         <link>http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html</link>
         <guid isPermaLink="true">http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html</guid>
-        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.&lt;br /&gt;
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these&lt;br /&gt;
 which were designed years ago but still fulfill their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
 
 &lt;h2 id=&quot;f&quot;&gt;F#&lt;/h2&gt;
 
-&lt;p&gt;If You’ve ever programmed in a &lt;strong&gt;static-typed language&lt;/strong&gt; You probably know that any type-system has it’s boundaries.
-There is a lot of situations where hard typing is a blessing, but there always are exceptions when it starts to become
-a preposterous curse.
+&lt;p&gt;If You’ve ever programmed in a &lt;strong&gt;static-typed language&lt;/strong&gt; You probably know that any type-system has it’s boundaries.&lt;br /&gt;
+There is a lot of situations where hard typing is a blessing, but there always are exceptions when it starts to become&lt;br /&gt;
+a preposterous curse.&lt;br /&gt;
 Throughout the years many [F]sharp ( ;) ) minds were doing they’re best to make programming easier without losing the &lt;strong&gt;type safety&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can imagine the struggle when a type was completely strict and nothing else but the datatype it represented.&lt;/p&gt;
@@ -73,7 +322,7 @@ Throughout the years many [F]sharp ( ;) ) minds were doing they’re best to mak
 
 &lt;p&gt;&lt;strong&gt;Polymorphism is a concept where a type can be also represented by it’s superset&lt;/strong&gt; - integer can represented as a number, so can be the float, but we are allowed to make use of only the parts that are shared by both.&lt;/p&gt;
 
-&lt;p&gt;The next huge revolution were &lt;a href=&quot;https://en.wikipedia.org/wiki/Generic_programming&quot;&gt;generic types - aka type variables&lt;/a&gt;. First introduced in &lt;a href=&quot;https://en.wikipedia.org/wiki/ML_(programming_language)&quot;&gt;ML&lt;/a&gt; it finally made available to write fragments of code in which it wasn’t particularly important to know the exact type.
+&lt;p&gt;The next huge revolution were &lt;a href=&quot;https://en.wikipedia.org/wiki/Generic_programming&quot;&gt;generic types - aka type variables&lt;/a&gt;. First introduced in &lt;a href=&quot;https://en.wikipedia.org/wiki/ML_(programming_language)&quot;&gt;ML&lt;/a&gt; it finally made available to write fragments of code in which it wasn’t particularly important to know the exact type.&lt;br /&gt;
 Parallely to that &lt;strong&gt;Damas, Hindley and Milner&lt;/strong&gt; introduced their &lt;a href=&quot;https://en.wikipedia.org/wiki/Type_inference&quot;&gt;type inference&lt;/a&gt; algorithm which finally made type programming twice less verbose. It allowed the compiler to guess the type by the way the variable was used inside the code.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://i.stack.imgur.com/hZhjl.png&quot; alt=&quot;Hindley-Milner Type Inference rules&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
@@ -88,17 +337,17 @@ Parallely to that &lt;strong&gt;Damas, Hindley and Milner&lt;/strong&gt; introdu
   &lt;li&gt;Scala uses type inference but it works only backwards.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Finally the languages that successfully implemented type inference are:&lt;br /&gt;
+&lt;p&gt;Finally the languages that successfully implemented type inference are:  &lt;br /&gt;
 &lt;strong&gt;OCaml, ML, F#, Haskell, Idris, Elm&lt;/strong&gt;, and not that many more. But that’d be far from true to call any of these languages popular.&lt;/p&gt;
 
 &lt;h3 id=&quot;type-providers&quot;&gt;Type Providers&lt;/h3&gt;
 
 &lt;p&gt;But what does it have to do with &lt;strong&gt;F#&lt;/strong&gt;?&lt;/p&gt;
 
-&lt;p&gt;The thing is there are situations where the type cannot be inferred. For instance when extracting the data from outside source, like XML, Atom or JSON.
-In situations like that You either have to make precautions for failure or try to cast everything by hand, which in most cases is a horrible work to do.
-F#’s creators found another solution to this problem.
-Type provider is a &lt;strong&gt;metaprogramming&lt;/strong&gt; feature, which creates a type based on the example data it is given during compile time.
+&lt;p&gt;The thing is there are situations where the type cannot be inferred. For instance when extracting the data from outside source, like XML, Atom or JSON.&lt;br /&gt;
+In situations like that You either have to make precautions for failure or try to cast everything by hand, which in most cases is a horrible work to do.&lt;br /&gt;
+F#’s creators found another solution to this problem.&lt;br /&gt;
+Type provider is a &lt;strong&gt;metaprogramming&lt;/strong&gt; feature, which creates a type based on the example data it is given during compile time.&lt;br /&gt;
 For example when we want to receive a JSON data regarding our bank user.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-fsharp&quot; data-lang=&quot;fsharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BankData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonProvider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&amp;quot; {&amp;quot;name&amp;quot;: &amp;quot;John&amp;quot;, &amp;quot;accounts&amp;quot;: [{ &amp;quot;number&amp;quot;: 1234, &amp;quot;balance&amp;quot;: 10.20}]}&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -119,14 +368,14 @@ For example when we want to receive a JSON data regarding our bank user.&lt;/p&g
         <title>Cool language features You&#39;ve never heard about - Part 3 - Elixir&#39;s Macros</title>
         <link>http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html</link>
         <guid isPermaLink="true">http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html</guid>
-        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.&lt;br /&gt;
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these&lt;br /&gt;
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
 
 &lt;h2 id=&quot;elixir&quot;&gt;Elixir&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://elixir-lang.org/&quot;&gt;Elixir language&lt;/a&gt; is a newborn child of &lt;a href=&quot;https://github.com/josevalim&quot;&gt;Jose Valim&lt;/a&gt; and Ruby community. It’s a Ruby dialect for interacting with Erlang virtual machine.
-Though it’s new and still emerging language it’s already production ready thanks to it’s mature Erlang VM environment.
+&lt;p&gt;&lt;a href=&quot;http://elixir-lang.org/&quot;&gt;Elixir language&lt;/a&gt; is a newborn child of &lt;a href=&quot;https://github.com/josevalim&quot;&gt;Jose Valim&lt;/a&gt; and Ruby community. It’s a Ruby dialect for interacting with Erlang virtual machine.&lt;br /&gt;
+Though it’s new and still emerging language it’s already production ready thanks to it’s mature Erlang VM environment.&lt;br /&gt;
 Jose and co-creators done their best to implement all of the coolest features from world’s languages, and one of the most impressive in my opinion is Elixir’s macro system.&lt;/p&gt;
 
 &lt;p&gt;A &lt;a href=&quot;https://en.wikipedia.org/wiki/Macro_(computer_science)&quot;&gt;Macro&lt;/a&gt; in programming is a code that is run during compile time of an application which takes a block of code in form of an &lt;a href=&quot;https://en.wikipedia.org/wiki/Abstract_syntax_tree&quot;&gt;AST&lt;/a&gt; as a parameter, and returns modified AST as a result, which is inserted in the place of a macro in code. &lt;/p&gt;
@@ -143,8 +392,8 @@ Jose and co-creators done their best to implement all of the coolest features fr
 
 &lt;p&gt;Elixir however uses regular syntax, nonetheless they made metaprogramming easy to grasp and very usable.&lt;/p&gt;
 
-&lt;p&gt;But what is a purpose of metaprogramming?
-Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.
+&lt;p&gt;But what is a purpose of metaprogramming?&lt;br /&gt;
+Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.&lt;br /&gt;
 You could make a function that checks if it’s debugging right now and if yes it’d print the statement.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;kd&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
@@ -185,7 +434,7 @@ You could make a function that checks if it’s debugging right now and if yes i
 
 &lt;h2 id=&quot;pipe-operator&quot;&gt;Pipe operator&lt;/h2&gt;
 
-&lt;p&gt;One of the mindbogglingly great features implemented using macros is the pipe operator (Probably inspired by &lt;a href=&quot;https://pl.wikipedia.org/wiki/F_Sharp&quot;&gt;F#&lt;/a&gt;)
+&lt;p&gt;One of the mindbogglingly great features implemented using macros is the pipe operator (Probably inspired by &lt;a href=&quot;https://pl.wikipedia.org/wiki/F_Sharp&quot;&gt;F#&lt;/a&gt;)&lt;br /&gt;
 Pipe operator does something similar to Linux’s pipe. It executes the function and passes the result to the next function as a first argument.&lt;/p&gt;
 
 &lt;p&gt;Imagine we’ve had a list. We want, to double each element of that, filter to only these that are divided by 3 and then sum up all of them.&lt;/p&gt;
@@ -204,9 +453,9 @@ Pipe operator does something similar to Linux’s pipe. It executes the function
 &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Enum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;nc&quot;&gt;Enum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Much better, but still that way it becomes horribly redundant.
-Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument
-using pipe operators.
+&lt;p&gt;Much better, but still that way it becomes horribly redundant.&lt;br /&gt;
+Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument&lt;br /&gt;
+using pipe operators.&lt;br /&gt;
 That way our code will look like:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -227,21 +476,21 @@ That way our code will look like:&lt;/p&gt;
         <title>Cool language features You&#39;ve never heard about - Part 2 - Erlang&#39;s Pattern Matching</title>
         <link>http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html</link>
         <guid isPermaLink="true">http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html</guid>
-        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.&lt;br /&gt;
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these&lt;br /&gt;
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
 
 &lt;h2 id=&quot;erlang&quot;&gt;Erlang&lt;/h2&gt;
 
-&lt;p&gt;Erlang is (un)widely known from it’s easiness of building distributed systems.
-A system written in Erlang can run great, despite being deployed on one, two or hundred machines.
-But even though it’s amazing in it’s particular niche, it also has unique syntax solutions that
+&lt;p&gt;Erlang is (un)widely known from it’s easiness of building distributed systems.&lt;br /&gt;
+A system written in Erlang can run great, despite being deployed on one, two or hundred machines.&lt;br /&gt;
+But even though it’s amazing in it’s particular niche, it also has unique syntax solutions that&lt;br /&gt;
 make it nice to develop in.&lt;/p&gt;
 
 &lt;h3 id=&quot;pattern-matching&quot;&gt;Pattern matching&lt;/h3&gt;
-&lt;p&gt;Some of You might be familiar with pattern matching, some of You can’t imagine programming without it, but most of imperative programmers aren’t so familiar with the concept at all.
-Pattern matching is a conditional assignment. What does it mean?
-That means that an assignment fails if the arguments don’t meet the requirement.
+&lt;p&gt;Some of You might be familiar with pattern matching, some of You can’t imagine programming without it, but most of imperative programmers aren’t so familiar with the concept at all.&lt;br /&gt;
+Pattern matching is a conditional assignment. What does it mean?&lt;br /&gt;
+That means that an assignment fails if the arguments don’t meet the requirement.&lt;br /&gt;
 A simplest possible pattern matching example is an overloaded function.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nameType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
@@ -251,11 +500,11 @@ A simplest possible pattern matching example is an overloaded function.&lt;/p&gt
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Integer&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Although the &lt;code&gt;nameType()&lt;/code&gt; function has the same name twice when we call &lt;code&gt;nameType(1)&lt;/code&gt; we execute totally different function
+&lt;p&gt;Although the &lt;code&gt;nameType()&lt;/code&gt; function has the same name twice when we call &lt;code&gt;nameType(1)&lt;/code&gt; we execute totally different function&lt;br /&gt;
 than if we typed &lt;code&gt;nameType(&quot;1&quot;)&lt;/code&gt;. This is pattern matching in it’s most primitive form.&lt;/p&gt;
 
-&lt;p&gt;Now, if You don’t know yet, Erlang is a functional language - which basically means it embraces lack of side-effects
-(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like &lt;code&gt;final&lt;/code&gt;s in Java, &lt;code&gt;val&lt;/code&gt;s in Scala or &lt;code&gt;readonly&lt;/code&gt;s in C#).&lt;br /&gt;
+&lt;p&gt;Now, if You don’t know yet, Erlang is a functional language - which basically means it embraces lack of side-effects&lt;br /&gt;
+(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like &lt;code&gt;final&lt;/code&gt;s in Java, &lt;code&gt;val&lt;/code&gt;s in Scala or &lt;code&gt;readonly&lt;/code&gt;s in C#).  &lt;br /&gt;
 And also in Erlang every assignment is pattern-matching.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-erlang&quot; data-lang=&quot;erlang&quot;&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
@@ -286,7 +535,7 @@ And also in Erlang every assignment is pattern-matching.&lt;/p&gt;
 &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dimesnsion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;&amp;quot;Is 2D&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.
+&lt;p&gt;Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.&lt;br /&gt;
 Take a simple Java example&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -325,7 +574,7 @@ Take a simple Java example&lt;/p&gt;
 
 &lt;h3 id=&quot;bonus&quot;&gt;Bonus&lt;/h3&gt;
 
-&lt;p&gt;Erlang can also pattern match on Lists with &lt;code&gt;[Head|Tail]&lt;/code&gt; behaviour.
+&lt;p&gt;Erlang can also pattern match on Lists with &lt;code&gt;[Head|Tail]&lt;/code&gt; behaviour.&lt;br /&gt;
 Imagine we want to check if the nunber contains digits in pairs (11223355, 1122, 88 ; but not 123, 112 or 556612)&lt;/p&gt;
 
 &lt;p&gt;As always let’s start with Java&lt;/p&gt;
@@ -341,7 +590,7 @@ Imagine we want to check if the nunber contains digits in pairs (11223355, 1122,
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;It’s not that long, but definitelly not easy to reason about.
+&lt;p&gt;It’s not that long, but definitelly not easy to reason about.&lt;br /&gt;
 Now let’s try Erlang equivalent&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-erlang&quot; data-lang=&quot;erlang&quot;&gt;&lt;span class=&quot;nf&quot;&gt;only_pairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;is_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;only_pairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;integer_to_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -371,8 +620,8 @@ Now let’s try Erlang equivalent&lt;/p&gt;
         <title>Cool language features You&#39;ve never heard about - Part 1 - Scala&#39;s Collections API</title>
         <link>http://wende.github.io/2015/08/30/Cool-language-features-Scala.html</link>
         <guid isPermaLink="true">http://wende.github.io/2015/08/30/Cool-language-features-Scala.html</guid>
-        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+        <description>&lt;p&gt;For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.&lt;br /&gt;
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these&lt;br /&gt;
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. &lt;/p&gt;
 
 &lt;h2 id=&quot;scala&quot;&gt;Scala&lt;/h2&gt;
@@ -397,12 +646,12 @@ which were designed years ago but still fullfil their niche f.i Lisp, Erlang or 
 &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapValues&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxBy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;And that’s all.
-First we convert to String, then to list of Chars.&lt;br /&gt;
-Then we group by identity ({a =&amp;gt; a}) to List of 
-digits (List(1,1,1,1), List(2,2,2) and so on).&lt;br /&gt;
-Then we squash that to values the lists hold.&lt;br /&gt;
-At the end we cast that to list,
+&lt;p&gt;And that’s all.&lt;br /&gt;
+First we convert to String, then to list of Chars.  &lt;br /&gt;
+Then we group by identity ({a =&amp;gt; a}) to List of &lt;br /&gt;
+digits (List(1,1,1,1), List(2,2,2) and so on).  &lt;br /&gt;
+Then we squash that to values the lists hold.  &lt;br /&gt;
+At the end we cast that to list,&lt;br /&gt;
 and we find the maximum value by tuple’s second field.  &lt;/p&gt;
 
 &lt;p&gt;And we’re left with the result:&lt;/p&gt;

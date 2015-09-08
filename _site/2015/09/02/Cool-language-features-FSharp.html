@@ -135,6 +135,8 @@
 			
 			
 			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled -->
 			
 
@@ -241,15 +243,15 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.<br />
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these<br />
 which were designed years ago but still fulfill their niche f.i Lisp, Erlang or Prolog. </p>
 
 <h2 id="f">F#</h2>
 
-<p>If You’ve ever programmed in a <strong>static-typed language</strong> You probably know that any type-system has it’s boundaries.
-There is a lot of situations where hard typing is a blessing, but there always are exceptions when it starts to become
-a preposterous curse.
+<p>If You’ve ever programmed in a <strong>static-typed language</strong> You probably know that any type-system has it’s boundaries.<br />
+There is a lot of situations where hard typing is a blessing, but there always are exceptions when it starts to become<br />
+a preposterous curse.<br />
 Throughout the years many [F]sharp ( ;) ) minds were doing they’re best to make programming easier without losing the <strong>type safety</strong>.</p>
 
 <p>You can imagine the struggle when a type was completely strict and nothing else but the datatype it represented.</p>
@@ -260,7 +262,7 @@ Throughout the years many [F]sharp ( ;) ) minds were doing they’re best to mak
 
 <p><strong>Polymorphism is a concept where a type can be also represented by it’s superset</strong> - integer can represented as a number, so can be the float, but we are allowed to make use of only the parts that are shared by both.</p>
 
-<p>The next huge revolution were <a href="https://en.wikipedia.org/wiki/Generic_programming">generic types - aka type variables</a>. First introduced in <a href="https://en.wikipedia.org/wiki/ML_(programming_language)">ML</a> it finally made available to write fragments of code in which it wasn’t particularly important to know the exact type.
+<p>The next huge revolution were <a href="https://en.wikipedia.org/wiki/Generic_programming">generic types - aka type variables</a>. First introduced in <a href="https://en.wikipedia.org/wiki/ML_(programming_language)">ML</a> it finally made available to write fragments of code in which it wasn’t particularly important to know the exact type.<br />
 Parallely to that <strong>Damas, Hindley and Milner</strong> introduced their <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> algorithm which finally made type programming twice less verbose. It allowed the compiler to guess the type by the way the variable was used inside the code.</p>
 
 <p><img src="http://i.stack.imgur.com/hZhjl.png" alt="Hindley-Milner Type Inference rules" class="center-image" /></p>
@@ -275,17 +277,17 @@ Parallely to that <strong>Damas, Hindley and Milner</strong> introduced their <a
   <li>Scala uses type inference but it works only backwards.</li>
 </ul>
 
-<p>Finally the languages that successfully implemented type inference are:<br />
+<p>Finally the languages that successfully implemented type inference are:  <br />
 <strong>OCaml, ML, F#, Haskell, Idris, Elm</strong>, and not that many more. But that’d be far from true to call any of these languages popular.</p>
 
 <h3 id="type-providers">Type Providers</h3>
 
 <p>But what does it have to do with <strong>F#</strong>?</p>
 
-<p>The thing is there are situations where the type cannot be inferred. For instance when extracting the data from outside source, like XML, Atom or JSON.
-In situations like that You either have to make precautions for failure or try to cast everything by hand, which in most cases is a horrible work to do.
-F#’s creators found another solution to this problem.
-Type provider is a <strong>metaprogramming</strong> feature, which creates a type based on the example data it is given during compile time.
+<p>The thing is there are situations where the type cannot be inferred. For instance when extracting the data from outside source, like XML, Atom or JSON.<br />
+In situations like that You either have to make precautions for failure or try to cast everything by hand, which in most cases is a horrible work to do.<br />
+F#’s creators found another solution to this problem.<br />
+Type provider is a <strong>metaprogramming</strong> feature, which creates a type based on the example data it is given during compile time.<br />
 For example when we want to receive a JSON data regarding our bank user.</p>
 
 <div class="highlight"><pre><code class="language-fsharp" data-lang="fsharp"><span class="k">type</span> <span class="nc">BankData</span> <span class="o">=</span> <span class="n">JsonProvider</span><span class="o">&lt;</span><span class="s">&quot;&quot;&quot; {&quot;name&quot;: &quot;John&quot;, &quot;accounts&quot;: [{ &quot;number&quot;: 1234, &quot;balance&quot;: 10.20}]}&quot;&quot;&quot;</span><span class="o">&gt;</span>
@@ -336,6 +338,41 @@ For example when we want to receive a JSON data regarding our bank user.</p>
 <article>
 
 
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
 
 
 

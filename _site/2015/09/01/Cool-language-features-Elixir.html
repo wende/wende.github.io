@@ -135,6 +135,8 @@
 			
 			
 			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled -->
 			
 
@@ -241,14 +243,14 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
+  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.<br />
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these<br />
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. </p>
 
 <h2 id="elixir">Elixir</h2>
 
-<p><a href="http://elixir-lang.org/">Elixir language</a> is a newborn child of <a href="https://github.com/josevalim">Jose Valim</a> and Ruby community. It’s a Ruby dialect for interacting with Erlang virtual machine.
-Though it’s new and still emerging language it’s already production ready thanks to it’s mature Erlang VM environment.
+<p><a href="http://elixir-lang.org/">Elixir language</a> is a newborn child of <a href="https://github.com/josevalim">Jose Valim</a> and Ruby community. It’s a Ruby dialect for interacting with Erlang virtual machine.<br />
+Though it’s new and still emerging language it’s already production ready thanks to it’s mature Erlang VM environment.<br />
 Jose and co-creators done their best to implement all of the coolest features from world’s languages, and one of the most impressive in my opinion is Elixir’s macro system.</p>
 
 <p>A <a href="https://en.wikipedia.org/wiki/Macro_(computer_science)">Macro</a> in programming is a code that is run during compile time of an application which takes a block of code in form of an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> as a parameter, and returns modified AST as a result, which is inserted in the place of a macro in code. </p>
@@ -265,8 +267,8 @@ Jose and co-creators done their best to implement all of the coolest features fr
 
 <p>Elixir however uses regular syntax, nonetheless they made metaprogramming easy to grasp and very usable.</p>
 
-<p>But what is a purpose of metaprogramming?
-Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.
+<p>But what is a purpose of metaprogramming?<br />
+Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.<br />
 You could make a function that checks if it’s debugging right now and if yes it’d print the statement.</p>
 
 <div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
@@ -307,7 +309,7 @@ You could make a function that checks if it’s debugging right now and if yes i
 
 <h2 id="pipe-operator">Pipe operator</h2>
 
-<p>One of the mindbogglingly great features implemented using macros is the pipe operator (Probably inspired by <a href="https://pl.wikipedia.org/wiki/F_Sharp">F#</a>)
+<p>One of the mindbogglingly great features implemented using macros is the pipe operator (Probably inspired by <a href="https://pl.wikipedia.org/wiki/F_Sharp">F#</a>)<br />
 Pipe operator does something similar to Linux’s pipe. It executes the function and passes the result to the next function as a first argument.</p>
 
 <p>Imagine we’ve had a list. We want, to double each element of that, filter to only these that are divided by 3 and then sum up all of them.</p>
@@ -326,9 +328,9 @@ Pipe operator does something similar to Linux’s pipe. It executes the function
 <span class="n">list</span> <span class="p">=</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
 <span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
 
-<p>Much better, but still that way it becomes horribly redundant.
-Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument
-using pipe operators.
+<p>Much better, but still that way it becomes horribly redundant.<br />
+Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument<br />
+using pipe operators.<br />
 That way our code will look like:</p>
 
 <div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
@@ -383,10 +385,54 @@ That way our code will look like:</p>
 
 
 
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
                                                     
                                                     <h4>Similar Posts</h4>
                                                     <ul>
                                                       
+                                                      <li class="relatedPost">
+                                                        <a href="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html">Functional programming basics on Elixir's example - Part 1
+                                                          
+                                                        </a>
+                                                      </li>
+                                                      
+                                                      
+                                                      
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                    
                                                       <li class="relatedPost">
                                                         <a href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html">n prime numbers in Elixir
                                                           
