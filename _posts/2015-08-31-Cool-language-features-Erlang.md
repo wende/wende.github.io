@@ -110,7 +110,7 @@ is_x_y_equal({X,Y}) -> "No they're not!"
 
 % Usecase
 point:is_x_y_equal({1,1}) // "Yes they are"
-point:is_x_y_equal({1,1}) // "No they're not"
+point:is_x_y_equal({1,3}) // "No they're not"
 
 {% endhighlight %}
 
