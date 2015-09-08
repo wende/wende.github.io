@@ -126,6 +126,7 @@ p code {
     border-radius: 3px;
     font-size: 1em;
     font-family: monospace;
+    text-align: left !important; 
 }
 
 p sub {
@@ -153,4 +154,8 @@ sub {
 .fb-share-button {
     left: 0 !important;
     top: -5px !important;
+}
+
+code {
+    text-align: left;
 }
