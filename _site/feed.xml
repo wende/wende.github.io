@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Tue, 08 Sep 2015 16:03:57 +0200</pubDate>
+    <pubDate>Tue, 08 Sep 2015 16:06:40 +0200</pubDate>
     
       <item>
         <title>Functional programming basics on Elixir&#39;s example - Part 1</title>
@@ -41,7 +41,7 @@ And probably many, many more.&lt;br /&gt;
 You might wait till Your language finally implement rest of the ideas, or You could learn a functional language Yourself.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;but-why-did-it-now-started-to-matter&quot;&gt;But why did it now started to matter&lt;/h3&gt;
+&lt;h3 id=&quot;but-why-did-it-now-start-to-matter&quot;&gt;But why did it now start to matter?&lt;/h3&gt;
 &lt;p&gt;Formerly the only significant difference between a functional and an imperative programmer was just one. Functional programmer accomplished his task faster.&lt;br /&gt;
 That was a trade-off which wasn’t really profitable for corporations. Maybe functional programmer was 5 times faster, but there was 50 times less functional programmers to hire, which big companies couldn’t really afford.&lt;br /&gt;
 But now we’re in the middle of the era when computational power started to change it’s meaning. We no longer double processor’s power every two years as &lt;a href=&quot;https://en.wikipedia.org/wiki/Moore%27s_law&quot;&gt;Gordon E. Moore was predicting&lt;/a&gt;. Now we add more processors and more machines.&lt;br /&gt;

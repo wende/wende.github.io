@@ -32,7 +32,7 @@ Here are some functional concepts You might have bumped on before.
 And probably many, many more.
 You might wait till Your language finally implement rest of the ideas, or You could learn a functional language Yourself.
 
-### But why did it now start to matter
+### But why did it now start to matter?
 Formerly the only significant difference between a functional and an imperative programmer was just one. Functional programmer accomplished his task faster.
 That was a trade-off which wasn't really profitable for corporations. Maybe functional programmer was 5 times faster, but there was 50 times less functional programmers to hire, which big companies couldn't really afford.
 But now we're in the middle of the era when computational power started to change it's meaning. We no longer double processor's power every two years as [Gordon E. Moore was predicting](https://en.wikipedia.org/wiki/Moore%27s_law). Now we add more processors and more machines.
