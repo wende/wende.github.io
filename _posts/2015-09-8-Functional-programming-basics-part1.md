@@ -141,6 +141,7 @@ but we can write imperative code in it and it's probably the widest understandab
 <table><tr><td style="padding:0 0">
 Elixir
 {% highlight elixir %}
+#
 def main() do
   list = [1,2,3,4,5,6]
   sum_list(list)
@@ -153,10 +154,12 @@ def sum_list(list) do
     head + sum_list(tail)
   end
 end
+#  
 {% endhighlight %}
 </td><td style="padding:0 0">
 JavaScript
 {% highlight js %}
+//
 function main(){
   var list = [1,2,3,4,5,6]
   sumList(list)
@@ -168,6 +171,8 @@ function sumList(list){
   }
   return sum
 }
+  
+// 
 {% endhighlight %}
 </td></tr></table>  
 What we've done is we take a list as an argument. If it's empty we return zero, if it has more than one element we take the first element and add it to the sum of elements of the rest.
@@ -226,14 +231,20 @@ But it presents an amazingly powerful concept. Now we can try to modernize our p
 <table><tr><td style="padding:0 0">
 Elixir
 {% highlight elixir %}
+#
 def sum_list([]), do: 0
 def sum_list([head | tail]) do
    head + sum_list(tail)
 end
+
+
+
+#
 {% endhighlight %}
 </td><td style="padding:0 0">
 JavaScript
 {% highlight js %}
+//
 function sumList(list){
   var sum = 0
   for(var i = 0; i < list.length; i++){
@@ -241,6 +252,7 @@ function sumList(list){
   }
   return sum
 }
+//
 {% endhighlight %}
 </td></tr></table>  
 
