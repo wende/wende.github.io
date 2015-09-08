@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Tue, 08 Sep 2015 15:56:54 +0200</pubDate>
+    <pubDate>Tue, 08 Sep 2015 15:57:54 +0200</pubDate>
     
       <item>
         <title>Functional programming basics on Elixir&#39;s example - Part 1</title>
@@ -147,7 +147,7 @@ That’s why there is incredibly useful &lt;strong&gt;tail notation&lt;/strong&g
 For imperative examples we will use JavaScript. It’s supposed to be multiparadigm,&lt;br /&gt;
 but we can write imperative code in it and it’s probably the widest understandable language we could find.&lt;/p&gt;
 
-&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border: none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border: none; text-align: center&quot;&gt;
 Elixir
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -165,7 +165,7 @@ Elixir
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none&quot;&gt;
+&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none ; text-align: center&quot;&gt;
 JavaScript
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
@@ -230,7 +230,7 @@ But with any other argument passed we’d get:&lt;br /&gt;
 &lt;p&gt;Yay! That’s amazingly useless!&lt;br /&gt;
 But it presents an amazingly powerful concept. Now we can try to modernize our previous snippet.&lt;/p&gt;
 
-&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border:none&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border:none ; text-align: center&quot;&gt;
 Elixir
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -243,7 +243,7 @@ Elixir
 
 &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none&quot;&gt;
+&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none ; text-align: center&quot;&gt;
 JavaScript
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
