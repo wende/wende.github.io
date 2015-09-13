@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Why You have to stop using Windows for programming | I hate Monads</title>
+	<meta name="description" content="You’ve got to admit, we all don’t like to hear that the stuff we’re using right now sucks. There is plenty of psychological studies proving that no matter wh...">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://wende.github.io/2015/09/13/Why-You-have-to-stop-using-windows-for-programming.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="I hate Monads" href="http://wende.github.io/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-56241713-9', 'auto');
+	ga('send', 'pageview');
+	</script>
+	
+
+<!-- facebook Open Graph Metadatas -->
+<meta content="your_facebook_app_id" property="fb:app_id">
+<meta content="" property="og:site_name">
+
+<meta content="Why You have to stop using Windows for programming" property="og:title">
+
+
+<meta content="article" property="og:type">
+
+
+<meta content="" property="og:description">
+
+
+<meta content="http://wende.github.io/2015/09/13/Why-You-have-to-stop-using-windows-for-programming.html" property="og:url">
+
+
+<meta content="2015-09-13T00:00:00+02:00" property="article:published_time">
+<meta content="http://wende.github.io/about/" property="article:author">
+
+
+<meta content="/img/logo-high-resolution.png" property="og:image">
+
+
+
+
+
+
+<meta content="linux," property="article:tag">
+
+<meta content="unix," property="article:tag">
+
+<meta content="windows," property="article:tag">
+
+<meta content="commands," property="article:tag">
+
+<meta content="console" property="article:tag">
+
+
+<!-- END FACEBOOK SHARE -->
+<!-- Umieść ten tag w nagłówku lub tuż przed tagiem zamykającym treść. -->
+<!-- GOOGLE SHARE -->
+<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}</script>
+<!-- /GOOGLE SHARE -->
+<!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@vdaubry">
+<meta name="twitter:creator" content="@vdaubry">
+
+<meta name="twitter:title" content="Why You have to stop using Windows for programming">
+
+
+<meta name="twitter:url" content="http://wende.github.io/2015/09/13/Why-You-have-to-stop-using-windows-for-programming.html">
+
+
+<meta name="twitter:description" content="">
+
+
+
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/">
+			<img class="avatar" src="https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/">I hate Monads</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+			
+			
+			
+			
+			<li>
+				<a class="page-link" href="/about/">
+					About
+				</a>
+			</li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:chris@neontree.pl" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/wende" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://plus.google.com/https://plus.google.com/+KrzysztofWendeIraasta" title="Follow on Google+">
+		<i class="fa fa-fw fa-google-plus"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="http://stackoverflow.com/users/2086804/krzysztof-wende" title="Follow on Stack Exchange">
+		<i class="fa fa-fw fa-stack-exchange"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/iraasta" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+
+
+
+<article >
+  <header style="background-image: url('/')">
+    <h1 class="title">Why You have to stop using Windows for programming</h1>
+    <p class="meta">
+    September 13, 2015
+    
+    </p>
+    <br>
+    <!-- SHARE BUTTONS -->
+    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/13/Why-You-have-to-stop-using-windows-for-programming.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
+    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <!-- /SHARE BUTTONS -->
+
+  </header>
+  <section class="post-content"><p>You’ve got to admit, we all don’t like to hear that the stuff we’re using right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini’s analysis of American brainwashed prisoners at war in China)<br />
+Lion share of us started using personal computers with MS Windows on it. We used it for years, and also we started programming on it, hence we got used to saying it’s the right way.<br />
+I’ve used to be in this camp. I thought the difference is insignificant. Right now I know - it isn’t.<br />
+I’m using Linux (Ubuntu to be precise [pangolin]). It took me quite long time to convince myself to make a shift. It took me way too much. It was a great mistake not to take that shot for so long, and that’s why I will try to convince You too that it is worth it.</p>
+
+<h3 id="command-line">Command-line</h3>
+
+<p>The most (only?) significant advantage of Linux (or OS X) system is the CLI. You might have underestimated it before. But as a programmer You’ll probably admit that a GUI is never as powerful as a text interface - especially when it comes to automation.<br />
+I’m not saying I’m a pro Linux user, and never probably be one. But there are few secret weapons I got to discover throughout last several years. Here are some of these</p>
+
+<h3 id="amazing-tab-completion">Amazing tab completion</h3>
+<p>It just works. Period</p>
+
+<h3 id="any-problem-is-copy-paste-solvable">Any problem is copy-paste solvable</h3>
+<p>Something doesn’t work as You would like it to? Google the problem. Copy the answer. Paste it into CLI. Problem solved.</p>
+
+<h3 id="one-line-command-for-anything---seriously">One-line command for anything - seriously</h3>
+<p>You probably all know <code>apt-get install</code> (or <code>yum</code> or other distro alternatives). It’s a huge relief to change the installation workflow from:<br />
+1. Google it<br />
+2. Go to the website<br />
+3. Find download page<br />
+4. download<br />
+5. open the installer<br />
+6. Next… Next… Finish</p>
+
+<p>to:<br />
+1. <code>sudo apt get install name_of_the_package</code><br />
+2. RET</p>
+
+<p>But that’s just a beginning of the journey. You can do almost anything in a one-liner if You know how to.</p>
+
+<h4 id="execute-a-shell-script-under-some-url">Execute a shell script under some URL</h4>
+<p><code>bash &lt;(wget -qO- URL)</code><br />
+And done, it downloads the script and executes it when it finishes.<br />
+For example try my script for checking whether You’ve got everything installed for my upcoming Elixir lecture tutorial (<a href="http://www.meetup.com/Elixir-Krakow/events/225061900/">Feel free to join BTW if You’re from Cracow in Poland</a>)<br />
+<code>bash &lt;(wget -qO- https://raw.githubusercontent.com/wende/mongoosetutorial/master/checkenv.sh)</code></p>
+
+<h4 id="see-the-http-response-of-a-website-under-the-url">See the HTTP response of a website under the url</h4>
+<p><code>curl URL</code><br />
+or<br />
+<code>wget URL</code></p>
+
+<p>Or save it to a file:</p>
+
+<p><code>echo curl URL &gt; filename</code></p>
+
+<h4 id="copy-a-file-over-ssh">Copy a file over SSH</h4>
+<p>You want to copy a file but You don’t have FTP configured? No problem<br />
+<code>scp /path/to/file username@address:/path/to/destination</code></p>
+
+<h4 id="beep">Beep</h4>
+<p>Sometime when You execute long commands it would be nice to know when it has finished.<br />
+Add<br />
+<code>alias beep=(speaker-test -t sine -f 1000 )&amp; pid=$! ; sleep 0.2s ; kill -9 $pid</code><br />
+To Your .bashrc file and when You want an information about it getting finished just use:<br />
+<code>(command ; beep)</code></p>
+
+<h3 id="shitload-of-great-tools">Shitload of great tools</h3>
+
+<p>On Unix systems You’ve got just infinite amount of tools that will help You do the job in one line (And they take one line to install as well)</p>
+
+<h4 id="entr">Entr</h4>
+<p>This is probably one of my favorite. I use it all the time.<br />
+Entr tracks the files You give it and whenever they change it executes a command You said it to.<br />
+Example<br />
+<code>find . | entr mix test</code><br />
+And from now on every time I change anything in my project files I get all of my Mix (Elixir) unit tests executed.</p>
+
+<h4 id="telnet">Telnet</h4>
+<p>If You ever worked with bare TCP connection You know how troublesome it can be to test it, and most of the time<br />
+You just end up writing Your own TCP client which sends the input string and writes out the response.<br />
+Well on Linux You’ve got that in the package</p>
+
+<h4 id="cloc">Cloc</h4>
+<p>A great tool to count lines of code in Your project.<br />
+Here is the output of this blog:</p>
+
+<p><code>cloc .</code></p>
+
+<pre><code>-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+CSS                             23          13230          10845          82840
+Javascript                     150          11954           9382          65926
+HTML                           108           5168            678          44150
+SASS                           143           4928           4057          24361
+XML                              3            183              0            964
+YAML                             1             10             12             54
+Ruby                             2             13             26             14
+-------------------------------------------------------------------------------
+SUM:                           432          35531          25072         218979
+-------------------------------------------------------------------------------
+</code></pre>
+
+<h4 id="tmux">TMUX</h4>
+
+<p>Divides Your terminal into panes and windows, and also allows You to close a terminal without losing Your session.<br />
+I use it all the time. Even right now during writing it. That way I can use the editor, see Jekyll logs and execute commands, all in one screen.  </p>
+
+<p><img src="/img/tmux.png" alt="Tmux session" /></p>
+
+<h4 id="emacs-or-vim">Emacs (or VIM)</h4>
+<p>I don’t want to start over an editor war so I will write it universally:<br />
+You’re a programmer. The quality of the tools You use is in direct proportion to the speed and quality of Your coding.<br />
+So why wouldn’t You use an editor that is capable of being developed by Yourself in any way You want to. Not to mention that these extensions are shared by all of the users. Thanks to that in my Emacs I can:</p>
+
+<ul>
+  <li>Read and write emails (Rmail)</li>
+  <li>Edit files over FTP or SSH (AngeFTP)</li>
+  <li>Write code in <strong>ANY</strong> programming language</li>
+  <li>Make TODO lists (OrgMode)</li>
+  <li>Write a blog - doh</li>
+  <li>And probably a lot more but I still haven’t discovered</li>
+</ul>
+
+<h4 id="nethogs">Nethogs</h4>
+<p>You’ve got low bandwidth on Your internet contract? Track which program uses the most of it.<br />
+It’s like <code>top</code> for bandwidth.<br />
+<img src="/img/nethogs.png" alt="Nethogs" /></p>
+
+<h3 id="language-specific-tools">Language specific tools</h3>
+<p>Every language has it’s toolset. And most (or even all of the) are commandline tools. And You don’t want to use Window’s commander. Trust me. It’s quite impossible to list all of the important tools but I will try to list some of them:</p>
+
+<ul>
+  <li>Every REPL - Node.js’s, Ruby’s, Python’s, Erlang’s, Scala’s</li>
+  <li>Most unit tests interfaces</li>
+  <li>GIT</li>
+  <li>Task automation tools - Grunt, automated compilers, transcompiled languages (CoffeeScript, Less, Sass, YAML, …)</li>
+  <li>Language compilers</li>
+</ul>
+
+<h3 id="summary">Summary</h3>
+
+<p>There is a lot of tools that will make Your programming experience richer, and most of them will only work on Linux or OS X.<br />
+And what great findings do You know?<br />
+I’d love to see You share that in comments!</p>
+
+<p>Cheers!</p>
+
+<h2 id="bonus---badass-shortcut-for-rebooting-the-system">Bonus - badass shortcut for rebooting the system</h2>
+<p><code>Alt + PrtSc + R -&gt; E -&gt; I -&gt; S -&gt; U -&gt; B</code><br />
+Or using a laptop with fn key:<br />
+<code>Alt + Fn + PrtSc + release Fn + R -&gt; E -&gt; I -&gt; S -&gt; U -&gt; B</code></p>
+
+<p>It’ll never stop to cheer me up ;)</p>
+</section>
+  <br>
+  <!-- SHARE BUTTONS -->
+    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/13/Why-You-have-to-stop-using-windows-for-programming.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
+    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <!-- /SHARE BUTTONS -->
+
+  
+  
+</article>
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <a id="prev-post" href="/2015/09/08/Functional-programming-basics-part1.html">
+      <span class="page-title">Functional programming basics on Elixir's example - Part 1</span>
+      <span class="nav-label">
+        <i class="fa fa-chevron-left"></i> Prev
+      </span>
+    </a>
+    
+    
+</div>
+
+
+<!-- Similar -->
+<article>
+
+
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
+                                                      
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'iraasta';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+    </div>
+    
+<script src="/js/katex_init.js"></script>
+
+
+
+<footer class="site-footer">
+	<p class="text">Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+</p>
+</footer>
+
+
+  </body>
+</html>

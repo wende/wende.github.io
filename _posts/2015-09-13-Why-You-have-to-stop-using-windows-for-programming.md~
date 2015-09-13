@@ -1,0 +1,23 @@
+---
+layout: post
+title: Why You have to stop using Windows for programming
+comments: true
+tags: linux, unix, windows, commands, console
+---
+
+You've got to admit, we all don't like to hear that the stuff we're using right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini's analysis of American brainwashed prisoners at war in China)
+Lion share of us started using personal computers with MS Windows on it. We used it for years, and also we started programming on it, hence we got used to saying it's the right way.
+I've used to be in this camp. I thought the difference is insignificant. Right now I know - it isn't.
+I'm using Linux (Ubuntu to be precise [pangolin ;)]). It took me quite long time to convince myself to make a shift. It took me way too much. It was a mistake not to take that shot for so long, and that's why I will try to convince You too that it is worth it.
+
+### Command-line
+
+The most (only?) significant advantage of Linux (or OS X) system is the CLI. You might have underestimated it before. But as a programmer You'll probably admit that a GUI is never as powerful as a text interface - especially when it comes to automation.
+I'm not saying I'm a pro Linux user, and never probably be one. But there are few secret weapons I got to discover throughout last several years. Here are some of those
+
+
+### One-line command for anything - seriously
+You probably all know `apt-get install`. It's a huge relief to change the installation workflow from:
+Google it -> Go to the website -> Find download page -> download -> open the installer -> Next... Next... Finish
+to:
+`sudo apt get install name_of_the_package` -> RET
