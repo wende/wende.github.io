@@ -119,7 +119,7 @@ So why wouldn't You use an editor that is capable of being developed by Yourself
 - Write code in **ANY** programming language
 - Make TODO lists (OrgMode)
 - Write a blog - doh
-- And probably a lot more but I still haven't discovered
+- And probably a lot more things which I still haven't discovered
 
 
 #### Nethogs
