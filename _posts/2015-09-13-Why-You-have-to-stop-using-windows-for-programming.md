@@ -5,7 +5,7 @@ comments: true
 tags: linux, unix, windows, commands, console
 ---
 
-You've got to admit, we all don't like to hear that the stuff we're using right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini's analysis of American brainwashed prisoners at war in China)
+You've got to admit, we all don't like to hear that the stuff we use right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini's analysis of American brainwashed prisoners at war in China)
 Lion share of us started using personal computers with MS Windows on it. We used it for years, and also we started programming on it, hence we got used to saying it's the right way.
 I've used to be in this camp. I thought the difference is insignificant. Right now I know - it isn't.
 I'm using Linux (Ubuntu to be precise [pangolin]). It took me quite long time to convince myself to make a shift. It took me way too much. It was a great mistake not to take that shot for so long, and that's why I will try to convince You too that it is worth it.
