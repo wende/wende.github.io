@@ -5,7 +5,23 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Sun, 13 Sep 2015 23:07:01 +0200</pubDate>
+    <pubDate>Fri, 18 Sep 2015 11:17:09 +0200</pubDate>
+    
+      <item>
+        <title>XMPP connection using Hedwig on Elixir and Phoenix</title>
+        <link>http://wende.github.io/2015/09/18/XMPP-connection-using-elixir-and-phoenix.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/18/XMPP-connection-using-elixir-and-phoenix.html</guid>
+        <description>&lt;p&gt;Yesterday I’ve had a great opportunity to talk with a tiny alchemists group about establishing XMPP connection from a Phoenix server.&lt;br /&gt;
+The meetup took a form of an interactive tutorial.&lt;br /&gt;
+You can check out the whole walktrough on my github profile or on soErlang webpage:&lt;br /&gt;
+- &lt;a href=&quot;http://github.com/wende/mongoosetutorial&quot;&gt;github/wende/mognoosetutorial&lt;/a&gt;&lt;br /&gt;
+- &lt;a href=&quot;http://soerlang.tumblr.com/post/129339842433/krzysztof-wende-xmpp-connection-from&quot;&gt;SoErlang&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Cheers!&lt;br /&gt;
+Chris&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Sep 2015 00:00:00 +0200</pubDate>
+      </item>
     
       <item>
         <title>Why You have to stop using Windows for programming</title>
