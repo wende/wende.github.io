@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Fri, 18 Sep 2015 11:17:09 +0200</pubDate>
+    <pubDate>Fri, 18 Sep 2015 14:27:02 +0200</pubDate>
     
       <item>
         <title>XMPP connection using Hedwig on Elixir and Phoenix</title>

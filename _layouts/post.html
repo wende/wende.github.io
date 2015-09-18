@@ -28,10 +28,10 @@ layout: default
   </header>
   <section class="post-content">{{ content }}</section>
   <br>
+  <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>
+  <br>
   {% include shares.html %}
-  
-  
-</article>
+  </article>
 <!-- Post navigation -->
 {% if site.theme.post_navigation %}
 <div id="post-nav">
@@ -82,7 +82,9 @@ layout: default
                                                       {% if hasSimilar.size > 0 %}
 </ul>
 {% endif %}
+<!-- Subscribe -->
 </article>
+
 
 <!-- Disqus -->
 {% if site.theme.disqus_shortname %}
