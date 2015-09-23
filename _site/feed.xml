@@ -5,7 +5,79 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Fri, 18 Sep 2015 14:27:02 +0200</pubDate>
+    <pubDate>Wed, 23 Sep 2015 10:12:53 +0200</pubDate>
+    
+      <item>
+        <title>Scala code to count the odds of throwing out the sum of 2 6-sided dices.</title>
+        <link>http://wende.github.io/2015/09/23/Scala-dice-odds.html</link>
+        <guid isPermaLink="true">http://wende.github.io/2015/09/23/Scala-dice-odds.html</guid>
+        <description>&lt;p&gt;Today I wanted to give You a cool snippet showing the power of Scala’s Collections.&lt;br /&gt;
+This short and beatiful piece counts odds of throwing out a sum of 2 dices ( 6 - sided )&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;identity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapValues&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toList&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sortBy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The result is a list of tuples:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;List((7,6), (6,5), (8,5), (5,4), (9,4), (10,3), (4,3), (3,2), (11,2), (2,1), (12,1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Where first number indicates the sum and the seconds number is the chance (x / 36)&lt;/p&gt;
+
+&lt;p&gt;If You want an indepth explanation we’ll do it step by step.&lt;br /&gt;
+So let’s break it down&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;1.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;(1 to 6)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Is a syntactic sugar for &lt;code&gt;Range(1,7)&lt;/code&gt; which creates an inclusive sequence from 1 to 6  &lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;2.&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.flatMap&lt;/code&gt; applies to every element of the list flattening the result&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;3.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;map { a + _ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;is a big syntatic sugar for&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;map { b =&amp;gt; a + b}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;4.&lt;/h3&gt;
+&lt;p&gt;Then We’ve got a &lt;code&gt;groupBy&lt;/code&gt; method which with &lt;code&gt;identity&lt;/code&gt; which is a shortcut for &lt;code&gt;a =&amp;gt; a&lt;/code&gt;  &lt;br /&gt;
+(it’s not really shorter but it feels much more intuitive)&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;5.&lt;/h3&gt;
+&lt;p&gt;Now we’ve got a &lt;code&gt;Map&lt;/code&gt; of a &lt;code&gt;Vector&lt;/code&gt;s (Arrays)  in which we iterate through values ( Array of the same values ).    &lt;br /&gt;
+Because all of the values are the same we can change the value just to a length of the &lt;code&gt;Array&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;6&lt;/h3&gt;
+&lt;p&gt;And this is actually the excercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.    &lt;br /&gt;
+To do that - because now we’ve got a map of &lt;code&gt;( sum -&amp;gt; chance )&lt;/code&gt; - we change it to a list of tuples with &lt;code&gt;toList&lt;/code&gt;&lt;br /&gt;
+All we do then is sort by very cool syntactic sugar notation&lt;br /&gt;
+&lt;code&gt;( -_._2 )&lt;/code&gt; which is a shorter way of writting&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{ a =&amp;gt; return -a._2 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And &lt;code&gt;_2&lt;/code&gt; is a second value of tuple ( analogically &lt;code&gt;_1&lt;/code&gt; is for first, &lt;code&gt;_3&lt;/code&gt; for third etc)&lt;/p&gt;
+
+&lt;p&gt;And this is how You can solve complex statistics task in a fast and concise quasi one-liner.&lt;/p&gt;
+
+&lt;p&gt;Cheers&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Sep 2015 00:00:00 +0200</pubDate>
+      </item>
     
       <item>
         <title>XMPP connection using Hedwig on Elixir and Phoenix</title>
