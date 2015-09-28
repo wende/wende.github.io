@@ -36,3 +36,13 @@ def nPrime(n: Int){
 }
 {% endhighlight %}
 
+
+### /Edit 28.09.2015
+I recently wrote a Haskell alternative:
+
+{% highlight haskell %}
+let pgen (p:xs) = p : pgen [x|x <- xs, x `mod` p > 0]
+let nPrime x = x `take` pgen [2..]
+{% endhighlight %}
+
+I think we might have a winner here ;)
