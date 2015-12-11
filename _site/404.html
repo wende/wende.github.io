@@ -92,7 +92,18 @@
 </head>
 
   <body>
-    <header class="site-header">
+    <!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+<header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -100,8 +111,9 @@
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">I hate Monads</a>
+		  <a href="/">I hate Monads</a>                  
 		</h1>
+                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -113,6 +125,7 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
+
 			</li>
 			
 			
@@ -199,8 +212,7 @@
 	</nav>
 </header>
 
-    <div class="content">
-      <article >
+          <article >
   <header style="background-image: url('/')">
     <h1 class="title">Page not found</h1>
   </header>

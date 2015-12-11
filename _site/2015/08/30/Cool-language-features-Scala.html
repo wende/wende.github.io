@@ -105,7 +105,18 @@
 </head>
 
   <body>
-    <header class="site-header">
+    <!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+<header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -113,8 +124,9 @@
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">I hate Monads</a>
+		  <a href="/">I hate Monads</a>                  
 		</h1>
+                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -126,6 +138,7 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
+
 			</li>
 			
 			
@@ -212,8 +225,7 @@
 	</nav>
 </header>
 
-    <div class="content">
-      <!-- FACEBOOK SHARE -->
+          <!-- FACEBOOK SHARE -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -223,9 +235,6 @@
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 <!-- /FACEBOOK SHARE -->
-
-
-
 
 <article >
   <header style="background-image: url('/')">
@@ -245,7 +254,7 @@
   </header>
   <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.<br />
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these<br />
-which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog. </p>
+which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog.</p>
 
 <h2 id="scala">Scala</h2>
 
@@ -275,7 +284,7 @@ Then we group by identity ({a =&gt; a}) to List of <br />
 digits (List(1,1,1,1), List(2,2,2) and so on).  <br />
 Then we squash that to values the lists hold.  <br />
 At the end we cast that to list,<br />
-and we find the maximum value by tuple’s second field.  </p>
+and we find the maximum value by tuple’s second field.</p>
 
 <p>And we’re left with the result:</p>
 

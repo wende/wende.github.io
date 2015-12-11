@@ -107,7 +107,18 @@
 </head>
 
   <body>
-    <header class="site-header">
+    <!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+<header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -115,8 +126,9 @@
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">I hate Monads</a>
+		  <a href="/">I hate Monads</a>                  
 		</h1>
+                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -128,6 +140,7 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
+
 			</li>
 			
 			
@@ -214,8 +227,7 @@
 	</nav>
 </header>
 
-    <div class="content">
-      <!-- FACEBOOK SHARE -->
+          <!-- FACEBOOK SHARE -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -225,9 +237,6 @@
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 <!-- /FACEBOOK SHARE -->
-
-
-
 
 <article >
   <header style="background-image: url('/')">
@@ -267,8 +276,8 @@ Here are some functional concepts You might have bumped on before.</p>
 
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/Anonymous_function">Lambda expressions</a> - C# 3.0, Java 8, JavaScript, Ruby, Python, C++11</li>
-  <li><a href="https://en.wikipedia.org/wiki/Symbol_(programming)">Symbols/Atoms</a> - Ruby, Objective-C, ES6 </li>
-  <li><a href="https://en.wikipedia.org/wiki/List_comprehension">List comprehensions</a> - Python, C#, JavaScript 1.7, Perl </li>
+  <li><a href="https://en.wikipedia.org/wiki/Symbol_(programming)">Symbols/Atoms</a> - Ruby, Objective-C, ES6</li>
+  <li><a href="https://en.wikipedia.org/wiki/List_comprehension">List comprehensions</a> - Python, C#, JavaScript 1.7, Perl</li>
   <li><a href="https://en.wikipedia.org/wiki/Tail_call">Tail recursion</a> - ES 6, Lua, Python</li>
   <li><a href="https://en.wikipedia.org/wiki/Higher-order_function">Higher order functions</a>( map, fold, reduce) - JavaScript, Ruby, Python, Perl, Matlab<br />
 And probably many, many more.<br />
@@ -294,10 +303,10 @@ That’s why functional programming started to shine again.</p>
 - <a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a> (Dynamic) - A language to control a beast called BEAM virtual machine, which is made with distributed never stopping systems in mind. Prolog syntax<br />
 - <a href="https://en.wikipedia.org/wiki/Elixir_(programming_language)">Elixir</a> (Dynamic) - Erlang’s machone, Lisp’s macros, Ruby’s syntax and tooling<br />
 - <a href="https://en.wikipedia.org/wiki/Elm_(programming_language)">Elm</a> - Haskell inspired web programming language. Great for learning functional thinking with web development.<br />
-- <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>(Static) - Microsoft’s child from 2005, which at the beginning didn’t get any interest, but now is getting it’s new life </p>
+- <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>(Static) - Microsoft’s child from 2005, which at the beginning didn’t get any interest, but now is getting it’s new life</p>
 
 <h3 id="but-what-is-that-functional-programming-after-all">But what is that functional programming after all?</h3>
-<p>There are quite few rules that characterize functional programming: </p>
+<p>There are quite few rules that characterize functional programming:</p>
 
 <ul>
   <li>Function is a first class building block.</li>

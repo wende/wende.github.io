@@ -103,7 +103,18 @@
 </head>
 
   <body>
-    <header class="site-header">
+    <!-- FACEBOOK SHARE -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<!-- /FACEBOOK SHARE -->
+
+<header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -111,8 +122,9 @@
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">I hate Monads</a>
+		  <a href="/">I hate Monads</a>                  
 		</h1>
+                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -124,6 +136,7 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
+
 			</li>
 			
 			
@@ -210,8 +223,7 @@
 	</nav>
 </header>
 
-    <div class="content">
-      <!-- FACEBOOK SHARE -->
+          <!-- FACEBOOK SHARE -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -221,9 +233,6 @@
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 <!-- /FACEBOOK SHARE -->
-
-
-
 
 <article >
   <header style="background-image: url('/')">
@@ -276,6 +285,13 @@ So I gave it a try with it. This is the effect:</p>
    <span class="o">.</span><span class="n">take</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">toList</span>
 <span class="o">}</span></code></pre></div>
 
+<h3 id="edit-28092015">/Edit 28.09.2015</h3>
+<p>I recently wrote a Haskell alternative:</p>
+
+<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">let</span> <span class="n">pgen</span> <span class="p">(</span><span class="n">p</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">p</span> <span class="kt">:</span> <span class="n">pgen</span> <span class="p">[</span><span class="n">x</span><span class="o">|</span><span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="kr">let</span> <span class="n">nPrime</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="p">`</span><span class="n">take</span><span class="p">`</span> <span class="n">pgen</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code></pre></div>
+
+<p>I think we might have a winner here ;)</p>
 </section>
   <br>
   <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>

@@ -10,8 +10,9 @@
 		</a>
 		{% endif %}
 		<h1 class="site-title">
-			<a href="{{ site.baseurl }}/">{{ site.theme.title }}</a>
+		  <a href="{{ site.baseurl }}/">{{ site.theme.title }}</a>                  
 		</h1>
+                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -21,6 +22,7 @@
 				<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
 					{{ page.title }}
 				</a>
+
 			</li>
 			{% endif %}
 			{% endfor %}
