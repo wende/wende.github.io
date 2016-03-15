@@ -398,19 +398,19 @@ Buttons
 /* Button sizes */
 .btn.btn-lg {
     font-size: 13px;
-    padding: 12px 45px;
+    padding: 12px 15%;
 }
 
 .btn.btn-sm {
     letter-spacing: 1px;
     font-size: 10px;
-    padding: 6px 25px;
+    padding: 6px 10%;
 }
 
 .btn.btn-xs {
     letter-spacing: 0;
     font-size: 10px;
-    padding: 4px 19px;
+    padding: 4px 8%;
 }
 
 /* ------------------------------------------------------------------
@@ -487,7 +487,14 @@ Accordion
 }
 
 .panel-heading a > span {
-    text-align: center;
+    text-align: left;
+}
+
+.panel-heading a > span > strong {
+    float: left;
+    margin-right: 8px;
+    text-align: right;
+    width: 125px;
 }
 
 .panel-title {
@@ -1007,6 +1014,10 @@ Page setup
     padding-left: 52px;
 }
 
+.loginpage .btn.btn-link.text-center {
+    text-align: center;
+}
+
 .loginpage .checkbox {
     padding-left: 0;
     padding-top: 10px;
@@ -1402,4 +1413,10 @@ Reset bootstrap navigation styles for small screens
 .navbar-custom .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+@media (min-width: 760px) {
+    .panel-heading a > span {
+        text-align: center;
+    }
 }

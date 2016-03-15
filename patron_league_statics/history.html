@@ -95,7 +95,7 @@
                 <li><a href="retailers.html" title="Retailers">Retailers</a></li>
                 <li><a href="help.html" title="Help">Help</a></li>
                 <li><a href="account.html" title="My Account">My Account</a></li>
-                <li><a href="#" title="Chat" class="chat-toggle-button">Chat</a></li>
+
             </ul>
 
         </div>
@@ -105,12 +105,12 @@
     <section class="module">
         <div class="container">
             <div class="row">
-                <div class="mainblock col-xs-12 col-sm-9 col-md-7 col-md-offset-1">
+                <div class="mainblock col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
                     <h1 class="font-alt m-b-40">Order & Return History</h1>
 
                     <div class="panel-group order-history-list" id="accordion">
-                        <div class="panel-legend">
+                        <div class="panel-legend hidden-xs">
                             <h3 class="panel-title font-alt">
                                 <span class="col-xs-2 btn btn-g btn-sm">Order Date</span>
                                 <span class="col-xs-3 btn btn-g btn-sm">Order Number</span>
@@ -124,11 +124,15 @@
                                 <h4 class="panel-title font-alt">
                                     <a data-toggle="collapse" class="collapsed" aria-expanded="false"
                                        data-parent="#accordion" href="#order-history-1">
-                                        <span class="col-xs-2">1/1/2016</span>
-                                        <span class="col-xs-3">0123456798ABC</span>
-                                        <span class="col-xs-4">Barneys New York</span>
-                                        <span class="col-xs-1">1</span>
-                                        <span class="col-xs-2">Processing</span>
+                                        <span class="col-xs-12 col-sm-2"><strong class="hide visible-xs">Order
+                                            Date:</strong>1/1/2016</span>
+                                        <span class="col-xs-12 col-sm-3"><strong class="hide visible-xs">Order
+                                            Number:</strong>0123456798ABC</span>
+                                        <span class="col-xs-12 col-sm-4"><strong
+                                                class="hide visible-xs">Retailer:</strong>Barneys New York</span>
+                                        <span class="col-xs-12 col-sm-1"><strong class="hide visible-xs">Items:</strong>1</span>
+                                        <span class="col-xs-12 col-sm-2"><strong
+                                                class="hide visible-xs">Status:</strong>Processing</span>
                                     </a>
                                 </h4>
                             </div>
@@ -282,34 +286,10 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="panel" data-id="2">
-                            <div class="panel-heading">
-                                <h4 class="panel-title font-alt">
-                                    <a data-toggle="collapse" class="collapsed" aria-expanded="false"
-                                       data-parent="#accordion" href="#order-history-2">
-                                        <span class="col-xs-2">1/2/2016</span>
-                                        <span class="col-xs-3">0123456798ABC</span>
-                                        <span class="col-xs-4">Barneys New York</span>
-                                        <span class="col-xs-1">2</span>
-                                        <span class="col-xs-2">Testing</span>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="order-history-2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Text #2
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-xs-12 text-center">
                         <button type="button" class="btn btn-link order-history-loadmore">Load more</button>
                     </div>
-                </div>
-
-                <div class="chatblock hidden-xs col-sm-3 col-md-offset-1">
-                    {{chat}}
                 </div>
             </div>
         </div>

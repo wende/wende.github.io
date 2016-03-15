@@ -1,11 +1,26 @@
-(function ($) {
-    "use strict";
+var Tawk_API = Tawk_API || {},
+    Tawk_LoadStart = new Date();
+(function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/56e48efa1e82531d5693fc10/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+})();
+//Tawk_API.visitor = {name: "Krzysztof Wende", email: "test@test"}
 
+(function ($) {
     /* ---------------------------------------------- /*
      * Preloader
      /* ---------------------------------------------- */
 
     $(window).load(function () {
+        var Tawk_API = Tawk_API || {}
+        Tawk_API.onLoad = (function(){
+            console.log("loaded")
+        })
+
         $('.loader').fadeOut();
         $('.page-loader').delay(350).fadeOut('slow');
     });
@@ -163,9 +178,6 @@
      /* ---------------------------------------------- */
 
     var tooltipbox = $('.tooltipbox'),
-        chatBtn = $('.chat-toggle-button'),
-        mainBlock = $('.mainblock'),
-        chatBlock = $('.chatblock'),
         orderForm = $('#order-form'),
         orderHistoryList = $('.order-history-list'),
         retailersFilters = $('#retailers-filters .filters'),
@@ -174,20 +186,6 @@
     if (tooltipbox.length) {
         tooltipbox.find('.glyphicon').tooltip();
     }
-
-    chatBtn.click(function (e) {
-        if (window.screen.width >= 992 && chatBlock.length) {
-            e.preventDefault();
-
-            if (chatBlock.is(':visible')) {
-                mainBlock.addClass('chat-hidden');
-                chatBlock.addClass('hide');
-            } else {
-                mainBlock.removeClass('chat-hidden');
-                chatBlock.removeClass('hide');
-            }
-        }
-    });
 
     if (orderForm.length) {
         var orderDetailForm = $('#order-detail-form');
@@ -204,7 +202,7 @@
                 orderForm.find('.help-block').text('');
                 $.ajax({
                     url: 'assets/ajax/order-url.json',
-                    method: 'post',
+                    method: 'get',
                     data: orderUrl,
                     success: function (res) {
                         if (res.result == "success") {
@@ -385,11 +383,11 @@
                                     '<div class="panel-heading">' +
                                     '<h4 class="panel-title font-alt">' +
                                     '<a data-toggle="collapse" class="collapsed" aria-expanded="false" data-parent="#accordion" href="#order-history-' + el.id + '">' +
-                                    '<span class="col-xs-2">' + el.date_order + '</span>' +
-                                    '<span class="col-xs-3">' + el.order_number + '</span>' +
-                                    '<span class="col-xs-4">' + el.retailer + '</span>' +
-                                    '<span class="col-xs-1">' + el.items + '</span>' +
-                                    '<span class="col-xs-2">' + el.status + '</span>' +
+                                    '<span class="col-xs-12 col-sm-2"><strong class="hide visible-xs">Order Date:</strong>' + el.date_order + '</span>' +
+                                    '<span class="col-xs-12 col-sm-3"><strong class="hide visible-xs">Order Number:</strong>' + el.order_number + '</span>' +
+                                    '<span class="col-xs-12 col-sm-4"><strong class="hide visible-xs">Retailer:</strong>' + el.retailer + '</span>' +
+                                    '<span class="col-xs-12 col-sm-1"><strong class="hide visible-xs">Items:</strong>' + el.items + '</span>' +
+                                    '<span class="col-xs-12 col-sm-2"><strong class="hide visible-xs">Status:</strong>' + el.status + '</span>' +
                                     '</a>' +
                                     '</h4>' +
                                     '</div>' +
@@ -621,3 +619,4 @@
         })
     }
 })(jQuery);
+
