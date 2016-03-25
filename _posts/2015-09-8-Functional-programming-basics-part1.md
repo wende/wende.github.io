@@ -4,7 +4,7 @@ title: Functional programming basics on Elixir's example - Part 1
 tags: functional, elixir, tutorial, basics
 ---
  
- I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they did't yet get to know.
+ I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they didn't yet get to know.
  In this post I'll try to describe what is functional programming, what's it's history, present and future, why You really should start to learn it, and how it really works in practice.
 
 ### Why bother with functional programming?
@@ -44,12 +44,13 @@ That's why functional programming started to shine again.
 ### What languages are functional?
 
 Now what are some cool languages You could think about getting to know:
+
 - [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language)) (Static) - absolute king of functional languages. Fully* pure and absolutely ingenious
 - [OCaml](https://en.wikipedia.org/wiki/OCaml) (Static) - Haskell's non-lazy brother with object oriented concepts. 
 - [Scala](https://en.wikipedia.org/wiki/Scala_(programming_language)) (Static) - Runs on JVM, Interops with Java, Although not strictly functional it takes a lot of functional world. It's a "Java meets functional" language
 - [Clojure](https://en.wikipedia.org/wiki/Clojure) (Dynamic) - An almighty Lisp descendant. Runs on JVM and shares all Lisp's great features (Macros rule!)
 - [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) (Dynamic) - A language to control a beast called BEAM virtual machine, which is made with distributed never stopping systems in mind. Prolog syntax
-- [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) (Dynamic) - Erlang's machone, Lisp's macros, Ruby's syntax and tooling
+- [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) (Dynamic) - Erlang's machine, Lisp's macros, Ruby's syntax and tooling
 - [Elm](https://en.wikipedia.org/wiki/Elm_(programming_language)) - Haskell inspired web programming language. Great for learning functional thinking with web development.
 - [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language))(Static) - Microsoft's child from 2005, which at the beginning didn't get any interest, but now is getting it's new life 
 
@@ -135,7 +136,7 @@ Or we could also take two first elements
 Why is it useful? You'll understand that when You'll feel a need to use a recursion.
 
 Let's make a simple functional/imperative comparison of a function summing up all list elements.
-For imperative examples we will use JavaScript. It's supposed to be multiparadigm,
+For imperative examples we will use JavaScript. It's supposed to be multi-paradigm,
 but we can write imperative code in it and it's probably the widest understandable language we could find.
  
 <table><tr><td style="padding:0 0; border: none; text-align: center">
