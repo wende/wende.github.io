@@ -1,0 +1,24 @@
+---
+layout: post
+title: 10 Programming tools I wish I was shown before
+comments: true
+tags: programming
+---
+
+
+Technology is a vast topic. The whole purpose of it is crossing the boundaries of the "How is it being done right now"
+And what comes with that - it grows faster than one can keep track of all the novelties. 
+If you're like me there's a time when you find out some tool, start using it and after a while you're so in love with it that you start asking yourself
+"How could I live without it before?". Then you talk all about it to people and it turns out that half of them were using it for ages already, you just didn't know that.
+So then there comes the next question "How come no one ever told me about that before?"
+
+Since I started programming I've gathered a bunch of tools, that were making my life as a programmer easier.
+And as everyone else I didn't pay that much attention to sharing this knowledge with others.
+
+But then I realized - there are no good sources to learn language agnostic tools. All you'll learn from the sources you read will probably be strictly bound to the language, framework or the specific domain you work in on a daily basis. But the tools that work with all of them are completely underappreciated.
+
+Because of that I decided to compile a list of my favorite tools I use every day to make my life easier and worry about what's important for me - the code.
+
+
+### 1 - Gitlab
+I can't say how much I appreciate Gitlab. 
