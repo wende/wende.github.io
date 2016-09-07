@@ -143,8 +143,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 40)
+  github-pages
+  jekyll-gist
+  jekyll-paginate
   json
+  pygments.rb
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

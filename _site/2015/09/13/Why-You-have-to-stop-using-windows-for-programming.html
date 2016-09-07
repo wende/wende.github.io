@@ -256,14 +256,14 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>You’ve got to admit, we all don’t like to hear that the stuff we use right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini’s analysis of American brainwashed prisoners at war in China)
-Lion share of us started using personal computers with MS Windows on it. We used it for years, and also we started programming on it, hence we got used to saying it’s the right way.
-I’ve used to be in this camp. I thought the difference is insignificant. Right now I know - it isn’t.
+  <section class="post-content"><p>You’ve got to admit, we all don’t like to hear that the stuff we use right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini’s analysis of American brainwashed prisoners at war in China)<br />
+Lion share of us started using personal computers with MS Windows on it. We used it for years, and also we started programming on it, hence we got used to saying it’s the right way.<br />
+I’ve used to be in this camp. I thought the difference is insignificant. Right now I know - it isn’t.<br />
 I’m using Linux (Ubuntu to be precise [pangolin]). It took me quite long time to convince myself to make a shift. It took me way too much. It was a great mistake not to take that shot for so long, and that’s why I will try to convince You too that it is worth it.</p>
 
 <h3 id="command-line">Command-line</h3>
 
-<p>The most (only?) significant advantage of Linux (or OS X) system is the CLI. You might have underestimated it before. But as a programmer You’ll probably admit that a GUI is never as powerful as a text interface - especially when it comes to automation.
+<p>The most (only?) significant advantage of Linux (or OS X) system is the CLI. You might have underestimated it before. But as a programmer You’ll probably admit that a GUI is never as powerful as a text interface - especially when it comes to automation.<br />
 I’m not saying I’m a pro Linux user, and never probably be one. But there are few secret weapons I got to discover throughout last several years. Here are some of these</p>
 
 <h3 id="amazing-tab-completion">Amazing tab completion</h3>
@@ -273,29 +273,29 @@ I’m not saying I’m a pro Linux user, and never probably be one. But there ar
 <p>Something doesn’t work as You would like it to? Google the problem. Copy the answer. Paste it into CLI. Problem solved.</p>
 
 <h3 id="one-line-command-for-anything---seriously">One-line command for anything - seriously</h3>
-<p>You probably all know <code>apt-get install</code> (or <code>yum</code> or other distro alternatives). It’s a huge relief to change the installation workflow from:
-1. Google it
-2. Go to the website
-3. Find download page
-4. download
-5. open the installer
+<p>You probably all know <code>apt-get install</code> (or <code>yum</code> or other distro alternatives). It’s a huge relief to change the installation workflow from:<br />
+1. Google it<br />
+2. Go to the website<br />
+3. Find download page<br />
+4. download<br />
+5. open the installer<br />
 6. Next… Next… Finish</p>
 
-<p>to:
-1. <code>sudo apt get install name_of_the_package</code>
+<p>to:<br />
+1. <code>sudo apt get install name_of_the_package</code><br />
 2. RET</p>
 
 <p>But that’s just a beginning of the journey. You can do almost anything in a one-liner if You know how to.</p>
 
 <h4 id="execute-a-shell-script-under-some-url">Execute a shell script under some URL</h4>
-<p><code>bash &lt;(wget -qO- URL)</code>
-And done, it downloads the script and executes it when it finishes.
-For example try my script for checking whether You’ve got everything installed for my upcoming Elixir lecture tutorial (<a href="http://www.meetup.com/Elixir-Krakow/events/225061900/">Feel free to join BTW if You’re from Cracow in Poland</a>)
+<p><code>bash &lt;(wget -qO- URL)</code><br />
+And done, it downloads the script and executes it when it finishes.<br />
+For example try my script for checking whether You’ve got everything installed for my upcoming Elixir lecture tutorial (<a href="http://www.meetup.com/Elixir-Krakow/events/225061900/">Feel free to join BTW if You’re from Cracow in Poland</a>)<br />
 <code>bash &lt;(wget -qO- https://raw.githubusercontent.com/wende/mongoosetutorial/master/checkenv.sh)</code></p>
 
 <h4 id="see-the-http-response-of-a-website-under-the-url">See the HTTP response of a website under the url</h4>
-<p><code>curl URL</code>
-or
+<p><code>curl URL</code><br />
+or<br />
 <code>wget URL</code></p>
 
 <p>Or save it to a file:</p>
@@ -303,14 +303,14 @@ or
 <p><code>echo curl URL &gt; filename</code></p>
 
 <h4 id="copy-a-file-over-ssh">Copy a file over SSH</h4>
-<p>You want to copy a file but You don’t have FTP configured? No problem
+<p>You want to copy a file but You don’t have FTP configured? No problem<br />
 <code>scp /path/to/file username@address:/path/to/destination</code></p>
 
 <h4 id="beep">Beep</h4>
-<p>Sometime when You execute long commands it would be nice to know when it has finished.
-Add
-<code>alias beep=(speaker-test -t sine -f 1000 )&amp; pid=$! ; sleep 0.2s ; kill -9 $pid</code>
-To Your .bashrc file and when You want an information about it getting finished just use:
+<p>Sometime when You execute long commands it would be nice to know when it has finished.<br />
+Add<br />
+<code>alias beep=(speaker-test -t sine -f 1000 )&amp; pid=$! ; sleep 0.2s ; kill -9 $pid</code><br />
+To Your .bashrc file and when You want an information about it getting finished just use:<br />
 <code>(command ; beep)</code></p>
 
 <h3 id="shitload-of-great-tools">Shitload of great tools</h3>
@@ -318,19 +318,19 @@ To Your .bashrc file and when You want an information about it getting finished 
 <p>On Unix systems You’ve got just infinite amount of tools that will help You do the job in one line (And they take one line to install as well)</p>
 
 <h4 id="entr">Entr</h4>
-<p>This is probably one of my favorite. I use it all the time.
-Entr tracks the files You give it and whenever they change it executes a command You said it to.
-Example
-<code>find . | entr mix test</code>
+<p>This is probably one of my favorite. I use it all the time.<br />
+Entr tracks the files You give it and whenever they change it executes a command You said it to.<br />
+Example<br />
+<code>find . | entr mix test</code><br />
 And from now on every time I change anything in my project files I get all of my Mix (Elixir) unit tests executed.</p>
 
 <h4 id="telnet">Telnet</h4>
-<p>If You ever worked with bare TCP connection You know how troublesome it can be to test it, and most of the time
-You just end up writing Your own TCP client which sends the input string and writes out the response.
+<p>If You ever worked with bare TCP connection You know how troublesome it can be to test it, and most of the time<br />
+You just end up writing Your own TCP client which sends the input string and writes out the response.<br />
 Well on Linux You’ve got that in the package</p>
 
 <h4 id="cloc">Cloc</h4>
-<p>A great tool to count lines of code in Your project.
+<p>A great tool to count lines of code in Your project.<br />
 Here is the output of this blog:</p>
 
 <p><code>cloc .</code></p>
@@ -352,14 +352,14 @@ SUM:                           432          35531          25072         218979
 
 <h4 id="tmux">TMUX</h4>
 
-<p>Divides Your terminal into panes and windows, and also allows You to close a terminal without losing Your session.
+<p>Divides Your terminal into panes and windows, and also allows You to close a terminal without losing Your session.<br />
 I use it all the time. Even right now during writing it. That way I can use the editor, see Jekyll logs and execute commands, all in one screen.</p>
 
 <p><img src="/img/tmux.png" alt="Tmux session" /></p>
 
 <h4 id="emacs-or-vim">Emacs (or VIM)</h4>
-<p>I don’t want to start over an editor war so I will write it universally:
-You’re a programmer. The quality of the tools You use is in direct proportion to the speed and quality of Your coding.
+<p>I don’t want to start over an editor war so I will write it universally:<br />
+You’re a programmer. The quality of the tools You use is in direct proportion to the speed and quality of Your coding.<br />
 So why wouldn’t You use an editor that is capable of being developed by Yourself in any way You want to. Not to mention that these extensions are shared by all of the users. Thanks to that in my Emacs I can:</p>
 
 <ul>
@@ -372,8 +372,8 @@ So why wouldn’t You use an editor that is capable of being developed by Yourse
 </ul>
 
 <h4 id="nethogs">Nethogs</h4>
-<p>You’ve got low bandwidth on Your internet contract? Track which program uses the most of it.
-It’s like <code>top</code> for bandwidth.
+<p>You’ve got low bandwidth on Your internet contract? Track which program uses the most of it.<br />
+It’s like <code>top</code> for bandwidth.<br />
 <img src="/img/nethogs.png" alt="Nethogs" /></p>
 
 <h3 id="language-specific-tools">Language specific tools</h3>
@@ -389,15 +389,15 @@ It’s like <code>top</code> for bandwidth.
 
 <h3 id="summary">Summary</h3>
 
-<p>There is a lot of tools that will make Your programming experience richer, and most of them will only work on Linux or OS X.
-And what great findings do You know?
+<p>There is a lot of tools that will make Your programming experience richer, and most of them will only work on Linux or OS X.<br />
+And what great findings do You know?<br />
 I’d love to see You share that in comments!</p>
 
 <p>Cheers!</p>
 
 <h2 id="bonus---badass-shortcut-for-rebooting-the-system">Bonus - badass shortcut for rebooting the system</h2>
-<p><code>Alt + PrtSc + R -&gt; E -&gt; I -&gt; S -&gt; U -&gt; B</code>
-Or using a laptop with fn key:
+<p><code>Alt + PrtSc + R -&gt; E -&gt; I -&gt; S -&gt; U -&gt; B</code><br />
+Or using a laptop with fn key:<br />
 <code>Alt + Fn + PrtSc + release Fn + R -&gt; E -&gt; I -&gt; S -&gt; U -&gt; B</code></p>
 
 <p>It’ll never stop to cheer me up ;)</p>
@@ -439,6 +439,21 @@ Or using a laptop with fn key:
 <article>
 
 
+
+
+
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+
+                                                      
+                                                      
+                                                      
 
 
 
