@@ -127,6 +127,8 @@ DEPENDENCIES
   jekyll-gist
   jekyll-paginate
   jekyll-sitemap
+  kramdown
+  rouge
 
 BUNDLED WITH
    1.12.5

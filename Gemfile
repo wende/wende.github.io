@@ -5,4 +5,6 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-gist'
   gem 'jekyll-sitemap'
+  gem 'rouge'
+  gem 'kramdown'
 end
