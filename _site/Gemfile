@@ -5,8 +5,10 @@ require 'json'
 require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-
-gem 'github-pages', group: :jekyll_plugins
-gem 'jekyll-paginate'
-gem 'jekyll-gist'
-gem 'rouge'
+group :jekyll_plugins do
+  gem 'github-pages'
+  gem 'jekyll-paginate'
+  gem 'jekyll-gist'
+  gem 'rouge'
+  gem 'kramdown'
+end

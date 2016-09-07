@@ -250,46 +250,40 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.<br />
+  <section class="post-content"><p>I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.
 Because the language required was JavaScript I did some horribly ugly imperative function.</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
 <script src="https://gist.github.com/0562a5f61128013ea9ed.js"> </script>
 
-<p>As You can see it’s almost impossible to decode it after writing.<br />
-But then I started wondering how would it look in Elixir.<br />
+<p>As You can see it’s almost impossible to decode it after writing.
+But then I started wondering how would it look in Elixir.
 So I implemented my first try. With prime number test and simple iterator function.</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
 <script src="https://gist.github.com/1060a14b9e8680bbe73c.js"> </script>
 
-<p>Not bad but still not dope.<br />
+<p>Not bad but still not dope.
 Then I recalled there was a new thing going on around Elixir called Streams.</p>
 
-<p>Stream is an implementation of an [possibly] endless enumerable.<br />
+<p>Stream is an implementation of an [possibly] endless enumerable.
 So I gave it a try with it. This is the effect:</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
 <script src="https://gist.github.com/51600fab1f7a1d1bfbd1.js"> </script>
 
 <p>Prime number in 2 still pretty readable lines of code. That’s neat. Isn’t it?</p>
 
 <h3 id="edit-scala-bonus">/Edit Scala Bonus</h3>
 
-<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">def</span> <span class="n">nPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">){</span>
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">def</span> <span class="n">nPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">){</span>
    <span class="nc">Stream</span><span class="o">.</span><span class="n">from</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
    <span class="o">.</span><span class="n">filter</span><span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="nc">Range</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="n">a</span><span class="o">).</span><span class="n">filter</span><span class="o">(</span><span class="n">a</span> <span class="o">%</span> <span class="k">_</span> <span class="o">==</span> <span class="mi">0</span><span class="o">).</span><span class="n">isEmpty</span> <span class="o">}</span>
    <span class="o">.</span><span class="n">take</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">toList</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <h3 id="edit-28092015">/Edit 28.09.2015</h3>
 <p>I recently wrote a Haskell alternative:</p>
 
-<div class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">let</span> <span class="n">pgen</span> <span class="p">(</span><span class="n">p</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">p</span> <span class="o">:</span> <span class="n">pgen</span> <span class="p">[</span><span class="n">x</span><span class="o">|</span><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
-<span class="kr">let</span> <span class="n">nPrime</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="p">`</span><span class="n">take</span><span class="p">`</span> <span class="n">pgen</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">let</span> <span class="n">pgen</span> <span class="p">(</span><span class="n">p</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">p</span> <span class="o">:</span> <span class="n">pgen</span> <span class="p">[</span><span class="n">x</span><span class="o">|</span><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="kr">let</span> <span class="n">nPrime</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="p">`</span><span class="n">take</span><span class="p">`</span> <span class="n">pgen</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code></pre></figure>
 
 <p>I think we might have a winner here ;)</p>
 </section>
@@ -330,15 +324,6 @@ So I gave it a try with it. This is the effect:</p>
 <article>
 
 
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
 
 
 

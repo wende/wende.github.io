@@ -252,69 +252,69 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.<br />
-From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these<br />
+  <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
+From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
 which were designed years ago but still fullfil their niche f.i Lisp, Erlang or Prolog.</p>
 
 <h2 id="erlang">Erlang</h2>
 
-<p>Erlang is (un)widely known from it’s easiness of building distributed systems.<br />
-A system written in Erlang can run great, despite being deployed on one, two or hundred machines.<br />
-But even though it’s amazing in it’s particular niche, it also has unique syntax solutions that<br />
+<p>Erlang is (un)widely known from it’s easiness of building distributed systems.
+A system written in Erlang can run great, despite being deployed on one, two or hundred machines.
+But even though it’s amazing in it’s particular niche, it also has unique syntax solutions that
 make it nice to develop in.</p>
 
 <h3 id="pattern-matching">Pattern matching</h3>
-<p>Some of You might be familiar with pattern matching, some of You can’t imagine programming without it, but most of imperative programmers aren’t so familiar with the concept at all.<br />
-Pattern matching is a conditional assignment. What does it mean?<br />
-That means that an assignment fails if the arguments don’t meet the requirement.<br />
+<p>Some of You might be familiar with pattern matching, some of You can’t imagine programming without it, but most of imperative programmers aren’t so familiar with the concept at all.
+Pattern matching is a conditional assignment. What does it mean?
+That means that an assignment fails if the arguments don’t meet the requirement.
 A simplest possible pattern matching example is an overloaded function.</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
     <span class="k">return</span> <span class="s">"String"</span>
 <span class="o">}</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
     <span class="k">return</span> <span class="s">"Integer"</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
-<p>Although the <code>nameType()</code> function has the same name twice when we call <code>nameType(1)</code> we execute totally different function<br />
-than if we typed <code>nameType("1")</code>. This is pattern matching in it’s most primitive form.</p>
+<p>Although the <code class="highlighter-rouge">nameType()</code> function has the same name twice when we call <code class="highlighter-rouge">nameType(1)</code> we execute totally different function
+than if we typed <code class="highlighter-rouge">nameType("1")</code>. This is pattern matching in it’s most primitive form.</p>
 
-<p>Now, if You don’t know yet, Erlang is a functional language - which basically means it embraces lack of side-effects<br />
-(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like <code>final</code>s in Java, <code>val</code>s in Scala or <code>readonly</code>s in C#).  <br />
+<p>Now, if You don’t know yet, Erlang is a functional language - which basically means it embraces lack of side-effects
+(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like <code class="highlighter-rouge">final</code>s in Java, <code class="highlighter-rouge">val</code>s in Scala or <code class="highlighter-rouge">readonly</code>s in C#).<br />
 And also in Erlang every assignment is pattern-matching.</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">X</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">X</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span>
 <span class="mi">10</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nv">X</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span>
 <span class="mi">10</span>
 <span class="mi">3</span><span class="o">&gt;</span> <span class="nv">X</span> <span class="o">=</span> <span class="mi">11</span><span class="p">.</span>
-<span class="o">**</span> <span class="n">exception</span> <span class="nn">error</span><span class="p">:</span> <span class="n">no</span> <span class="n">match</span> <span class="k">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="n">value</span> <span class="mi">11</span></code></pre></div>
+<span class="o">**</span> <span class="n">exception</span> <span class="nn">error</span><span class="p">:</span> <span class="n">no</span> <span class="n">match</span> <span class="k">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="n">value</span> <span class="mi">11</span></code></pre></figure>
 
 <p>But we can also use that with destructuring asigment.</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="mi">1</span><span class="o">&gt;</span> <span class="p">{</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="nv">Z</span><span class="p">]}</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]}.</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="mi">1</span><span class="o">&gt;</span> <span class="p">{</span><span class="nv">X</span><span class="p">,</span> <span class="nv">Y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="nv">Z</span><span class="p">]}</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]}.</span>
 <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]}</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nv">X</span><span class="p">.</span>
 <span class="mi">10</span>
 <span class="mi">3</span><span class="o">&gt;</span> <span class="nv">Y</span><span class="p">.</span>
 <span class="mi">20</span>
 <span class="mi">4</span><span class="o">&gt;</span> <span class="nv">Z</span><span class="p">.</span>
-<span class="mi">4</span></code></pre></div>
+<span class="mi">4</span></code></pre></figure>
 
 <p>Or function definition</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 3D"</span><span class="p">.</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 3D"</span><span class="p">.</span>
 <span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 2D"</span><span class="p">.</span>
 <span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 1D"</span><span class="p">.</span>
 <span class="nf">dimension</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="s">"Tha hell'd you give me?"</span><span class="p">.</span>
 
 <span class="mi">1</span><span class="o">&gt;</span> <span class="nf">dimesnsion</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
-<span class="s">"Is 2D"</span></code></pre></div>
+<span class="s">"Is 2D"</span></code></pre></figure>
 
-<p>Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.<br />
+<p>Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.
 Take a simple Java example</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Point</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
 
@@ -331,31 +331,31 @@ Take a simple Java example</p>
     
 <span class="c1">// Usecase</span>
 <span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// Yes they are</span>
-<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they're not</span></code></pre></div>
+<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they're not</span></code></pre></figure>
 
 <p>Not quite what we want. Simple concept of implementing point and comparing X and Y took us 14 lines of code.</p>
 
 <p>Now let’s see Erlang equivalent</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">module</span><span class="p">(</span><span class="n">point</span><span class="p">).</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">module</span><span class="p">(</span><span class="n">point</span><span class="p">).</span>
 
 <span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"Yes they are!"</span>
 <span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"No they're not!"</span>
 
 <span class="c">% Usecase
 </span><span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span> <span class="o">//</span> <span class="s">"Yes they are"</span>
-<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">"No they're not"</span></code></pre></div>
+<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">"No they're not"</span></code></pre></figure>
 
 <p>That’s a little bit better, isn’t it?</p>
 
 <h3 id="bonus">Bonus</h3>
 
-<p>Erlang can also pattern match on Lists with <code>[Head|Tail]</code> behaviour.<br />
+<p>Erlang can also pattern match on Lists with <code class="highlighter-rouge">[Head|Tail]</code> behaviour.
 Imagine we want to check if the nunber contains digits in pairs (11223355, 1122, 88 ; but not 123, 112 or 556612)</p>
 
 <p>As always let’s start with Java</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="p">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="p">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
     <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span>
     <span class="c1">// odd list cannot be in pairs </span>
@@ -364,26 +364,26 @@ Imagine we want to check if the nunber contains digits in pairs (11223355, 1122,
         <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">s</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
-<p>It’s not that long, but definitelly not easy to reason about.<br />
+<p>It’s not that long, but definitelly not easy to reason about.
 Now let’s try Erlang equivalent</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
 <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">length</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="n">mod</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">;</span>
 <span class="nf">only_pairs</span><span class="p">([])</span> <span class="o">-&gt;</span> <span class="n">true</span><span class="p">;</span>
 <span class="nf">only_pairs</span><span class="p">([</span><span class="nv">A</span><span class="p">,</span> <span class="nv">A</span> <span class="p">|</span> <span class="nv">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="err">&amp;&amp;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">R</span><span class="p">);</span>
-<span class="nf">only_pairs</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">.</span></code></pre></div>
+<span class="nf">only_pairs</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">.</span></code></pre></figure>
 
 <p>Imperative version is probably understandable for programming folks so I will just describe the functional one.</p>
 
 <p>We’ve made the whole solution using 5 simple statements</p>
 
 <ol>
-  <li>If <code>A</code> is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.</li>
-  <li>If <code>A</code> hasn’t got even length we know the statement is false.</li>
+  <li>If <code class="highlighter-rouge">A</code> is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.</li>
+  <li>If <code class="highlighter-rouge">A</code> hasn’t got even length we know the statement is false.</li>
   <li>If parameter is empty list the statement is true</li>
-  <li>If first and second elements are the same return true <code>AND</code> result of the same logic on the rest of the list</li>
+  <li>If first and second elements are the same return true <code class="highlighter-rouge">AND</code> result of the same logic on the rest of the list</li>
   <li>If none of the above applies, the statement is false</li>
 </ol>
 
@@ -426,17 +426,6 @@ Now let’s try Erlang equivalent</p>
 <article>
 
 
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
 
 
 

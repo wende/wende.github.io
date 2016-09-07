@@ -250,66 +250,71 @@
     <!-- /SHARE BUTTONS -->
 
   </header>
-  <section class="post-content"><p>Today I wanted to give You a cool snippet showing the power of Scala’s Collections.<br />
+  <section class="post-content"><p>Today I wanted to give You a cool snippet showing the power of Scala’s Collections.
 This short and beautiful piece counts odds of throwing out a sum of 2 dices ( 6 - sided )</p>
 
-<div class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">6</span><span class="o">)</span>
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">6</span><span class="o">)</span>
 <span class="o">.</span><span class="n">flatMap</span><span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
     <span class="o">(</span><span class="mi">1</span> <span class="n">to</span> <span class="mi">6</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="o">+</span> <span class="k">_</span> <span class="o">}</span>
 <span class="o">}</span>
 <span class="o">.</span><span class="n">groupBy</span><span class="o">(</span><span class="n">identity</span><span class="o">)</span>
 <span class="o">.</span><span class="n">mapValues</span><span class="o">{</span> <span class="k">_</span><span class="o">.</span><span class="n">length</span> <span class="o">}</span>
 <span class="o">.</span><span class="n">toList</span>
-<span class="o">.</span><span class="n">sortBy</span><span class="o">(-</span><span class="k">_</span><span class="o">.</span><span class="n">_2</span><span class="o">)</span></code></pre></div>
+<span class="o">.</span><span class="n">sortBy</span><span class="o">(-</span><span class="k">_</span><span class="o">.</span><span class="n">_2</span><span class="o">)</span></code></pre></figure>
 
 <p>The result is a list of tuples:</p>
 
-<pre><code>List((7,6), (6,5), (8,5), (5,4), (9,4), (10,3), (4,3), (3,2), (11,2), (2,1), (12,1))
+<div class="highlighter-rouge"><pre class="highlight"><code>List((7,6), (6,5), (8,5), (5,4), (9,4), (10,3), (4,3), (3,2), (11,2), (2,1), (12,1))
 </code></pre>
+</div>
 
 <p>Where first number indicates the sum and the seconds number is the chance (x / 36)</p>
 
-<p>If You want an in-depth explanation we’ll do it step by step.<br />
+<p>If You want an in-depth explanation we’ll do it step by step.
 So let’s break it down</p>
 
 <h3 id="section">1.</h3>
 
-<pre><code>(1 to 6)
+<div class="highlighter-rouge"><pre class="highlight"><code>(1 to 6)
 </code></pre>
+</div>
 
-<p>Is a syntactic sugar for <code>Range(1,7)</code> which creates an inclusive sequence from 1 to 6</p>
+<p>Is a syntactic sugar for <code class="highlighter-rouge">Range(1,7)</code> which creates an inclusive sequence from 1 to 6</p>
 
 <h3 id="section-1">2.</h3>
-<p><code>.flatMap</code> applies to every element of the list flattening the result</p>
+<p><code class="highlighter-rouge">.flatMap</code> applies to every element of the list flattening the result</p>
 
 <h3 id="section-2">3.</h3>
 
-<pre><code>map { a + _ }
+<div class="highlighter-rouge"><pre class="highlight"><code>map { a + _ }
 </code></pre>
+</div>
 
 <p>is a big syntactic sugar for</p>
 
-<pre><code>map { b =&gt; a + b}
+<div class="highlighter-rouge"><pre class="highlight"><code>map { b =&gt; a + b}
 </code></pre>
+</div>
 
 <h3 id="section-3">4.</h3>
-<p>Then We’ve got a <code>groupBy</code> method which with <code>identity</code> which is a shortcut for <code>a =&gt; a</code>  <br />
+<p>Then We’ve got a <code class="highlighter-rouge">groupBy</code> method which with <code class="highlighter-rouge">identity</code> which is a shortcut for <code class="highlighter-rouge">a =&gt; a</code><br />
 (it’s not really shorter but it feels much more intuitive)</p>
 
 <h3 id="section-4">5.</h3>
-<p>Now we’ve got a <code>Map</code> of a <code>Vector</code>s (Arrays)  in which we iterate through values ( Array of the same values ).    <br />
-Because all of the values are the same we can change the value just to a length of the <code>Array</code>.</p>
+<p>Now we’ve got a <code class="highlighter-rouge">Map</code> of a <code class="highlighter-rouge">Vector</code>s (Arrays)  in which we iterate through values ( Array of the same values ).  <br />
+Because all of the values are the same we can change the value just to a length of the <code class="highlighter-rouge">Array</code>.</p>
 
 <h3 id="section-5">6</h3>
-<p>And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.    <br />
-To do that - because now we’ve got a map of <code>( sum -&gt; chance )</code> - we change it to a list of tuples with <code>toList</code><br />
-All we do then is sort by very cool syntactic sugar notation<br />
-<code>( -_._2 )</code> which is a shorter way of writing</p>
+<p>And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.  <br />
+To do that - because now we’ve got a map of <code class="highlighter-rouge">( sum -&gt; chance )</code> - we change it to a list of tuples with <code class="highlighter-rouge">toList</code>
+All we do then is sort by very cool syntactic sugar notation
+<code class="highlighter-rouge">( -_._2 )</code> which is a shorter way of writing</p>
 
-<pre><code>{ a =&gt; return -a._2 }
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">-a._2</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>And <code>_2</code> is a second value of tuple ( analogically <code>_1</code> is for first, <code>_3</code> for third etc)</p>
+<p>And <code class="highlighter-rouge">_2</code> is a second value of tuple ( analogically <code class="highlighter-rouge">_1</code> is for first, <code class="highlighter-rouge">_3</code> for third etc)</p>
 
 <p>And this is how You can solve complex statistics task in a fast and concise quasi one-liner.</p>
 
@@ -338,13 +343,6 @@ All we do then is sort by very cool syntactic sugar notation<br />
     </a>
     
     
-    <a id="next-post" href="/2016/09/10/ten-programming-tools-I-wish-I-was-shown-before.html">
-       <span class="page-title">10 Programming tools I wish I was shown before</span>
-       <span class="nav-label">
-        Next <i class="fa fa-chevron-right"></i>
-       </span>
-     </a>
-    
 </div>
 
 
@@ -352,15 +350,6 @@ All we do then is sort by very cool syntactic sugar notation<br />
 <article>
 
 
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
 
 
 
