@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description>How to function in a [dys]functional world</description>
-    <pubDate>Wed, 07 Sep 2016 22:30:43 +0200</pubDate>
+    <pubDate>Wed, 07 Sep 2016 22:40:01 +0200</pubDate>
     
       <item>
         <title>Scala code to count the odds of throwing out the sum of 2 6-sided dices.</title>
