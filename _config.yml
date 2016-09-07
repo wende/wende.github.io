@@ -5,9 +5,9 @@ url: "http://wende.github.io" # the base hostname & protocol for your site
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: I hate Monads
-  avatar: avatar.png
-  gravatar: "502d830e6e95833ce07efc51f89a38e6"# Email MD5 hash
+  title: "I hate Monads"
+  avatar: "avatar.png"
+  gravatar: "502d830e6e95833ce07efc51f89a38e6" # Email MD5 hash
   description: "How to function in a [dys]functional world" # used by search engines
 
   # Header and footer text
@@ -20,7 +20,7 @@ theme:
 
   # Icons
   rss: false
-  email_address: "chris@neontree.pl"# Full email address, e.g. "sam@example.com"
+  email_address: "chris@neontree.pl" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
