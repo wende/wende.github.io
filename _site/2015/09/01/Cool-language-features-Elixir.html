@@ -266,10 +266,10 @@ Jose and co-creators done their best to implement all of the coolest features fr
 
 <p>Macros has been widely known in Lisp-like languages - <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp itself</a>, <a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a> and dependant. But these languages share one common trait. Their code is already an AST. Which means they don’t require any further parsing in order to be passed to the compiler.</p>
 
-<div class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">factorial</span> <span class="p">(</span><span class="nv">n</span> <span class="k">&amp;optional</span> <span class="p">(</span><span class="nv">acc</span> <span class="mi">1</span><span class="p">))</span>
-<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nv">acc</span>
-   <span class="p">(</span><span class="nv">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">acc</span> <span class="nv">n</span><span class="p">))))</span></code></pre></div>
+<div class="highlight"><pre><code class="language-lisp" data-lang="lisp">(defun factorial (n &amp;optional (acc 1))
+(if (&lt;= n 1)
+acc
+   (factorial (- n 1) (* acc n))))</code></pre></div>
 <p><sub> Lisp naive factorial implementation </sub></p>
 
 <p>That means the code is the data strucutre itself.</p>
@@ -280,38 +280,38 @@ Jose and co-creators done their best to implement all of the coolest features fr
 Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.<br />
 You could make a function that checks if it’s debugging right now and if yes it’d print the statement.</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="nc">Mix</span><span class="p">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
-        <span class="nc">IO</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="no">Mix</span><span class="o">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
+        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
     <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
 <p>But this way we’d have to check and compare enviroment state every time we’d like to print something. Which might be not so significant performance loss, but it is. That’s why we can use a Macro in here</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">defmacro</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="nc">Mix</span><span class="p">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
-     <span class="k">quote</span><span class="p">,</span> <span class="ss">do</span><span class="p">:</span> <span class="nc">IO</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">defmacro</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="no">Mix</span><span class="o">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
+     <span class="kn">quote</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
    <span class="k">else</span>
-     <span class="k">quote</span><span class="p">,</span> <span class="ss">do</span><span class="p">:</span> <span class="mi">0</span>
+     <span class="kn">quote</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="m">0</span>
    <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
 <p>That way our <code>log</code> macro will look like that in dev environment:</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-   <span class="n">a</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
-   <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
-   <span class="n">log</span><span class="p">(</span><span class="s2">&quot;a is equal </span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-   <span class="n">log</span><span class="p">(</span><span class="s2">&quot;b is equal </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+   <span class="n">a</span> <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> <span class="m">2</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
+   <span class="n">log</span><span class="p">(</span><span class="sd">"</span><span class="s2">a is equal </span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+   <span class="n">log</span><span class="p">(</span><span class="sd">"</span><span class="s2">b is equal </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">end</span></code></pre></div>
 
 <p>And like this in production environment:</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-   <span class="n">a</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
-   <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
-   <span class="mi">0</span>
-   <span class="mi">0</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+   <span class="n">a</span> <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> <span class="m">2</span>
+   <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
+   <span class="m">0</span>
+   <span class="m">0</span>
 <span class="k">end</span></code></pre></div>
 
 <p>Thanks to macros You can implement infinite number of cool features to the language, which won’t affect Your runtime performance.</p>
@@ -325,27 +325,27 @@ Pipe operator does something similar to Linux’s pipe. It executes the function
 
 <p>Using naive Elixir we could do that</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
+<span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
 
 <p>But that’s just horrible! We can write it once, but someone from outside would have to spend nice couple of minutes to analyze what it does.</p>
 
 <p>The second approach would be with temporary variables</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">list</span> <span class="p">=</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
-<span class="n">list</span> <span class="p">=</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
-<span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
+<span class="n">list</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">list</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">)</span>
+<span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
 
 <p>Much better, but still that way it becomes horribly redundant.<br />
 Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument<br />
 using pipe operators.<br />
 That way our code will look like:</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
-<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
-<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
+<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">)</span>
+<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">)</span>
+<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></div>
 
 <p>Now that way we’ve got both easy to read and relatively short solution.</p>
 

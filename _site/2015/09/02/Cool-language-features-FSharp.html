@@ -299,12 +299,12 @@ F#’s creators found another solution to this problem.<br />
 Type provider is a <strong>metaprogramming</strong> feature, which creates a type based on the example data it is given during compile time.<br />
 For example when we want to receive a JSON data regarding our bank user.</p>
 
-<div class="highlight"><pre><code class="language-fsharp" data-lang="fsharp"><span class="k">type</span> <span class="nc">BankData</span> <span class="o">=</span> <span class="n">JsonProvider</span><span class="o">&lt;</span><span class="s">&quot;&quot;&quot; {&quot;name&quot;: &quot;John&quot;, &quot;accounts&quot;: [{ &quot;number&quot;: 1234, &quot;balance&quot;: 10.20}]}&quot;&quot;&quot;</span><span class="o">&gt;</span>
-<span class="k">let</span> <span class="nv">mark</span> <span class="o">=</span> <span class="nn">BankData</span><span class="p">.</span><span class="n">parse</span><span class="o">(</span><span class="s">&quot;&quot;&quot; {&quot;name&quot;: &quot;Mark&quot;, &quot;accounts&quot;: [{ &quot;number&quot;: 1235, &quot;balance&quot;: 220.20}]}&quot;&quot;&quot;</span><span class="o">)</span>
-<span class="n">mark</span><span class="o">.</span><span class="n">name</span>        <span class="c1">//=&gt; &quot;Mark&quot; :: String</span>
-<span class="n">mark</span><span class="o">.</span><span class="n">accounts</span>    <span class="c1">//=&gt; [{###}] :: List</span>
-<span class="o">[</span><span class="n">account1</span><span class="o">|</span><span class="n">rest</span><span class="o">]</span> <span class="o">=</span>  <span class="n">mark</span><span class="o">.</span><span class="n">accounts</span>
-<span class="n">account1</span><span class="o">.</span><span class="n">balance</span> <span class="c1">//=&gt; 220.20 :: Float</span></code></pre></div>
+<div class="highlight"><pre><code class="language-fsharp" data-lang="fsharp">type BankData = JsonProvider&lt;""" {"name": "John", "accounts": [{ "number": 1234, "balance": 10.20}]}"""&gt;
+let mark = BankData.parse(""" {"name": "Mark", "accounts": [{ "number": 1235, "balance": 220.20}]}""")
+mark.name        //=&gt; "Mark" :: String
+mark.accounts    //=&gt; [{###}] :: List
+[account1|rest] =  mark.accounts
+account1.balance //=&gt; 220.20 :: Float</code></pre></div>
 
 <p>This way we can get the type safety during the development by just providing the exemplar input.</p>
 

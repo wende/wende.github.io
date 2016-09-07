@@ -269,11 +269,11 @@ Pattern matching is a conditional assignment. What does it mean?<br />
 That means that an assignment fails if the arguments don’t meet the requirement.<br />
 A simplest possible pattern matching example is an overloaded function.</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
-    <span class="k">return</span> <span class="s">&quot;String&quot;</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">return</span> <span class="s">"String"</span>
 <span class="o">}</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
-    <span class="k">return</span> <span class="s">&quot;Integer&quot;</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">return</span> <span class="s">"Integer"</span>
 <span class="o">}</span></code></pre></div>
 
 <p>Although the <code>nameType()</code> function has the same name twice when we call <code>nameType(1)</code> we execute totally different function<br />
@@ -303,13 +303,13 @@ And also in Erlang every assignment is pattern-matching.</p>
 
 <p>Or function definition</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 3D&quot;</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 2D&quot;</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 1D&quot;</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="s">&quot;Tha hell&#39;d you give me?&quot;</span><span class="p">.</span>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 3D"</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 2D"</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 1D"</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="s">"Tha hell'd you give me?"</span><span class="p">.</span>
 
-<span class="mi">1</span><span class="o">&gt;</span> <span class="n">dimesnsion</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
-<span class="s">&quot;Is 2D&quot;</span></code></pre></div>
+<span class="mi">1</span><span class="o">&gt;</span> <span class="nf">dimesnsion</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
+<span class="s">"Is 2D"</span></code></pre></div>
 
 <p>Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.<br />
 Take a simple Java example</p>
@@ -318,20 +318,20 @@ Take a simple Java example</p>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">){</span>
+    <span class="kd">public</span> <span class="n">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">){</span>
         <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isXYEven</span><span class="o">(){</span>
-        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="k">this</span><span class="o">.</span><span class="na">y</span><span class="o">)</span> <span class="k">return</span> <span class="s">&quot;Yes  they are!&quot;</span>
-        <span class="k">else</span> <span class="k">return</span> <span class="s">&quot;No, they&#39;re not!&quot;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">isXYEven</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="k">this</span><span class="o">.</span><span class="na">y</span><span class="o">)</span> <span class="k">return</span> <span class="s">"Yes  they are!"</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="s">"No, they're not!"</span>
     <span class="o">}</span>
 <span class="o">}</span>
     
 <span class="c1">// Usecase</span>
-<span class="k">new</span> <span class="nf">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// Yes they are</span>
-<span class="k">new</span> <span class="nf">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they&#39;re not</span></code></pre></div>
+<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// Yes they are</span>
+<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they're not</span></code></pre></div>
 
 <p>Not quite what we want. Simple concept of implementing point and comparing X and Y took us 14 lines of code.</p>
 
@@ -339,12 +339,12 @@ Take a simple Java example</p>
 
 <div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">module</span><span class="p">(</span><span class="n">point</span><span class="p">).</span>
 
-<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;Yes they are!&quot;</span>
-<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;No they&#39;re not!&quot;</span>
+<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"Yes they are!"</span>
+<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"No they're not!"</span>
 
-<span class="c">% Usecase</span>
-<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span> <span class="o">//</span> <span class="s">&quot;Yes they are&quot;</span>
-<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">&quot;No they&#39;re not&quot;</span></code></pre></div>
+<span class="c">% Usecase
+</span><span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span> <span class="o">//</span> <span class="s">"Yes they are"</span>
+<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">"No they're not"</span></code></pre></div>
 
 <p>That’s a little bit better, isn’t it?</p>
 
@@ -355,12 +355,12 @@ Imagine we want to check if the nunber contains digits in pairs (11223355, 1122,
 
 <p>As always let’s start with Java</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="o">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="p">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
     <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span>
     <span class="c1">// odd list cannot be in pairs </span>
     <span class="k">if</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span>
-    <span class="nf">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="o">){</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="o">){</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">s</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
@@ -369,10 +369,10 @@ Imagine we want to check if the nunber contains digits in pairs (11223355, 1122,
 <p>It’s not that long, but definitelly not easy to reason about.<br />
 Now let’s try Erlang equivalent</p>
 
-<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
+<div class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
 <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">length</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="n">mod</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">;</span>
 <span class="nf">only_pairs</span><span class="p">([])</span> <span class="o">-&gt;</span> <span class="n">true</span><span class="p">;</span>
-<span class="nf">only_pairs</span><span class="p">([</span><span class="nv">A</span><span class="p">,</span> <span class="nv">A</span> <span class="p">|</span> <span class="nv">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="err">&amp;&amp;</span> <span class="n">only_pairs</span><span class="p">(</span><span class="nv">R</span><span class="p">);</span>
+<span class="nf">only_pairs</span><span class="p">([</span><span class="nv">A</span><span class="p">,</span> <span class="nv">A</span> <span class="p">|</span> <span class="nv">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="err">&amp;&amp;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">R</span><span class="p">);</span>
 <span class="nf">only_pairs</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">.</span></code></pre></div>
 
 <p>Imperative version is probably understandable for programming folks so I will just describe the functional one.</p>

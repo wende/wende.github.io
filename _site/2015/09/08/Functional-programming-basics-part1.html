@@ -346,21 +346,21 @@ You’ll understand with an example.</p>
 
 <p>Here we’ve got a simple assignment</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Hello there&quot;</span><span class="p">]</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Hello there"</span><span class="p">]</span></code></pre></div>
 
 <p>But what if we wanted to get each value of the list into separate variables</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">hello</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Hello there&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">hello</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Hello there"</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># b = 2</span>
-<span class="c1"># hello = &quot;Hello there&quot;</span></code></pre></div>
+<span class="c1"># hello = "Hello there"</span></code></pre></div>
 
 <p>That’s easy isn’t it?</p>
 
 <p>But what if we wanted to go further, and we had a list with tuples in it</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list_of_points</span> <span class="p">=</span> <span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}]</span>
-<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">{</span><span class="n">c_x</span><span class="p">,</span> <span class="n">c_y</span><span class="p">}]</span> <span class="p">=</span> <span class="n">list_of_points</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list_of_points</span> <span class="o">=</span> <span class="p">[{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">},</span> <span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},</span> <span class="p">{</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">}]</span>
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">{</span><span class="n">c_x</span><span class="p">,</span> <span class="n">c_y</span><span class="p">}]</span> <span class="o">=</span> <span class="n">list_of_points</span>
 <span class="c1"># a = {1,2}</span>
 <span class="c1"># b = {2,2}</span>
 <span class="c1"># c_x = 3</span>
@@ -370,19 +370,19 @@ You’ll understand with an example.</p>
 In Elixir (derived from Erlang) there is a syntactic sugar for an unwanted variable.<br />
 We note it as an <code>_</code> (underscore). For example if we wanted to get just the first variable of a list</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="bp">_</span><span class="p">,</span> <span class="bp">_</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
 <span class="c1"># a = 1</span></code></pre></div>
 
 <p>But that way, if our list was 10 elements long, or even unknown length we would have to write a lot of underscores.<br />
 That’s why there is incredibly useful <strong>tail notation</strong>: <code>[ head | tail]</code></p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span> <span class="p">|</span> <span class="n">tail</span> <span class="p">]</span>  <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span> <span class="o">|</span> <span class="n">tail</span> <span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># tail = [2,3,4]</span></code></pre></div>
 
 <p>Or we could also take two first elements</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">|</span> <span class="n">t</span> <span class="p">]</span>  <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">|</span> <span class="n">t</span> <span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># b = 2</span>
 <span class="c1"># t = [3,4]</span></code></pre></div>
@@ -397,15 +397,15 @@ but we can write imperative code in it and it’s probably the widest understand
 Elixir
 
 <div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="c1">#</span>
-<span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-  <span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+  <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">]</span>
   <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="kd">def</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="k">do</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">do</span>
-    <span class="mi">0</span>
+<span class="k">def</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">do</span>
+    <span class="m">0</span>
   <span class="k">else</span>
-    <span class="p">[</span><span class="n">head</span> <span class="p">|</span> <span class="n">tail</span><span class="p">]</span> <span class="p">=</span> <span class="n">list</span>
+    <span class="p">[</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span>
     <span class="n">head</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -434,13 +434,13 @@ JavaScript
 If You didn’t do many recursions in Your life it might seem quite counter-intuitive. But don’t worry, You’ll get used to it.<br />
 Let’s examine what does happen to our list when we call <code>sum_list([1,2,3,4])</code></p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>          <span class="p">-&gt;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>        <span class="p">-&gt;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>      <span class="p">-&gt;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>    <span class="p">-&gt;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([])</span> <span class="p">-&gt;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">-&gt;</span>
-<span class="mi">10</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">sum_list</span><span class="p">([</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>          <span class="o">-&gt;</span>
+<span class="m">1</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>        <span class="o">-&gt;</span>
+<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>      <span class="o">-&gt;</span>
+<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">4</span><span class="p">])</span>    <span class="o">-&gt;</span>
+<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="m">4</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([])</span> <span class="o">-&gt;</span>
+<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="m">4</span> <span class="o">+</span> <span class="m">0</span> <span class="o">-&gt;</span>
+<span class="m">10</span></code></pre></div>
 
 <p>But to be completely honest with You, the code we just wrote is a bullcrap.<br />
 Let’s make it better.</p>
@@ -449,14 +449,14 @@ Let’s make it better.</p>
 
 <p>Pattern matching has another neat functionality. It can fail.</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">**</span> <span class="p">(</span><span class="nc">MatchError</span><span class="p">)</span> <span class="n">no</span> <span class="n">match</span> <span class="n">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="ss">value</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">iex</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
+<span class="o">**</span> <span class="p">(</span><span class="no">MatchError</span><span class="p">)</span> <span class="n">no</span> <span class="n">match</span> <span class="n">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="ss">value:</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span></code></pre></div>
 
 <p>The good thing about it is that we can use it in an overloaded function.<br />
 For instance</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">describe_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Yay. A perfect one two three list&quot;</span>
-<span class="kd">def</span> <span class="n">describe_list</span><span class="p">(</span><span class="n">anything_else</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Boo, It&#39;s not it&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">describe_list</span><span class="p">([</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Yay. A perfect one two three list"</span>
+<span class="k">def</span> <span class="n">describe_list</span><span class="p">(</span><span class="n">anything_else</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Boo, It's not it"</span></code></pre></div>
 
 <p>Now if we called <code>describe_list([1,2,3])</code> we would get:<br />
 “Yay. A perfect one two three list”.<br />
@@ -465,13 +465,13 @@ But with any other argument passed we’d get:<br />
 
 <p>Let’s try another dummy example</p>
 
-<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;zero&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;one&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;two&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;three&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;four&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;five&quot;</span>
-<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="bp">_</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Not 1-5&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">zero"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">1</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">one"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">2</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">two"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">3</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">three"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">4</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">four"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">five"</span>
+<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="n">_</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Not 1-5"</span></code></pre></div>
 
 <p>Yay! That’s amazingly useless!<br />
 But it presents an amazingly powerful concept. Now we can try to modernize our previous snippet.</p>
@@ -480,8 +480,8 @@ But it presents an amazingly powerful concept. Now we can try to modernize our p
 Elixir
 
 <div class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="c1">#</span>
-<span class="kd">def</span> <span class="n">sum_list</span><span class="p">([]),</span> <span class="ss">do</span><span class="p">:</span> <span class="mi">0</span>
-<span class="kd">def</span> <span class="n">sum_list</span><span class="p">([</span><span class="n">head</span> <span class="p">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
+<span class="k">def</span> <span class="n">sum_list</span><span class="p">([]),</span> <span class="k">do</span><span class="p">:</span> <span class="m">0</span>
+<span class="k">def</span> <span class="n">sum_list</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
    <span class="n">head</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
 <span class="k">end</span>
 
