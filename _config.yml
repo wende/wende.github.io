@@ -74,3 +74,5 @@ sass:
   style: :compressed
 gems:
     - jekyll-sitemap
+    - jekyll-gist
+    - jekyll-paginate
