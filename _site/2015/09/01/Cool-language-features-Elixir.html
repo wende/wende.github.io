@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
-	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
-	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/main.css">
 
@@ -48,75 +46,11 @@
 	</script>
 	
 
-<!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
-
-<meta content="Cool language features You've never heard about - Part 3 - Elixir's Macros" property="og:title">
-
-
-<meta content="article" property="og:type">
-
-
-<meta content="" property="og:description">
-
-
-<meta content="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html" property="og:url">
-
-
-<meta content="2015-09-01T00:00:00+02:00" property="article:published_time">
-<meta content="http://wende.github.io/about/" property="article:author">
-
-
-<meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-
-
-
-
-<meta content="elixir," property="article:tag">
-
-<meta content="cool," property="article:tag">
-
-<meta content="languages" property="article:tag">
-
-
-<!-- END FACEBOOK SHARE -->
-<!-- Umieść ten tag w nagłówku lub tuż przed tagiem zamykającym treść. -->
-<!-- GOOGLE SHARE -->
-<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}</script>
-<!-- /GOOGLE SHARE -->
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-<meta name="twitter:title" content="Cool language features You've never heard about - Part 3 - Elixir's Macros">
-
-
-<meta name="twitter:url" content="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html">
-
-
-<meta name="twitter:description" content="">
-
-
-
+  <link href="/css/syntax.css" rel="stylesheet">
 </head>
 
   <body>
-    <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<header class="site-header">
+    <header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -124,9 +58,8 @@
 		</a>
 		
 		<h1 class="site-title">
-		  <a href="/">I hate Monads</a>                  
+			<a href="/">I hate Monads</a>
 		</h1>
-                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -138,7 +71,6 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
-
 			</li>
 			
 			
@@ -225,32 +157,14 @@
 	</nav>
 </header>
 
-          <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<article >
+    <div class="content">
+      <article >
   <header style="background-image: url('/')">
     <h1 class="title">Cool language features You've never heard about - Part 3 - Elixir's Macros</h1>
     <p class="meta">
     September 1, 2015
     
     </p>
-    <br>
-    <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
-
   </header>
   <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
@@ -266,10 +180,10 @@ Jose and co-creators done their best to implement all of the coolest features fr
 
 <p>Macros has been widely known in Lisp-like languages - <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp itself</a>, <a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a> and dependant. But these languages share one common trait. Their code is already an AST. Which means they don’t require any further parsing in order to be passed to the compiler.</p>
 
-<figure class="highlight"><pre><code class="language-lisp" data-lang="lisp">(defun factorial (n &amp;optional (acc 1))
-(if (&lt;= n 1)
-acc
-   (factorial (- n 1) (* acc n))))</code></pre></figure>
+<figure class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nb">defun</span> <span class="nv">factorial</span> <span class="p">(</span><span class="nv">n</span> <span class="k">&amp;optional</span> <span class="p">(</span><span class="nv">acc</span> <span class="mi">1</span><span class="p">))</span>
+<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">&lt;=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nv">acc</span>
+   <span class="p">(</span><span class="nv">factorial</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">acc</span> <span class="nv">n</span><span class="p">))))</span></code></pre></figure>
 <p><sub> Lisp naive factorial implementation </sub></p>
 
 <p>That means the code is the data strucutre itself.</p>
@@ -280,38 +194,38 @@ acc
 Imagine a situation in which You’d like to have verbose output of Your application but only in debugging environment.
 You could make a function that checks if it’s debugging right now and if yes it’d print the statement.</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="no">Mix</span><span class="o">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
-        <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="nc">Mix</span><span class="p">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
+        <span class="nc">IO</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
     <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>But this way we’d have to check and compare enviroment state every time we’d like to print something. Which might be not so significant performance loss, but it is. That’s why we can use a Macro in here</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">defmacro</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="no">Mix</span><span class="o">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
-     <span class="kn">quote</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="no">IO</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">defmacro</span> <span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="nc">Mix</span><span class="p">.</span><span class="n">env</span><span class="p">()</span> <span class="o">==</span> <span class="ss">:dev</span> <span class="k">do</span>
+     <span class="k">quote</span><span class="p">,</span> <span class="ss">do</span><span class="p">:</span> <span class="nc">IO</span><span class="p">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
    <span class="k">else</span>
-     <span class="kn">quote</span><span class="p">,</span> <span class="k">do</span><span class="p">:</span> <span class="m">0</span>
+     <span class="k">quote</span><span class="p">,</span> <span class="ss">do</span><span class="p">:</span> <span class="mi">0</span>
    <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
-<p>That way our <code class="highlighter-rouge">log</code> macro will look like that in dev environment:</p>
+<p>That way our <code>log</code> macro will look like that in dev environment:</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-   <span class="n">a</span> <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> <span class="m">2</span>
-   <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
-   <span class="n">log</span><span class="p">(</span><span class="sd">"</span><span class="s2">a is equal </span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-   <span class="n">log</span><span class="p">(</span><span class="sd">"</span><span class="s2">b is equal </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+   <span class="n">a</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
+   <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="n">log</span><span class="p">(</span><span class="s2">&quot;a is equal </span><span class="si">#{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+   <span class="n">log</span><span class="p">(</span><span class="s2">&quot;b is equal </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>And like this in production environment:</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-   <span class="n">a</span> <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> <span class="m">2</span>
-   <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="m">1</span>
-   <span class="m">0</span>
-   <span class="m">0</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+   <span class="n">a</span> <span class="p">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
+   <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="mi">0</span>
+   <span class="mi">0</span>
 <span class="k">end</span></code></pre></figure>
 
 <p>Thanks to macros You can implement infinite number of cool features to the language, which won’t affect Your runtime performance.</p>
@@ -325,27 +239,27 @@ Pipe operator does something similar to Linux’s pipe. It executes the function
 
 <p>Using naive Elixir we could do that</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
-<span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">),</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
 
 <p>But that’s just horrible! We can write it once, but someone from outside would have to spend nice couple of minutes to analyze what it does.</p>
 
 <p>The second approach would be with temporary variables</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
-<span class="n">list</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">)</span>
-<span class="n">list</span> <span class="o">=</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">)</span>
-<span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">list</span> <span class="p">=</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">list</span> <span class="p">=</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
+<span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
 
 <p>Much better, but still that way it becomes horribly redundant.
 Fortunatelly Elixir gives an ability to pass a result of the function to the next function as a first argument
 using pipe operators.
 That way our code will look like:</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">]</span>
-<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="m">2</span> <span class="k">end</span><span class="p">)</span>
-<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="k">end</span><span class="p">)</span>
-<span class="o">|&gt;</span> <span class="no">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">*</span><span class="mi">2</span> <span class="k">end</span><span class="p">)</span>
+<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span> <span class="p">-&gt;</span> <span class="n">rem</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span>
+<span class="o">|&gt;</span> <span class="nc">Enum</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">fn</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="k">end</span><span class="p">)</span></code></pre></figure>
 
 <p>Now that way we’ve got both easy to read and relatively short solution.</p>
 
@@ -353,17 +267,8 @@ That way our code will look like:</p>
 
 <p>In the next part I’ll write about F#’s Type Providers. Stay tuned.</p>
 </section>
-  <br>
-  <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>
-  <br>
-  <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
+</article>
 
-  </article>
 <!-- Post navigation -->
 
 <div id="post-nav">
@@ -384,306 +289,6 @@ That way our code will look like:</p>
      </a>
     
 </div>
-
-
-<!-- Similar -->
-<article>
-
-
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                    
-                                                    <h4>Similar Posts</h4>
-                                                    <ul>
-                                                      
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/18/XMPP-connection-using-elixir-and-phoenix.html">XMPP connection using Hedwig on Elixir and Phoenix
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html">Functional programming basics on Elixir's example - Part 1
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html">n prime numbers in Elixir
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html">Cool language features You've never heard about - Part 4 - F#'s Type Providers
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html">Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/08/30/Cool-language-features-Scala.html">Cool language features You've never heard about - Part 1 - Scala's Collections API
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-                                                      
-</ul>
-
-<!-- Subscribe -->
-</article>
 
 
 <!-- Disqus -->

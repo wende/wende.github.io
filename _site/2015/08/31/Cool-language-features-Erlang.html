@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
-	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
-	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/main.css">
 
@@ -48,75 +46,11 @@
 	</script>
 	
 
-<!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
-
-<meta content="Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching" property="og:title">
-
-
-<meta content="article" property="og:type">
-
-
-<meta content="" property="og:description">
-
-
-<meta content="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html" property="og:url">
-
-
-<meta content="2015-08-31T00:00:00+02:00" property="article:published_time">
-<meta content="http://wende.github.io/about/" property="article:author">
-
-
-<meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-
-
-
-
-<meta content="erlang," property="article:tag">
-
-<meta content="cool," property="article:tag">
-
-<meta content="languages" property="article:tag">
-
-
-<!-- END FACEBOOK SHARE -->
-<!-- Umieść ten tag w nagłówku lub tuż przed tagiem zamykającym treść. -->
-<!-- GOOGLE SHARE -->
-<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}</script>
-<!-- /GOOGLE SHARE -->
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-<meta name="twitter:title" content="Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching">
-
-
-<meta name="twitter:url" content="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html">
-
-
-<meta name="twitter:description" content="">
-
-
-
+  <link href="/css/syntax.css" rel="stylesheet">
 </head>
 
   <body>
-    <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<header class="site-header">
+    <header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -124,9 +58,8 @@
 		</a>
 		
 		<h1 class="site-title">
-		  <a href="/">I hate Monads</a>                  
+			<a href="/">I hate Monads</a>
 		</h1>
-                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -138,7 +71,6 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
-
 			</li>
 			
 			
@@ -225,32 +157,14 @@
 	</nav>
 </header>
 
-          <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<article >
+    <div class="content">
+      <article >
   <header style="background-image: url('/')">
     <h1 class="title">Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching</h1>
     <p class="meta">
     August 31, 2015
     
     </p>
-    <br>
-    <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
-
   </header>
   <section class="post-content"><p>For the next few weeks I’m gonna list cool features and tips for every programming language You can imagine.
 From most popular like Java or Python, through new emerging flagship killers - Scala, Go, Rust - and these
@@ -269,18 +183,18 @@ Pattern matching is a conditional assignment. What does it mean?
 That means that an assignment fails if the arguments don’t meet the requirement.
 A simplest possible pattern matching example is an overloaded function.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
-    <span class="k">return</span> <span class="s">"String"</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">return</span> <span class="s">&quot;String&quot;</span>
 <span class="o">}</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
-    <span class="k">return</span> <span class="s">"Integer"</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">nameType</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">return</span> <span class="s">&quot;Integer&quot;</span>
 <span class="o">}</span></code></pre></figure>
 
-<p>Although the <code class="highlighter-rouge">nameType()</code> function has the same name twice when we call <code class="highlighter-rouge">nameType(1)</code> we execute totally different function
-than if we typed <code class="highlighter-rouge">nameType("1")</code>. This is pattern matching in it’s most primitive form.</p>
+<p>Although the <code>nameType()</code> function has the same name twice when we call <code>nameType(1)</code> we execute totally different function
+than if we typed <code>nameType("1")</code>. This is pattern matching in it’s most primitive form.</p>
 
 <p>Now, if You don’t know yet, Erlang is a functional language - which basically means it embraces lack of side-effects
-(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like <code class="highlighter-rouge">final</code>s in Java, <code class="highlighter-rouge">val</code>s in Scala or <code class="highlighter-rouge">readonly</code>s in C#).<br />
+(changes in global state). Because of that, variables in Erlang are ‘single-assignment variables’ (Something like <code>final</code>s in Java, <code>val</code>s in Scala or <code>readonly</code>s in C#).<br />
 And also in Erlang every assignment is pattern-matching.</p>
 
 <figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">X</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span>
@@ -303,13 +217,13 @@ And also in Erlang every assignment is pattern-matching.</p>
 
 <p>Or function definition</p>
 
-<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 3D"</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 2D"</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"is 1D"</span><span class="p">.</span>
-<span class="nf">dimension</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="s">"Tha hell'd you give me?"</span><span class="p">.</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">,</span><span class="nv">Z</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 3D&quot;</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 2D&quot;</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">({</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;is 1D&quot;</span><span class="p">.</span>
+<span class="nf">dimension</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="s">&quot;Tha hell&#39;d you give me?&quot;</span><span class="p">.</span>
 
-<span class="mi">1</span><span class="o">&gt;</span> <span class="nf">dimesnsion</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
-<span class="s">"Is 2D"</span></code></pre></figure>
+<span class="mi">1</span><span class="o">&gt;</span> <span class="n">dimesnsion</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span>
+<span class="s">&quot;Is 2D&quot;</span></code></pre></figure>
 
 <p>Now imagine we want to write a simple program that checks if X and Y coords of a point are equal.
 Take a simple Java example</p>
@@ -318,20 +232,20 @@ Take a simple Java example</p>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="n">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">){</span>
+    <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">){</span>
         <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="n">isXYEven</span><span class="o">(){</span>
-        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="k">this</span><span class="o">.</span><span class="na">y</span><span class="o">)</span> <span class="k">return</span> <span class="s">"Yes  they are!"</span>
-        <span class="k">else</span> <span class="k">return</span> <span class="s">"No, they're not!"</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">isXYEven</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">==</span> <span class="k">this</span><span class="o">.</span><span class="na">y</span><span class="o">)</span> <span class="k">return</span> <span class="s">&quot;Yes  they are!&quot;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="s">&quot;No, they&#39;re not!&quot;</span>
     <span class="o">}</span>
 <span class="o">}</span>
     
 <span class="c1">// Usecase</span>
-<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// Yes they are</span>
-<span class="k">new</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they're not</span></code></pre></figure>
+<span class="k">new</span> <span class="nf">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// Yes they are</span>
+<span class="k">new</span> <span class="nf">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">3</span><span class="o">).</span><span class="na">isXYEven</span><span class="o">()</span>  <span class="c1">// No they&#39;re not</span></code></pre></figure>
 
 <p>Not quite what we want. Simple concept of implementing point and comparing X and Y took us 14 lines of code.</p>
 
@@ -339,28 +253,28 @@ Take a simple Java example</p>
 
 <figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">module</span><span class="p">(</span><span class="n">point</span><span class="p">).</span>
 
-<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"Yes they are!"</span>
-<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">"No they're not!"</span>
+<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">X</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;Yes they are!&quot;</span>
+<span class="nf">is_x_y_equal</span><span class="p">({</span><span class="nv">X</span><span class="p">,</span><span class="nv">Y</span><span class="p">})</span> <span class="o">-&gt;</span> <span class="s">&quot;No they&#39;re not!&quot;</span>
 
-<span class="c">% Usecase
-</span><span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span> <span class="o">//</span> <span class="s">"Yes they are"</span>
-<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">"No they're not"</span></code></pre></figure>
+<span class="c">% Usecase</span>
+<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">})</span> <span class="o">//</span> <span class="s">&quot;Yes they are&quot;</span>
+<span class="nn">point</span><span class="p">:</span><span class="nf">is_x_y_equal</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span> <span class="o">//</span> <span class="s">&quot;No they&#39;re not&quot;</span></code></pre></figure>
 
 <p>That’s a little bit better, isn’t it?</p>
 
 <h3 id="bonus">Bonus</h3>
 
-<p>Erlang can also pattern match on Lists with <code class="highlighter-rouge">[Head|Tail]</code> behaviour.
+<p>Erlang can also pattern match on Lists with <code>[Head|Tail]</code> behaviour.
 Imagine we want to check if the nunber contains digits in pairs (11223355, 1122, 88 ; but not 123, 112 or 556612)</p>
 
 <p>As always let’s start with Java</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="p">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">onlyPairs</span><span class="o">(</span><span class="kt">long</span> <span class="n">number</span><span class="o">){</span>
     <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span>
     <span class="c1">// odd list cannot be in pairs </span>
     <span class="k">if</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="o">){</span>
+    <span class="nf">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="o">){</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">s</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
@@ -369,10 +283,10 @@ Imagine we want to check if the nunber contains digits in pairs (11223355, 1122,
 <p>It’s not that long, but definitelly not easy to reason about.
 Now let’s try Erlang equivalent</p>
 
-<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
+<figure class="highlight"><pre><code class="language-erlang" data-lang="erlang"><span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_integer</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">only_pairs</span><span class="p">(</span><span class="nb">integer_to_list</span><span class="p">(</span><span class="nv">A</span><span class="p">));</span>
 <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="k">when</span> <span class="nb">length</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="n">mod</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">;</span>
 <span class="nf">only_pairs</span><span class="p">([])</span> <span class="o">-&gt;</span> <span class="n">true</span><span class="p">;</span>
-<span class="nf">only_pairs</span><span class="p">([</span><span class="nv">A</span><span class="p">,</span> <span class="nv">A</span> <span class="p">|</span> <span class="nv">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="err">&amp;&amp;</span> <span class="nf">only_pairs</span><span class="p">(</span><span class="nv">R</span><span class="p">);</span>
+<span class="nf">only_pairs</span><span class="p">([</span><span class="nv">A</span><span class="p">,</span> <span class="nv">A</span> <span class="p">|</span> <span class="nv">R</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="err">&amp;&amp;</span> <span class="n">only_pairs</span><span class="p">(</span><span class="nv">R</span><span class="p">);</span>
 <span class="nf">only_pairs</span><span class="p">(_)</span> <span class="o">-&gt;</span> <span class="n">false</span><span class="p">.</span></code></pre></figure>
 
 <p>Imperative version is probably understandable for programming folks so I will just describe the functional one.</p>
@@ -380,26 +294,17 @@ Now let’s try Erlang equivalent</p>
 <p>We’ve made the whole solution using 5 simple statements</p>
 
 <ol>
-  <li>If <code class="highlighter-rouge">A</code> is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.</li>
-  <li>If <code class="highlighter-rouge">A</code> hasn’t got even length we know the statement is false.</li>
+  <li>If <code>A</code> is an integer, cast it to a string (lists and strings are the same in Erlang) and execute the function as it were a string in the first place.</li>
+  <li>If <code>A</code> hasn’t got even length we know the statement is false.</li>
   <li>If parameter is empty list the statement is true</li>
-  <li>If first and second elements are the same return true <code class="highlighter-rouge">AND</code> result of the same logic on the rest of the list</li>
+  <li>If first and second elements are the same return true <code>AND</code> result of the same logic on the rest of the list</li>
   <li>If none of the above applies, the statement is false</li>
 </ol>
 
 <p>You may argue which solution is better in different dimensions. But in my opinion Erlang version is much easier to understand.</p>
 </section>
-  <br>
-  <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>
-  <br>
-  <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/08/31/Cool-language-features-Erlang.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
+</article>
 
-  </article>
 <!-- Post navigation -->
 
 <div id="post-nav">
@@ -420,279 +325,6 @@ Now let’s try Erlang equivalent</p>
      </a>
     
 </div>
-
-
-<!-- Similar -->
-<article>
-
-
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                    <h4>Similar Posts</h4>
-                                                    <ul>
-                                                      
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/02/Cool-language-features-FSharp.html">Cool language features You've never heard about - Part 4 - F#'s Type Providers
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html">Cool language features You've never heard about - Part 3 - Elixir's Macros
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/08/30/Cool-language-features-Scala.html">Cool language features You've never heard about - Part 1 - Scala's Collections API
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-                                                      
-</ul>
-
-<!-- Subscribe -->
-</article>
 
 
 <!-- Disqus -->

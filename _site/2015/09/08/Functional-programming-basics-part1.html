@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
-	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
-	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/main.css">
 
@@ -48,77 +46,11 @@
 	</script>
 	
 
-<!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
-
-<meta content="Functional programming basics on Elixir's example - Part 1" property="og:title">
-
-
-<meta content="article" property="og:type">
-
-
-<meta content="" property="og:description">
-
-
-<meta content="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html" property="og:url">
-
-
-<meta content="2015-09-08T00:00:00+02:00" property="article:published_time">
-<meta content="http://wende.github.io/about/" property="article:author">
-
-
-<meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-
-
-
-
-<meta content="functional," property="article:tag">
-
-<meta content="elixir," property="article:tag">
-
-<meta content="tutorial," property="article:tag">
-
-<meta content="basics" property="article:tag">
-
-
-<!-- END FACEBOOK SHARE -->
-<!-- Umieść ten tag w nagłówku lub tuż przed tagiem zamykającym treść. -->
-<!-- GOOGLE SHARE -->
-<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}</script>
-<!-- /GOOGLE SHARE -->
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-<meta name="twitter:title" content="Functional programming basics on Elixir's example - Part 1">
-
-
-<meta name="twitter:url" content="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html">
-
-
-<meta name="twitter:description" content="">
-
-
-
+  <link href="/css/syntax.css" rel="stylesheet">
 </head>
 
   <body>
-    <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<header class="site-header">
+    <header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -126,9 +58,8 @@
 		</a>
 		
 		<h1 class="site-title">
-		  <a href="/">I hate Monads</a>                  
+			<a href="/">I hate Monads</a>
 		</h1>
-                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -140,7 +71,6 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
-
 			</li>
 			
 			
@@ -227,32 +157,14 @@
 	</nav>
 </header>
 
-          <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<article >
+    <div class="content">
+      <article >
   <header style="background-image: url('/')">
     <h1 class="title">Functional programming basics on Elixir's example - Part 1</h1>
     <p class="meta">
     September 8, 2015
     
     </p>
-    <br>
-    <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
-
   </header>
   <section class="post-content"><p>I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they didn’t yet get to know.
  In this post I’ll try to describe what is functional programming, what’s it’s history, present and future, why You really should start to learn it, and how it really works in practice.</p>
@@ -331,11 +243,11 @@ But all the magic is in a paradoxical phenomenon, that although we can do less, 
 Tuples are like objects in JavaScript, but their properties aren’t named.
 They’re like in Math a representation of an ordered list.</p>
 
-<p>JavaScript point: <code class="highlighter-rouge"><span class="p">{</span><span class="err">x:</span><span class="w"> </span><span class="err">10,</span><span class="w"> </span><span class="err">y:</span><span class="w"> </span><span class="err">200</span><span class="p">}</span></code>
-Functional point: <code class="highlighter-rouge"><span class="p">{</span><span class="err">10,</span><span class="w"> </span><span class="err">200</span><span class="p">}</span></code></p>
+<p>JavaScript point: <code>{x: 10, y: 200}</code>
+Functional point: <code>{10, 200}</code></p>
 
-<p>JavaScript person: <code class="highlighter-rouge"><span class="p">{</span><span class="err">name:</span><span class="w"> </span><span class="nt">"Jack"</span><span class="err">,</span><span class="w"> </span><span class="err">age</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="err">gender</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">}</span></code>
-Functional person: <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"Jack"</span><span class="err">,</span><span class="w"> </span><span class="err">20,</span><span class="w"> </span><span class="nt">"male"</span><span class="err">}</span></code></p>
+<p>JavaScript person: <code>{name: "Jack", age: 20, gender: "male"}</code>
+Functional person: <code>{"Jack", 20, "male"}</code></p>
 
 <p>It has nothing to do with the programming itself, it’s just an old convention which is still being continued.</p>
 
@@ -346,21 +258,21 @@ You’ll understand with an example.</p>
 
 <p>Here we’ve got a simple assignment</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Hello there"</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Hello there&quot;</span><span class="p">]</span></code></pre></figure>
 
 <p>But what if we wanted to get each value of the list into separate variables</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">hello</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Hello there"</span><span class="p">]</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">hello</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Hello there&quot;</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># b = 2</span>
-<span class="c1"># hello = "Hello there"</span></code></pre></figure>
+<span class="c1"># hello = &quot;Hello there&quot;</span></code></pre></figure>
 
 <p>That’s easy isn’t it?</p>
 
 <p>But what if we wanted to go further, and we had a list with tuples in it</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list_of_points</span> <span class="o">=</span> <span class="p">[{</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">},</span> <span class="p">{</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">},</span> <span class="p">{</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">}]</span>
-<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">{</span><span class="n">c_x</span><span class="p">,</span> <span class="n">c_y</span><span class="p">}]</span> <span class="o">=</span> <span class="n">list_of_points</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">list_of_points</span> <span class="p">=</span> <span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}]</span>
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">{</span><span class="n">c_x</span><span class="p">,</span> <span class="n">c_y</span><span class="p">}]</span> <span class="p">=</span> <span class="n">list_of_points</span>
 <span class="c1"># a = {1,2}</span>
 <span class="c1"># b = {2,2}</span>
 <span class="c1"># c_x = 3</span>
@@ -368,21 +280,21 @@ You’ll understand with an example.</p>
 
 <p>But what if we wanted to extract only some variables leaving the others.
 In Elixir (derived from Erlang) there is a syntactic sugar for an unwanted variable.
-We note it as an <code class="highlighter-rouge">_</code> (underscore). For example if we wanted to get just the first variable of a list</p>
+We note it as an <code>_</code> (underscore). For example if we wanted to get just the first variable of a list</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="bp">_</span><span class="p">,</span> <span class="bp">_</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="c1"># a = 1</span></code></pre></figure>
 
 <p>But that way, if our list was 10 elements long, or even unknown length we would have to write a lot of underscores.
-That’s why there is incredibly useful <strong>tail notation</strong>: <code class="highlighter-rouge">[ head | tail]</code></p>
+That’s why there is incredibly useful <strong>tail notation</strong>: <code>[ head | tail]</code></p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span> <span class="o">|</span> <span class="n">tail</span> <span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span> <span class="p">|</span> <span class="n">tail</span> <span class="p">]</span>  <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># tail = [2,3,4]</span></code></pre></figure>
 
 <p>Or we could also take two first elements</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">|</span> <span class="n">t</span> <span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="p">[</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">|</span> <span class="n">t</span> <span class="p">]</span>  <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="c1"># a = 1</span>
 <span class="c1"># b = 2</span>
 <span class="c1"># t = [3,4]</span></code></pre></figure>
@@ -397,19 +309,19 @@ but we can write imperative code in it and it’s probably the widest understand
 Elixir
 
 <figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="c1">#</span>
-<span class="k">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
-  <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">]</span>
+<span class="kd">def</span> <span class="n">main</span><span class="p">()</span> <span class="k">do</span>
+  <span class="n">list</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
   <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="k">def</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="k">do</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">do</span>
-    <span class="m">0</span>
+<span class="kd">def</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">do</span>
+    <span class="mi">0</span>
   <span class="k">else</span>
-    <span class="p">[</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span>
+    <span class="p">[</span><span class="n">head</span> <span class="p">|</span> <span class="n">tail</span><span class="p">]</span> <span class="p">=</span> <span class="n">list</span>
     <span class="n">head</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
-<span class="c1">#  </span></code></pre></figure>
+<span class="c1">#</span></code></pre></figure>
 
 </td><td style="padding:0 0; border: none ; text-align: center">
 JavaScript
@@ -426,21 +338,21 @@ JavaScript
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">sum</span>
 <span class="p">}</span>
-  
-<span class="c1">// </span></code></pre></figure>
+
+<span class="c1">//</span></code></pre></figure>
 
 </td></tr></table>
 <p>What we’ve done is we take a list as an argument. If it’s empty we return zero, if it has more than one element we take the first element and add it to the sum of elements of the rest.
 If You didn’t do many recursions in Your life it might seem quite counter-intuitive. But don’t worry, You’ll get used to it.
-Let’s examine what does happen to our list when we call <code class="highlighter-rouge">sum_list([1,2,3,4])</code></p>
+Let’s examine what does happen to our list when we call <code>sum_list([1,2,3,4])</code></p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">sum_list</span><span class="p">([</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>          <span class="o">-&gt;</span>
-<span class="m">1</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>        <span class="o">-&gt;</span>
-<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">])</span>      <span class="o">-&gt;</span>
-<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="m">4</span><span class="p">])</span>    <span class="o">-&gt;</span>
-<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="m">4</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([])</span> <span class="o">-&gt;</span>
-<span class="m">1</span> <span class="o">+</span> <span class="m">2</span> <span class="o">+</span> <span class="m">3</span> <span class="o">+</span> <span class="m">4</span> <span class="o">+</span> <span class="m">0</span> <span class="o">-&gt;</span>
-<span class="m">10</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>          <span class="p">-&gt;</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>        <span class="p">-&gt;</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>      <span class="p">-&gt;</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>    <span class="p">-&gt;</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">([])</span> <span class="p">-&gt;</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">0</span> <span class="p">-&gt;</span>
+<span class="mi">10</span></code></pre></figure>
 
 <p>But to be completely honest with You, the code we just wrote is a bullcrap.
 Let’s make it better.</p>
@@ -449,39 +361,39 @@ Let’s make it better.</p>
 
 <p>Pattern matching has another neat functionality. It can fail.</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="n">iex</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span>
-<span class="o">**</span> <span class="p">(</span><span class="no">MatchError</span><span class="p">)</span> <span class="n">no</span> <span class="n">match</span> <span class="n">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="ss">value:</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="lineno">1</span> <span class="n">iex</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="lineno">2</span> <span class="o">**</span> <span class="p">(</span><span class="nc">MatchError</span><span class="p">)</span> <span class="n">no</span> <span class="n">match</span> <span class="n">of</span> <span class="n">right</span> <span class="n">hand</span> <span class="n">side</span> <span class="ss">value</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span></code></pre></figure>
 
 <p>The good thing about it is that we can use it in an overloaded function.
 For instance</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">describe_list</span><span class="p">([</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Yay. A perfect one two three list"</span>
-<span class="k">def</span> <span class="n">describe_list</span><span class="p">(</span><span class="n">anything_else</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Boo, It's not it"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">describe_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Yay. A perfect one two three list&quot;</span>
+<span class="kd">def</span> <span class="n">describe_list</span><span class="p">(</span><span class="n">anything_else</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Boo, It&#39;s not it&quot;</span></code></pre></figure>
 
-<p>Now if we called <code class="highlighter-rouge">describe_list([1,2,3])</code> we would get:
+<p>Now if we called <code>describe_list([1,2,3])</code> we would get:
 “Yay. A perfect one two three list”.
 But with any other argument passed we’d get:
 “Boo, It’s not it”</p>
 
 <p>Let’s try another dummy example</p>
 
-<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">zero"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">1</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">one"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">2</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">two"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">3</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">three"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">4</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">four"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="m">5</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">five"</span>
-<span class="k">def</span> <span class="n">word</span><span class="p">(</span><span class="n">_</span><span class="p">),</span> <span class="k">do</span><span class="p">:</span> <span class="sd">"</span><span class="s2">Not 1-5"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;zero&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;one&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;two&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;three&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;four&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;five&quot;</span>
+<span class="kd">def</span> <span class="n">word</span><span class="p">(</span><span class="bp">_</span><span class="p">),</span> <span class="ss">do</span><span class="p">:</span> <span class="s2">&quot;Not 1-5&quot;</span></code></pre></figure>
 
 <p>Yay! That’s amazingly useless!
 But it presents an amazingly powerful concept. Now we can try to modernize our previous snippet.</p>
 
-<table><tr><td style="padding:0 0; border:none ; text-align: center">
+<table><tr><td style="padding:0 0; border:none;">
 Elixir
 
 <figure class="highlight"><pre><code class="language-elixir" data-lang="elixir"><span class="c1">#</span>
-<span class="k">def</span> <span class="n">sum_list</span><span class="p">([]),</span> <span class="k">do</span><span class="p">:</span> <span class="m">0</span>
-<span class="k">def</span> <span class="n">sum_list</span><span class="p">([</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
+<span class="kd">def</span> <span class="n">sum_list</span><span class="p">([]),</span> <span class="ss">do</span><span class="p">:</span> <span class="mi">0</span>
+<span class="kd">def</span> <span class="n">sum_list</span><span class="p">([</span><span class="n">head</span> <span class="p">|</span> <span class="n">tail</span><span class="p">])</span> <span class="k">do</span>
    <span class="n">head</span> <span class="o">+</span> <span class="n">sum_list</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span>
 <span class="k">end</span>
 
@@ -489,7 +401,7 @@ Elixir
 
 <span class="c1">#</span></code></pre></figure>
 
-</td><td style="padding:0 0; border: none ; text-align: center">
+</td><td style="padding:0 0; border: none;">
 JavaScript
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">//</span>
@@ -511,17 +423,8 @@ JavaScript
 <!-- Compare table -->
 
 </section>
-  <br>
-  <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>
-  <br>
-  <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
+</article>
 
-  </article>
 <!-- Post navigation -->
 
 <div id="post-nav">
@@ -542,321 +445,6 @@ JavaScript
      </a>
     
 </div>
-
-
-<!-- Similar -->
-<article>
-
-
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                    
-                                                    <h4>Similar Posts</h4>
-                                                    <ul>
-                                                      
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/18/XMPP-connection-using-elixir-and-phoenix.html">XMPP connection using Hedwig on Elixir and Phoenix
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html">n prime numbers in Elixir
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html">Cool language features You've never heard about - Part 3 - Elixir's Macros
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-                                                      
-</ul>
-
-<!-- Subscribe -->
-</article>
 
 
 <!-- Disqus -->

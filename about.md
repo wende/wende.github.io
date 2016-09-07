@@ -2,17 +2,11 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: "img/1500x500.png"
+feature-img: "img/sample_feature_img_2.png"
 ---
 
-Krzysztof 'iraasta' Wende  
-Server programmer.  
-Distributed systems and clusters enthusiast.  
-Scala zealot.  
-Company owner wanting to become true CEO.  
-Always a leader - never a boss.  
-Never-resting wanderer through new technologies.  
-Martin Odersky fan.  
-Programming books deveourer.  
-Proud Raspberry Pi owner.  
-Ubuntu user.  
+Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
+
+Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
+
+This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.

@@ -3,7 +3,7 @@ layout: post
 title: Functional programming basics on Elixir's example - Part 1
 tags: functional, elixir, tutorial, basics
 ---
- 
+
  I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they didn't yet get to know.
  In this post I'll try to describe what is functional programming, what's it's history, present and future, why You really should start to learn it, and how it really works in practice.
 
@@ -25,8 +25,8 @@ functional world for more than 30 years. They do it because they make problem so
 Here are some functional concepts You might have bumped on before.
 
 - [Lambda expressions](https://en.wikipedia.org/wiki/Anonymous_function) - C# 3.0, Java 8, JavaScript, Ruby, Python, C++11
-- [Symbols/Atoms](https://en.wikipedia.org/wiki/Symbol_(programming)) - Ruby, Objective-C, ES6 
-- [List comprehensions](https://en.wikipedia.org/wiki/List_comprehension) - Python, C#, JavaScript 1.7, Perl 
+- [Symbols/Atoms](https://en.wikipedia.org/wiki/Symbol_(programming)) - Ruby, Objective-C, ES6
+- [List comprehensions](https://en.wikipedia.org/wiki/List_comprehension) - Python, C#, JavaScript 1.7, Perl
 - [Tail recursion](https://en.wikipedia.org/wiki/Tail_call) - ES 6, Lua, Python
 - [Higher order functions](https://en.wikipedia.org/wiki/Higher-order_function)( map, fold, reduce) - JavaScript, Ruby, Python, Perl, Matlab
 And probably many, many more.
@@ -46,16 +46,16 @@ That's why functional programming started to shine again.
 Now what are some cool languages You could think about getting to know:
 
 - [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language)) (Static) - absolute king of functional languages. Fully* pure and absolutely ingenious
-- [OCaml](https://en.wikipedia.org/wiki/OCaml) (Static) - Haskell's non-lazy brother with object oriented concepts. 
+- [OCaml](https://en.wikipedia.org/wiki/OCaml) (Static) - Haskell's non-lazy brother with object oriented concepts.
 - [Scala](https://en.wikipedia.org/wiki/Scala_(programming_language)) (Static) - Runs on JVM, Interops with Java, Although not strictly functional it takes a lot of functional world. It's a "Java meets functional" language
 - [Clojure](https://en.wikipedia.org/wiki/Clojure) (Dynamic) - An almighty Lisp descendant. Runs on JVM and shares all Lisp's great features (Macros rule!)
 - [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) (Dynamic) - A language to control a beast called BEAM virtual machine, which is made with distributed never stopping systems in mind. Prolog syntax
 - [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)) (Dynamic) - Erlang's machine, Lisp's macros, Ruby's syntax and tooling
 - [Elm](https://en.wikipedia.org/wiki/Elm_(programming_language)) - Haskell inspired web programming language. Great for learning functional thinking with web development.
-- [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language))(Static) - Microsoft's child from 2005, which at the beginning didn't get any interest, but now is getting it's new life 
+- [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language))(Static) - Microsoft's child from 2005, which at the beginning didn't get any interest, but now is getting it's new life
 
 ### But what is that functional programming after all?
-There are quite few rules that characterize functional programming: 
+There are quite few rules that characterize functional programming:
 
 - Function is a first class building block.
 - Single responsibility for single function
@@ -138,7 +138,7 @@ Why is it useful? You'll understand that when You'll feel a need to use a recurs
 Let's make a simple functional/imperative comparison of a function summing up all list elements.
 For imperative examples we will use JavaScript. It's supposed to be multi-paradigm,
 but we can write imperative code in it and it's probably the widest understandable language we could find.
- 
+
 <table><tr><td style="padding:0 0; border: none; text-align: center">
 Elixir
 {% highlight elixir %}
@@ -155,7 +155,7 @@ def sum_list(list) do
     head + sum_list(tail)
   end
 end
-#  
+#
 {% endhighlight %}
 </td><td style="padding:0 0; border: none ; text-align: center">
 JavaScript
@@ -172,10 +172,10 @@ function sumList(list){
   }
   return sum
 }
-  
-// 
+
+//
 {% endhighlight %}
-</td></tr></table>  
+</td></tr></table>
 What we've done is we take a list as an argument. If it's empty we return zero, if it has more than one element we take the first element and add it to the sum of elements of the rest.
 If You didn't do many recursions in Your life it might seem quite counter-intuitive. But don't worry, You'll get used to it.
 Let's examine what does happen to our list when we call `sum_list([1,2,3,4])`
@@ -197,7 +197,7 @@ Let's make it better.
 
 Pattern matching has another neat functionality. It can fail.
 
-{% highlight elixir %}
+{% highlight elixir linenos %}
 iex(1)> [a, 1, 2] = [1,2,3]
 ** (MatchError) no match of right hand side value: [1, 2, 3]
 {% endhighlight%}
@@ -229,7 +229,7 @@ def word(_), do: "Not 1-5"
 Yay! That's amazingly useless!
 But it presents an amazingly powerful concept. Now we can try to modernize our previous snippet.
 
-<table><tr><td style="padding:0 0; border:none ; text-align: center">
+<table><tr><td style="padding:0 0; border:none;">
 Elixir
 {% highlight elixir %}
 #
@@ -242,7 +242,7 @@ end
 
 #
 {% endhighlight %}
-</td><td style="padding:0 0; border: none ; text-align: center">
+</td><td style="padding:0 0; border: none;">
 JavaScript
 {% highlight js %}
 //
@@ -255,7 +255,7 @@ function sumList(list){
 }
 //
 {% endhighlight %}
-</td></tr></table>  
+</td></tr></table>
 
 Well now that's significantly better isn't it?
 
@@ -264,8 +264,8 @@ In the next part we will learn how to write some fully usable program.
 
 
 <!-- Compare table -->
-{% comment %} 
-Comparison 
+{% comment %}
+Comparison
 <table><tr><td style="padding:0 0; border: none ; text-align: center">
 {% highlight js %}
 s

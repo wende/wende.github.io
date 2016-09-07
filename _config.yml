@@ -3,7 +3,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wende.github.io" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
-theme:
+theme_settings:
   # Meta
   title: "I hate Monads"
   avatar: "avatar.png"
@@ -68,7 +68,7 @@ paginate_path: "blog/page:num"
 markdown: kramdown
 kramdown:
   input: GFM
-highlighter: rouge
+highlighter: pygments
 sass:
   sass_dir: _sass
   style: :compressed

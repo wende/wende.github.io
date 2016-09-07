@@ -7,8 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
-	<link rel="author" href="https://plus.google.com/+KrzysztofWendeIraasta"/>
-	
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/main.css">
 
@@ -48,73 +46,11 @@
 	</script>
 	
 
-<!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="" property="og:site_name">
-
-<meta content="n prime numbers in Elixir" property="og:title">
-
-
-<meta content="article" property="og:type">
-
-
-<meta content="" property="og:description">
-
-
-<meta content="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html" property="og:url">
-
-
-<meta content="2015-09-07T00:00:00+02:00" property="article:published_time">
-<meta content="http://wende.github.io/about/" property="article:author">
-
-
-<meta content="/img/logo-high-resolution.png" property="og:image">
-
-
-
-
-
-
-<meta content="elixir," property="article:tag">
-
-<meta content="algorithms" property="article:tag">
-
-
-<!-- END FACEBOOK SHARE -->
-<!-- Umieść ten tag w nagłówku lub tuż przed tagiem zamykającym treść. -->
-<!-- GOOGLE SHARE -->
-<script src="https://apis.google.com/js/platform.js" async defer>{lang: 'pl'}</script>
-<!-- /GOOGLE SHARE -->
-<!-- Twitter cards metadatas -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-
-<meta name="twitter:title" content="n prime numbers in Elixir">
-
-
-<meta name="twitter:url" content="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html">
-
-
-<meta name="twitter:description" content="">
-
-
-
+  <link href="/css/syntax.css" rel="stylesheet">
 </head>
 
   <body>
-    <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<header class="site-header">
+    <header class="site-header">
 	<div class="branding">
 		
 		<a href="/">
@@ -122,9 +58,8 @@
 		</a>
 		
 		<h1 class="site-title">
-		  <a href="/">I hate Monads</a>                  
+			<a href="/">I hate Monads</a>
 		</h1>
-                <div style="margin: 2px 0 0 30px; position: absolute" class="fb-like" data-href="https://web.facebook.com/I-hate-Monads-1747836925437879" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
 	</div>
 	<nav class="site-nav">
 		<ul>
@@ -136,7 +71,6 @@
 				<a class="page-link" href="/about/">
 					About
 				</a>
-
 			</li>
 			
 			
@@ -223,42 +157,28 @@
 	</nav>
 </header>
 
-          <!-- FACEBOOK SHARE -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<!-- /FACEBOOK SHARE -->
-
-<article >
+    <div class="content">
+      <article >
   <header style="background-image: url('/')">
     <h1 class="title">n prime numbers in Elixir</h1>
     <p class="meta">
     September 7, 2015
     
     </p>
-    <br>
-    <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
-
   </header>
   <section class="post-content"><p>I’ve been asked by a friend to give her a naive implementation of a function giving n first prime numbers.
 Because the language required was JavaScript I did some horribly ugly imperative function.</p>
 
+<noscript><pre>400: Invalid request
+</pre></noscript>
 <script src="https://gist.github.com/0562a5f61128013ea9ed.js"> </script>
 
 <p>As You can see it’s almost impossible to decode it after writing.
 But then I started wondering how would it look in Elixir.
 So I implemented my first try. With prime number test and simple iterator function.</p>
 
+<noscript><pre>400: Invalid request
+</pre></noscript>
 <script src="https://gist.github.com/1060a14b9e8680bbe73c.js"> </script>
 
 <p>Not bad but still not dope.
@@ -267,6 +187,8 @@ Then I recalled there was a new thing going on around Elixir called Streams.</p>
 <p>Stream is an implementation of an [possibly] endless enumerable.
 So I gave it a try with it. This is the effect:</p>
 
+<noscript><pre>400: Invalid request
+</pre></noscript>
 <script src="https://gist.github.com/51600fab1f7a1d1bfbd1.js"> </script>
 
 <p>Prime number in 2 still pretty readable lines of code. That’s neat. Isn’t it?</p>
@@ -282,22 +204,13 @@ So I gave it a try with it. This is the effect:</p>
 <h3 id="edit-28092015">/Edit 28.09.2015</h3>
 <p>I recently wrote a Haskell alternative:</p>
 
-<figure class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">let</span> <span class="n">pgen</span> <span class="p">(</span><span class="n">p</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">p</span> <span class="o">:</span> <span class="n">pgen</span> <span class="p">[</span><span class="n">x</span><span class="o">|</span><span class="n">x</span> <span class="o">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
-<span class="kr">let</span> <span class="n">nPrime</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="p">`</span><span class="n">take</span><span class="p">`</span> <span class="n">pgen</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="kr">let</span> <span class="n">pgen</span> <span class="p">(</span><span class="n">p</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">p</span> <span class="kt">:</span> <span class="n">pgen</span> <span class="p">[</span><span class="n">x</span><span class="o">|</span><span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="kr">let</span> <span class="n">nPrime</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="p">`</span><span class="n">take</span><span class="p">`</span> <span class="n">pgen</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span></code></pre></figure>
 
 <p>I think we might have a winner here ;)</p>
 </section>
-  <br>
-  <a href="http://eepurl.com/bzH3Mr">Subscribe to the newsletter</a>
-  <br>
-  <!-- SHARE BUTTONS -->
-    <div class="fb-share-button" data-href="http://wende.github.io/2015/09/07/Elixir-n-prime-numbers.html" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
-    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iraasta">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    <!-- /SHARE BUTTONS -->
+</article>
 
-  </article>
 <!-- Post navigation -->
 
 <div id="post-nav">
@@ -318,233 +231,6 @@ So I gave it a try with it. This is the effect:</p>
      </a>
     
 </div>
-
-
-<!-- Similar -->
-<article>
-
-
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                    
-                                                    <h4>Similar Posts</h4>
-                                                    <ul>
-                                                      
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/18/XMPP-connection-using-elixir-and-phoenix.html">XMPP connection using Hedwig on Elixir and Phoenix
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/08/Functional-programming-basics-part1.html">Functional programming basics on Elixir's example - Part 1
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                    
-                                                      <li class="relatedPost">
-                                                        <a href="http://wende.github.io/2015/09/01/Cool-language-features-Elixir.html">Cool language features You've never heard about - Part 3 - Elixir's Macros
-                                                          
-                                                        </a>
-                                                      </li>
-                                                      
-                                                      
-                                                      
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-
-
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-
-
-                                                      
-
-                                                      
-                                                      
-                                                      
-                                                      
-</ul>
-
-<!-- Subscribe -->
-</article>
 
 
 <!-- Disqus -->
