@@ -76,6 +76,4 @@ gems:
     - jekyll-sitemap
     - jekyll-gist
     - jekyll-paginate
-    - kramdown
-    - rouge
 exclude: [vendor]
