@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description></description>
-    <pubDate>Wed, 07 Sep 2016 23:35:01 +0200</pubDate>
+    <pubDate>Wed, 07 Sep 2016 23:52:03 +0200</pubDate>
     
       <item>
         <title>Scala code to count the odds of throwing out the sum of 2 6-sided dices.</title>
@@ -391,7 +391,7 @@ That’s why there is incredibly useful &lt;strong&gt;tail notation&lt;/strong&g
 For imperative examples we will use JavaScript. It’s supposed to be multi-paradigm,
 but we can write imperative code in it and it’s probably the widest understandable language we could find.&lt;/p&gt;
 
-&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border: none; text-align: center&quot;&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td style=&quot;padding:0 0; border: none; &quot;&gt;
 Elixir
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-elixir&quot; data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -409,7 +409,7 @@ Elixir
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none ; text-align: center&quot;&gt;
+&lt;/td&gt;&lt;td style=&quot;padding:0 0; border: none ;&quot;&gt;
 JavaScript
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;

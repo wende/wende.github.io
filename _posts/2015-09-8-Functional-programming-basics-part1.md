@@ -139,7 +139,7 @@ Let's make a simple functional/imperative comparison of a function summing up al
 For imperative examples we will use JavaScript. It's supposed to be multi-paradigm,
 but we can write imperative code in it and it's probably the widest understandable language we could find.
 
-<table><tr><td style="padding:0 0; border: none; text-align: center">
+<table><tr><td style="padding:0 0; border: none; ">
 Elixir
 {% highlight elixir %}
 #
@@ -157,7 +157,7 @@ def sum_list(list) do
 end
 #
 {% endhighlight %}
-</td><td style="padding:0 0; border: none ; text-align: center">
+</td><td style="padding:0 0; border: none ;">
 JavaScript
 {% highlight js %}
 //
@@ -266,11 +266,11 @@ In the next part we will learn how to write some fully usable program.
 <!-- Compare table -->
 {% comment %}
 Comparison
-<table><tr><td style="padding:0 0; border: none ; text-align: center">
+<table><tr><td style="padding:0 0; border: none ;">
 {% highlight js %}
 s
 {% endhighlight %}
-</td><td style="padding:0 0; border: none ; text-align: center">
+</td><td style="padding:0 0; border: none ;">
 {% highlight js %}
 s
 {% endhighlight %}
