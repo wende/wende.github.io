@@ -2,12 +2,20 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wende.github.io" # the base hostname & protocol for your site
 
+
+authors:
+  wende:
+    name: "Krzysztof Wende"
+    description: "Po prostu wende"
+    avatar: "https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100"
+
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
   title: "I hate Monads"
+  subtitle: "Neon Tree Solutions Ltd official blog"
   avatar: "avatar.png"
-  gravatar: "502d830e6e95833ce07efc51f89a38e6" # Email MD5 hash
+  #gravatar: "502d830e6e95833ce07efc51f89a38e6" # Email MD5 hash
   description: "How to function in a [dys]functional world" # used by search engines
 
   # Header and footer text

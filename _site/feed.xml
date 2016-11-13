@@ -5,7 +5,7 @@
     <atom:link href="http://wende.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://wende.github.io/</link>
     <description></description>
-    <pubDate>Thu, 08 Sep 2016 00:03:33 +0200</pubDate>
+    <pubDate>Mon, 14 Nov 2016 00:44:22 +0100</pubDate>
     
       <item>
         <title>Scala code to count the odds of throwing out the sum of 2 6-sided dices.</title>
@@ -54,15 +54,15 @@ So let’s break it down&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;section-3&quot;&gt;4.&lt;/h3&gt;
-&lt;p&gt;Then We’ve got a &lt;code&gt;groupBy&lt;/code&gt; method which with &lt;code&gt;identity&lt;/code&gt; which is a shortcut for &lt;code&gt;a =&amp;gt; a&lt;/code&gt;&lt;br /&gt;
+&lt;p&gt;Then We’ve got a &lt;code&gt;groupBy&lt;/code&gt; method which with &lt;code&gt;identity&lt;/code&gt; which is a shortcut for &lt;code&gt;a =&amp;gt; a&lt;/code&gt;
 (it’s not really shorter but it feels much more intuitive)&lt;/p&gt;
 
 &lt;h3 id=&quot;section-4&quot;&gt;5.&lt;/h3&gt;
-&lt;p&gt;Now we’ve got a &lt;code&gt;Map&lt;/code&gt; of a &lt;code&gt;Vector&lt;/code&gt;s (Arrays)  in which we iterate through values ( Array of the same values ).  &lt;br /&gt;
+&lt;p&gt;Now we’ve got a &lt;code&gt;Map&lt;/code&gt; of a &lt;code&gt;Vector&lt;/code&gt;s (Arrays)  in which we iterate through values ( Array of the same values ).
 Because all of the values are the same we can change the value just to a length of the &lt;code&gt;Array&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;section-5&quot;&gt;6&lt;/h3&gt;
-&lt;p&gt;And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.  &lt;br /&gt;
+&lt;p&gt;And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.
 To do that - because now we’ve got a map of &lt;code&gt;( sum -&amp;gt; chance )&lt;/code&gt; - we change it to a list of tuples with &lt;code&gt;toList&lt;/code&gt;
 All we do then is sort by very cool syntactic sugar notation
 &lt;code&gt;( -_._2 )&lt;/code&gt; which is a shorter way of writing&lt;/p&gt;

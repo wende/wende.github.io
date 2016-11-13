@@ -54,11 +54,11 @@
 	<div class="branding">
 		
 		<a href="/">
-			<img class="avatar" src="https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100" alt=""/>
+			<img class="avatar" src="/img/avatar.png" alt=""/>
 		</a>
 		
 		<h1 class="site-title">
-			<a href="/">I hate Monads</a>
+			<a href="/">I hate Monads <h5> Neon Tree Solutions Ltd official blog </h5> </a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -163,7 +163,9 @@
     <h1 class="title">Scala code to count the odds of throwing out the sum of 2 6-sided dices.</h1>
     <p class="meta">
     September 23, 2015
-    
+      
+        - wende
+      
     </p>
   </header>
   <section class="post-content"><p>Today I wanted to give You a cool snippet showing the power of Scala’s Collections.
@@ -209,15 +211,15 @@ So let’s break it down</p>
 </code></pre>
 
 <h3 id="section-3">4.</h3>
-<p>Then We’ve got a <code>groupBy</code> method which with <code>identity</code> which is a shortcut for <code>a =&gt; a</code><br />
+<p>Then We’ve got a <code>groupBy</code> method which with <code>identity</code> which is a shortcut for <code>a =&gt; a</code>
 (it’s not really shorter but it feels much more intuitive)</p>
 
 <h3 id="section-4">5.</h3>
-<p>Now we’ve got a <code>Map</code> of a <code>Vector</code>s (Arrays)  in which we iterate through values ( Array of the same values ).  <br />
+<p>Now we’ve got a <code>Map</code> of a <code>Vector</code>s (Arrays)  in which we iterate through values ( Array of the same values ).
 Because all of the values are the same we can change the value just to a length of the <code>Array</code>.</p>
 
 <h3 id="section-5">6</h3>
-<p>And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.  <br />
+<p>And this is actually the exercise done. Now for the sake of clarification I sort the results by their chance from highest to  lowest.
 To do that - because now we’ve got a map of <code>( sum -&gt; chance )</code> - we change it to a list of tuples with <code>toList</code>
 All we do then is sort by very cool syntactic sugar notation
 <code>( -_._2 )</code> which is a shorter way of writing</p>
@@ -231,7 +233,19 @@ All we do then is sort by very cool syntactic sugar notation
 
 <p>Cheers</p>
 </section>
+
+  <!-- About the author -->
+  <div id="about-author">
+      <h2> About the author: </h2>
+      
+      <img class="avatar" src="https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100">
+      <p> Author: <b>Krzysztof Wende</b></p>
+      <p> About: Po prostu wende </p>
+      
+  </div>
+
 </article>
+
 
 <!-- Post navigation -->
 
