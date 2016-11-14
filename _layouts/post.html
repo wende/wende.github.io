@@ -16,14 +16,19 @@ layout: default
   <section class="post-content">{{ content }}</section>
 
   <!-- About the author -->
+  {% if page.author %}
   <div id="about-author">
-      <h2> About the author: </h2>
-      {% if page.author %}
-      <img class="avatar" src="{{ site.authors[page.author].avatar }}">
-      <p> Author: <b>{{ site.authors[page.author].name }}</b></p>
-      <p> About: {{ site.authors[page.author].description }} </p>
-      {% endif %}
+    <!-- <h3>About the author</h3> -->
+    <div class="image">
+      <img src="{{ site.baseurl }}/{{ site.authors[page.author].avatar }}">
+    </div>
+    <div class="description">
+      <p class="name">{{ site.authors[page.author].name }}</p>
+      <p class="about">{{ site.authors[page.author].description }} </p>
+      <p class="stack">{{ site.authors[page.author].stack }} </p>
+    </div>
   </div>
+  {% endif %}
 
 </article>
 
