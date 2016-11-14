@@ -2,11 +2,21 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wende.github.io" # the base hostname & protocol for your site
 
-
 authors:
   wende:
     name: "Krzysztof Wende"
     description: "Po prostu wende"
+    link: "http://neontree.pl/wende"
+    avatar: "https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100"
+  cichocinski:
+    name: "Tomasz Cichocinski"
+    description: "Po prostu tomek"
+    link: "http://neontree.pl/cichocinski"
+    avatar: "https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100"
+  hajto:
+    name: "Jakub Hajto"
+    description: "Po prostu hajto"
+    link: "http://neontree.pl/hajto"
     avatar: "https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100"
 
 # THEME-SPECIFIC CONFIGURATION
@@ -63,7 +73,7 @@ theme_settings:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+  google_fonts: "Lato:300,400,700,700italic,400italic"
 
   # Post navigation
   post_navigation: true
