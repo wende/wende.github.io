@@ -3,6 +3,7 @@ layout: post
 title: XMPP connection using Hedwig on Elixir and Phoenix
 comments: true
 tags: xmpp, elixir, phoenix, hedwig
+author: wende
 ---
 
 Yesterday I've had a great opportunity to talk with a tiny alchemists group about establishing XMPP connection from a Phoenix server.

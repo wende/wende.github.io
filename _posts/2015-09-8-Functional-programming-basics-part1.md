@@ -2,6 +2,7 @@
 layout: post
 title: Functional programming basics on Elixir's example - Part 1
 tags: functional, elixir, tutorial, basics
+author: wende
 ---
 
  I get asked more than often why functional programming is something worth knowing. Some people are curious, some would like to burn me at the stake, some just never heard about it and are still passionate to grasp concept they didn't yet get to know.
