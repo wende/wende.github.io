@@ -3,7 +3,7 @@ layout: post
 title: Cool language features You've never heard about - Part 4 - F#'s Type Providers
 comments: true
 tags: fsharp, cool, languages
-
+author: wende
 ---
 
 For the next few weeks I'm gonna list cool features and tips for every programming language You can imagine.

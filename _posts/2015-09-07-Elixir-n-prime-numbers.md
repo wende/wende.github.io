@@ -2,6 +2,7 @@
 layout: post
 tags: elixir, algorithms
 title: n prime numbers in Elixir
+author: wende
 ---
 
 I've been asked by a friend to give her a naive implementation of a function giving n first prime numbers.

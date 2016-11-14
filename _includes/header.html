@@ -10,7 +10,9 @@
 		</a>
 		{% endif %}
 		<h1 class="site-title">
-			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }} <h5> {{site.theme_settings.subtitle}} </h5> </a>
+			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}
+        <h5 class="site-subtitle"> {{ site.theme_settings.subtitle }} </h5>
+      </a>
 		</h1>
 	</div>
 	<nav class="site-nav">
@@ -24,6 +26,9 @@
 			</li>
 			{% endif %}
 			{% endfor %}
+      <li>
+        <a class="page-link" href="http://neontree.pl">About</a>
+      </li>
 			<!-- Social icons from Font Awesome, if enabled -->
 			{% include icons.html %}
 		</ul>

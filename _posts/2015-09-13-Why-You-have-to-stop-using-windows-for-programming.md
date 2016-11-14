@@ -3,6 +3,7 @@ layout: post
 title: Why You have to stop using Windows for programming
 comments: true
 tags: linux, unix, windows, commands, console
+author: wende
 ---
 
 You've got to admit, we all don't like to hear that the stuff we use right now sucks. There is plenty of psychological studies proving that no matter what, we will stand by the side of the thing (I kindly recommend Dr Robert Cialidini's analysis of American brainwashed prisoners at war in China)
