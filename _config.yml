@@ -44,7 +44,7 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: "chris@neontree.pl" # Full email address, e.g. "sam@example.com"
+  email_address: "contact@neontree.pl" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
