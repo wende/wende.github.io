@@ -83,5 +83,6 @@ sass:
 gems:
     - jekyll-sitemap
     - jekyll-gist
+    - jekyll-seo-tag
     - jekyll-paginate
 exclude: [vendor]
