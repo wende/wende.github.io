@@ -2,12 +2,28 @@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://wende.github.io" # the base hostname & protocol for your site
 
-
 authors:
   wende:
     name: "Krzysztof Wende"
-    description: "Po prostu wende"
-    avatar: "https://secure.gravatar.com/avatar/502d830e6e95833ce07efc51f89a38e6?s=100"
+    description: "Krzysztof is a natural born leader. Charismatic and confident, holds the entire team together. He’s also a distributed systems designer and a functional programming guru. He’s passionate about uncovering fascinating pieces of state-of-the-art software and popularising them."
+    stack: "Scalable and distributed development, System architecture, Elixir, Erlang, Scala, Node.js"
+    link: "http://neontree.pl/wende"
+    avatar: "img/wende_2.jpg"
+
+  cichocinski:
+    name: "Tomasz Cichocinski"
+    description: "All kinds of front-end. Tomek is web development and game programming hothead, who's always trying to find best solutions and best tools for the given job. Spending all free time discovering new technologies and mastering already known. He's providing front-end expertise to the whole team."
+    stack: "JavaScript, React, Redux, Elm, Node.js, Build systems"
+    link: "http://neontree.pl/cichocinski"
+    avatar: "img/cichocinski_2.jpg"
+
+  hajto:
+    name: "Jakub Hajto"
+    stack: "Elixir, Phoenix WebFramework, Scala, Play, Akka, Jenkins, Docker, Continous Integration and Delivery, Third Party Services"
+    description: "Functional Programming Ninja, he jumps between technologies to get the best out of them. Currently in love with Elixir’s simplicity and performance. At the same time he’s the laziest of us all. If something can be done without programmers interference, he’ll probably do it that way. That’s why he loves Jenkins and Docker."
+    stack: "Elixir, Phoenix WebFramework, Scala, Play, Akka, Jenkins, Docker, Continous Integration and Delivery, Third Party Services"
+    link: "http://neontree.pl/hajto"
+    avatar: "img/hajto_2.jpg"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -28,7 +44,7 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: "chris@neontree.pl" # Full email address, e.g. "sam@example.com"
+  email_address: "contact@neontree.pl" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
@@ -63,7 +79,7 @@ theme_settings:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+  google_fonts: "Lato:300,400,700,700italic,400italic"
 
   # Post navigation
   post_navigation: true
@@ -76,7 +92,7 @@ paginate_path: "blog/page:num"
 markdown: kramdown
 kramdown:
   input: GFM
-highlighter: pygments
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed

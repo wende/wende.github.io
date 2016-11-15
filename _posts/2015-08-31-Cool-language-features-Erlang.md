@@ -3,7 +3,7 @@ layout: post
 title: Cool language features You've never heard about - Part 2 - Erlang's Pattern Matching
 comments: true
 tags: erlang, cool, languages
-
+author: wende
 ---
 
 For the next few weeks I'm gonna list cool features and tips for every programming language You can imagine.

@@ -27,16 +27,18 @@
   }
   .excerpt {
     margin-top: 1em;
+    font-weight: 300;
   }
 }
 // Pagination
 .pagination .button {
   margin: 0 1.5em;
   i {
-    vertical-align: middle;
+    /* vertical-align: middle; */
   }
 }
 .pagination {
   padding: $padding-small $padding-large 0 $padding-large;
   text-align: center;
+  font-weight: 300;
 }

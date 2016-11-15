@@ -14,14 +14,19 @@ layout: default
     {% for post in paginator.posts %}
     <div class="post-teaser">
       <header>
-        <h1>
+        <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
             {{ post.title }}
           </a>
-        </h1>
-        <p class="meta">
+        </h2>
+        <span class="meta">
           {{ post.date | date: "%B %-d, %Y" }}
-        </p>
+          {% if post.author %}
+          - <a href="{{ site.authors[post.author].link }}">
+          {{ site.authors[post.author].name }}
+          </a>
+          {% endif %}
+        </span>
       </header>
       <div class="excerpt">
         {{ post.excerpt }}
