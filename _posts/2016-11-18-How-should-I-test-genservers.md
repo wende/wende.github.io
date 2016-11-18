@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The proper way I should have been testing genservers...
+title: The way I should have been testing genservers...
 tags: functional, elixir, otp
 author: hajto
 ---
