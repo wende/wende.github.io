@@ -5,7 +5,7 @@ tags: functional, elixir, otp
 author: hajto
 ---
 
-Last Wednesday I went to Elixir Meetup in Cracow's headquarters of Erlang Solutions. It was supposed to be about basics of Elixir and how pipe operator influenced the software design, but I learned another priceless lesson. I've been testing GenServers wrong whole time...
+Last Wednesday I went to Elixir Meetup in Cracow's headquarters of Erlang Solutions. It was supposed to be about basics of Elixir and how pipe operator influenced the software design, but I learned another priceless lesson. I've been testing GenServers callbacks wrong whole time...
 
 
 I was usally doing it by spawning a process in setup the same way I would do in the supervision tree. Don't get me wrong it's totally cool for integration tests.
