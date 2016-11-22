@@ -28,7 +28,7 @@ Although we have some important complains. One of them is imposing presentation 
 
 1. Arduino Security System - our next door neighbours were developing home security system based on Arduino. They were building it live from scratch and programming it. The process of them making it happen was excellent show actually. From know and then we were able to hear them swearing and shouting texts like "pin 4 is still three, give data in matrix xxxx", where xxx were sentences we couldn't fully understand. After 20 or so hours they made functional minimal viable product. During the live demo they encountered some problems with wifi, but it was still awesome.
 
-2.
+2. [WanderLust](http://wanderlust.edu.pl/) - I don't really recall what was idea behind this project, but the splash screen will last really long in our memory.
 
 #### Problems we have encountered
 
