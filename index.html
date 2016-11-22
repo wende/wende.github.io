@@ -12,7 +12,8 @@ layout: default
 
   <div class="posts">
     {% for post in paginator.posts %}
-    <div class="post-teaser">
+      {% if post.draft != true  %}
+      <div class="post-teaser">
       <header>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
@@ -34,7 +35,8 @@ layout: default
           {{ site.theme_settings.str_continue_reading }}
         </a>
       </div>
-    </div>
+      </div>
+      {% endif %}
     {% endfor %}
   </div>
 
