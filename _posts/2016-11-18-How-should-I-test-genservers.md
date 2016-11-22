@@ -25,7 +25,6 @@ I was usally doing it by spawning a process in setup the same way I would do in 
 
 The only thing we're doing here is testing input and output of callback basically. What if we could just test the callback itself? But wait... We can!
 
-
 Let's assume we have `Stuff` module defined like so.
 {% highlight Elixir %}
 
