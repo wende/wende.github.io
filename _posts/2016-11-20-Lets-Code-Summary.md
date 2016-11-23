@@ -3,14 +3,14 @@ layout: post
 title: Let's code! Few thoughts after hackathon.
 tags: hackathon, event
 author: hajto
-draft: true
+draft: false
 ---
 
-Last week we were attending to hackathon event called Let's Code. It was being organized by company SII. It was great oportunity to test our skills and test our endurance. In less than 20 hrs we managed to creaty functional MVP!
+Last week we were attending to hackathon event called [Let's Code](https://www.facebook.com/events/1791934494355549). It was being organized by company [SII](http://sii.pl). It was great oportunity to test our skills and test our endurance. In less than 20 hrs we managed to creaty functional MVP!
 
 #### Let's hack
 
-The general idea of hackathon was to create an app from one of the three sectors: local business, security and connecting people. We went with social networking because technologies we use on a daily basis were ideal that purpose. After a brief discussion we decided that we won't use react on the front end just for now and we used more hackable aproach.
+The general idea of hackathon was to create an app from one of the three sectors: local business, security and connecting people. We went with social networking because technologies we use on a daily basis were ideal for that purpose. After a brief discussion we decided that we won't use react on the front end just for now and we used more hackable aproach.
 
 ![Swing by logo]({{ site.url }}/img/letscode/swing_by.png){: .center-image}
 
@@ -20,13 +20,13 @@ Basically the core functionality consists of 2 activities. Creating events and a
 
 ![Swing by logo]({{ site.url }}/img/letscode/mocks.jpg){: .center-image}
 
-Speaking about hackathon itself it was quite well organised. Most of programmers had an extra monitor to use and after a brief investigation we were even able to borrow missing adapters to use them. There was more than enough of food for everyone. Pizza of every possible kind and even some subway sandwitches with whatever you could imagine including chicken, tune and some veggies. Even drinks were cooled in the fridge. In other words, organizers shown us some really nice attention to details providing really good working conditions.
+Speaking about hackathon itself it was quite well organised. Most of programmers had an extra monitor to use and after a brief investigation we were even able to borrow missing adapters to use them. There was more than enough food for everyone. Pizza of every possible kind and even some Subway sandwitches  with whatever you could imagine including chicken, tuna and some veggies. Even drinks were cooled in the fridge. In other words, organizers shown us some really nice attention to details providing really good working conditions.
 
 Although we have some important complains. One of them is imposing presentation template (not a pretty one actually...) in .pptx format. What if you want to make prezi or slides presentation? In my humble opinion that's really bad idea, because it severely limits our creativity when it comes to it's form. I think we managed to overcome that limitation by using gifs made by our magnificient designer `Maciek Chwast` (a.k.a. hipster for hire).
 
 #### Other notable projects
 
-1. Arduino Security System - our next door neighbours were developing home security system based on Arduino. They were building it live from scratch and programming it. The process of them making it happen was excellent show actually. From know and then we were able to hear them swearing and shouting texts like "pin 4 is still three, give data in matrix xxxx", where xxx were sentences we couldn't fully understand. After 20 or so hours they made functional minimal viable product. During the live demo they encountered some problems with wifi, but it was still awesome.
+1. Arduino Security System - the neighbouring group was developing home security system based on Arduino. They were building it live from scratch and programming it. The process of them making it happen was excellent show actually. Once for a while we were able to hear them swearing and shouting texts like "pin 4 is still free, give data in matrix xxxx", where xxx were sentences we couldn't fully understand. After 20 or so hours they made functional minimal viable product. During the live demo they encountered some problems with wifi, but it was still awesome.
 
 2. [WanderLust](http://wanderlust.edu.pl/) - I don't really recall what was idea behind this project, but the splash screen will last really long in our memory.
 
@@ -58,7 +58,7 @@ Cute, isn't it? We also had an issue with finding good android phone picture to 
 
 ![Macieks invention]({{ site.url }}/img/letscode/iandroid.jpg){: .center-image}
 
-Another troublesome part was connecting to spotify via ueberauth_spotify. The author of strategy forgot to implement credentials callback... Ofcourse rather then fixing it at the moment i mocked it shoving it into random field in conn struct.
+Another troublesome part was connecting to spotify via ueberauth_spotify. The author of strategy forgot to implement credentials callback... Of course rather then fixing it at the moment i mocked it shoving it into random field in conn struct.
 
 {% highlight elixir %}
 defp fetch_user(conn, token) do
