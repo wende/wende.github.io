@@ -10,7 +10,7 @@ Right now we're developing our app - *Swingby*. We're using React Native for mob
 
 ### Background
 
-I'm developing for web mostly. I revolve around web technologies and languages. That's why I'm responsibe for our Fronend Engineering at Neon Tree.
+I'm developing mostly for web. I revolve around web technologies and languages. That's why I'm responsibe for our Fronend Engineering at Neon Tree.
 I've wrote few mobile apps back in school, both Android and iOS, but I've never been into mobile development at production level. And it seems I might change my mind in the near future.
 
 I was staring with real web development with Angular 1. It was ok but I've never felt in love with this technology. Back then I was working on my web game engine [amble-engine](https://github.com/Baransu/amble-engine),
