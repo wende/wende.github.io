@@ -59,7 +59,7 @@ layout: default
 </div>
 
 <script>
- var link = "http://crossorigin.me/http://quotes.stormconsultancy.co.uk/random.json"
+ var link = "http://quotes.stormconsultancy.co.uk/random.json"
 
  var r = JSON.parse(httpGet(link));
  document.getElementById("quote").innerHTML = "<p>" + r.quote + "\n</p><p>--- "+r.author+" ---</p>"

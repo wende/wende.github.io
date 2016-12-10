@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Few thought on React Native and mobile development
+title: Few thoughts on React Native and mobile platforms
 tags: mobile, frontend, react-native, react, javascript
 author: cichocinski
 draft: false
