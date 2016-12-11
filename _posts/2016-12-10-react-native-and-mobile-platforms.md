@@ -31,7 +31,7 @@ But few problems shown up. Router, pages managment and blur effect for images.
 I was looking for good solution to both problems. I've tried few libraries to manage pages and routing but `react-native-router-flux` turns to be the best solution. It has simple and clean API so showing and hiding pages is no more a headache.
 Second problem was blur effect on images. And this time I'was looking for good library to solve problem. I found `react-native-blur`, and it's great library. Which works on our codebase only with iOS not on Android due to differences between these platforms.
 
-### Platofrm differences
+### Platform differences
 I think this is the biggest downside of shared mobile development with the same codebase for both platforms in general.
 In hybrid apps like overything Cordova based there is not that much problem, because you're writing HTML as in usual web application and only few things require
 to interact with underlying native platform. But in React Native you're writing everything native. So my blur example failed because there is not consistency between iOS and Android. Right, there is common a lot, but few things are just not.
