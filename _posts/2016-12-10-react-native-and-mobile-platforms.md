@@ -34,7 +34,7 @@ Second problem was blur effect on images. And this time I'was looking for good l
 ### Platform differences
 I think this is the biggest downside of shared mobile development with the same codebase for both platforms in general.
 In hybrid apps like overything Cordova based there is not that much problem, because you're writing HTML as in usual web application and only few things require
-to interact with underlying native platform. But in React Native you're writing everything native. So my blur example failed because there is not consistency between iOS and Android. Right, there is common a lot, but few things are just not.
+to interact with underlying native platform. But in React Native you're writing everything native. So my blur example failed because there is not consistency between iOS and Android. Right, there is a lot in common, but few things are just not.
 For example `elevation API` on Android. It's unique to Android because it gives you this pretty looking Material Design effect. And I'm not expecting iOS to provide the same API and the same look and feel. But thease differences are making our development harder.
 And since elevation/shadow is not a big problem other things like blur are. Why to hell Android has no blur support for images at the first place?! It's so common to blur background images for example and use blur in general.
 
