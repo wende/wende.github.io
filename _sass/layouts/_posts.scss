@@ -137,7 +137,18 @@ header {
 
   }
 }
+
 .center-image{
     margin: 0 auto;
     display: block;
+}
+
+.image-wrapper {
+  text-align: center;
+
+  .image-caption {
+    font-size: 0.9em;
+    // color: $grey-color;
+    // margin-top: $spacing-unit / 3;
+  }
 }
