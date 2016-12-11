@@ -24,7 +24,7 @@ I'm with React in heart for almost a year or so right now. And it works perfect 
 But none of us has production experience with both iOS and Android at the same time.
 So we decided to jump into React Native because we had a lot of experience with working with React.
 
-### Learn once, build everywhere
+### Learn once, write everywhere
 And this is trully the best aspect of React ecosystem. I scaffolded project and start working. And it was so natural for someone with web development background in comparison to native Android or iOS.
 It's the same JavaScript with ES6 syntax. It's the same API with the same lifecycle for components. It's the same state managment library (we're using Redux). So I was writing and creating like I would be doing that for years.
 But few problems shown up. Router, pages managment and blur effect for images.
