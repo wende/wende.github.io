@@ -1,0 +1,273 @@
+{
+    "hello": "Hi",
+    "myNameIs" : "My name is",
+    "thisIsMyResume" : "and this is my resume/cv",
+    "experienceHeadline" : "experience",
+    "aboutMeHeadline": "about me",
+    "contactHeadline" : "Contact",
+    "skillsHeadline" : "skills",
+    "workHistoryHeadline" : "work history",
+    "languagesHeadline" : "Languages",
+    "testimonialsHeadline" : "Testimonials (O1 Visa Excerpts) ",
+
+    "badges" : [
+        {
+            "logo" : "https://github.com/wende/elchemy/raw/master/logo.png?raw=true",
+            "title" : "Elchemy Creator",
+            "description" : "Creator of <a href='https://configure.ergodox-ez.com/layouts/j9Md/latest/0'> Elchemy </a> - statically typed functional programming language for the Erlang VM."
+        },
+        {
+            "logo" : "http://payload.cargocollective.com/1/0/21463/2005376/lambda-films-logod.png",
+            "title" : "Functional Programmer",
+            "description" : "Love in immutable state, monads & pure functions"
+        },
+        {
+            "logo" : "https://qsf.fs.quoracdn.net/-3-images.logo.wordmark_default.svg-26-bfa6b94bc0d6af2e.svg",
+            "title" : "Over 250k article reads on Quora",
+            "description" : "Former Most Viewed Writer in: CS Abstraction, Akka, Elixir <br> Selected for Quora Digest (1,2MM email feed) twice"
+        },
+        {
+            "logo" : "https://avatars2.githubusercontent.com/u/1481354?v=3&s=400",
+            "title" : "Erlang/Elixir fan",
+            "description" : "Active Erlang OTP/Elixir community member"
+        },
+        {
+            "logo" : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/light-bulb-icon.png",
+            "title" : "Entrepreneur",
+            "description" : "CEO / founder. Lean startup mind"
+        },
+        {
+            "logo": "https://www.pubnub.com/wp-content/uploads/2015/01/B62xj9FCUAA3YoC.png",
+            "title" : "Atom Editor Community Active Member",
+            "description" : "50k downloads of extensions combined             <br>             <a href='https://atom.io/packages/autocomplete-elixir'>Elixir Autocomplete</a> - Over 40k downloads. Formerly             the most popular Atom Elixir extension for over 2 years.             <br>             <a href='https://atom.io/packages/autocomplete-elixir'>Erlang Autocomplete</a> - Over 10k downloads. The most             popular Atom Erlang extension."
+        }
+    ],
+    "workHistory" : [
+        {
+            "time" : "2004",
+            "title" : "Beginning Of The Programming Journey",
+            "description" : "C++. LEGO MindStorm programming"
+        },
+        {
+            "time" : "2008",
+            "title" : "Game Redactor at mmorpg.org.pl",
+            "description" : "I've had an opportunity to join the team of amazing people amongst mmorpg.org.pl editors. My job was to write game reviews, news, and interview people making games"
+        },
+        {
+            "time" : "2010",
+            "title" : "MMO Engine Project Eclipse Development in Visual Basic",
+            "description" : "I've been developing a well known in gaming community MMO game engine written in Visual Basic"
+        },
+        {
+            "time" : "2011",
+            "title" : "Flash",
+            "description" : "Finally, I've decided to try myself writing my own game. I've started by learning Flash and mastered the whole thing cover to cover. Starling, AS2, AS3, GPU optimization, Network Programming. Nothing was stopping me from writing my own game... Except an inability to stick to one idea at a time. I've made 3-4 games of all genres I could think of: FPS, RTS, RPG and casual survival game"
+        },
+        {
+            "time" : "2004",
+            "title" : "I've started my programming journey",
+            "description" : "C++. LEGO MindStorm programming"
+        },
+        {
+            "time" : "2012",
+            "title" : "C#",
+            "description" : "Flash was a dying technology. I've had to move forward. C# was looking like a most rewarding time investment. I've written my own C# TCP Server and discovered how complicated but at the same time compelling was the concept of concurrency to me. I've got my first programming contracts on Freelancer.com."
+        },
+        {
+            "time" : "2013",
+            "title" : "Unity3d",
+            "description" : "Unity3D engine taught me how simple programming can be. During that time I've got to know and learn from many skilled developers. I've got my game development job at Propagame, programming C# Network protocol infrastructure."
+        },
+        {
+            "time" : "OCT 2013",
+            "title" : "Node.js",
+            "description" : "Node.js taught me that network programming can be simple thanks to an asynchronous paradigm. I've learned that there is much more to programming than just the popular choices. I've started learning about new databases like MongoDB and Redis and experiment with them in my subsequent projects"
+        },
+        {
+            "time" : "NOV 2013",
+            "title" : "CloudCab - The First StartUp",
+            "description" : "I've met a visionary man from New York - Filip Baba. He taught me about NY market and how programming business really looks like. With his idea of taxi company niche for software like Uber - but for companies, not against them - with mechanisms for gradual system migration from analog-radio-based infrastructure. We've started CloudCab. Using Node.js as a backend with Redis / MySQL. Website app as an operator panel with Socket.io And native Android apps for both passengers and drivers. Soon CloudCab was able to connect thousands of devices on AWS micro instance."
+        },
+        {
+            "time" : "2014",
+            "title" : "Distributed Computing",
+            "description" : "CloudCab needs made me understand how important scalability is when developing a server like that. Node.js made me realize that there is more than one way to approach distributed software development. I've started to study many distributed computing concepts - Actor Systems, Referential transparency in functional programming, as well as the more basic ones like queues, mutexes and locks. I've dived deep into Scala, Closure, Haskell and finally to discover my new favourite language - Erlang"
+        },
+        {
+            "time" : "AUG 2014",
+            "title" : "CloudCab's first investor!",
+            "description" : "CloudCab has been invested in by WideTech Columbia and used experimentally in their NY branch. It was renamed to Light Dispatch for marketing purposes"
+        },
+        {
+            "time" : "SEP 2014",
+            "title" : "Neon Tree Solutions Ltd founded",
+            "description" : "I've founded my company in United Kingdom and named it Neon Tree Solutions. Alongside with 3 freshly hired developers we continued full steam ahead with the development of further versions of CloudCab / Light Dispatch"
+        },
+        {
+            "time": "NOV 2014",
+            "title" : "Light Dispatch's First Tenant",
+            "description" : "Light Dispatch has been successfully launched as a beta version in first New York carrier base - Greenline Limo LLC."
+        },
+        {
+            "time": "JAN 2015",
+            "title": "Light Dispatch acquisition",
+            "description": "Light dispatch has been fully acquired by the seed investor WideTech. It was time for me to move on onto some new projects"
+        },
+        {
+            "time": "Q1 2015",
+            "title": "New Start-Ups",
+            "description": "My team and I have done our best to make our ideas come true. We've launched multiple Start-Up proof of concepts and watched how would people respond to them following the LEAN principles. <ul> <li> LanceIt - neighbourhood outsourcing</li>  <li> Spotnote - leave notes anywhere on the world map</li> <li> Everbuy - stay notified about new products matching your query on Ebay and Polish Allegro </li> </ul>"
+        },
+        {
+            "time" : "JUN-AUG 2015",
+            "title": "Erlang Solutions Internship",
+            "description": "I've spent some time working in Erlang Solutions Ltd Polish branch in experimental Elixir team, working on concepts revolving around the concept of Internet Of Things, XMPP Protocol and using Elixir with Phoenix Framework in production."
+        },
+        {
+            "time" : "SEP-NOV 2015",
+            "title": "Theoretical Computer Science at Jagiellonian University",
+            "description": "With Nationwide Inventiveness Contest Award I got a free entry to a university of my choice. I decided it'd be a waste not to try it. After 3 months on Theoretical Computer Science on Jagiellonian University of Kraków I've got a job opportunity from a company located in San Francisco and decided to take it instead"
+        },
+        {
+            "time" : "JAN-MAY 2016",
+            "title": "CTO at Man La Mode",
+            "description": "I've got an offer to become a CTO of Man La Mode, a Delaware Start-Up company with an idea for an state-of-the-art e-commerce platform. I was assigned a team of 4 people to manage at the same time developing the back-end architecture in Elixir"
+        },
+        {
+            "time" : "MAY-AUG 2016",
+            "title" : "Ann Arbor, MI, USA",
+            "description" : "I've left my home country to seek entrepreneurial spirit across the ocean in Ann Arbor, Michigan. We were awarded a place in Google SPARK Accelerator"
+        }
+    ],
+    "experiences" : [
+        {
+            "where" : "MMORPG.ORG.PL",
+            "year" : "2009 - 2010",
+            "title" : "Redactor",
+            "responsibilities" : "Writing game reviews and doing interviews with game creators"
+        },
+        {
+            "where" : "Freelance",
+            "year" : "2013",
+            "title" : "Flash / C# Freelancing on Freelancer.com",
+            "responsibilities" : "Projects in Flash and Unity3D"
+        },
+        {
+            "where" : "Propagame",
+            "year" : "2013",
+            "title" : "Redactor",
+            "responsibilities" : "Writing game reviews and doing interviews with game creators"
+        },
+        {
+            "where" : "Independent",
+            "year" : "2013-2014",
+            "title" : "Node.js developer / Android developer / Web Developer",
+            "responsibilities" : "Developing of an own StartUp - CloudCab"
+        },
+        {
+            "where" : "Neon Tree Solutions",
+            "year" : "2014-JAN 2015",
+            "title" : "CEO / Node.js developer ",
+            "responsibilities" : "Developing of an own StartUp - CloudCab"
+        },
+        {
+            "where" : "Neon Tree Solutions",
+            "year" : "Q1/Q2 2015",
+            "title" : "CEO / Scala developer ",
+            "responsibilities" : "Developing of own StartUps - LanceIt, Spotnote, Everbuy"
+        },
+        {
+            "where" : "Erlang Solutions",
+            "year" : "JUN 2015 - AUG 2015",
+            "title" : "Elixir developer / Intern",
+            "responsibilities" : "Phoenix Framework usage in an Internet of Things concept"
+        },
+        {
+            "where" : "Man La Mode Inc",
+            "year" : "JAN 2016 - AUG 2016",
+            "title" : "CTO / Elixir Developer",
+            "responsibilities" : "Team and product managment. Backend programming"
+        }
+    ],
+    "contact" : [
+        {
+            "fa" : "fa-github",
+            "value" : "GitHub",
+            "link" : "https://www.github.com/wende"
+        },
+        {
+            "fa" : "fa-phone",
+            "value" : "+48 533 302 090"
+        },
+        {
+            "fa" : "fa-envelope",
+            "value" : "chris@neontree.pl"
+        },
+        {
+            "fa" : "fa-envelope",
+            "value" : "krzysztof.wende@gmail.com"
+        },
+        {
+            "fa" : "fa-stack-overflow",
+            "value" : "Stack Overflow",
+            "link" : "http://stackoverflow.com/users/2086804/krzysztof-wende"
+        },
+        {
+            "fa" : "fa-stack-overflow",
+            "value" : "Stack Overflow Careers",
+            "link" : "http://careers.stackoverflow.com/wende"
+        },
+        {
+            "fa" : "fa-quote-left",
+            "value" : "Quora",
+            "link" : "https://www.quora.com/Krzysztof-Wende"
+        }
+    ],
+    "languages" : [
+        {
+            "language" : "Polish",
+            "proficiency" : "100%"
+        },
+        {
+            "language" : "English",
+            "proficiency" : "95%"
+        },
+        {
+            "language" : "Italian",
+            "proficiency" : "10%"
+        }
+    ],
+    "testimonials" : [
+        {
+            "face" : "https://media.licdn.com/dms/image/C4E03AQE72ZGA8YDqNw/profile-displayphoto-shrink_800_800/0?e=1545264000&v=beta&t=DJlm-_ZNTIS8SdjTB8SU7dEtmI2rvn8lsj40CUlNa5M",
+            "who" : "Filip Baba ( Propagame CEO )",
+            "text" : "Exceptionally talented coder, goes the extra mile to make sure you are satisfied with his work. Knows programming concepts and Unity like the back of his hand."
+        },
+        {
+            "face" : "https://pbs.twimg.com/profile_images/667973757181431808/IdQgSAH__400x400.jpg",
+            "who" : "José Valim ( Elixir programming language creator )",
+            "text": "[...]The fact that Mr. Wende is frequently sought out amongst experts in the field, who are many years senior to Mr. Wende in age, for feedback, ideas, and peer­review is in my opinion most demonstrative of his extraordinary and prodigious ability."
+        },
+        {
+            "face" : "https://avatars0.githubusercontent.com/u/11467?v=3&s=460",
+            "who" : "Robert Virding (Erlang programming language creator)" ,
+            "text": "[...] I had been quite impressed by the nature of his work from the brief period I enjoyed as his coworker at Erlang Solutions. Despite being the youngest invited speaker at the conference Mr. Wende’s lecture, “Developing Elixir with Atom Editor,” was one of the highlights of the conference [...]"
+        },
+        {
+            "face" : "https://media.licdn.com/dms/image/C5603AQHGuWjgGnphOw/profile-displayphoto-shrink_800_800/0?e=1545264000&v=beta&t=G1e1aTLZ4mBPaeMardTb_c5nz2M4cXzpv4pTV2sHpSw",
+            "who" : "Michał Ślaski - (Branch Manager at Erlang Solutions)",
+            "text": "[...] His breathtaking knowledge and intrinsic concern to help people through the medium of technology are some of the qualities that elevate Mr. Wende in the esteem of his peers as a recognized world­class talent. This is a rare and appreciated combination"
+        }
+    ],
+    "skills" : [
+        { "proficiency": "1.00", "name" : "Elixir" }
+    ],
+    "hobbies" : [
+        "Playing Drums",
+        "Fusion Jazz",
+        "Craft Beer",
+        "Psychology",
+        "Weightlifting",
+        "Nutrition"
+    ]
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-translate-customization" content="92a3cbb1325a21fc-104c316a883fa5c4-g2f46984ae24d3013-b">
+	</meta>
+	<title>Krzysztof Wende</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="photo-header" class="text-center">
+					<!-- PHOTO (AVATAR) -->
+					<div id="photo">
+						<img src="https://media.licdn.com/dms/image/C4D03AQFohGdKdQ1nZg/profile-displayphoto-shrink_200_200/0?e=1545264000&v=beta&t=Oe6tjdYGD2Jg-ejsG0JI_oH5evRX3DwUJLhpD5_6hEY"
+						 alt="avatar">
+					</div>
+					<div id="text-header">
+						<h1>,<br>  <span>Krzysztof</span><sup></sup> </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-7">
+				<!-- About Me -->
+				<div class="box">
+					<h2></h2>
+					<ul id="education" class="clearfix">
+					</ul>
+
+				</div>
+				<!-- Work history -->
+				<div class="box">
+					<h2>  </h2>
+					<ul id="education" class="clearfix">
+
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-5">
+				<!-- CONTACT -->
+				<div class="box clearfix">
+					<h2>  </h2>
+				</div>
+						<!-- EXPERIENCES -->
+				<div class="box">
+					<h2>  </h2>
+				</div>
+						<!-- SKILLS -->
+						<div class="box">
+							<h2> &nbsp&nbsp&nbsp&nbsp&nbsp<input id="skillsearch"></h2>
+							<div class="skills">
+								<div class="item-skills" data-percent="1.00">CoffeeScript</div>
+								<div class="item-skills" data-percent="1.00">Node.js</div>
+								<div class="item-skills" data-percent="1.00">Redis</div>
+
+								<div class="item-skills" data-percent="0.90">Functional Programming</div>
+								<div class="item-skills" data-percent="0.90">Object Oriented Programming</div>
+								<div class="item-skills" data-percent="0.90">MongoDB</div>
+
+								<div class="item-skills" data-percent="0.90">Git</div>
+								<div class="item-skills" data-percent="0.90">Gitlab-CI</div>
+								<div class="item-skills" data-percent="0.90">Network Programming (TCP, UDP, HTTP, WebSockets)</div>
+								<div class="item-skills" data-percent="0.90">Erlang</div>
+								<div class="item-skills" data-percent="0.90">Elixir</div>
+								<div class="item-skills" data-percent="0.90">Asynchronous Programming</div>
+
+								<div class="item-skills" data-percent="0.80">Scala</div>
+								<div class="item-skills" data-percent="0.80">Object Oriented Design Patterns</div>
+								<div class="item-skills" data-percent="0.80">Type theory</div>
+
+								<div class="item-skills" data-percent="0.70">C#</div>
+								<div class="item-skills" data-percent="0.70">Unity3D</div>
+								<div class="item-skills" data-percent="0.70">Metaprogramming</div>
+								<div class="item-skills" data-percent="0.70">MMO Game Development Techniques</div>
+								<div class="item-skills" data-percent="0.70">Java</div>
+								<div class="item-skills" data-percent="0.60">PhoneGap / Cordova</div>
+								<div class="item-skills" data-percent="0.60">Play Framework</div>
+								<div class="item-skills" data-percent="0.60">Dart</div>
+								<div class="item-skills" data-percent="0.60">Meteor.js</div>
+
+								<div class="item-skills" data-percent="0.50">Akka</div>
+								<div class="item-skills" data-percent="0.50">Linux</div>
+
+								<div class="item-skills" data-percent="0.40">Phoenix Framework</div>
+
+								<div class="item-skills" data-percent="0.30">Android</div>
+
+								<div class="item-skills" data-percent="0.25">Python</div>
+								<div class="item-skills" data-percent="0.20">Haskell</div>
+								<div class="skills-legend clearfix">
+									<div class="legend-left legend">Beginner </div>
+									<div class="legend-left legend"><span>Proficient</span></div>
+									<div class="legend-right legend"><span>Expert</span></div>
+									<div class="legend-right legend">Master</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- LANGUAGES -->
+						<div class="box">
+							<h2>  </h2>
+
+							<div id="language-skills">
+							</div>
+						</div>
+
+						<!-- TESTIMONIALS -->
+						<div class="box">
+							<h2> </h2>
+							<ul id="education" class="clearfix">
+							</ul>
+
+						</div>
+						<!-- HOBBIES -->
+						<div class="box">
+							<h2>Hobbies</h2>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- JQUERY -->
+		<script src="js/jquery.min.js"></script>
+		<!-- BOOTSTRAP -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- SCRIPTS -->
+		<script src="js/scripts.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				//I'm on fire. One-liner search lol
+				// body...
+				$('#skillsearch').keyup(function () { $(".item-skills").each(function (i, el) { ~($(el).text().toLowerCase().indexOf($("#skillsearch").val())) ? $(el).show() : $(el).hide() }) })
+			});
+
+		</script>
+		<script>
+			(function (i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date(); a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-56241713-2', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+</body>
+
+</html>
