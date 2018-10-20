@@ -3,4 +3,4 @@ all:
 	mustache data/data_pl.json template.mustache > cv_pl.hmtl
 
 watch:
-	browser-sync start --server --files .
+	(find data & find template.mustache) | entr make all & browser-sync start --server --files .

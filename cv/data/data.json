@@ -9,12 +9,22 @@
     "workHistoryHeadline" : "work history",
     "languagesHeadline" : "Languages",
     "testimonialsHeadline" : "Testimonials (O1 Visa Excerpts) ",
+    "hobbiesHeadline" : "Hobbies",
+    "talksHeadline" : "Talks",
+    "interviewsHeadline" : "Interviews",
+    "proficiencies": {
+        "beginner" : "Beginner",
+        "proficient" : "Proficient",
+        "expert" : "Expert",
+        "master" : "Master"
+    },
+
 
     "badges" : [
         {
             "logo" : "https://github.com/wende/elchemy/raw/master/logo.png?raw=true",
             "title" : "Elchemy Creator",
-            "description" : "Creator of <a href='https://configure.ergodox-ez.com/layouts/j9Md/latest/0'> Elchemy </a> - statically typed functional programming language for the Erlang VM."
+            "description" : "Creator of <a href='https://configure.ergodox-ez.com/layouts/j9Md/latest/0'> Elchemy </a> - statically typed functional programming language for the Erlang VM. <br> Over 750+ stars on GitHub"
         },
         {
             "logo" : "http://payload.cargocollective.com/1/0/21463/2005376/lambda-films-logod.png",
@@ -34,12 +44,12 @@
         {
             "logo" : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/light-bulb-icon.png",
             "title" : "Entrepreneur",
-            "description" : "CEO / founder. Lean startup mind"
+            "description" : "CEO / founder. Lean Start-Up mind"
         },
         {
             "logo": "https://www.pubnub.com/wp-content/uploads/2015/01/B62xj9FCUAA3YoC.png",
             "title" : "Atom Editor Community Active Member",
-            "description" : "50k downloads of extensions combined             <br>             <a href='https://atom.io/packages/autocomplete-elixir'>Elixir Autocomplete</a> - Over 40k downloads. Formerly             the most popular Atom Elixir extension for over 2 years.             <br>             <a href='https://atom.io/packages/autocomplete-elixir'>Erlang Autocomplete</a> - Over 10k downloads. The most             popular Atom Erlang extension."
+            "description" : "50k downloads of extensions combined<br><a href='https://atom.io/packages/autocomplete-elixir'>Elixir Autocomplete</a> - Over 40k downloads. Formerly             the most popular Atom Elixir extension for over 2 years.             <br>             <a href='https://atom.io/packages/autocomplete-elixir'>Erlang Autocomplete</a> - Over 10k downloads. The most             popular Atom Erlang extension."
         }
     ],
     "workHistory" : [
@@ -64,11 +74,6 @@
             "description" : "Finally, I've decided to try myself writing my own game. I've started by learning Flash and mastered the whole thing cover to cover. Starling, AS2, AS3, GPU optimization, Network Programming. Nothing was stopping me from writing my own game... Except an inability to stick to one idea at a time. I've made 3-4 games of all genres I could think of: FPS, RTS, RPG and casual survival game"
         },
         {
-            "time" : "2004",
-            "title" : "I've started my programming journey",
-            "description" : "C++. LEGO MindStorm programming"
-        },
-        {
             "time" : "2012",
             "title" : "C#",
             "description" : "Flash was a dying technology. I've had to move forward. C# was looking like a most rewarding time investment. I've written my own C# TCP Server and discovered how complicated but at the same time compelling was the concept of concurrency to me. I've got my first programming contracts on Freelancer.com."
@@ -86,7 +91,7 @@
         {
             "time" : "NOV 2013",
             "title" : "CloudCab - The First StartUp",
-            "description" : "I've met a visionary man from New York - Filip Baba. He taught me about NY market and how programming business really looks like. With his idea of taxi company niche for software like Uber - but for companies, not against them - with mechanisms for gradual system migration from analog-radio-based infrastructure. We've started CloudCab. Using Node.js as a backend with Redis / MySQL. Website app as an operator panel with Socket.io And native Android apps for both passengers and drivers. Soon CloudCab was able to connect thousands of devices on AWS micro instance."
+            "description" : "I've met a visionary man from New York - Filip Baba. He taught me about NY market and how programming business really looks like. With his idea of taxi company niche for software like Uber - but for companies, not against them - with mechanisms for gradual system migration from analog-radio-based infrastructure. We've started CloudCab. Using Node.js as a back-end with Redis / MySQL. Website app as an operator panel with Socket.io And native Android apps for both passengers and drivers. Soon CloudCab was able to connect thousands of devices on AWS micro instance."
         },
         {
             "time" : "2014",
@@ -116,7 +121,7 @@
         {
             "time": "Q1 2015",
             "title": "New Start-Ups",
-            "description": "My team and I have done our best to make our ideas come true. We've launched multiple Start-Up proof of concepts and watched how would people respond to them following the LEAN principles. <ul> <li> LanceIt - neighbourhood outsourcing</li>  <li> Spotnote - leave notes anywhere on the world map</li> <li> Everbuy - stay notified about new products matching your query on Ebay and Polish Allegro </li> </ul>"
+            "description": "My team and I have done our best to make our ideas come true. We've launched multiple Start-Up proof of concepts and watched how would people respond to them following the LEAN principles. <ul> <li> LanceIt - neighbourhood outsourcing</li>  <li> Spotnote - leave notes anywhere on the world map</li> <li> Everbuy - stay notified about new products matching your query on EBay and Polish Allegro </li> </ul>"
         },
         {
             "time" : "JUN-AUG 2015",
@@ -134,9 +139,19 @@
             "description": "I've got an offer to become a CTO of Man La Mode, a Delaware Start-Up company with an idea for an state-of-the-art e-commerce platform. I was assigned a team of 4 people to manage at the same time developing the back-end architecture in Elixir"
         },
         {
-            "time" : "MAY-AUG 2016",
+            "time" : "Q3/Q4 2016",
             "title" : "Ann Arbor, MI, USA",
             "description" : "I've left my home country to seek entrepreneurial spirit across the ocean in Ann Arbor, Michigan. We were awarded a place in Google SPARK Accelerator"
+        },
+        {
+            "time" : "FEB 2017",
+            "title" : "Elchemy",
+            "description" : "The project of Elchemy programming language"
+        },
+        {
+            "time": "APR 2017-NOW",
+            "title": "Inflowmatix Ltd",
+            "description": "We've established a business to business cooperation with Inflowmatix - a UK Start-Up utilizing state-of-the-art measuring devices in combination with a resiliency of distributed systems and statistical analysis to analyse and prevent water network malfunctions"
         }
     ],
     "experiences" : [
@@ -186,7 +201,19 @@
             "where" : "Man La Mode Inc",
             "year" : "JAN 2016 - AUG 2016",
             "title" : "CTO / Elixir Developer",
-            "responsibilities" : "Team and product managment. Backend programming"
+            "responsibilities" : "Team and product management. Back-end programming"
+        },
+        {
+            "where" : "Neon Tree Solutions Ltd",
+            "year" : "NOV 2017 - FEB 2018",
+            "title" : "CEO / Elixir Developer",
+            "responsibilities" : "Team and product management. Back-end programming"
+        },
+        {
+            "where" : "Inflowmatix Ltd",
+            "year" : "FEB 2018 - NOW",
+            "title" : "Elixir Developer",
+            "responsibilities" : "Distributed back-end system development"
         }
     ],
     "contact" : [
@@ -251,7 +278,7 @@
         {
             "face" : "https://avatars0.githubusercontent.com/u/11467?v=3&s=460",
             "who" : "Robert Virding (Erlang programming language creator)" ,
-            "text": "[...] I had been quite impressed by the nature of his work from the brief period I enjoyed as his coworker at Erlang Solutions. Despite being the youngest invited speaker at the conference Mr. Wende’s lecture, “Developing Elixir with Atom Editor,” was one of the highlights of the conference [...]"
+            "text": "[...] I had been quite impressed by the nature of his work from the brief period I enjoyed as his co-worker at Erlang Solutions. Despite being the youngest invited speaker at the conference Mr. Wende’s lecture, “Developing Elixir with Atom Editor,” was one of the highlights of the conference [...]"
         },
         {
             "face" : "https://media.licdn.com/dms/image/C5603AQHGuWjgGnphOw/profile-displayphoto-shrink_800_800/0?e=1545264000&v=beta&t=G1e1aTLZ4mBPaeMardTb_c5nz2M4cXzpv4pTV2sHpSw",
@@ -260,7 +287,59 @@
         }
     ],
     "skills" : [
-        { "proficiency": "1.00", "name" : "Elixir" }
+        { "proficiency": "1.00", "name" : "Elixir" },
+        { "proficiency": "0.95", "name" : "Erlang" },
+        { "proficiency": "0.95", "name" : "Elm" },
+        { "proficiency": "0.95", "name" : "Functional Programming" },
+        { "proficiency": "0.90", "name" : "Git" },
+        { "proficiency": "0.90", "name" : "Distributed systems" },
+        { "proficiency": "0.80", "name" : "JavaScript / Node.js" },
+        { "proficiency": "0.80", "name" : "CoffeeScript" },
+        { "proficiency": "0.80", "name" : "Programming Language Development" },
+        { "proficiency": "0.80", "name" : "Metaprogramming" },
+        { "proficiency": "0.80", "name" : "Object Oriented Programming"},
+        { "proficiency": "0.70", "name" : "C#" },
+        { "proficiency": "0.70", "name" : "Java" },
+        { "proficiency": "0.50", "name" : "Scala" },
+        { "proficiency": "0.30", "name" : "Prolog" },
+        { "proficiency": "0.30", "name" : "Unity" },
+        { "proficiency": "0.30", "name" : "Haskell" },
+        { "proficiency": "0.30", "name" : "AWS" },
+        { "proficiency": "0.20", "name" : "OCaml" }
+    ],
+    "talks": [
+        {
+            "where" : "Lambda Days",
+            "year" : "2016",
+            "title" : "Developing Elixir with Atom Editor",
+            "link": "https://www.youtube.com/embed/Z46929W1qIY?start=33&end=282"
+        },
+        {
+            "where": "Elixir LDN",
+            "year": "2017",
+            "title": "Writing Type-safe Elixir Code with Elm's Syntax - Elchemy",
+            "link": "https://www.youtube.com/embed/anGb8ByaZbc?start=255&end=556"
+        },
+        {
+            "where" : "Lambda Days",
+            "year" : "2018",
+            "title" : "Progress after one year development of Elchemy programming language",
+            "link" : "https://www.youtube.com/embed/AYf8TH2Ewtw"
+        }
+    ],
+    "interviews": [
+        {
+            "where" : "mamstartup.pl",
+            "year" : "2016",
+            "title": "At the age of 19, he sold the application to a Colombian corporation. He got tired of the fight for the market with Uber (PL)",
+            "link": "https://mamstartup.pl/sukces/8075/w-wieku-19-lat-sprzedal-aplikacje-kolumbijskiej-korporacji-zmeczyla-go-walka-o-rynek-z-uberem"
+        },
+        {
+            "where" : "justjoin.it",
+            "year" : "2018",
+            "title" : "How to create your own programming language? Meet Krzysztof Wende and his Elchemy (PL)",
+            "link" : "https://geek.justjoin.it/stworzyc-wlasny-jezyk-programowania-poznaj-krzysztofa-wende-elchemy/"
+        }
     ],
     "hobbies" : [
         "Playing Drums",

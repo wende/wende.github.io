@@ -57,83 +57,55 @@
 				<div class="box clearfix">
 					<h2>  </h2>
 				</div>
-						<!-- EXPERIENCES -->
+				<!-- EXPERIENCES -->
 				<div class="box">
 					<h2>  </h2>
 				</div>
-						<!-- SKILLS -->
-						<div class="box">
-							<h2> &nbsp&nbsp&nbsp&nbsp&nbsp<input id="skillsearch"></h2>
-							<div class="skills">
-								<div class="item-skills" data-percent="1.00">CoffeeScript</div>
-								<div class="item-skills" data-percent="1.00">Node.js</div>
-								<div class="item-skills" data-percent="1.00">Redis</div>
-
-								<div class="item-skills" data-percent="0.90">Functional Programming</div>
-								<div class="item-skills" data-percent="0.90">Object Oriented Programming</div>
-								<div class="item-skills" data-percent="0.90">MongoDB</div>
-
-								<div class="item-skills" data-percent="0.90">Git</div>
-								<div class="item-skills" data-percent="0.90">Gitlab-CI</div>
-								<div class="item-skills" data-percent="0.90">Network Programming (TCP, UDP, HTTP, WebSockets)</div>
-								<div class="item-skills" data-percent="0.90">Erlang</div>
-								<div class="item-skills" data-percent="0.90">Elixir</div>
-								<div class="item-skills" data-percent="0.90">Asynchronous Programming</div>
-
-								<div class="item-skills" data-percent="0.80">Scala</div>
-								<div class="item-skills" data-percent="0.80">Object Oriented Design Patterns</div>
-								<div class="item-skills" data-percent="0.80">Type theory</div>
-
-								<div class="item-skills" data-percent="0.70">C#</div>
-								<div class="item-skills" data-percent="0.70">Unity3D</div>
-								<div class="item-skills" data-percent="0.70">Metaprogramming</div>
-								<div class="item-skills" data-percent="0.70">MMO Game Development Techniques</div>
-								<div class="item-skills" data-percent="0.70">Java</div>
-								<div class="item-skills" data-percent="0.60">PhoneGap / Cordova</div>
-								<div class="item-skills" data-percent="0.60">Play Framework</div>
-								<div class="item-skills" data-percent="0.60">Dart</div>
-								<div class="item-skills" data-percent="0.60">Meteor.js</div>
-
-								<div class="item-skills" data-percent="0.50">Akka</div>
-								<div class="item-skills" data-percent="0.50">Linux</div>
-
-								<div class="item-skills" data-percent="0.40">Phoenix Framework</div>
-
-								<div class="item-skills" data-percent="0.30">Android</div>
-
-								<div class="item-skills" data-percent="0.25">Python</div>
-								<div class="item-skills" data-percent="0.20">Haskell</div>
-								<div class="skills-legend clearfix">
-									<div class="legend-left legend">Beginner </div>
-									<div class="legend-left legend"><span>Proficient</span></div>
-									<div class="legend-right legend"><span>Expert</span></div>
-									<div class="legend-right legend">Master</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- LANGUAGES -->
-						<div class="box">
-							<h2>  </h2>
-
-							<div id="language-skills">
-							</div>
-						</div>
-
-						<!-- TESTIMONIALS -->
-						<div class="box">
-							<h2> </h2>
-							<ul id="education" class="clearfix">
-							</ul>
-
-						</div>
-						<!-- HOBBIES -->
-						<div class="box">
-							<h2>Hobbies</h2>
-
+				<!-- SKILLS -->
+				<div class="box">
+					<h2> &nbsp&nbsp&nbsp&nbsp&nbsp<input id="skillsearch"></h2>
+					<div class="skills">
+						<div class="skills-legend clearfix">
+							<div class="legend-left legend">  </div>
+							<div class="legend-left legend"><span> </span></div>
+							<div class="legend-right legend"><span>  </span></div>
+							<div class="legend-right legend">  </div>
 						</div>
 					</div>
 				</div>
+
+				<!-- LANGUAGES -->
+				<div class="box">
+					<h2>  </h2>
+
+					<div id="language-skills">
+					</div>
+				</div>
+
+				<!-- TESTIMONIALS -->
+				<div class="box">
+					<h2> </h2>
+					<ul id="education" class="clearfix">
+					</ul>
+
+				</div>
+
+				<!-- TALKS -->
+				<div class="box">
+					<h2>  </h2>
+				</div>
+
+				<!-- TALKS -->
+				<div class="box">
+					<h2>  </h2>
+				</div>
+
+				<!-- HOBBIES -->
+				<div class="box">
+					<h2>  </h2>
+
+				</div>
+
 			</div>
 		</div>
 		<!-- JQUERY -->
@@ -146,7 +118,16 @@
 			$(document).ready(function () {
 				//I'm on fire. One-liner search lol
 				// body...
-				$('#skillsearch').keyup(function () { $(".item-skills").each(function (i, el) { ~($(el).text().toLowerCase().indexOf($("#skillsearch").val())) ? $(el).show() : $(el).hide() }) })
+				$('#skillsearch').keyup(function () {
+					$(".item-skills").each(function (i, el) {
+						~($(el)
+							.text()
+							.toLowerCase()
+							.indexOf($("#skillsearch")
+							.val())
+						 ) ? $(el).show() : $(el).hide()
+					})
+				})
 			});
 
 		</script>
