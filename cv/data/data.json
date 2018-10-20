@@ -33,7 +33,7 @@
         },
         {
             "logo" : "https://qsf.fs.quoracdn.net/-3-images.logo.wordmark_default.svg-26-bfa6b94bc0d6af2e.svg",
-            "title" : "Over 250k article reads on Quora",
+            "title" : "Over 250k article views on Quora",
             "description" : "Former Most Viewed Writer in: CS Abstraction, Akka, Elixir <br> Selected for Quora Digest (1,2MM email feed) twice"
         },
         {
@@ -134,7 +134,7 @@
             "description": "With Nationwide Inventiveness Contest Award I got a free entry to a university of my choice. I decided it'd be a waste not to try it. After 3 months on Theoretical Computer Science on Jagiellonian University of Kraków I've got a job opportunity from a company located in San Francisco and decided to take it instead."
         },
         {
-            "time" : "JAN-MAY 2016",
+            "time" : "JAN-AUG 2016",
             "title": "CTO at Man La Mode",
             "description": "I've got an offer to become a CTO of Man La Mode, a Delaware Start-Up company with an idea for an state-of-the-art e-commerce platform. I was assigned a team of 4 people to manage at the same time developing the back-end architecture in Elixir."
         },
@@ -170,8 +170,8 @@
         {
             "where" : "Propagame",
             "year" : "2013",
-            "title" : "Redactor",
-            "responsibilities" : "Writing game reviews and doing interviews with game creators"
+            "title" : "C#/Unity3D/Java projects development",
+            "responsibilities" : "Development of games and game elements for a game company Propagame"
         },
         {
             "where" : "Independent",
@@ -325,6 +325,12 @@
             "year" : "2018",
             "title" : "Progress after one year development of Elchemy programming language",
             "link" : "https://www.youtube.com/embed/AYf8TH2Ewtw"
+        },
+        {
+            "where" : "Elixir Meetup",
+            "year" : "2018",
+            "title" : "Elchemy - Type safe programming for Erlang VM",
+            "link" : "https://www.meetup.com/Elixir-Krakow/events/254814185/"
         }
     ],
     "interviews": [
