@@ -1,17 +1,17 @@
 {
-    "hello": "Hi",
-    "myNameIs" : "My name is",
-    "thisIsMyResume" : "and this is my resume/cv",
-    "experienceHeadline" : "experience",
-    "aboutMeHeadline": "about me",
-    "contactHeadline" : "Contact",
-    "skillsHeadline" : "skills",
-    "workHistoryHeadline" : "work history",
-    "languagesHeadline" : "Languages",
-    "testimonialsHeadline" : "Testimonials (O1 Visa Excerpts) ",
-    "hobbiesHeadline" : "Hobbies",
-    "talksHeadline" : "Talks",
-    "interviewsHeadline" : "Interviews",
+    "hello": "Cześć",
+    "myNameIs" : "Mam na imię",
+    "thisIsMyResume" : "i to jest moje CV",
+    "experienceHeadline" : "doświadczenie",
+    "aboutMeHeadline": "o mnie",
+    "contactHeadline" : "kontakt",
+    "skillsHeadline" : "umiejętności",
+    "workHistoryHeadline" : "historia zatrudnienia",
+    "languagesHeadline" : "Języki",
+    "testimonialsHeadline" : "Referencje (Fragmenty podania o Vizę 01) ",
+    "hobbiesHeadline" : "Zainteresowania",
+    "talksHeadline" : "Przemówienia",
+    "interviewsHeadline" : "Wywiady",
     "proficiencies": {
         "beginner" : "Beginner",
         "proficient" : "Proficient",
@@ -79,7 +79,7 @@
         {
             "time" : "2013",
             "title" : "Unity3d",
-            "description" : "Silnik Unity3D udowodnił mi, jak proste może być programowanie. Miałem wówczas szansę poznać i zaczerpnąć wiedzy  od wielu wykwalifikowanych programistów. Zatrudniono mnie w Propagame, gdzie moim zadaniem było programowanie/opracowywanie/rozwijanie infrastruktury protokołu sieciowego C#. },
+            "description" : "Silnik Unity3D udowodnił mi, jak proste może być programowanie. Miałem wówczas szansę poznać i zaczerpnąć wiedzy  od wielu wykwalifikowanych programistów. Zatrudniono mnie w Propagame, gdzie moim zadaniem było programowanie/opracowywanie/rozwijanie infrastruktury protokołu sieciowego C#." },
         {
             "time" : "OCT 2013",
             "title" : "Node.js",
@@ -106,16 +106,15 @@
         {
             "time": "NOV 2014",
             "title" : "Pierwszy najemca Light Dispatch",
-            "description" : "Light Dispatch został pomyślnie uruchomiony w wersji beta dla pierwszej centrali przewoźniczej w Nowym Jorku - Greenline Limo LLC. " },
+            "description" : "Light Dispatch zostało pomyślnie uruchomione w wersji beta dla pierwszej centrali przewoźniczej w Nowym Jorku - Greenline Limo LLC. " },
         {
             "time": "JAN 2015",
             "title": "Light Dispatch acquisition",
-            "description": "Light Dispatch została w pełni przejęta przez inwestora SeedTech. Nadszedł czas, aby przejść do kilku nowych projektów "},
+            "description": "Light Dispatch zostało w pełni przejęte przez inwestora WideTech. Miałem głowe pełną nowych pomysłów, więc zacząłem myśleć o następnym projekcie"},
         {
             "time": "Q1 2015",
             "title": "New Start-Ups",
-            "description": "My team and I have done our best to make our ideas come true. We've launched multiple Start-Up proof of concepts and watched how would people respond to them following the LEAN principles. <ul> <li> LanceIt - neighbourhood outsourcing</li>  <li> Spotnote - leave notes anywhere on the world map</li> <li> Everbuy - stay notified about new products matching your query on EBay and Polish Allegro </li> </ul>"
-        },
+            "description": "Wraz z moim zespołem dołożyliśmy wszelkich starań, aby zrealizować nasze pomysły. Stworzyliśmy wiele prototypów i analizowaliśmy, jak ludzie na nie reagują, zgodnie z metodologią LEAN."},
         {
             "time" : "JUN-AUG 2015",
             "title": "Erlang Solutions Internship",
