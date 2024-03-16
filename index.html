@@ -51,8 +51,12 @@
     right: -550px;
     overflow: hidden;
     position: absolute;
+    transition: all 1s ease;
 }
-
+#papuga:hover {
+    right: -50px;
+}
+        
 span {
   display: block;
   font-size: 20px;
@@ -79,7 +83,7 @@ body {
   <div id="minutes"></div>
   <div id="seconds"></div>
 </div>
-    <img src="./papu.png" style="/* position: absolute; */ /* display: inline-block; */ position: 0 0 0 0; /* float: right; */ /* padding: 0 0; */ right: -550px; overflow: hidden; position: absolute;">
+    <img src="./papu.png" id="#papuga">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>function makeTimer() {
 
