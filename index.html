@@ -47,16 +47,24 @@
     width: 50%
 }
 
+#outer-papuga {
+    overflow: hidden;
+}
 #papuga {
     right: -550px;
-    overflow: hidden;
     position: absolute;
     transition: all 1s ease;
 }
 #papuga:hover {
     right: -50px;
 }
-        
+
+#koralik {
+    position: absolute;
+    top: 72%;
+    left: 40%;
+    height: 40%;
+}
 span {
   display: block;
   font-size: 20px;
@@ -71,7 +79,7 @@ body {
     </style>
 </head>
 <body>
-    <img src="./papu.png" id="papuga">
+    <div id="outer-papuga"><img src="./papu.png" id="papuga"></div>
     <div id="kc"> KC </div>
     <img src="./koralik.png" id="koralik">
     <div id="timer">   
