@@ -100,6 +100,12 @@ export const CV_DATA = {
   ] as Experience[],
   portfolio: [
     {
+      name: "Cicada",
+      description: "Code Intelligence for AI Assistants. Token-efficient code indexing via MCP for Elixir, Python, and more.",
+      stats: "50% faster AI responses, 70% fewer tokens",
+      link: "https://github.com/wende/cicada"
+    },
+    {
       name: "Elchemy",
       description: "Strongly typed Erlang VM Language. Heavily inspired by Elm and Haskell.",
       stats: "Over 1000 Stars on Github",
@@ -128,16 +134,16 @@ export const CV_DATA = {
   ] as Project[],
   skills: [
     {
+      category: "AI & Agents",
+      items: ["Agentic Architectures", "AI-Assisted Development", "Code Intelligence Tooling", "LLM Integration", "Prompt Engineering", "Local Model Deployment"]
+    },
+    {
+      category: "AI Infrastructure",
+      items: ["Model Training", "Data Scraping & Sanitization", "ComfyUI Pipelines", "Automatic1111", "N8n Automation", "MCP Servers"]
+    },
+    {
       category: "Core Technologies",
-      items: ["Elixir", "Erlang", "React.js", "TypeScript", "Node.js", "Scala", "ReasonML", "Java"]
-    },
-    {
-      category: "Architecture & Systems",
-      items: ["Distributed Systems", "Event-Sourcing", "Real-Time Telemetry", "VoIP & SMS", "AWS Cloud Cluster"]
-    },
-    {
-      category: "Data & Storage",
-      items: ["InfluxDB", "Mnesia", "Timescale", "PostgresDB"]
+      items: ["Elixir", "Erlang", "TypeScript", "Distributed Systems", "Event-Sourcing"]
     }
   ] as Skill[],
   hobbies: ["Fusion Jazz", "Percussion/Drums", "Nutrition", "Psychology", "Coffee", "Indie Games", "Traveling"]
