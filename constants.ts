@@ -18,6 +18,27 @@ export const CV_DATA = {
   ],
   experience: [
     {
+      role: "AI Infrastructure & Elixir Developer",
+      company: "Thenvoi",
+      location: "Remote",
+      period: "2025-2026",
+      description: "Worked on core infrastructure for the agentic mesh platform - a secure communication layer enabling AI agents to dynamically discover, collaborate, and orchestrate tasks across teams and systems.",
+      responsibilities: [
+        "Contributed to AI orchestration and inter-agent communication infrastructure",
+        "Worked on centralized agent management and human-agent collaboration features"
+      ]
+    },
+    {
+      role: "Elixir Developer",
+      company: "Software Mansion",
+      location: "Poland (Remote)",
+      period: "2024-2025",
+      description: "Contributed to Membrane Framework, an open-source multimedia streaming framework for Elixir, enabling real-time audio and video processing with support for WebRTC, HLS, RTMP, and various codecs.",
+      responsibilities: [
+        "Developed observability tooling for the Membrane multimedia processing framework"
+      ]
+    },
+    {
       role: "Elixir Developer",
       company: "Confly z o.o",
       location: "Poland (Remote)",
