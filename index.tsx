@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { VibeKanbanWebCompanion } from 'vibe-kanban-web-companion';
+import { setup } from '@treelocator/runtime';
 import App from './App';
+
+// Initialize TreeLocatorJS - Alt+Click any element to copy component tree
+setup();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -11,7 +14,6 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <VibeKanbanWebCompanion />
     <App />
   </React.StrictMode>
 );

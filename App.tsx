@@ -5,8 +5,14 @@ import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
+import { TreeLocatorDemo } from './components/TreeLocatorDemo';
 
 function App() {
+  // Simple routing: show TreeLocatorJS demo at /treelocatorjs/
+  if (window.location.pathname.startsWith('/treelocatorjs')) {
+    return <TreeLocatorDemo />;
+  }
+
   return (
     <div className="min-h-screen bg-off-white selection:bg-black selection:text-white">
       <Header />
