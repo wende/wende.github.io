@@ -222,19 +222,7 @@ export const TreeLocatorDemo = () => {
           }
         }
 
-        // Fallback: try reading from clipboard
-        if (!treePath) {
-          try {
-            const clipboardText = await navigator.clipboard.readText();
-            if (clipboardText && clipboardText.includes('→')) {
-              treePath = clipboardText;
-            }
-          } catch {
-            // Clipboard access denied
-          }
-        }
-
-        // Only advance if we got a valid tree path
+        // Only advance if we got a valid tree path from the API (no clipboard fallback here)
         if (treePath) {
           hasAdvancedToStep3.current = true;
           setElementPath(treePath);
