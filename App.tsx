@@ -8,8 +8,16 @@ import { Contact } from './components/Contact';
 import { TreeLocatorDemo } from './components/TreeLocatorDemo';
 
 function App() {
+  // Handle GitHub Pages redirect for client-side routing
+  const redirect = typeof sessionStorage !== 'undefined' ? sessionStorage.redirect : null;
+  if (redirect) {
+    delete sessionStorage.redirect;
+    window.history.replaceState(null, '', redirect);
+  }
+
   // Simple routing: show TreeLocatorJS demo at /treelocatorjs/
-  if (window.location.pathname.startsWith('/treelocatorjs')) {
+  const pathname = redirect || window.location.pathname;
+  if (pathname.startsWith('/treelocatorjs')) {
     return <TreeLocatorDemo />;
   }
 
