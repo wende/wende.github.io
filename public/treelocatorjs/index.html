@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Sequence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap');
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            cursor: default;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animations --- */
+
+        /* Smooth fade in/out for text */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-exit {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-exit-active {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Container movement */
+        .text-wrapper {
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .text-wrapper.shifted-up {
+            transform: translateY(-38vh);
+        }
+
+        /* The Breathing Button */
+        .anchor-point {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+            transform: scale(1);
+            animation: pulse-white 3s infinite;
+            transition: transform 0.3s ease, opacity 0.5s ease;
+            cursor: pointer;
+            z-index: 50;
+        }
+        
+        .anchor-point:active {
+            transform: scale(0.9);
+        }
+
+        .anchor-point.expanded {
+            animation: none;
+            transform: scale(30);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease-in;
+        }
+
+        @keyframes pulse-white {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); transform: scale(0.95); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); transform: scale(1); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); transform: scale(0.95); }
+        }
+
+        /* The Arrow */
+        .arrow-indicator {
+            position: absolute;
+            bottom: 6rem; /* Hovering above the button */
+            left: 2rem; /* Aligned with left edge */
+            width: 3rem; /* Matches button width */
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: 1;
+            animation: stylish-hover 2.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+            transition: opacity 0.5s ease;
+            z-index: 40;
+            pointer-events: none;
+        }
+        .arrow-indicator.hidden-arrow {
+            opacity: 0;
+            animation: none;
+        }
+
+        @keyframes stylish-hover {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            pointer-events: none;
+            animation: ripple-anim 1s cubic-bezier(0, 0.2, 0.8, 1) forwards;
+            z-index: 10;
+        }
+
+        @keyframes ripple-anim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Grid Background */
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0;
+            transition: opacity 2s ease;
+            pointer-events: none;
+        }
+        .bg-grid.visible { opacity: 1; }
+
+        /* Rothko / Nested Divs */
+        .rothko-wrapper {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 60; /* Above text */
+        }
+        .rothko-wrapper.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Rothko Layers */
+        .rothko-layer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+        
+        .rothko-1 {
+            width: 260px;
+            height: 340px;
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .rothko-2 {
+            width: 190px;
+            height: 240px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .rothko-3 {
+            width: 120px;
+            height: 140px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* The Core (Target) */
+        .rothko-core {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .rothko-core:hover {
+            transform: scale(1.1);
+        }
+
+        .rothko-1:hover { border-color: rgba(255,255,255,0.2); }
+        .rothko-2:hover { border-color: rgba(255,255,255,0.3); }
+
+    </style>
+</head>
+<body class="h-screen w-screen flex items-center justify-center select-none bg-black">
+
+    <!-- Subtle Grid Background -->
+    <div id="grid" class="bg-grid"></div>
+
+    <!-- Main Text Container -->
+    <div id="text-wrapper" class="text-wrapper relative z-20 text-center max-w-md px-6 pointer-events-none">
+        <h1 id="main-text" class="text-2xl md:text-3xl font-light tracking-widest fade-enter fade-enter-active">
+            INITIATE SEQUENCE
+        </h1>
+        <p id="sub-text" class="mt-4 text-xs md:text-sm text-gray-500 tracking-wider font-light fade-enter fade-enter-active">
+            Locate the anchor point.
+        </p>
+    </div>
+
+    <!-- Interaction Layer (for click anywhere) -->
+    <div id="touch-layer" class="absolute inset-0 z-10 hidden"></div>
+
+    <!-- The Button (Anchor) -->
+    <div id="anchor-btn" class="anchor-point"></div>
+
+    <!-- The Arrow (Styled to match Rothko/Ripple aesthetic) -->
+    <div id="arrow" class="arrow-indicator">
+        <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shaft -->
+            <line x1="20" y1="0" x2="20" y2="45" stroke="white" stroke-width="1" />
+            <!-- Head: Transparent fill with white stroke -->
+            <path d="M10 35 L20 50 L30 35 L20 42 Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- The Rothko Structure -->
+    <div id="rothko" class="absolute inset-0 rothko-wrapper">
+        <div class="rothko-layer rothko-1">
+            <div class="rothko-layer rothko-2">
+                <div class="rothko-layer rothko-3">
+                    <div id="core-element" class="rothko-core"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const anchorBtn = document.getElementById('anchor-btn');
+        const arrow = document.getElementById('arrow');
+        const textWrapper = document.getElementById('text-wrapper');
+        const mainText = document.getElementById('main-text');
+        const subText = document.getElementById('sub-text');
+        const touchLayer = document.getElementById('touch-layer');
+        const grid = document.getElementById('grid');
+        const rothko = document.getElementById('rothko');
+        const coreElement = document.getElementById('core-element');
+        const body = document.body;
+
+        let state = 0; 
+
+        function updateText(heading, sub) {
+            mainText.classList.remove('fade-enter-active');
+            mainText.classList.add('fade-exit-active');
+            subText.classList.remove('fade-enter-active');
+            subText.classList.add('fade-exit-active');
+
+            setTimeout(() => {
+                mainText.innerText = heading;
+                subText.innerText = sub;
+                mainText.classList.remove('fade-exit-active');
+                mainText.classList.add('fade-enter');
+                subText.classList.remove('fade-exit-active');
+                subText.classList.add('fade-enter');
+                void mainText.offsetWidth;
+                requestAnimationFrame(() => {
+                    mainText.classList.add('fade-enter-active');
+                    mainText.classList.remove('fade-enter');
+                    subText.classList.add('fade-enter-active');
+                    subText.classList.remove('fade-enter');
+                });
+            }, 500);
+        }
+
+        // STEP 1: Click Anchor
+        anchorBtn.addEventListener('click', (e) => {
+            if (state !== 0) return;
+            state = 1;
+
+            arrow.classList.add('hidden-arrow');
+            anchorBtn.classList.add('expanded');
+            
+            updateText("SYNC ACTIVE", "Touch the void.");
+            grid.classList.add('visible');
+
+            setTimeout(() => {
+                touchLayer.classList.remove('hidden');
+            }, 500);
+        });
+
+        // STEP 2: Click Void (Transitions to Rothko)
+        function createRipple(x, y) {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            const size = Math.random() * 100 + 100;
+            ripple.style.width = `${size}px`;
+            ripple.style.height = `${size}px`;
+            ripple.style.left = `${x - size/2}px`;
+            ripple.style.top = `${y - size/2}px`;
+            body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 1000);
+        }
+
+        function activateRothko() {
+            state = 2;
+            textWrapper.classList.add('shifted-up');
+            
+            updateText("ALIGNMENT", "Find the core.");
+            touchLayer.classList.add('hidden'); 
+            rothko.classList.add('active');
+        }
+
+        touchLayer.addEventListener('click', (e) => {
+            if (state === 1) {
+                createRipple(e.clientX, e.clientY);
+                activateRothko();
+            }
+        });
+
+        touchLayer.addEventListener('touchstart', (e) => {
+            e.preventDefault(); 
+            if (state === 1) {
+                const touch = e.touches[0];
+                createRipple(touch.clientX, touch.clientY);
+                activateRothko();
+            }
+        });
+
+        // STEP 3: Click Core
+        coreElement.addEventListener('click', (e) => {
+            if (state === 2) {
+                state = 3;
+                e.stopPropagation(); 
+                
+                coreElement.style.transform = "scale(0)";
+                coreElement.style.opacity = "0";
+
+                updateText("CONNECTED", "Sequence complete.");
+                
+                setTimeout(() => {
+                    textWrapper.classList.remove('shifted-up');
+                }, 800);
+
+                setTimeout(() => {
+                   touchLayer.classList.remove('hidden');
+                   rothko.style.opacity = '0';
+                   rothko.style.pointerEvents = 'none';
+                }, 1000);
+            }
+        });
+
+    </script>
+</body>
+</html>
