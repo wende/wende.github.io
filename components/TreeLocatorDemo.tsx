@@ -234,10 +234,13 @@ export const TreeLocatorDemo = () => {
           }
         }
 
-        hasAdvancedToStep3.current = true;
-        setElementPath(treePath || 'Component tree copied to clipboard');
-        setStep(3);
-        setTimeout(() => setShowGithub(true), 1000);
+        // Only advance if we got a valid tree path
+        if (treePath) {
+          hasAdvancedToStep3.current = true;
+          setElementPath(treePath);
+          setStep(3);
+          setTimeout(() => setShowGithub(true), 1000);
+        }
       };
 
       // Small delay to let TreeLocatorJS finish
@@ -299,10 +302,13 @@ export const TreeLocatorDemo = () => {
           }
         }
 
-        hasAdvancedToStep3.current = true;
-        setElementPath(treePath || 'Component tree copied to clipboard');
-        setStep(3);
-        setTimeout(() => setShowGithub(true), 1000);
+        // Only advance if we got a valid tree path
+        if (treePath) {
+          hasAdvancedToStep3.current = true;
+          setElementPath(treePath);
+          setStep(3);
+          setTimeout(() => setShowGithub(true), 1000);
+        }
       }, 200);
     };
 
