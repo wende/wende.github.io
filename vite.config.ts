@@ -6,21 +6,23 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     const isDev = mode === 'development';
     return {
+      esbuild: {
+        jsx: isDev ? 'preserve' : 'automatic',
+      },
+      build: {
+        minify: isDev ? false : 'esbuild',
+        sourcemap: isDev ? 'inline' : false,
+      },
       server: {
         port: 0,
         host: '0.0.0.0',
       },
       plugins: [
         react({
+          jsxRuntime: 'automatic',
+          jsxDev: true,
           babel: {
-            presets: [
-              ['@babel/preset-react', {
-                runtime: 'automatic',
-                development: isDev,
-              }],
-            ],
             plugins: [
-              '@babel/plugin-transform-react-jsx-source',
               ['@locator/babel-jsx/dist', { env: 'development' }],
             ],
           },

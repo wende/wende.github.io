@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --mode development
+        run: NODE_ENV=development npm run build -- --mode development
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
