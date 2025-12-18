@@ -1,39 +1,57 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Nested components to demonstrate TreeLocatorJS ancestry chain
-const RothkoCore = () => (
-  <div className="w-[50px] h-[50px] bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.4)] cursor-pointer transition-transform hover:scale-110" />
-);
+function RothkoSquare({ id }: { id: string }) {
+  return <div id={id} className="w-[50px] h-[50px] bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.4)] cursor-pointer transition-transform hover:scale-110" />;
+}
 
-const RothkoLayer3 = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center justify-center w-[120px] h-[140px] bg-white/[0.12] border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/30">
-    {children}
-  </div>
-);
+function RothkoCore() {
+  return (
+    <div className="flex gap-5" id="rothko-core-container">
+      <RothkoSquare id="rothko-square-1" />
+      <RothkoSquare id="rothko-square-2" />
+      <RothkoSquare id="rothko-square-3" />
+    </div>
+  );
+}
 
-const RothkoLayer2 = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center justify-center w-[190px] h-[240px] bg-white/[0.08] border border-white/15 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/40">
-    {children}
-  </div>
-);
+function RothkoLayer3({ children }: { children: React.ReactNode }) {
+  return (
+    <div id="rothko-layer-3" className="flex items-center justify-center w-[270px] h-[140px] bg-white/[0.12] border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/30">
+      {children}
+    </div>
+  );
+}
 
-const RothkoLayer1 = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center justify-center w-[260px] h-[340px] bg-white/[0.05] backdrop-blur-sm border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/20">
-    {children}
-  </div>
-);
+function RothkoLayer2({ children }: { children: React.ReactNode }) {
+  return (
+    <div id="rothko-layer-2" className="flex items-center justify-center w-[370px] h-[240px] bg-white/[0.08] border border-white/15 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/40">
+      {children}
+    </div>
+  );
+}
 
-const RothkoStructure = ({ visible }: { visible: boolean }) => (
-  <div className={`flex items-center justify-center transition-all duration-1000 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-    <RothkoLayer1>
-      <RothkoLayer2>
-        <RothkoLayer3>
-          <RothkoCore />
-        </RothkoLayer3>
-      </RothkoLayer2>
-    </RothkoLayer1>
-  </div>
-);
+function RothkoLayer1({ children }: { children: React.ReactNode }) {
+  return (
+    <div id="rothko-layer-1" className="flex items-center justify-center w-[470px] h-[340px] bg-white/[0.05] backdrop-blur-sm border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:border-white/20">
+      {children}
+    </div>
+  );
+}
+
+function RothkoStructure({ visible }: { visible: boolean }) {
+  return (
+    <div id="rothko-structure" className={`flex items-center justify-center transition-all duration-1000 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+      <RothkoLayer1>
+        <RothkoLayer2>
+          <RothkoLayer3>
+            <RothkoCore />
+          </RothkoLayer3>
+        </RothkoLayer2>
+      </RothkoLayer1>
+    </div>
+  );
+}
 
 const Arrow = ({ visible }: { visible: boolean }) => (
   <div className={`absolute bottom-24 right-5 w-12 h-16 flex justify-center items-end z-40 pointer-events-none transition-opacity duration-500 ${visible ? 'opacity-100 animate-bounce' : 'opacity-0'}`}>

@@ -6,9 +6,6 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     const isDev = mode === 'development';
     return {
-      esbuild: {
-        jsx: isDev ? 'preserve' : 'automatic',
-      },
       build: {
         minify: isDev ? false : 'esbuild',
         sourcemap: isDev ? 'inline' : false,
@@ -23,7 +20,7 @@ export default defineConfig(({ mode }) => {
           jsxDev: true,
           babel: {
             plugins: [
-              ['@locator/babel-jsx/dist', { env: 'development' }],
+              ['@locator/babel-jsx/dist/index.js', {}],
             ],
           },
         }),
