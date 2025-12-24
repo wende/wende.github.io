@@ -18,7 +18,7 @@
     "@babel/plugin-transform-react-jsx-source": "^7.27.1",
     "@babel/preset-react": "^7.28.5",
     "@locator/babel-jsx": "^0.5.1",
-    "@treelocator/runtime": "^0.1.4",
+    "@treelocator/runtime": "^0.2.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",

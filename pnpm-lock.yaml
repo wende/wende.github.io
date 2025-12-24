@@ -31,8 +31,8 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(@babel/core@7.28.5)
       '@treelocator/runtime':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^0.2.0
+        version: 0.2.0
       '@types/node':
         specifier: ^22.14.0
         version: 22.19.3
@@ -924,8 +924,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@treelocator/runtime@0.1.4':
-    resolution: {integrity: sha512-biYDy83xn9EuFC+Z/wLdwaGBbJWrwWLUVnjUWQPjvIo1nyAWiwBX1KHxa8Az7qWICqKFW+j5WUJACcHJTmOiTg==}
+  '@treelocator/runtime@0.2.0':
+    resolution: {integrity: sha512-btSx4QioJCmzl5jltVqtzeawVdut7kNgbUbSBvzrbC/rdlP2SDyVmarPKdnEVdc8celn86nsx4Ejyo2591IlPA==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2435,7 +2435,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.4':
     optional: true
 
-  '@treelocator/runtime@0.1.4':
+  '@treelocator/runtime@0.2.0':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@locator/shared': 0.5.0
