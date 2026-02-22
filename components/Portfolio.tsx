@@ -1,10 +1,11 @@
 import React from 'react';
 import { CV_DATA } from '../constants';
 import { motion } from 'framer-motion';
-import { ExternalLink, Star, Award, TrendingUp } from 'lucide-react';
+import { ExternalLink, Star, Award, TrendingUp, Code } from 'lucide-react';
 import { AnimatedHeading } from './AnimatedHeading';
 
 const iconMap = {
+    "Cicada": Code,
     "Elchemy": Star,
     "Autocomplete Elixir": ExternalLink,
     "Forbes 25 under 25": Award,

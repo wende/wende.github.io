@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useBoringMode } from '../boringMode';
 
 const navLinks = [
   { name: 'Expertise', href: '#expertise' },
@@ -11,6 +12,7 @@ const navLinks = [
 ];
 
 export const Header: React.FC = () => {
+  const { boring, toggle: toggleBoring } = useBoringMode();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -43,6 +45,14 @@ export const Header: React.FC = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8">
+          <button
+            onClick={toggleBoring}
+            className={`text-sm uppercase tracking-widest font-bold transition-colors ${
+              boring ? 'text-black' : 'text-gray-500 hover:text-black'
+            }`}
+          >
+            {boring ? 'Fun Mode' : 'Boring Mode'}
+          </button>
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -71,6 +81,12 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             className="absolute top-full left-0 w-full bg-white flex flex-col items-center justify-center space-y-8 md:hidden shadow-xl overflow-hidden"
           >
+            <button
+              onClick={() => { toggleBoring(); setMobileMenuOpen(false); }}
+              className="text-2xl font-display font-bold uppercase"
+            >
+              {boring ? 'Fun Mode' : 'Boring Mode'}
+            </button>
             {navLinks.map((link) => (
               <button
                 key={link.name}
