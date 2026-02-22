@@ -6,8 +6,22 @@ import { Skills } from './components/Skills';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { BoringModeProvider } from './boringMode';
+import { TreeLocatorDemo } from './components/TreeLocatorDemo';
 
 function App() {
+  // Handle GitHub Pages redirect for client-side routing
+  const redirect = typeof sessionStorage !== 'undefined' ? sessionStorage.redirect : null;
+  if (redirect) {
+    delete sessionStorage.redirect;
+    window.history.replaceState(null, '', redirect);
+  }
+
+  // Simple routing: show TreeLocatorJS demo at /treelocatorjs/
+  const pathname = redirect || window.location.pathname;
+  if (pathname.startsWith('/treelocatorjs')) {
+    return <TreeLocatorDemo />;
+  }
+
   return (
     <BoringModeProvider>
       <div className="min-h-screen bg-off-white selection:bg-black selection:text-white">

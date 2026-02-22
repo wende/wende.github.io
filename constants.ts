@@ -18,6 +18,27 @@ export const CV_DATA = {
   ],
   experience: [
     {
+      role: "AI Infrastructure & Elixir Developer",
+      company: "Thenvoi",
+      location: "Remote",
+      period: "2025-2026",
+      description: "Worked on core infrastructure for the agentic mesh platform - a secure communication layer enabling AI agents to dynamically discover, collaborate, and orchestrate tasks across teams and systems.",
+      responsibilities: [
+        "Contributed to AI orchestration and inter-agent communication infrastructure",
+        "Worked on centralized agent management and human-agent collaboration features"
+      ]
+    },
+    {
+      role: "Elixir Developer",
+      company: "Software Mansion",
+      location: "Poland (Remote)",
+      period: "2024-2025",
+      description: "Contributed to Membrane Framework, an open-source multimedia streaming framework for Elixir, enabling real-time audio and video processing with support for WebRTC, HLS, RTMP, and various codecs.",
+      responsibilities: [
+        "Developed observability tooling for the Membrane multimedia processing framework"
+      ]
+    },
+    {
       role: "Elixir Developer",
       company: "Confly z o.o",
       location: "Poland (Remote)",
@@ -114,18 +135,17 @@ export const CV_DATA = {
   ] as Project[],
   skills: [
     {
+      category: "AI & Agents",
+      items: ["Agentic Architectures", "AI-Assisted Development", "Code Intelligence Tooling", "LLM Integration", "Prompt Engineering", "Local Model Deployment"]
+    },
+    {
+      category: "AI Infrastructure",
+      items: ["Model Training", "Data Scraping & Sanitization", "ComfyUI Pipelines", "Automatic1111", "N8n Automation", "MCP Servers"]
+    },
+    {
       category: "Core Technologies",
-      items: ["Elixir", "Erlang", "React.js", "TypeScript", "Node.js", "Scala", "ReasonML", "Java"]
-    },
-    {
-      category: "Architecture & Systems",
-      items: ["Distributed Systems", "Event-Sourcing", "Real-Time Telemetry", "VoIP & SMS", "AWS Cloud Cluster"]
-    },
-    {
-      category: "Data & Storage",
-      items: ["InfluxDB", "Mnesia", "Timescale", "PostgresDB"]
+      items: ["Elixir", "Erlang", "TypeScript", "Distributed Systems", "Event-Sourcing"]
     }
   ] as Skill[],
   hobbies: ["Fusion Jazz", "Percussion/Drums", "Nutrition", "Psychology", "Coffee", "Indie Games", "Traveling"]
 };
-

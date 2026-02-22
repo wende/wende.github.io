@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@treelocator/runtime": "^0.3.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.555.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx-source": "^7.27.1",
+    "@babel/preset-react": "^7.28.5",
+    "@locator/babel-jsx": "^0.5.1",
+    "@treelocator/runtime": "^0.2.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",

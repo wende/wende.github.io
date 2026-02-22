@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import setup from '@treelocator/runtime';
-setup();
+import { setup } from '@treelocator/runtime';
 import App from './App';
+
+// Initialize TreeLocatorJS - Alt+Click any element to copy component tree
+setup();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
