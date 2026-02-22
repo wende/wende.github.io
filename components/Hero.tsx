@@ -199,7 +199,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {!boring && (
-        <div className="flex justify-center items-center w-full min-h-[8rem] md:min-h-[16rem]">
+        <div className="flex justify-center items-center w-full min-h-[12rem] md:min-h-[16rem]">
           <motion.p
             className="text-5xl md:text-7xl font-sans font-bold text-black select-none leading-tight text-center cursor-pointer"
             onClick={() => dispatch({ type: 'CLICK' })}
