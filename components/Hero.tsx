@@ -3,7 +3,7 @@ import { CV_DATA } from '../constants';
 import { motion, useSpring, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { AnimatedHeading } from './AnimatedHeading';
-import { heroReducer, heroInitialState, heroText, HERO_COMPLETED_KEY } from '../heroFsm';
+import { heroReducer, heroInitialState, heroText, heroStates, HERO_COMPLETED_KEY } from '../heroFsm';
 import { useBoringMode } from '../boringMode';
 
 export const Hero: React.FC = () => {
@@ -56,8 +56,10 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const section = sectionRef.current;
       const threshold = window.innerHeight * 0.05;
-      if (window.scrollY > 100) {
+      const scrollThreshold = section ? section.offsetHeight * 0.5 : window.innerHeight * 0.5;
+      if (window.scrollY > scrollThreshold) {
         dispatch({ type: 'SCROLL' });
       } else if (window.scrollY <= threshold) {
         dispatch({ type: 'SCROLL_TOP' });
@@ -85,7 +87,7 @@ export const Hero: React.FC = () => {
   useEffect(() => {
     if (textState !== 'dismissed') { setShowPop(false); delete remainingRef.current.pop; return; }
     if (isHovering) return;
-    const remaining = remainingRef.current.pop ?? 1000;
+    const remaining = remainingRef.current.pop ?? 1500;
     const start = Date.now();
     const timer = setTimeout(() => {
       delete remainingRef.current.pop;
@@ -100,7 +102,7 @@ export const Hero: React.FC = () => {
   useEffect(() => {
     if (textState !== 'dismissed') { delete remainingRef.current.dismissed; return; }
     if (isHovering) return;
-    const remaining = remainingRef.current.dismissed ?? 2000;
+    const remaining = remainingRef.current.dismissed ?? 3000;
     const start = Date.now();
     const timer = setTimeout(() => {
       delete remainingRef.current.dismissed;
@@ -132,6 +134,29 @@ export const Hero: React.FC = () => {
       try { localStorage.setItem(HERO_COMPLETED_KEY, '1'); } catch {}
     }
   }, [textState]);
+
+  // Console debug: type heroDebug() in DevTools to enable debug controls
+  useEffect(() => {
+    (window as any).__heroDispatch = dispatch;
+    (window as any).heroDebug = () => {
+      console.log(`Current state: ${textState}`);
+      console.log(`States: ${heroStates.join(', ')}`);
+      console.log('Commands:');
+      console.log('  heroNext()        - next state');
+      console.log('  heroPrev()        - previous state');
+      console.log('  heroReset()       - clear localStorage & reload');
+      (window as any).heroNext = () => dispatch({ type: 'DEBUG_NEXT' });
+      (window as any).heroPrev = () => dispatch({ type: 'DEBUG_PREV' });
+      (window as any).heroReset = () => { localStorage.removeItem(HERO_COMPLETED_KEY); window.location.reload(); };
+    };
+    return () => {
+      delete (window as any).__heroDispatch;
+      delete (window as any).heroDebug;
+      delete (window as any).heroNext;
+      delete (window as any).heroPrev;
+      delete (window as any).heroReset;
+    };
+  });
 
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col justify-center px-6 pt-20 relative overflow-hidden bg-off-white">
@@ -174,7 +199,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {!boring && (
-        <div className="flex justify-center items-center w-full min-h-[11rem] md:min-h-[16rem]">
+        <div className="flex justify-center items-center w-full min-h-[8rem] md:min-h-[16rem]">
           <motion.p
             className="text-5xl md:text-7xl font-sans font-bold text-black select-none leading-tight text-center cursor-pointer"
             onClick={() => dispatch({ type: 'CLICK' })}
@@ -338,13 +363,6 @@ export const Hero: React.FC = () => {
       )}
       </AnimatePresence>
 
-      {/* Debug controls */}
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-2 bg-black/80 text-white px-3 py-2 rounded-lg font-mono text-xs">
-        <button onClick={() => dispatch({ type: 'DEBUG_PREV' })} className="px-2 py-1 bg-white/20 rounded hover:bg-white/30">&larr;</button>
-        <span className="min-w-[80px] text-center">{textState}</span>
-        <button onClick={() => dispatch({ type: 'DEBUG_NEXT' })} className="px-2 py-1 bg-white/20 rounded hover:bg-white/30">&rarr;</button>
-        <button onClick={() => { localStorage.removeItem(HERO_COMPLETED_KEY); window.location.reload(); }} className="px-2 py-1 bg-red-500/40 rounded hover:bg-red-500/60 ml-1">reset</button>
-      </div>
       </>
       )}
 
