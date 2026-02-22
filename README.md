@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Krzysztof Wende — Portfolio
 
-# Run and deploy your AI Studio app
+Minimalist portfolio website built with React, TypeScript, and Tailwind CSS, featuring animated SVG heading effects and smooth scroll-driven transitions.
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/drive/1LMyrDvFE91b5Xgpp4RWyMnRFYM7t41PX
+- React 19 + TypeScript
+- Tailwind CSS (CDN)
+- Framer Motion
+- Vite
+- Deployed via GitHub Pages
 
-## Run Locally
+## Development
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+## Build
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+npm run preview
+```

@@ -5,6 +5,7 @@ import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
+import { BoringModeProvider } from './boringMode';
 import { TreeLocatorDemo } from './components/TreeLocatorDemo';
 
 function App() {
@@ -22,16 +23,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-off-white selection:bg-black selection:text-white">
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <Experience />
-        <Portfolio />
-        <Contact />
-      </main>
-    </div>
+    <BoringModeProvider>
+      <div className="min-h-screen bg-off-white selection:bg-black selection:text-white">
+        <Header />
+        <main>
+          <Hero />
+          <Skills />
+          <Experience />
+          <Portfolio />
+          <Contact />
+        </main>
+      </div>
+    </BoringModeProvider>
   );
 }
 

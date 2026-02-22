@@ -101,7 +101,7 @@ export const CV_DATA = {
   portfolio: [
     {
       name: "Cicada",
-      description: "Code Intelligence for AI Assistants. Token-efficient code indexing via MCP for Elixir, Python, and more.",
+      description: "Code Intelligence for AI Assistants. Token-efficient code indexing via MCP for Elixir, Python, and 17 other languages.",
       stats: "50% faster AI responses, 70% fewer tokens",
       link: "https://github.com/wende/cicada"
     },
@@ -122,9 +122,10 @@ export const CV_DATA = {
       stats: "Forbes 2020"
     },
     {
-      name: "Stack Overflow",
-      description: "11 years active contribution.",
-      stats: "Visited on 1500+ days"
+      name: "MobileClaw",
+      description: "OpenClaw (and LM Studio) chat with strong focus on responsive and beautiful interface.",
+      stats: "Open source AI chat client",
+      link: "https://github.com/wende/mobileclaw"
     },
     {
       name: "Quora",
