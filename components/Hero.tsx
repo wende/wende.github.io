@@ -3,7 +3,7 @@ import { CV_DATA } from '../constants';
 import { motion, useSpring, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { AnimatedHeading } from './AnimatedHeading';
-import { heroReducer, heroInitialState, heroText } from '../heroFsm';
+import { heroReducer, heroInitialState, heroText, HERO_COMPLETED_KEY } from '../heroFsm';
 import { useBoringMode } from '../boringMode';
 
 export const Hero: React.FC = () => {
@@ -127,6 +127,12 @@ export const Hero: React.FC = () => {
     };
   }, [textState, isHovering]);
 
+  useEffect(() => {
+    if (textState === 'greatday') {
+      try { localStorage.setItem(HERO_COMPLETED_KEY, '1'); } catch {}
+    }
+  }, [textState]);
+
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col justify-center px-6 pt-20 relative overflow-hidden bg-off-white">
       {/* Background Abstract Element */}
@@ -183,15 +189,34 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <AnimatePresence mode="wait">
-              <motion.span
-                key={textState}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                {heroText[textState]}
-              </motion.span>
+              {textState === 'anyways' ? (
+                <motion.span
+                  key="anyways"
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {heroText[textState].split('').map((char, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: i * 0.08, duration: 0 }}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.span>
+              ) : (
+                <motion.span
+                  key={textState}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {heroText[textState]}
+                </motion.span>
+              )}
             </AnimatePresence>
           </motion.p>
         </div>
@@ -209,47 +234,62 @@ export const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.4 } }}
-        transition={{ delay: 1.5, duration: 1 }}
+        transition={{ delay: 1.5, duration: 0.3 }}
       >
-        <p className="text-lg md:text-xl font-sans italic text-gray-400 mb-2 translate-x-[-45px] md:translate-x-[-40px] md:rotate-[-6deg] translate-y-[4.5rem] md:translate-y-0">
+        <motion.p
+          className="text-lg md:text-xl font-sans italic text-gray-400 mb-2 translate-x-[-45px] md:translate-x-[-40px] md:rotate-[-6deg] translate-y-[4.5rem] md:translate-y-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
           {textState === 'meta' ? 'Really. Try it!' : 'like this one'}
-        </p>
+        </motion.p>
         {/* Mobile: cropped 30% from left */}
         <svg width="84" height="100" viewBox="36 0 84 100" fill="none" className="text-gray-400 translate-x-[6px] -rotate-[40deg] origin-bottom-right md:hidden">
-          <path
+          <motion.path
             d="M10 10 C 25 5, 40 2, 55 8 C 70 14, 78 30, 82 48 C 86 66, 90 78, 100 88"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             fill="none"
-            strokeDasharray="4 3"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ delay: 1.6, duration: 1, ease: "easeInOut" }}
           />
-          <path
+          <motion.path
             d="M94 80 L100 88 L90 86" transform="rotate(15, 100, 88)"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.6, duration: 0.15 }}
           />
         </svg>
         {/* Desktop: full arrow */}
         <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="text-gray-400 translate-x-[20px] hidden md:block">
-          <path
+          <motion.path
             d="M10 10 C 25 5, 40 2, 55 8 C 70 14, 78 30, 82 48 C 86 66, 90 78, 100 88"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             fill="none"
-            strokeDasharray="4 3"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ delay: 1.6, duration: 1, ease: "easeInOut" }}
           />
-          <path
+          <motion.path
             d="M94 80 L100 88 L90 86" transform="rotate(15, 100, 88)"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.6, duration: 0.15 }}
           />
         </svg>
       </motion.div>
@@ -303,6 +343,7 @@ export const Hero: React.FC = () => {
         <button onClick={() => dispatch({ type: 'DEBUG_PREV' })} className="px-2 py-1 bg-white/20 rounded hover:bg-white/30">&larr;</button>
         <span className="min-w-[80px] text-center">{textState}</span>
         <button onClick={() => dispatch({ type: 'DEBUG_NEXT' })} className="px-2 py-1 bg-white/20 rounded hover:bg-white/30">&rarr;</button>
+        <button onClick={() => { localStorage.removeItem(HERO_COMPLETED_KEY); window.location.reload(); }} className="px-2 py-1 bg-red-500/40 rounded hover:bg-red-500/60 ml-1">reset</button>
       </div>
       </>
       )}

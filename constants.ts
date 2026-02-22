@@ -101,9 +101,10 @@ export const CV_DATA = {
       stats: "Forbes 2020"
     },
     {
-      name: "Stack Overflow",
-      description: "11 years active contribution.",
-      stats: "Visited on 1500+ days"
+      name: "MobileClaw",
+      description: "OpenClaw (and LM Studio) chat with strong focus on responsive and beautiful interface.",
+      stats: "Open source AI chat client",
+      link: "https://github.com/wende/mobileclaw"
     },
     {
       name: "Quora",

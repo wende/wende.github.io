@@ -1,4 +1,4 @@
-export type HeroState = 'default' | 'scrolled' | 'returned' | 'dismissed' | 'resumed' | 'always' | 'everything' | 'meta' | 'anyways' | 'keepgoing' | 'withyou' | 'whoknows' | 'greatday' | 'activated';
+export type HeroState = 'returning' | 'default' | 'scrolled' | 'returned' | 'dismissed' | 'resumed' | 'always' | 'everything' | 'meta' | 'anyways' | 'keepgoing' | 'withyou' | 'whoknows' | 'greatday' | 'activated';
 
 export type HeroEvent =
   | { type: 'SCROLL' }
@@ -11,6 +11,10 @@ export type HeroEvent =
   | { type: 'DEBUG_PREV' };
 
 const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState>>> = {
+  returning: {
+    CLICK: 'resumed',
+    SCROLL: 'scrolled',
+  },
   default: {
     SCROLL: 'scrolled',
     CLICK: 'always',
@@ -18,16 +22,13 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   },
   scrolled: {
     SCROLL_TOP: 'returned',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   returned: {
     DISMISS_ARROW: 'dismissed',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   dismissed: {
     CLICK: 'resumed',
     TIMEOUT: 'resumed',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   resumed: {
     CLICK: 'always',
@@ -35,11 +36,9 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   },
   always: {
     CLICK: 'everything',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   everything: {
     CLICK: 'meta',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   meta: {
     CLICK: 'anyways',
@@ -48,29 +47,35 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   anyways: {
     CLICK: 'keepgoing',
     TIMEOUT: 'keepgoing',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   keepgoing: {
     CLICK: 'withyou',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   withyou: {
     CLICK: 'whoknows',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
   whoknows: {
     CLICK: 'greatday',
-    TREELOCATOR_ACTIVATED: 'activated',
   },
-  greatday: {
-    TREELOCATOR_ACTIVATED: 'activated',
+  greatday: {},
+  activated: {
+    CLICK: 'keepgoing',
   },
-  activated: {},
 };
 
-export const heroStates: HeroState[] = ['activated', 'default', 'scrolled', 'returned', 'dismissed', 'resumed', 'always', 'everything', 'meta', 'anyways', 'keepgoing', 'withyou', 'whoknows', 'greatday'];
+export const heroStates: HeroState[] = ['activated', 'returning', 'default', 'scrolled', 'returned', 'dismissed', 'resumed', 'always', 'everything', 'meta', 'anyways', 'keepgoing', 'withyou', 'whoknows', 'greatday'];
 
-export const heroInitialState: HeroState = 'default';
+export const HERO_COMPLETED_KEY = 'hero-narrative-completed';
+
+export function getHeroInitialState(): HeroState {
+  try {
+    return localStorage.getItem(HERO_COMPLETED_KEY) ? 'returning' : 'default';
+  } catch {
+    return 'default';
+  }
+}
+
+export const heroInitialState = getHeroInitialState();
 
 export function heroReducer(state: HeroState, event: HeroEvent): HeroState {
   if (event.type === 'DEBUG_NEXT') {
@@ -85,6 +90,7 @@ export function heroReducer(state: HeroState, event: HeroEvent): HeroState {
 }
 
 export const heroText: Record<HeroState, string> = {
+  returning: "Oh hi! You're back!",
   default: 'I love building tools...',
   scrolled: "Wait. Don't go",
   returned: 'Phew. Alright. Where was I?',
