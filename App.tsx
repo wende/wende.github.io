@@ -7,6 +7,7 @@ import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { BoringModeProvider } from './boringMode';
 import { TreeLocatorDemo } from './components/TreeLocatorDemo';
+import { AskAboutMe } from './components/AskAboutMe';
 
 function App() {
   // Handle GitHub Pages redirect for client-side routing
@@ -33,6 +34,7 @@ function App() {
           <Portfolio />
           <Contact />
         </main>
+        <AskAboutMe />
       </div>
     </BoringModeProvider>
   );
