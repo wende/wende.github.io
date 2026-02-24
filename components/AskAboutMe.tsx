@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const IS_DEV = import.meta.env.DEV;
-const TURNSTILE_SITE_KEY = (process.env as any).TURNSTILE_SITE_KEY || (IS_DEV ? '1x00000000000000000000AA' : '');
+const TURNSTILE_SITE_KEY = (process.env as any).TURNSTILE_SITE_KEY || '';
 const SESSION_VERIFIED_KEY = 'turnstile_verified';
 
 function useTurnstile() {

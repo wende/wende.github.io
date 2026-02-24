@@ -31,6 +31,8 @@ jobs:
 
       - name: Build
         run: NODE_ENV=development npm run build -- --mode development
+        env:
+          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
