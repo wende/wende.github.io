@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { setup } from '@treelocator/runtime';
+import './index.css';
 import App from './App';
 
 // Initialize TreeLocatorJS - Alt+Click any element to copy component tree

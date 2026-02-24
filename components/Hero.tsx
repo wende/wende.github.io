@@ -45,13 +45,9 @@ export const Hero: React.FC = () => {
   }, [mouseX, mouseY]);
 
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      if (document.body.classList.contains('locatorjs-active-pointer')) {
-        dispatch({ type: 'TREELOCATOR_ACTIVATED' });
-      }
-    });
-    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
+    const onChatOpen = () => dispatch({ type: 'TREELOCATOR_ACTIVATED' });
+    window.addEventListener('chat-opened', onChatOpen);
+    return () => window.removeEventListener('chat-opened', onChatOpen);
   }, []);
 
   useEffect(() => {

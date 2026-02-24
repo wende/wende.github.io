@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 export const AskAboutMe: React.FC = () => {
+  // TODO: fix wendebot connection before re-enabling
+  return null;
   const [chatOpen, setChatOpen] = useState(false);
 
   const openChat = () => {

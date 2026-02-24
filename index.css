@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: 'Manrope', sans-serif;
+  --font-family-display: 'Space Grotesk', sans-serif;
+
+  --color-off-white: #F0EEE9;
+  --color-charcoal: #1A1A1A;
+  --color-ink: #4E4E4E;
+  --color-muted: #D5D5D7;
+}
