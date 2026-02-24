@@ -1,90 +1,17 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const TURNSTILE_SITE_KEY = (process.env as any).TURNSTILE_SITE_KEY || '';
-const SESSION_VERIFIED_KEY = 'turnstile_verified';
-
-function useTurnstile() {
-  const [verified, setVerified] = useState(() => {
-    return sessionStorage.getItem(SESSION_VERIFIED_KEY) === '1';
-  });
-  const [token, setToken] = useState<string | null>(null);
-  const widgetRef = useRef<string | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const render = useCallback(() => {
-    if (verified || widgetRef.current) return;
-    const turnstile = (window as any).turnstile;
-    if (!turnstile || !containerRef.current) return;
-
-    widgetRef.current = turnstile.render(containerRef.current, {
-      sitekey: TURNSTILE_SITE_KEY,
-      callback: (tkn: string) => {
-        setToken(tkn);
-        setVerified(true);
-        sessionStorage.setItem(SESSION_VERIFIED_KEY, '1');
-      },
-      'error-callback': () => {
-        widgetRef.current = null;
-      },
-      size: 'invisible',
-    });
-  }, [verified]);
-
-  useEffect(() => {
-    if (verified) return;
-    if ((window as any).turnstile) {
-      render();
-      return;
-    }
-    const onLoad = () => render();
-    window.addEventListener('turnstile:ready', onLoad);
-    return () => window.removeEventListener('turnstile:ready', onLoad);
-  }, [verified, render]);
-
-  const trigger = useCallback(() => {
-    if (verified) return true;
-    const turnstile = (window as any).turnstile;
-    if (turnstile && !widgetRef.current && containerRef.current) {
-      render();
-    }
-    if (turnstile && widgetRef.current) {
-      turnstile.execute(widgetRef.current);
-    }
-    return false;
-  }, [verified, render]);
-
-  return { verified, token, trigger, containerRef };
-}
-
 export const AskAboutMe: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
-  const { verified, trigger, containerRef } = useTurnstile();
 
   const openChat = () => {
     setChatOpen(true);
     window.dispatchEvent(new CustomEvent('chat-opened'));
   };
 
-  const handleOpen = () => {
-    if (verified) {
-      openChat();
-    } else {
-      const isVerified = trigger();
-      if (isVerified) {
-        openChat();
-      }
-    }
-  };
-
-  if (!TURNSTILE_SITE_KEY) return null;
-
   return (
     <>
-      {/* Turnstile invisible container */}
-      <div ref={containerRef} style={{ position: 'fixed', bottom: 0, left: 0, zIndex: -1 }} />
-
       {/* Floating button */}
       <AnimatePresence>
         {!chatOpen && (
@@ -93,7 +20,7 @@ export const AskAboutMe: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
-            onClick={handleOpen}
+            onClick={openChat}
             className="fixed bottom-5 right-5 z-[2147483646] w-11 h-11 bg-ink text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-600 transition-colors group"
             aria-label="Ask about me"
           >
