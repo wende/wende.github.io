@@ -62,13 +62,18 @@ export const AskAboutMe: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
   const { verified, trigger, containerRef } = useTurnstile();
 
+  const openChat = () => {
+    setChatOpen(true);
+    window.dispatchEvent(new CustomEvent('chat-opened'));
+  };
+
   const handleOpen = () => {
     if (verified) {
-      setChatOpen(true);
+      openChat();
     } else {
       const isVerified = trigger();
       if (isVerified) {
-        setChatOpen(true);
+        openChat();
       }
     }
   };
@@ -123,7 +128,7 @@ export const AskAboutMe: React.FC = () => {
             </button>
 
             <iframe
-              src="https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev"
+              src="https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b"
               width="100%"
               height="100%"
               frameBorder="0"
