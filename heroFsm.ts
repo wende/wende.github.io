@@ -14,17 +14,21 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   returning: {
     CLICK: 'resumed',
     SCROLL: 'scrolled',
+    TIMEOUT: 'resumed',
   },
   default: {
     SCROLL: 'scrolled',
     CLICK: 'always',
     TREELOCATOR_ACTIVATED: 'activated',
+    TIMEOUT: 'always',
   },
   scrolled: {
     SCROLL_TOP: 'returned',
+    TIMEOUT: 'returned',
   },
   returned: {
     DISMISS_ARROW: 'dismissed',
+    TIMEOUT: 'dismissed',
   },
   dismissed: {
     CLICK: 'resumed',
@@ -33,16 +37,20 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   resumed: {
     CLICK: 'always',
     TREELOCATOR_ACTIVATED: 'activated',
+    TIMEOUT: 'always',
   },
   always: {
     CLICK: 'everything',
+    TIMEOUT: 'everything',
   },
   everything: {
     CLICK: 'meta',
+    TIMEOUT: 'meta',
   },
   meta: {
     CLICK: 'anyways',
     TREELOCATOR_ACTIVATED: 'activated',
+    TIMEOUT: 'anyways',
   },
   anyways: {
     CLICK: 'keepgoing',
@@ -50,17 +58,36 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   },
   keepgoing: {
     CLICK: 'withyou',
+    TIMEOUT: 'withyou',
   },
   withyou: {
     CLICK: 'whoknows',
+    TIMEOUT: 'whoknows',
   },
   whoknows: {
     CLICK: 'greatday',
+    TIMEOUT: 'greatday',
   },
   greatday: {},
   activated: {
     CLICK: 'keepgoing',
   },
+};
+
+export const heroTimerDurations: Partial<Record<HeroState, number>> = {
+  returning: 4000,
+  default: 6000,
+  scrolled: 3000,
+  returned: 1500,
+  dismissed: 3000,
+  resumed: 4000,
+  always: 3000,
+  everything: 3500,
+  meta: 4000,
+  anyways: 1000,
+  keepgoing: 3500,
+  withyou: 3000,
+  whoknows: 3000,
 };
 
 export const heroStates: HeroState[] = ['activated', 'returning', 'default', 'scrolled', 'returned', 'dismissed', 'resumed', 'always', 'everything', 'meta', 'anyways', 'keepgoing', 'withyou', 'whoknows', 'greatday'];

@@ -3,7 +3,7 @@ import { CV_DATA } from '../constants';
 import { motion, useSpring, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { AnimatedHeading } from './AnimatedHeading';
-import { heroReducer, heroInitialState, heroText, heroStates, HERO_COMPLETED_KEY } from '../heroFsm';
+import { heroReducer, heroInitialState, heroText, heroStates, heroTimerDurations, HERO_COMPLETED_KEY } from '../heroFsm';
 import { useBoringMode } from '../boringMode';
 
 export const Hero: React.FC = () => {
@@ -69,21 +69,24 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Generic timed transition: auto-advances any state that has a duration in heroTimerDurations
   useEffect(() => {
-    if (textState !== 'returned') { delete remainingRef.current.returned; return; }
+    const duration = heroTimerDurations[textState];
+    if (!duration) { delete remainingRef.current[textState]; return; }
     if (isHovering) return;
-    const remaining = remainingRef.current.returned ?? 1500;
+    const remaining = remainingRef.current[textState] ?? duration;
     const start = Date.now();
     const timer = setTimeout(() => {
-      delete remainingRef.current.returned;
-      dispatch({ type: 'DISMISS_ARROW' });
+      delete remainingRef.current[textState];
+      dispatch({ type: 'TIMEOUT' });
     }, remaining);
     return () => {
       clearTimeout(timer);
-      remainingRef.current.returned = Math.max(0, remaining - (Date.now() - start));
+      remainingRef.current[textState] = Math.max(0, remaining - (Date.now() - start));
     };
   }, [textState, isHovering]);
 
+  // Pop effect halfway through dismissed state
   useEffect(() => {
     if (textState !== 'dismissed') { setShowPop(false); delete remainingRef.current.pop; return; }
     if (isHovering) return;
@@ -96,36 +99,6 @@ export const Hero: React.FC = () => {
     return () => {
       clearTimeout(timer);
       remainingRef.current.pop = Math.max(0, remaining - (Date.now() - start));
-    };
-  }, [textState, isHovering]);
-
-  useEffect(() => {
-    if (textState !== 'dismissed') { delete remainingRef.current.dismissed; return; }
-    if (isHovering) return;
-    const remaining = remainingRef.current.dismissed ?? 3000;
-    const start = Date.now();
-    const timer = setTimeout(() => {
-      delete remainingRef.current.dismissed;
-      dispatch({ type: 'TIMEOUT' });
-    }, remaining);
-    return () => {
-      clearTimeout(timer);
-      remainingRef.current.dismissed = Math.max(0, remaining - (Date.now() - start));
-    };
-  }, [textState, isHovering]);
-
-  useEffect(() => {
-    if (textState !== 'anyways') { delete remainingRef.current.anyways; return; }
-    if (isHovering) return;
-    const remaining = remainingRef.current.anyways ?? 1000;
-    const start = Date.now();
-    const timer = setTimeout(() => {
-      delete remainingRef.current.anyways;
-      dispatch({ type: 'TIMEOUT' });
-    }, remaining);
-    return () => {
-      clearTimeout(timer);
-      remainingRef.current.anyways = Math.max(0, remaining - (Date.now() - start));
     };
   }, [textState, isHovering]);
 
