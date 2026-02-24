@@ -24,7 +24,7 @@ export const Experience: React.FC = () => {
                     className="relative pl-8 md:pl-16"
                 >
                     {/* Timeline Dot */}
-                    <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-white border-4 border-black transition-transform duration-300 hover:scale-150" />
+                    <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-white border-4 border-ink transition-transform duration-300 hover:scale-150" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                         {/* Header Info */}
@@ -41,7 +41,7 @@ export const Experience: React.FC = () => {
                                 <ul className="space-y-2">
                                     {job.responsibilities.map((res, i) => (
                                         <li key={i} className="flex items-start text-sm text-gray-600">
-                                            <span className="mr-2 mt-1.5 min-w-[4px] h-[4px] bg-black rounded-full" />
+                                            <span className="mr-2 mt-1.5 min-w-[4px] h-[4px] bg-ink rounded-full" />
                                             {res}
                                         </li>
                                     ))}

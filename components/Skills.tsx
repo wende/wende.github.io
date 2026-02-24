@@ -21,13 +21,13 @@ export const Skills: React.FC = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="space-y-6"
                 >
-                    <h3 className="text-xl font-bold uppercase tracking-widest border-b-2 border-black pb-4">
+                    <h3 className="text-xl font-bold uppercase tracking-widest border-b-2 border-ink pb-4">
                         {skillGroup.category}
                     </h3>
                     <ul className="space-y-3">
                         {skillGroup.items.map((item) => (
-                            <li key={item} className="flex items-center text-gray-700 hover:text-black transition-colors duration-200">
-                                <span className="w-1.5 h-1.5 bg-black mr-3" />
+                            <li key={item} className="flex items-center text-gray-700 hover:text-ink transition-colors duration-200">
+                                <span className="w-1.5 h-1.5 bg-ink mr-3" />
                                 <span className="text-lg">{item}</span>
                             </li>
                         ))}

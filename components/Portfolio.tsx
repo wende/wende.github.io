@@ -50,13 +50,13 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
 
 export const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-24 bg-black text-white">
+    <section id="portfolio" className="py-24 bg-charcoal text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="text-4xl md:text-6xl font-display font-bold tracking-tight">
                 <AnimatedHeading text="SELECTED WORKS" />
             </div>
-            <p className="text-gray-400 mt-4 md:mt-0 max-w-sm text-right hidden md:block">
+            <p className="text-muted mt-4 md:mt-0 max-w-sm text-right hidden md:block">
                 A showcase of open source contributions, awards, and impactful startups.
             </p>
         </div>
@@ -72,7 +72,7 @@ export const Portfolio: React.FC = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="group relative bg-charcoal border border-gray-800 p-8 hover:bg-white hover:text-black transition-colors duration-500 ease-in-out cursor-default overflow-hidden"
+                        className="group relative bg-ink border border-muted/20 p-8 hover:bg-off-white hover:text-ink transition-colors duration-500 ease-in-out cursor-default overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
                            <IconComponent className="w-12 h-12" />
@@ -88,14 +88,14 @@ export const Portfolio: React.FC = () => {
                                         </a>
                                     )}
                                 </h3>
-                                <div className="w-12 h-1 bg-white group-hover:bg-black mb-6 transition-colors duration-500" />
+                                <div className="w-12 h-1 bg-white group-hover:bg-ink mb-6 transition-colors duration-500" />
                                 <p className="text-gray-400 group-hover:text-gray-600 mb-4 font-light">
                                     {item.description}
                                 </p>
                             </div>
 
                             {item.stats && (
-                                <div className="mt-4 pt-4 border-t border-gray-700 group-hover:border-gray-200">
+                                <div className="mt-4 pt-4 border-t border-muted/20 group-hover:border-muted">
                                     <p className="font-mono text-xs uppercase tracking-wider">{item.stats}</p>
                                 </div>
                             )}

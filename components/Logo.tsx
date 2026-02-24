@@ -19,7 +19,7 @@ export const Logo: React.FC = () => {
 
   return (
     <motion.div
-      className="w-12 h-12 relative flex items-center justify-center bg-black cursor-pointer overflow-hidden group"
+      className="w-12 h-12 relative flex items-center justify-center bg-ink cursor-pointer overflow-hidden group"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

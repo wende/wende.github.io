@@ -36,11 +36,11 @@ export const Contact: React.FC = () => {
                 <div className="bg-off-white p-8 border border-gray-100">
                     <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400">Socials</h3>
                     <div className="flex space-x-6">
-                        <a href={`https://linkedin.com/in/${CV_DATA.contact.linkedin}`} target="_blank" rel="noreferrer" className="group flex items-center space-x-3 text-black hover:text-gray-600 transition-colors">
+                        <a href={`https://linkedin.com/in/${CV_DATA.contact.linkedin}`} target="_blank" rel="noreferrer" className="group flex items-center space-x-3 text-ink hover:text-gray-600 transition-colors">
                             <Linkedin className="w-8 h-8" />
                             <span className="font-bold text-lg">LinkedIn</span>
                         </a>
-                        <a href={`https://github.com/${CV_DATA.contact.github}`} target="_blank" rel="noreferrer" className="group flex items-center space-x-3 text-black hover:text-gray-600 transition-colors">
+                        <a href={`https://github.com/${CV_DATA.contact.github}`} target="_blank" rel="noreferrer" className="group flex items-center space-x-3 text-ink hover:text-gray-600 transition-colors">
                             <Github className="w-8 h-8" />
                             <span className="font-bold text-lg">GitHub</span>
                         </a>

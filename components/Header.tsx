@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
           <button
             onClick={toggleBoring}
             className={`text-sm uppercase tracking-widest font-bold transition-colors ${
-              boring ? 'text-black' : 'text-gray-500 hover:text-black'
+              boring ? 'text-ink' : 'text-gray-500 hover:text-ink'
             }`}
           >
             {boring ? 'Fun Mode' : 'Boring Mode'}
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-sm uppercase tracking-widest font-bold text-gray-500 hover:text-black transition-colors"
+              className="text-sm uppercase tracking-widest font-bold text-gray-500 hover:text-ink transition-colors"
             >
               {link.name}
             </button>

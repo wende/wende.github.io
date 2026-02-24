@@ -89,14 +89,14 @@ export const AskAboutMe: React.FC = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.3 }}
             onClick={handleOpen}
-            className="fixed bottom-5 right-5 z-[2147483646] w-11 h-11 bg-black text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-800 transition-colors group"
+            className="fixed bottom-5 right-5 z-[2147483646] w-11 h-11 bg-ink text-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-600 transition-colors group"
             aria-label="Ask about me"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
             {/* Tooltip */}
-            <span className="absolute right-full mr-3 px-3 py-1.5 bg-black text-white text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <span className="absolute right-full mr-3 px-3 py-1.5 bg-ink text-white text-xs font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Ask about me
             </span>
           </motion.button>
@@ -111,12 +111,12 @@ export const AskAboutMe: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed bottom-5 right-5 z-[2147483646] w-[calc(100vw-2.5rem)] max-w-md h-[min(70vh,32rem)] rounded-2xl sm:w-96" style={{ overflow: 'clip', boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25), 0 -8px 20px -8px rgb(0 0 0 / 0.1)' }}
+            className="fixed bottom-5 right-5 z-[2147483646] w-[calc(100vw-2.5rem)] max-w-md h-[min(70vh,32rem)] rounded-2xl sm:w-96" style={{ overflow: 'clip' }}
           >
             {/* Close button */}
             <button
               onClick={() => setChatOpen(false)}
-              className="absolute top-3 right-3 z-10 w-7 h-7 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
+              className="absolute top-3 right-3 z-10 w-7 h-7 bg-ink/50 hover:bg-ink/70 text-white rounded-full flex items-center justify-center transition-colors"
               aria-label="Close chat"
             >
               <X size={14} />
@@ -128,7 +128,8 @@ export const AskAboutMe: React.FC = () => {
               height="100%"
               frameBorder="0"
               scrolling="yes"
-              className="w-full h-full border-0"
+              allowTransparency={true}
+              className="w-full h-full border-0 bg-transparent"
               title="Ask about me"
             />
           </motion.div>

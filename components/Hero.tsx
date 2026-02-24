@@ -134,7 +134,7 @@ export const Hero: React.FC = () => {
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col justify-center px-6 pt-20 relative overflow-hidden bg-off-white">
       {/* Background Abstract Element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 opacity-50 skew-x-12 hidden lg:block pointer-events-none" />
+      <div className="absolute -top-96 bottom-0 right-0 w-1/3 bg-gray-50 opacity-50 skew-x-12 hidden lg:block pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full z-10">
         <motion.div
@@ -145,11 +145,11 @@ export const Hero: React.FC = () => {
             <p className="text-sm md:text-base tracking-[0.3em] uppercase text-gray-500 mb-4 font-bold">
                 Portfolio 2026
             </p>
-            <div className="text-5xl md:text-8xl lg:text-9xl font-display font-bold leading-tight tracking-tighter text-black mb-8">
-                <div className="mb-2 md:mb-4">
+            <div className="text-5xl md:text-8xl lg:text-9xl font-display font-bold leading-tight tracking-tighter text-ink mb-8">
+                <div className="mb-2 md:mb-4 text-muted">
                     <AnimatedHeading text="KRZYSZTOF" />
                 </div>
-                <div className="text-gray-400">
+                <div className="text-ink">
                     <AnimatedHeading text="WENDE" />
                 </div>
             </div>
@@ -174,7 +174,7 @@ export const Hero: React.FC = () => {
         {!boring && (
         <div className="flex justify-center items-center w-full min-h-[12rem] md:min-h-[16rem]">
           <motion.p
-            className="text-5xl md:text-7xl font-sans font-bold text-black select-none leading-tight text-center cursor-pointer"
+            className="text-5xl md:text-7xl font-sans font-bold text-ink select-none leading-tight text-center cursor-pointer"
             onClick={() => dispatch({ type: 'CLICK' })}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
@@ -304,7 +304,7 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 0 }}
           transition={{ duration: 0, delay: 0.12 }}
         >
-          <svg width="80" height="80" viewBox="0 0 80 80" className="text-black">
+          <svg width="80" height="80" viewBox="0 0 80 80" className="text-ink">
             {[
               { angle: 0, inner: 18, outer: 32 },
               { angle: 40, inner: 16, outer: 26 },
@@ -350,7 +350,7 @@ export const Hero: React.FC = () => {
           transition={{ opacity: { delay: textState === 'greatday' ? 1 : 0, duration: 0.5 }, y: { repeat: Infinity, duration: 2 } }}
           onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <ArrowDown className="text-black w-8 h-8" />
+          <ArrowDown className="text-ink w-8 h-8" />
         </motion.div>
       )}
       </AnimatePresence>
