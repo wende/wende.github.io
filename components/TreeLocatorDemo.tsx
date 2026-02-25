@@ -62,7 +62,7 @@ const Arrow = ({ visible }: { visible: boolean }) => (
   </div>
 );
 
-const Ripple = ({ id }: { x: number; y: number; id: number }) => (
+const Ripple = ({ id }: React.PropsWithKey<{ x: number; y: number; id: number }>) => (
   <div
     key={id}
     className="fixed rounded-full bg-white/20 border border-white/40 pointer-events-none z-[100]"

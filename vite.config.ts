@@ -17,7 +17,6 @@ export default defineConfig(({ mode }) => {
       plugins: [
         react({
           jsxRuntime: 'automatic',
-          jsxDev: true,
           babel: {
             plugins: [
               ['@locator/babel-jsx/dist/index.js', {}],
