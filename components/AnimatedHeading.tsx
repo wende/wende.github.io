@@ -7,6 +7,15 @@ interface AnimatedHeadingProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
+const textProps = {
+  x: "35",
+  y: "70",
+  textAnchor: "middle" as const,
+  fontFamily: "'Montserrat', sans-serif",
+  fontWeight: "400",
+  fontSize: "64",
+};
+
 export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({ text, className = "", size = 'lg' }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -25,65 +34,27 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({ text, classNam
         <div key={wordIndex} className="flex">
           {word.split('').map((char, charIndex) => {
              const index = charCount++;
-             const textId = `letter-shape-${text.replace(/\s/g, '-')}-${wordIndex}-${charIndex}`;
-             const clipId = `letter-clip-${text.replace(/\s/g, '-')}-${wordIndex}-${charIndex}`;
+             const maskId = `letter-mask-${text.replace(/\s/g, '-')}-${wordIndex}-${charIndex}`;
+             const wStyle = char.toUpperCase() === 'W' ? { strokeDasharray: 500, strokeDashoffset: 500 } : undefined;
 
              return (
                <div key={charIndex} className="relative h-[1.1em] w-[0.7em]">
                  <svg
                     viewBox="0 0 70 90"
                     className="w-full h-full overflow-visible"
-                    style={{ fontKerning: 'normal' }}
+                    textRendering="geometricPrecision"
                  >
+                    <defs>
+                        <mask id={maskId} maskUnits="userSpaceOnUse">
+                            <text {...textProps} fill="white">{char}</text>
+                        </mask>
+                    </defs>
                     <g className="letter" style={{ '--order': index } as React.CSSProperties}>
-                        {/* Primary text element with ID for reference */}
-                        <text
-                            id={textId}
-                            className="outline-1"
-                            x="35"
-                            y="70"
-                            textAnchor="middle"
-                            fontFamily="'Montserrat', sans-serif"
-                            fontWeight="400"
-                            fontSize="64"
-                            style={char.toUpperCase() === 'W' ? { strokeDasharray: 500, strokeDashoffset: 500 } : undefined}
-                        >
-                            {char}
-                        </text>
-                        <text
-                            className="outline-2"
-                            x="35"
-                            y="70"
-                            textAnchor="middle"
-                            fontFamily="'Montserrat', sans-serif"
-                            fontWeight="400"
-                            fontSize="64"
-                            style={char.toUpperCase() === 'W' ? { strokeDasharray: 500, strokeDashoffset: 500 } : undefined}
-                        >
-                            {char}
-                        </text>
-                        <text
-                            className="outline-3"
-                            x="35"
-                            y="70"
-                            textAnchor="middle"
-                            fontFamily="'Montserrat', sans-serif"
-                            fontWeight="400"
-                            fontSize="64"
-                            style={char.toUpperCase() === 'W' ? { strokeDasharray: 500, strokeDashoffset: 500 } : undefined}
-                        >
-                            {char}
-                        </text>
+                        <text className="stroke-pass-1" {...textProps} style={wStyle}>{char}</text>
+                        <text className="stroke-pass-2" {...textProps} style={wStyle}>{char}</text>
+                        <text className="stroke-pass-3" {...textProps} style={wStyle}>{char}</text>
 
-                        {/* Clip Path Definition using use href */}
-                        <defs>
-                            <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
-                                <use href={`#${textId}`} />
-                            </clipPath>
-                        </defs>
-
-                        {/* Fills */}
-                        <g clipPath={`url(#${clipId})`}>
+                        <g mask={`url(#${maskId})`}>
                              <rect className="fill-band fill-1" x="-55" y="-20" width="180" height="160" />
                              <rect className="fill-band fill-2" x="-55" y="-20" width="180" height="160" />
                              <rect className="fill-band fill-3" x="-55" y="-20" width="180" height="160" />

@@ -53,20 +53,21 @@
         animation-delay: calc(var(--order) * var(--delay-step));
       }
 
-      .animated-heading.is-visible .letter .outline-2 {
+      .animated-heading.is-visible .letter .stroke-pass-2 {
         opacity: 0.55;
         animation-delay: calc(var(--order) * var(--delay-step) + 0.15s);
       }
 
-      .animated-heading.is-visible .letter .outline-3 {
+      .animated-heading.is-visible .letter .stroke-pass-3 {
         opacity: 0.25;
         animation-delay: calc(var(--order) * var(--delay-step) + 0.3s);
       }
 
       .animated-heading .fill-band {
         fill: currentColor;
-        transform-origin: left center;
-        transform-box: fill-box;
+        /* Use explicit SVG coordinates instead of transform-box: fill-box (Safari compat) */
+        /* Rect is at x=-55 y=-20 w=180 h=160, so left-center = (-55, 60) */
+        transform-origin: -55px 60px;
         transform: scaleX(0);
         opacity: 0;
       }
