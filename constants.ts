@@ -11,10 +11,10 @@ export const CV_DATA = {
     location: "Kraków, Poland"
   },
   tldr: [
-    "Functional programming enthusiast with 10 years of commercial experience. Four of which in executive roles and six in developer roles.",
+    "Functional programming engineer with 10 years of commercial experience, including four years in executive roles and six years as an individual contributor.",
     "Creator of Elchemy – a type-safe programming language for Erlang VM, heavily inspired by Elm and Haskell.",
     "Forbes 25 under 25 awardee in New Technology category.",
-    "Founder of CloudCab LLC, Man La Mode LLC and Neon Tree LTD software house."
+    "Strong at turning ambiguous distributed-systems and AI-product requirements into reliable production software."
   ],
   experience: [
     {
@@ -22,10 +22,10 @@ export const CV_DATA = {
       company: "Thenvoi",
       location: "Remote",
       period: "2025-2026",
-      description: "Worked on core infrastructure for the agentic mesh platform - a secure communication layer enabling AI agents to dynamically discover, collaborate, and orchestrate tasks across teams and systems.",
+      description: "Built core infrastructure for an agentic mesh platform: a secure communication layer that enables AI agents to discover capabilities, collaborate, and orchestrate tasks across teams and systems.",
       responsibilities: [
-        "Contributed to AI orchestration and inter-agent communication infrastructure",
-        "Worked on centralized agent management and human-agent collaboration features"
+        "Implemented components for secure inter-agent messaging, capability discovery, and orchestration flows.",
+        "Built centralized agent-management features for lifecycle control and human-in-the-loop collaboration."
       ]
     },
     {
@@ -33,9 +33,10 @@ export const CV_DATA = {
       company: "Software Mansion",
       location: "Poland (Remote)",
       period: "2024-2025",
-      description: "Contributed to Membrane Framework, an open-source multimedia streaming framework for Elixir, enabling real-time audio and video processing with support for WebRTC, HLS, RTMP, and various codecs.",
+      description: "Built observability tooling for Membrane Framework, an open-source Elixir multimedia framework for real-time audio and video processing (WebRTC, HLS, RTMP).",
       responsibilities: [
-        "Developed observability tooling for the Membrane multimedia processing framework"
+        "Designed and implemented pipeline observability tooling for Membrane-based multimedia systems.",
+        "Improved diagnostics for real-time media pipelines to speed up debugging and production incident triage."
       ]
     },
     {
@@ -56,10 +57,10 @@ export const CV_DATA = {
       period: "2016-2021",
       description: "One of the first three developers to lay the foundation for the InflowNet system, which is now used in over 20 countries by major water companies to deliver real-time telemetry data, preventing outages, bursts, and leakages.",
       responsibilities: [
-        "Designed a fully distributed architecture in Elixir capable of processing gigabytes of data per second with 99.999% annual availability and consistency.",
+        "Designed distributed Elixir services for high-throughput telemetry ingestion and processing (multi-gigabyte streams), with strict uptime and consistency targets.",
         "Managed databases including InfluxDB, Mnesia, Timescale, and PostgresDB.",
-        "Implemented event-sourced architecture.",
-        "Designed a cluster of over 20 machines in the AWS Cloud."
+        "Implemented event-sourced architecture for critical telemetry workflows.",
+        "Designed a 20+ node AWS cluster for resilient processing and horizontal scaling."
       ]
     },
     {
@@ -67,7 +68,7 @@ export const CV_DATA = {
       company: "Neon Tree Solutions Ltd",
       location: "Kraków, London",
       period: "2014-2021",
-      description: "Led a team of 3-5 in a software house responsible for developing cutting-edge proofs of concept for contractors. Responsible for the first prototype of the Erlang Performance Lab project.",
+      description: "Led a team of 3-5 in a software house building proofs of concept and experimental systems for contractors. Built the first prototype of the Erlang Performance Lab project.",
       responsibilities: [
         "Technologies used: Erlang/Elixir, Scala, React.js, ReasonML"
       ]
@@ -89,7 +90,7 @@ export const CV_DATA = {
       company: "CloudCab LLC",
       location: "New York (Remote)",
       period: "2013-2015",
-      description: "Developed a modern dispatch system for a variety of companies, including ride-hailing, medical material, and cargo transportation.",
+      description: "Developed a modern dispatch system for ride-hailing, medical material, and cargo transportation operators; later acquired by WideTech (18+ countries).",
       responsibilities: [
         "Developed and oversaw both customer and driver apps in Java for Android.",
         "Developed the back-end in Node.js.",
@@ -102,7 +103,7 @@ export const CV_DATA = {
     {
       name: "Cicada",
       description: "Code Intelligence for AI Assistants. Token-efficient code indexing via MCP for Elixir, Python, and 17 other languages.",
-      stats: "50% faster AI responses, 70% fewer tokens",
+      stats: "Internal coding-assistant benchmarks: up to 50% faster responses and up to 70% fewer tokens",
       link: "https://github.com/wende/cicada"
     },
     {
@@ -123,7 +124,7 @@ export const CV_DATA = {
     },
     {
       name: "MobileClaw",
-      description: "OpenClaw (and LM Studio) chat with strong focus on responsive and beautiful interface.",
+      description: "Built an open-source AI chat client for OpenClaw and LM Studio, focused on responsive UX across desktop and mobile.",
       stats: "Open source AI chat client",
       link: "https://github.com/wende/mobileclaw"
     },
@@ -139,8 +140,15 @@ export const CV_DATA = {
       items: ["Agentic Architectures", "AI-Assisted Development", "Code Intelligence Tooling", "LLM Integration", "Prompt Engineering", "Local Model Deployment"]
     },
     {
-      category: "AI Infrastructure",
-      items: ["Model Training", "Data Scraping & Sanitization", "ComfyUI Pipelines", "Automatic1111", "N8n Automation", "MCP Servers"]
+      category: "Distributed Systems",
+      items: [
+        "Elixir / OTP / BEAM",
+        "Event-Sourced Architectures",
+        "Fault-Tolerant Cluster Architecture",
+        "InfluxDB, Mnesia, TimescaleDB, PostgreSQL",
+        "VoIP / SIP / RTP & SMS Gateways",
+        "WebRTC / HLS / RTMP / RTSP"
+      ]
     },
     {
       category: "Core Technologies",

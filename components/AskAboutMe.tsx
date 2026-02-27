@@ -123,11 +123,20 @@ export const AskAboutMe: React.FC = () => {
             onPointerDown={onPointerDown('top')}
             style={{ position: 'absolute', top: -3, left: 12, right: 12, height: 6, cursor: 'ns-resize', zIndex: 10 }}
           />
-          {/* Top-left corner resize handle */}
-          <div
+          {/* Top-left corner resize handle (chevron) */}
+          <button
+            type="button"
+            aria-label="Resize chat panel from corner"
             onPointerDown={onPointerDown('top-left')}
-            style={{ position: 'absolute', top: -3, left: -3, width: 14, height: 14, cursor: 'nwse-resize', zIndex: 11 }}
-          />
+            className="absolute left-0 top-0 z-20 flex h-5 w-5 items-center justify-center text-ink/45 transition-colors hover:text-ink/70"
+            style={{ cursor: 'nwse-resize' }}
+          >
+            <ChevronRight
+              size={12}
+              className="rotate-[225deg]"
+              style={{ marginTop: '7px', marginLeft: '7px', scale: '1.5' }}
+            />
+          </button>
           <iframe
             src="https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b"
             width="100%"
