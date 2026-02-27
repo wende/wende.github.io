@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const HIDDEN_LOCATOR_STYLE = '#locatorjs-wrapper { display: block !important; visibility: hidden !important; opacity: 0 !important; transition: opacity 0.5s ease !important; }';
+const VISIBLE_LOCATOR_STYLE = '#locatorjs-wrapper { display: block !important; visibility: visible !important; opacity: 1 !important; transition: opacity 0.5s ease !important; }';
+
 // Nested components to demonstrate TreeLocatorJS ancestry chain
 function RothkoSquare({ id }: { id: string }) {
   return <div id={id} className="w-[50px] h-[50px] bg-white/90 shadow-[0_0_20px_rgba(255,255,255,0.4)] cursor-pointer transition-transform hover:scale-110" />;
@@ -151,7 +154,7 @@ export const TreeLocatorDemo = () => {
   useEffect(() => {
     const style = document.createElement('style');
     style.id = 'locator-hide-style';
-    style.innerHTML = `#locatorjs-wrapper { opacity: 0 !important; pointer-events: none !important; transition: opacity 0.5s ease !important; }`;
+    style.innerHTML = HIDDEN_LOCATOR_STYLE;
     document.head.appendChild(style);
 
     return () => {
@@ -164,9 +167,9 @@ export const TreeLocatorDemo = () => {
     const style = document.getElementById('locator-hide-style');
     if (style) {
       if (step >= 1) {
-        style.innerHTML = `#locatorjs-wrapper { opacity: 1 !important; pointer-events: auto !important; transition: opacity 0.5s ease !important; }`;
+        style.innerHTML = VISIBLE_LOCATOR_STYLE;
       } else {
-        style.innerHTML = `#locatorjs-wrapper { opacity: 0 !important; pointer-events: none !important; transition: opacity 0.5s ease !important; }`;
+        style.innerHTML = HIDDEN_LOCATOR_STYLE;
       }
     }
   }, [step]);
