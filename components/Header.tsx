@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { Menu, X } from 'lucide-react';
+import { Github, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBoringMode } from '../boringMode';
 
@@ -62,6 +62,15 @@ export const Header: React.FC = () => {
               {link.name}
             </button>
           ))}
+          <a
+            href="https://github.com/wende"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile"
+            className="text-gray-500 hover:text-ink transition-colors"
+          >
+            <Github size={18} />
+          </a>
         </div>
 
         {/* Mobile Nav Button */}
@@ -96,6 +105,15 @@ export const Header: React.FC = () => {
                 {link.name}
               </button>
             ))}
+            <a
+              href="https://github.com/wende"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+              className="text-ink"
+            >
+              <Github size={28} />
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
