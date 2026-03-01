@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const MIN_WIDTH = 300;
@@ -6,6 +6,7 @@ const MIN_HEIGHT = 280;
 const DEFAULT_WIDTH = 384; // sm:w-96
 const DEFAULT_HEIGHT_VH = 70;
 const MAX_HEIGHT_PX = 512; // 32rem
+const MOBILE_BREAKPOINT = 640;
 
 export const AskAboutMe: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -15,8 +16,15 @@ export const AskAboutMe: React.FC = () => {
     Math.min(window.innerHeight * DEFAULT_HEIGHT_VH / 100, MAX_HEIGHT_PX)
   );
   const [isDragging, setIsDragging] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
   const dragging = useRef<'left' | 'top' | 'top-left' | null>(null);
   const startPos = useRef({ x: 0, y: 0, w: 0, h: 0 });
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const toggle = () => {
     if (!chatOpen) {
@@ -99,44 +107,55 @@ export const AskAboutMe: React.FC = () => {
         )}
       </button>
 
-      {/* Chat panel — to the left of the button, iframe stays mounted */}
+      {/* Chat panel — above button on mobile, to the left on desktop */}
       {iframeMounted && (
         <div
-          className="fixed bottom-[28px] right-[89px] z-[2147483646] rounded-2xl"
+          className="fixed z-[2147483646] rounded-2xl"
           style={{
-            width: panelWidth,
-            height: panelHeight,
+            ...(isMobile
+              ? { bottom: 96, right: 16, left: 16 }
+              : { bottom: 28, right: 89, width: panelWidth }),
+            height: isMobile ? 'calc(100dvh - 96px - 16px)' : panelHeight,
             overflow: 'clip',
             opacity: chatOpen ? 1 : 0,
-            transform: chatOpen ? 'translateX(0) scale(1)' : 'translateX(40px) scale(0.95)',
+            transform: chatOpen
+              ? 'translate(0) scale(1)'
+              : isMobile
+                ? 'translateY(20px) scale(0.95)'
+                : 'translateX(40px) scale(0.95)',
             pointerEvents: chatOpen ? 'auto' : 'none',
             transition: isDragging ? 'none' : 'opacity 250ms ease-out, transform 250ms ease-out',
           }}
         >
-          {/* Left resize handle */}
-          <div
-            onPointerDown={onPointerDown('left')}
-            style={{ position: 'absolute', left: -3, top: 12, bottom: 12, width: 6, cursor: 'ew-resize', zIndex: 10 }}
-          />
-          {/* Top resize handle */}
-          <div
-            onPointerDown={onPointerDown('top')}
-            style={{ position: 'absolute', top: -3, left: 12, right: 12, height: 6, cursor: 'ns-resize', zIndex: 10 }}
-          />
-          {/* Top-left corner resize handle (chevron) */}
-          <button
-            type="button"
-            aria-label="Resize chat panel from corner"
-            onPointerDown={onPointerDown('top-left')}
-            className="absolute left-0 top-0 z-20 flex h-5 w-5 items-center justify-center text-ink/45 transition-colors hover:text-ink/70"
-            style={{ cursor: 'nwse-resize' }}
-          >
-            <ChevronRight
-              size={12}
-              className="rotate-[225deg]"
-              style={{ marginTop: '7px', marginLeft: '7px', scale: '1.5' }}
-            />
-          </button>
+          {/* Resize handles — desktop only */}
+          {!isMobile && (
+            <>
+              {/* Left resize handle */}
+              <div
+                onPointerDown={onPointerDown('left')}
+                style={{ position: 'absolute', left: -3, top: 12, bottom: 12, width: 6, cursor: 'ew-resize', zIndex: 10 }}
+              />
+              {/* Top resize handle */}
+              <div
+                onPointerDown={onPointerDown('top')}
+                style={{ position: 'absolute', top: -3, left: 12, right: 12, height: 6, cursor: 'ns-resize', zIndex: 10 }}
+              />
+              {/* Top-left corner resize handle (chevron) */}
+              <button
+                type="button"
+                aria-label="Resize chat panel from corner"
+                onPointerDown={onPointerDown('top-left')}
+                className="absolute left-0 top-0 z-20 flex h-5 w-5 items-center justify-center text-ink/45 transition-colors hover:text-ink/70"
+                style={{ cursor: 'nwse-resize' }}
+              >
+                <ChevronRight
+                  size={12}
+                  className="rotate-[225deg]"
+                  style={{ marginTop: '7px', marginLeft: '7px', scale: '1.5' }}
+                />
+              </button>
+            </>
+          )}
           <iframe
             src="https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b"
             width="100%"
