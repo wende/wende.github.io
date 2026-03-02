@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { setup } from '@treelocator/runtime';
 import './index.css';
 import App from './App';
+import { initAnalytics } from './analytics';
 
 // Initialize TreeLocatorJS - Alt+Click any element to copy component tree
 setup();
+initAnalytics();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
