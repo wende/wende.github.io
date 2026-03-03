@@ -12,6 +12,9 @@ export const Hero: React.FC = () => {
   const [textState, dispatch] = useReducer(heroReducer, heroInitialState);
   const [showPop, setShowPop] = useState(false);
   const [arrowHidden, setArrowHidden] = useState(false);
+  const [chatClicked, setChatClicked] = useState(() => {
+    try { return !!localStorage.getItem('chat-arrow-dismissed'); } catch { return false; }
+  });
   const [isHovering, setIsHovering] = useState(false);
   const remainingRef = useRef<Record<string, number>>({});
   const mouseX = useSpring(0, { stiffness: 120, damping: 20 });
@@ -46,7 +49,11 @@ export const Hero: React.FC = () => {
   }, [mouseX, mouseY]);
 
   useEffect(() => {
-    const onChatOpen = () => dispatch({ type: 'TREELOCATOR_ACTIVATED' });
+    const onChatOpen = () => {
+      dispatch({ type: 'TREELOCATOR_ACTIVATED' });
+      setChatClicked(true);
+      try { localStorage.setItem('chat-arrow-dismissed', '1'); } catch {}
+    };
     window.addEventListener('chat-opened', onChatOpen);
     return () => window.removeEventListener('chat-opened', onChatOpen);
   }, []);
@@ -225,7 +232,7 @@ export const Hero: React.FC = () => {
       <>
       {/* Hand-drawn arrow pointing at TreeLocator button */}
       <AnimatePresence>
-      {(textState === 'default' || textState === 'resumed' || textState === 'meta') && (
+      {!chatClicked && (textState === 'default' || textState === 'resumed' || textState === 'meta') && (
       <motion.div
         className="absolute bottom-16 right-12 md:right-20 pointer-events-none mr-2 mb-2"
         initial={{ opacity: 0 }}
