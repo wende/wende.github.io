@@ -11,6 +11,7 @@ export const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [textState, dispatch] = useReducer(heroReducer, heroInitialState);
   const [showPop, setShowPop] = useState(false);
+  const [arrowHidden, setArrowHidden] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const remainingRef = useRef<Record<string, number>>({});
   const mouseX = useSpring(0, { stiffness: 120, damping: 20 });
@@ -91,6 +92,7 @@ export const Hero: React.FC = () => {
     const timer = setTimeout(() => {
       delete remainingRef.current.pop;
       setShowPop(true);
+      setArrowHidden(true);
     }, remaining);
     return () => {
       clearTimeout(timer);
@@ -100,6 +102,7 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     if (textState === 'greatday') {
+      setArrowHidden(false);
       try { localStorage.setItem(HERO_COMPLETED_KEY, '1'); } catch {}
     }
   }, [textState]);
@@ -336,7 +339,7 @@ export const Hero: React.FC = () => {
       )}
 
       <AnimatePresence>
-      {(boring || !(showPop || textState === 'resumed' || textState === 'always' || textState === 'everything' || textState === 'meta' || textState === 'anyways' || textState === 'keepgoing' || textState === 'withyou' || textState === 'whoknows' || textState === 'activated')) && (
+      {(boring || !arrowHidden) && (
         <motion.div
           key={textState === 'greatday' ? 'greatday-arrow' : 'default-arrow'}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer"
