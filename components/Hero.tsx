@@ -346,7 +346,7 @@ export const Hero: React.FC = () => {
           transition={{ opacity: { delay: textState === 'greatday' ? 1 : 0, duration: 0.5 }, y: { repeat: Infinity, duration: 2 } }}
           onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <ArrowDown className="text-ink w-8 h-8 mr-2 mb-2" />
+          <ArrowDown className="text-ink w-8 h-8" />
         </motion.div>
       )}
       </AnimatePresence>
