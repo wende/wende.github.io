@@ -224,7 +224,7 @@ export const Hero: React.FC = () => {
       <AnimatePresence>
       {(textState === 'default' || textState === 'resumed' || textState === 'meta') && (
       <motion.div
-        className="absolute bottom-16 right-12 md:right-20 pointer-events-none"
+        className="absolute bottom-16 right-12 md:right-20 pointer-events-none mr-2 mb-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.4 } }}
