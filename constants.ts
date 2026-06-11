@@ -10,11 +10,18 @@ export const CV_DATA = {
     github: "wende",
     location: "Kraków, Poland"
   },
+  profile: "Distributed systems architect and Elixir specialist with 13 years of commercial experience. Background spanning AI agent infrastructure, real-time multimedia processing, water telemetry systems deployed across 20+ countries, telecom platforms, and open-source language design.",
+  highlights: [
+    "13 years commercial experience",
+    "Elixir / OTP specialist",
+    "AI agent infrastructure",
+    "Forbes 25 Under 25"
+  ],
   tldr: [
-    "Functional programming engineer with 10 years of commercial experience, including four years in executive roles and six years as an individual contributor.",
-    "Creator of Elchemy – a type-safe programming language for Erlang VM, heavily inspired by Elm and Haskell.",
-    "Forbes 25 under 25 awardee in New Technology category.",
-    "Strong at turning ambiguous distributed-systems and AI-product requirements into reliable production software."
+    "Distributed systems architect and Elixir specialist with 13 years of commercial experience.",
+    "Built AI agent infrastructure, real-time multimedia tooling, water telemetry systems deployed across 20+ countries, and telecom platforms.",
+    "Creator of Elchemy, a type-safe programming language for the Erlang VM inspired by Elm and Haskell.",
+    "Forbes 25 Under 25 awardee in New Technology category; founded and exited a transportation tech startup at age 19."
   ],
   experience: [
     {
@@ -22,10 +29,10 @@ export const CV_DATA = {
       company: "Thenvoi",
       location: "Remote",
       period: "2025-2026",
-      description: "Built core infrastructure for an agentic mesh platform: a secure communication layer that enables AI agents to discover capabilities, collaborate, and orchestrate tasks across teams and systems.",
+      description: "Built core infrastructure for the Agentic Mesh platform: a secure communication layer enabling AI agents to dynamically discover, collaborate, and orchestrate tasks.",
       responsibilities: [
-        "Implemented components for secure inter-agent messaging, capability discovery, and orchestration flows.",
-        "Built centralized agent-management features for lifecycle control and human-in-the-loop collaboration."
+        "Contributed to AI orchestration, inter-agent communication protocols built on open standards (MCP, A2A), and centralized agent management.",
+        "Developed human-agent collaboration features for shared working environments."
       ]
     },
     {
@@ -33,44 +40,43 @@ export const CV_DATA = {
       company: "Software Mansion",
       location: "Poland (Remote)",
       period: "2024-2025",
-      description: "Built observability tooling for Membrane Framework, an open-source Elixir multimedia framework for real-time audio and video processing (WebRTC, HLS, RTMP).",
+      description: "Contributed to Membrane Framework, an open-source multimedia streaming framework for Elixir supporting WebRTC, HLS, RTMP, and various codecs.",
       responsibilities: [
-        "Designed and implemented pipeline observability tooling for Membrane-based multimedia systems.",
-        "Improved diagnostics for real-time media pipelines to speed up debugging and production incident triage."
+        "Developed observability tooling for real-time multimedia processing pipelines."
       ]
     },
     {
       role: "Elixir Developer",
-      company: "Confly z o.o",
+      company: "Confly z o.o (Priv)",
       location: "Poland (Remote)",
       period: "2021-2023",
-      description: "Designed and built a telecom platform with VoIP and SMS support, enabling instantaneous acquisition of new numbers while ensuring compliance with Polish telecommunication regulations.",
+      description: "Designed and built the telecom platform for Priv, a virtual phone number app with VoIP and SMS, handling instantaneous number acquisition and Polish telecom compliance.",
       responsibilities: [
-        "Designed and developed an in-house Event Sourcing system",
-        "Designed and developed a telecommunication protocol responsible for handling VoIP calls"
+        "Designed and developed an in-house Event Sourcing system from scratch.",
+        "Designed and developed a custom VoIP telecommunication protocol."
       ]
     },
     {
       role: "Elixir Developer",
-      company: "Inflowmatix Ltd",
+      company: "Inflowmatix Ltd (acquired by SUEZ)",
       location: "Southampton, UK (Remote)",
       period: "2016-2021",
-      description: "One of the first three developers to lay the foundation for the InflowNet system, which is now used in over 20 countries by major water companies to deliver real-time telemetry data, preventing outages, bursts, and leakages.",
+      description: "One of the first three developers to build the InflowNet real-time water telemetry platform, now deployed in 20+ countries.",
       responsibilities: [
-        "Designed distributed Elixir services for high-throughput telemetry ingestion and processing (multi-gigabyte streams), with strict uptime and consistency targets.",
-        "Managed databases including InfluxDB, Mnesia, Timescale, and PostgresDB.",
-        "Implemented event-sourced architecture for critical telemetry workflows.",
-        "Designed a 20+ node AWS cluster for resilient processing and horizontal scaling."
+        "Designed a fully distributed Elixir architecture processing gigabytes/sec with 99.999% annual availability.",
+        "Managed databases including InfluxDB, Mnesia, TimescaleDB, and PostgreSQL.",
+        "Designed and operated a cluster of 20+ machines on AWS with event-sourced architecture."
       ]
     },
     {
-      role: "CEO",
+      role: "CEO / Founder",
       company: "Neon Tree Solutions Ltd",
-      location: "Kraków, London",
+      location: "Kraków & London",
       period: "2014-2021",
-      description: "Led a team of 3-5 in a software house building proofs of concept and experimental systems for contractors. Built the first prototype of the Erlang Performance Lab project.",
+      description: "Led a software consultancy of 3-5 engineers specializing in cutting-edge proofs of concept using Erlang, Elixir, Scala, React.js, and ReasonML.",
       responsibilities: [
-        "Technologies used: Erlang/Elixir, Scala, React.js, ReasonML"
+        "Responsible for the first prototype of the Erlang Performance Lab project.",
+        "Managed cross-border operations between Poland and the UK."
       ]
     },
     {
@@ -78,82 +84,92 @@ export const CV_DATA = {
       company: "Man La Mode LLC",
       location: "Kraków & Ann Arbor, MI",
       period: "2015-2016",
-      description: "Developed and oversaw a novel affiliate network allowing users to purchase fashion goods directly from the source at significant discounts.",
+      description: "Built the backend in Elixir and oversaw frontend development in React.js for a luxury fashion buyers club.",
       responsibilities: [
-        "Developed the back-end in Elixir.",
-        "Oversaw front-end development in React.js.",
-        "Engaged with investors."
+        "Engaged directly with investors in Ann Arbor, Michigan."
       ]
     },
     {
       role: "CTO / Co-founder",
-      company: "CloudCab LLC",
+      company: "CloudCab LLC → LightDispatch (acquired by WideTech)",
       location: "New York (Remote)",
       period: "2013-2015",
-      description: "Developed a modern dispatch system for ride-hailing, medical material, and cargo transportation operators; later acquired by WideTech (18+ countries).",
+      description: "Built a white-label B2B dispatch platform for taxi, medical, and cargo transportation; later acquired by WideTech, a Colombian GPS/fleet company operating in 18+ countries.",
       responsibilities: [
-        "Developed and oversaw both customer and driver apps in Java for Android.",
-        "Developed the back-end in Node.js.",
-        "Oversaw the front-end fleet dispatch administrative panel.",
+        "Developed Android apps for customers and drivers, a Node.js backend, and a fleet dispatch admin panel.",
         "Led a team of four."
       ]
     }
   ] as Experience[],
   portfolio: [
     {
+      name: "Forbes 25 Under 25",
+      description: "Awardee in the New Technology category by Forbes Poland and McKinsey & Company.",
+      stats: "New Technology Category (2020)"
+    },
+    {
       name: "Cicada",
-      description: "Code Intelligence for AI Assistants. Token-efficient code indexing via MCP for Elixir, Python, and 17 other languages.",
-      stats: "Internal coding-assistant benchmarks: up to 50% faster responses and up to 70% fewer tokens",
+      description: "AST-based code intelligence MCP server for AI assistants, built around tree-sitter and SCIP.",
+      stats: "17+ languages; up to 50% faster responses and 70% fewer tokens",
       link: "https://github.com/wende/cicada"
     },
     {
       name: "Elchemy",
-      description: "Strongly typed Erlang VM Language. Heavily inspired by Elm and Haskell.",
-      stats: "Over 1000 Stars on Github",
+      description: "Statically typed language for the Erlang VM, inspired by Elm and Haskell.",
+      stats: "1,000+ GitHub stars",
       link: "https://github.com/wende/elchemy"
     },
     {
       name: "Autocomplete Elixir",
-      description: "#1 Most popular Elixir and Erlang plugin for Atom Editor.",
-      stats: "Over 60,000 downloads"
-    },
-    {
-      name: "Forbes 25 under 25",
-      description: "Awardee in New Technology Category",
-      stats: "Forbes 2020"
+      description: "#1 most popular Elixir/Erlang plugin for Atom Editor, with semantic completion via live BEAM introspection.",
+      stats: "60,000+ downloads",
+      link: "https://github.com/wende/autocomplete-elixir"
     },
     {
       name: "MobileClaw",
-      description: "Built an open-source AI chat client for OpenClaw and LM Studio, focused on responsive UX across desktop and mobile.",
-      stats: "Open source AI chat client",
+      description: "Open-source mobile-first AI chat client for OpenClaw and LM Studio with streaming, tool execution display, inline diffs, and sub-agent feeds.",
+      stats: "Open-source AI chat client",
       link: "https://github.com/wende/mobileclaw"
     },
     {
-      name: "Quora",
-      description: "Active knowledge sharing.",
-      stats: "Over 350,000 answer reads"
+      name: "BUZZArt / Idziemy Na Solo",
+      description: "Founder and president of a culture-focused NGO running a free music production program in Gdańsk.",
+      stats: "7 editions; 130 songs released; KPO/EU funded"
     }
   ] as Project[],
   skills: [
     {
-      category: "AI & Agents",
-      items: ["Agentic Architectures", "AI-Assisted Development", "Code Intelligence Tooling", "LLM Integration", "Prompt Engineering", "Local Model Deployment"]
-    },
-    {
-      category: "Distributed Systems",
-      items: [
-        "Elixir / OTP / BEAM",
-        "Event-Sourced Architectures",
-        "Fault-Tolerant Cluster Architecture",
-        "InfluxDB, Mnesia, TimescaleDB, PostgreSQL",
-        "VoIP / SIP / RTP & SMS Gateways",
-        "WebRTC / HLS / RTMP / RTSP"
-      ]
-    },
-    {
       category: "Core Technologies",
-      items: ["Elixir", "Erlang", "TypeScript", "Distributed Systems", "Event-Sourcing"]
+      items: ["Elixir", "Erlang/OTP", "TypeScript", "Distributed Systems", "Event Sourced Architecture"]
+    },
+    {
+      category: "AI & Agents",
+      items: ["Agentic Architectures", "MCP Servers", "A2A", "LLM Integration", "Local Model Deployment"]
+    },
+    {
+      category: "Developer Tooling",
+      items: ["Code Intelligence (AST/tree-sitter)", "Language Design", "Editor Tooling", "Data Pipelines"]
+    },
+    {
+      category: "Frontend",
+      items: ["React.js", "Next.js", "Tailwind CSS"]
+    },
+    {
+      category: "Infrastructure",
+      items: ["InfluxDB", "TimescaleDB", "PostgreSQL", "VoIP/SIP/RTP"]
     }
   ] as Skill[],
-  hobbies: ["Fusion Jazz", "Percussion/Drums", "Nutrition", "Psychology", "Coffee", "Indie Games", "Traveling"]
+  education: {
+    school: "Jagiellonian University in Kraków",
+    focus: "Theoretical Computer Science",
+    details: "Left after one semester in 2013 to take the CTO role at CloudCab, New York."
+  },
+  community: {
+    role: "Founder & President",
+    organization: "Stowarzyszenie Twórców Kultury BUZZArt",
+    description: "Runs Idziemy Na Solo, a free music production program in Gdańsk.",
+    stats: "7 editions, 130 songs released, KPO/EU funded",
+    period: "2022-present"
+  },
+  hobbies: ["Fusion jazz", "Drums & percussion (17 years)", "Recording studio owner", "Indie games", "Nutrition", "Psychology", "Coffee"]
 };

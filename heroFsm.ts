@@ -19,6 +19,7 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   default: {
     SCROLL: 'scrolled',
     CLICK: 'always',
+    TIMEOUT: 'always',
     TREELOCATOR_ACTIVATED: 'activated',
   },
   scrolled: {
@@ -35,6 +36,7 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   },
   resumed: {
     CLICK: 'always',
+    TIMEOUT: 'always',
     TREELOCATOR_ACTIVATED: 'activated',
   },
   always: {
@@ -68,17 +70,21 @@ const transitions: Record<HeroState, Partial<Record<HeroEvent['type'], HeroState
   greatday: {},
   activated: {
     CLICK: 'keepgoing',
+    TIMEOUT: 'keepgoing',
   },
 };
 
 export const heroTimerDurations: Partial<Record<HeroState, number>> = {
   returning: 4000,
+  default: 4500,
   scrolled: 3000,
   returned: 1500,
   dismissed: 3000,
+  resumed: 4500,
   always: 3000,
   everything: 3500,
   anyways: 1000,
+  activated: 2500,
   keepgoing: 3500,
   withyou: 3000,
   whoknows: 3000,
@@ -112,11 +118,11 @@ export function heroReducer(state: HeroState, event: HeroEvent): HeroState {
 
 export const heroText: Record<HeroState, string> = {
   returning: "Oh hi! You're back!",
-  default: 'I love building tools...',
+  default: 'I love building things...',
   scrolled: "Wait. Don't go",
   returned: 'Phew. Alright. Where was I?',
   dismissed: "We won't be needing that",
-  resumed: 'So I love building tools...',
+  resumed: 'So I love building things...',
   always: 'Always have.',
   everything: 'Apps. Workshops. Open source.',
   meta: 'I even turned this CV into one',
