@@ -7,6 +7,8 @@ const DEFAULT_WIDTH = 384; // sm:w-96
 const DEFAULT_HEIGHT_VH = 70;
 const MAX_HEIGHT_PX = 512; // 32rem
 const MOBILE_BREAKPOINT = 640;
+const DETACHED_CHAT_URL =
+  "https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b";
 
 export const AskAboutMe: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -157,7 +159,7 @@ export const AskAboutMe: React.FC = () => {
             </>
           )}
           <iframe
-            src="https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b"
+            src={DETACHED_CHAT_URL}
             width="100%"
             height="100%"
             frameBorder="0"

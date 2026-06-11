@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
                     <AnimatedHeading text="GET IN TOUCH" />
                 </div>
                 <p className="text-xl text-gray-600 mb-8 max-w-md">
-                    Looking for a distributed systems architect or functional programming expert? Let's discuss how I can help.
+                    Looking for an Elixir specialist or distributed systems architect? Let's discuss how I can help.
                 </p>
                 
                 <div className="space-y-6">
@@ -45,6 +45,21 @@ export const Contact: React.FC = () => {
                             <span className="font-bold text-lg">GitHub</span>
                         </a>
                     </div>
+                </div>
+
+                <div className="bg-off-white p-8 border border-gray-100">
+                    <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400">Education</h3>
+                    <p className="text-lg font-bold text-ink">{CV_DATA.education.school}</p>
+                    <p className="text-gray-700">{CV_DATA.education.focus}</p>
+                    <p className="mt-3 text-sm text-gray-500 leading-relaxed">{CV_DATA.education.details}</p>
+                </div>
+
+                <div className="bg-off-white p-8 border border-gray-100">
+                    <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400">Community</h3>
+                    <p className="text-lg font-bold text-ink">{CV_DATA.community.role}</p>
+                    <p className="text-gray-700">{CV_DATA.community.organization}</p>
+                    <p className="mt-3 text-sm text-gray-500 leading-relaxed">{CV_DATA.community.description}</p>
+                    <p className="mt-3 font-mono text-xs uppercase tracking-wider text-gray-500">{CV_DATA.community.stats}</p>
                 </div>
 
                 <div className="bg-off-white p-8 border border-gray-100">

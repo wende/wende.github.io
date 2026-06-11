@@ -12,9 +12,8 @@ export const Hero: React.FC = () => {
   const [textState, dispatch] = useReducer(heroReducer, heroInitialState);
   const [showPop, setShowPop] = useState(false);
   const [arrowHidden, setArrowHidden] = useState(false);
-  const [chatClicked, setChatClicked] = useState(() => {
-    try { return !!localStorage.getItem('chat-arrow-dismissed'); } catch { return false; }
-  });
+  const [chatClicked, setChatClicked] = useState(false);
+  const [hasNarrativeStarted, setHasNarrativeStarted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const remainingRef = useRef<Record<string, number>>({});
   const mouseX = useSpring(0, { stiffness: 120, damping: 20 });
@@ -50,9 +49,9 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const onChatOpen = () => {
+      setHasNarrativeStarted(true);
       dispatch({ type: 'TREELOCATOR_ACTIVATED' });
       setChatClicked(true);
-      try { localStorage.setItem('chat-arrow-dismissed', '1'); } catch {}
     };
     window.addEventListener('chat-opened', onChatOpen);
     return () => window.removeEventListener('chat-opened', onChatOpen);
@@ -73,8 +72,29 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (hasNarrativeStarted) return;
+    const startNarrative = () => setHasNarrativeStarted(true);
+    const passiveOptions: AddEventListenerOptions = { passive: true };
+
+    window.addEventListener('pointerdown', startNarrative, passiveOptions);
+    window.addEventListener('keydown', startNarrative);
+    window.addEventListener('wheel', startNarrative, passiveOptions);
+    window.addEventListener('touchstart', startNarrative, passiveOptions);
+    window.addEventListener('scroll', startNarrative, passiveOptions);
+
+    return () => {
+      window.removeEventListener('pointerdown', startNarrative);
+      window.removeEventListener('keydown', startNarrative);
+      window.removeEventListener('wheel', startNarrative);
+      window.removeEventListener('touchstart', startNarrative);
+      window.removeEventListener('scroll', startNarrative);
+    };
+  }, [hasNarrativeStarted]);
+
   // Generic timed transition: auto-advances any state that has a duration in heroTimerDurations
   useEffect(() => {
+    if (!hasNarrativeStarted) return;
     const duration = heroTimerDurations[textState];
     if (!duration) { delete remainingRef.current[textState]; return; }
     if (isHovering) return;
@@ -88,7 +108,7 @@ export const Hero: React.FC = () => {
       clearTimeout(timer);
       remainingRef.current[textState] = Math.max(0, remaining - (Date.now() - start));
     };
-  }, [textState, isHovering]);
+  }, [textState, isHovering, hasNarrativeStarted]);
 
   // Pop effect halfway through dismissed state
   useEffect(() => {
@@ -165,23 +185,28 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-3xl"
         >
-             <h2 className="text-xl md:text-2xl font-light text-gray-800 mb-8 leading-relaxed">
+             <h2 className="text-xl md:text-2xl font-light text-gray-800 mb-4 md:mb-8 leading-relaxed">
                 {CV_DATA.title}
              </h2>
-             <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-600 mb-12">
-                 <span className="px-4 py-2 border border-gray-200 bg-white shadow-sm">Forbes 25 under 25</span>
-                 <span className="px-4 py-2 border border-gray-200 bg-white shadow-sm">Elixir Specialist</span>
-                 <span className="px-4 py-2 border border-gray-200 bg-white shadow-sm">Systems Architect</span>
+             <div className="hidden md:flex flex-wrap gap-4 text-sm font-medium text-gray-600 mb-12">
+                 {CV_DATA.highlights.map((highlight) => (
+                    <span key={highlight} className="px-4 py-2 border border-gray-200 bg-white shadow-sm">
+                       {highlight}
+                    </span>
+                 ))}
              </div>
         </motion.div>
 
         {!boring && (
-        <div className="flex justify-center items-center w-full min-h-[12rem] md:min-h-[16rem]">
+        <div className="flex justify-center items-center w-full min-h-[8rem] md:min-h-[10rem] mb-24 md:mb-8">
           <motion.p
             className="text-5xl md:text-7xl font-sans font-bold text-ink select-none leading-tight text-center cursor-pointer"
-            onClick={() => dispatch({ type: 'CLICK' })}
+            onClick={() => {
+              setHasNarrativeStarted(true);
+              dispatch({ type: 'CLICK' });
+            }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             style={{
@@ -234,22 +259,36 @@ export const Hero: React.FC = () => {
       <AnimatePresence>
       {!chatClicked && (textState === 'default' || textState === 'resumed' || textState === 'meta') && (
       <motion.div
-        className="absolute bottom-16 right-12 md:right-20 pointer-events-none mr-2 mb-2"
+        // Chat button is fixed bottom-8 right-8, w-14 h-14: center = (60, 60) in
+        // right/bottom viewport px. The SVG tip is at viewBox (100, 88), i.e. 20px
+        // from the SVG's right edge and 12px above its bottom. The curve arrives at
+        // the tip heading 45° down-right, so the tip must sit on that 45° diagonal
+        // up-left of the button center for its heading to aim through the center:
+        // tip at (60+29, 60+29) = (89, 89) → container right: 69, bottom: 77.
+        className="fixed right-[69px] bottom-[77px] z-[2147483645] pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.4 } }}
         transition={{ delay: 1.5, duration: 0.3 }}
       >
+        {/* Button center in this coordinate space is (129, 117) — 29px down-right
+            of the tip (100, 88), on the tip's 45° heading line. Rotating this
+            wrapper about that point swings the arrow's body to fit narrow screens
+            while the tip orbits the button center with its heading still aimed
+            through it, so it can never point wrong. The label is inside the
+            wrapper so its anchor (bottom-center pinned to the artwork's
+            top-center) follows the rotation; the label itself counter-rotates
+            back to a constant -6° tilt. */}
+        <div className="relative origin-[129px_117px] -rotate-[40deg] md:rotate-0">
         <motion.p
-          className="text-lg md:text-xl font-sans italic text-gray-400 mb-2 translate-x-[-45px] md:translate-x-[-40px] md:rotate-[-6deg] translate-y-[4.5rem] md:translate-y-0"
+          className="absolute bottom-full left-1/2 -translate-x-1/2 rotate-[34deg] md:rotate-[-6deg] text-lg md:text-xl font-sans italic text-gray-500 whitespace-nowrap"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
         >
           {textState === 'meta' ? 'Really. Try it!' : 'like this one'}
         </motion.p>
-        {/* Mobile: cropped 30% from left */}
-        <svg width="84" height="100" viewBox="36 0 84 100" fill="none" className="text-gray-400 translate-x-[6px] -rotate-[40deg] origin-bottom-right md:hidden">
+        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="text-gray-500 overflow-visible">
           <motion.path
             d="M10 10 C 25 5, 40 2, 55 8 C 70 14, 78 30, 82 48 C 86 66, 90 78, 100 88"
             stroke="currentColor"
@@ -272,30 +311,7 @@ export const Hero: React.FC = () => {
             transition={{ delay: 2.6, duration: 0.15 }}
           />
         </svg>
-        {/* Desktop: full arrow */}
-        <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="text-gray-400 translate-x-[20px] hidden md:block">
-          <motion.path
-            d="M10 10 C 25 5, 40 2, 55 8 C 70 14, 78 30, 82 48 C 86 66, 90 78, 100 88"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ delay: 1.6, duration: 1, ease: "easeInOut" }}
-          />
-          <motion.path
-            d="M94 80 L100 88 L90 86" transform="rotate(15, 100, 88)"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.6, duration: 0.15 }}
-          />
-        </svg>
+        </div>
       </motion.div>
       )}
       </AnimatePresence>

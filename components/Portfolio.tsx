@@ -43,9 +43,9 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
     "Cicada": IconCode,
     "Elchemy": IconStar,
     "Autocomplete Elixir": IconExternalLink,
-    "Forbes 25 under 25": IconAward,
+    "Forbes 25 Under 25": IconAward,
     "MobileClaw": IconMessage,
-    "Quora": IconTrending,
+    "BUZZArt / Idziemy Na Solo": IconTrending,
 };
 
 export const Portfolio: React.FC = () => {
@@ -57,7 +57,7 @@ export const Portfolio: React.FC = () => {
                 <AnimatedHeading text="SELECTED WORKS" />
             </div>
             <p className="text-muted mt-4 md:mt-0 max-w-sm text-right hidden md:block">
-                A showcase of open source contributions, awards, and impactful startups.
+                A showcase of open source projects, awards, startups, and community work.
             </p>
         </div>
 
