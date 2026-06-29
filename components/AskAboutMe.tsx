@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const MIN_WIDTH = 300;
@@ -7,8 +7,24 @@ const DEFAULT_WIDTH = 384; // sm:w-96
 const DEFAULT_HEIGHT_VH = 70;
 const MAX_HEIGHT_PX = 512; // 32rem
 const MOBILE_BREAKPOINT = 640;
-const DETACHED_CHAT_URL =
-  "https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b";
+const SESSION_STORAGE_KEY = 'wende-chat-session';
+const DETACHED_CHAT_BASE =
+  'https://wendebot.vercel.app?detached&url=wss://wendebot.fly.dev&token=d5c63d4790b61d2404a1c8cddf93f5d1115c390cf0b02b013d38d044f3a57f9b';
+
+function getOrCreateChatSessionKey(): string {
+  let key = localStorage.getItem(SESSION_STORAGE_KEY);
+  if (!key) {
+    key = crypto.randomUUID().replace(/-/g, '').slice(0, 32);
+    localStorage.setItem(SESSION_STORAGE_KEY, key);
+  }
+  return key;
+}
+
+function buildDetachedChatUrl(): string {
+  const url = new URL(DETACHED_CHAT_BASE);
+  url.searchParams.set('sessionKey', getOrCreateChatSessionKey());
+  return url.toString();
+}
 
 export const AskAboutMe: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -19,6 +35,7 @@ export const AskAboutMe: React.FC = () => {
   );
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_BREAKPOINT);
+  const chatUrl = useMemo(() => buildDetachedChatUrl(), []);
   const dragging = useRef<'left' | 'top' | 'top-left' | null>(null);
   const startPos = useRef({ x: 0, y: 0, w: 0, h: 0 });
 
@@ -159,7 +176,7 @@ export const AskAboutMe: React.FC = () => {
             </>
           )}
           <iframe
-            src={DETACHED_CHAT_URL}
+            src={chatUrl}
             width="100%"
             height="100%"
             frameBorder="0"
