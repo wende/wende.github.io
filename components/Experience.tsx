@@ -30,8 +30,8 @@ export const Experience: React.FC = () => {
                         {/* Header Info */}
                         <div className="lg:col-span-4">
                             <h3 className="text-2xl font-bold font-display">{job.role}</h3>
-                            <h4 className="text-lg font-medium text-gray-600 mb-1">{job.company}</h4>
-                            <p className="text-sm uppercase tracking-wide text-gray-400">{job.period} | {job.location}</p>
+                            <h4 className="text-lg font-medium text-gray-600 mb-1">{job.company} · {job.period}</h4>
+                            <p className="text-sm uppercase tracking-wide text-gray-400">{job.location}</p>
                         </div>
 
                         {/* Description */}
