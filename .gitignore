@@ -24,3 +24,15 @@ dist-ssr
 *.sw?
 .claude/
 .codex/
+
+# CV generator local artifacts
+cv/.venv/
+cv/__pycache__/
+cv/*.png
+cv/*_crop.png
+cv/preview*/
+cv/cmp-*/
+cv/new-*/
+cv/orig-*/
+cv/verify*/
+cv/quote_*/

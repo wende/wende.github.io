@@ -49,13 +49,12 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
     "BUZZArt / Idziemy Na Solo": IconTrending,
 };
 
-const GROUP_ORDER = ['award', 'community', 'independent', 'open-source'] as const;
+const GROUP_ORDER = ['award', 'community', 'independent'] as const;
 
 const GROUP_LABELS: Record<(typeof GROUP_ORDER)[number], string | null> = {
   award: null,
   community: null,
   independent: 'Independent Work',
-  'open-source': 'Open Source',
 };
 
 const ProjectCard: React.FC<{ item: Project; index: number }> = ({ item, index }) => {
@@ -105,11 +104,25 @@ const ProjectCard: React.FC<{ item: Project; index: number }> = ({ item, index }
 };
 
 export const Portfolio: React.FC = () => {
-  const grouped = GROUP_ORDER.map((group) => ({
-    group,
-    label: GROUP_LABELS[group],
-    items: CV_DATA.portfolio.filter((item) => (item.group ?? 'open-source') === group),
-  })).filter((section) => section.items.length > 0);
+  // Merge consecutive unlabeled groups into one grid so single-item
+  // groups (award + community) sit side-by-side instead of stacking.
+  const sections = GROUP_ORDER.reduce<
+    { key: string; label: string | null; items: Project[] }[]
+  >((acc, group) => {
+    const items = CV_DATA.portfolio.filter((item) => (item.group ?? 'independent') === group);
+    if (items.length === 0) return acc;
+
+    const label = GROUP_LABELS[group];
+    const prev = acc[acc.length - 1];
+    if (prev && prev.label === null && label === null) {
+      prev.items.push(...items);
+      prev.key += `-${group}`;
+      return acc;
+    }
+
+    acc.push({ key: group, label, items: [...items] });
+    return acc;
+  }, []);
 
   let cardIndex = 0;
 
@@ -121,13 +134,13 @@ export const Portfolio: React.FC = () => {
                 <AnimatedHeading text="SELECTED WORKS" />
             </div>
             <p className="text-muted mt-4 md:mt-0 max-w-sm text-right hidden md:block">
-                Awards, community work, independent projects, and open source.
+                Awards, community work, and independent projects.
             </p>
         </div>
 
         <div className="space-y-16">
-          {grouped.map((section) => (
-            <div key={section.group}>
+          {sections.map((section) => (
+            <div key={section.key}>
               {section.label && (
                 <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-6">
                   {section.label}

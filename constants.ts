@@ -28,6 +28,7 @@ export const CV_DATA = {
       role: "AI Infrastructure & Elixir Developer",
       company: "Thenvoi",
       location: "Remote",
+      startYear: 2025,
       period: "4 months",
       description: "Built core infrastructure for the Agentic Mesh platform: a secure communication layer enabling AI agents to dynamically discover, collaborate, and orchestrate tasks.",
       responsibilities: [
@@ -39,6 +40,7 @@ export const CV_DATA = {
       role: "Elixir Developer",
       company: "Software Mansion",
       location: "Poland (Remote)",
+      startYear: 2024,
       period: "6 months",
       description: "Built observability tooling for Membrane Framework, an open-source Elixir multimedia streaming stack supporting WebRTC, HLS, RTMP, and common codecs.",
       responsibilities: [
@@ -49,6 +51,7 @@ export const CV_DATA = {
       role: "Elixir Developer",
       company: "Confly sp. z o.o. (Priv)",
       location: "Poland (Remote)",
+      startYear: 2021,
       period: "2 years",
       description: "Designed and built the telecom platform for Priv, a virtual phone number app with VoIP and SMS, handling instantaneous number acquisition and Polish telecom compliance.",
       responsibilities: [
@@ -60,6 +63,7 @@ export const CV_DATA = {
       role: "Elixir Developer",
       company: "Inflowmatix Ltd (acquired by SUEZ)",
       location: "Southampton, UK (Remote)",
+      startYear: 2016,
       period: "5 years",
       description: "One of the first three developers to build the InflowNet real-time water telemetry platform, now deployed in 20+ countries.",
       responsibilities: [
@@ -72,6 +76,7 @@ export const CV_DATA = {
       role: "CEO / Founder",
       company: "Neon Tree Solutions Ltd",
       location: "Kraków & London",
+      startYear: 2014,
       period: "7 years",
       description: "Led a software consultancy of 3–5 engineers specializing in cutting-edge proofs of concept using Erlang, Elixir, Scala, React.js, and ReasonML.",
       responsibilities: [
@@ -82,6 +87,7 @@ export const CV_DATA = {
       role: "CTO / Co-founder",
       company: "Man La Mode LLC",
       location: "Kraków & Ann Arbor, MI",
+      startYear: 2015,
       period: "1 year",
       description: "Built the Elixir backend and oversaw React.js frontend for a luxury fashion buyers club sourcing goods directly from brands.",
       responsibilities: [
@@ -93,6 +99,7 @@ export const CV_DATA = {
       role: "CTO / Co-founder",
       company: "CloudCab LLC → LightDispatch (acquired by WideTech)",
       location: "New York (Remote)",
+      startYear: 2013,
       period: "2 years",
       description: "Built a white-label B2B dispatch platform for taxi, medical, and cargo transportation; later acquired by WideTech, a Colombian GPS/fleet company operating in 18+ countries.",
       responsibilities: [
@@ -105,13 +112,15 @@ export const CV_DATA = {
     {
       name: "Forbes 25 Under 25",
       description: "Awardee in the New Technology category by Forbes Poland and McKinsey & Company.",
-      stats: "New Technology Category (2020)",
+      stats: "New Technology Category",
+      period: "2020",
       group: "award"
     },
     {
       name: "BUZZArt / Idziemy Na Solo",
       description: "Founder and president of a culture-focused NGO running a free music production program in Gdańsk.",
       stats: "7 editions; 130 songs released; KPO/EU funded",
+      period: "2022–2026",
       group: "community"
     },
     {
@@ -134,15 +143,17 @@ export const CV_DATA = {
       name: "Elchemy",
       description: "Statically typed language for the Erlang VM, inspired by Elm and Haskell.",
       stats: "1,000+ GitHub stars",
+      period: "2017–2019",
       link: "https://github.com/wende/elchemy",
-      group: "open-source"
+      group: "independent"
     },
     {
       name: "Autocomplete Elixir",
       description: "#1 most popular Elixir/Erlang plugin for Atom Editor, with semantic completion via live BEAM introspection.",
       stats: "60,000+ downloads",
+      period: "2015",
       link: "https://github.com/wende/autocomplete-elixir",
-      group: "open-source"
+      group: "independent"
     }
   ] as Project[],
   skills: [
