@@ -24,6 +24,16 @@ npm run build
 npm run preview
 ```
 
+## CV
+
+The generated CV uses Python and ReportLab:
+
+```bash
+python3 -m venv cv/.venv
+cv/.venv/bin/pip install -r cv/requirements.txt
+cv/.venv/bin/python cv/generate_cv.py
+```
+
 ## Analytics (GA4)
 
 This site supports Google Analytics 4 in production builds.

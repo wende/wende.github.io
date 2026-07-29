@@ -12,7 +12,25 @@ const IconCode: React.FC<{ className?: string }> = ({ className }) => (
 
 const IconStar: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 14.14 2 9.27 8.91 8.26 12 2" />
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
+const IconElchemy: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="2.5" y="2.5" width="19" height="19" />
+    <text
+      x="12"
+      y="16"
+      fill="currentColor"
+      stroke="none"
+      textAnchor="middle"
+      fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+      fontSize="10"
+      fontWeight="700"
+    >
+      El
+    </text>
   </svg>
 );
 
@@ -42,7 +60,7 @@ const IconTrending: React.FC<{ className?: string }> = ({ className }) => (
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
     "Cicada": IconCode,
-    "Elchemy": IconStar,
+    "Elchemy": IconElchemy,
     "Autocomplete Elixir": IconExternalLink,
     "Forbes 25 Under 25": IconAward,
     "MobileClaw": IconMessage,

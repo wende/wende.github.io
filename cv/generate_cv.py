@@ -332,7 +332,11 @@ class CV:
         self.c.setFillColor(MUTED)
         self.c.drawString(JOB_X, self.y, job["company"])
         self.right_text(job["duration"], "Carlito", 9.5, MUTED)
-        self.y -= 14.0
+        # Paragraphs are positioned from their top edge, while the company is
+        # drawn on a baseline.  Only bridge the baseline-to-top difference
+        # here; subtracting a full leading creates an extra blank line before
+        # every bullet list.
+        self.y -= 3.0
 
         style = P(9.5, 13.0, INK)
         for b in job["bullets"]:
@@ -346,7 +350,7 @@ class CV:
             self.y -= h
 
         self._quote_line(seg_top, self.y - 1.1)
-        # Original clear gap bullet-bottom → next-role-top ≈ 13.3pt
+        # Match the original clear gap from the final bullet to the next role.
         self.y -= 21
 
     def work(self):
@@ -384,9 +388,11 @@ class CV:
 
             self.right_text(proj["year"], "Carlito", 9.3, MUTED)
 
-            self.y -= 13.3
+            # As with work-history bullets, bridge from the title baseline to
+            # the paragraph top instead of inserting another full leading.
+            self.y -= 3.2
             self.para(proj["body"], style, TEXT_X, CONTENT_RIGHT - TEXT_X - year_reserve)
-            # Original clear gap ≈ 11.6pt body-bottom → next-title-top
+            # Match the original body-to-next-title spacing.
             self.y -= 19
 
     def education(self):
