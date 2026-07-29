@@ -1,5 +1,6 @@
 import React from 'react';
 import { CV_DATA } from '../constants';
+import { Project } from '../types';
 import { motion } from 'framer-motion';
 import { AnimatedHeading } from './AnimatedHeading';
 
@@ -12,6 +13,24 @@ const IconCode: React.FC<{ className?: string }> = ({ className }) => (
 const IconStar: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
+const IconElchemy: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="2.5" y="2.5" width="19" height="19" />
+    <text
+      x="12"
+      y="16"
+      fill="currentColor"
+      stroke="none"
+      textAnchor="middle"
+      fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+      fontSize="10"
+      fontWeight="700"
+    >
+      El
+    </text>
   </svg>
 );
 
@@ -41,14 +60,90 @@ const IconTrending: React.FC<{ className?: string }> = ({ className }) => (
 
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
     "Cicada": IconCode,
-    "Elchemy": IconStar,
+    "Elchemy": IconElchemy,
     "Autocomplete Elixir": IconExternalLink,
     "Forbes 25 Under 25": IconAward,
     "MobileClaw": IconMessage,
     "BUZZArt / Idziemy Na Solo": IconTrending,
 };
 
+const GROUP_ORDER = ['award', 'community', 'independent'] as const;
+
+const GROUP_LABELS: Record<(typeof GROUP_ORDER)[number], string | null> = {
+  award: null,
+  community: null,
+  independent: 'Independent Work',
+};
+
+const ProjectCard: React.FC<{ item: Project; index: number }> = ({ item, index }) => {
+  const IconComponent = iconMap[item.name.split(',')[0]] || IconStar;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group relative bg-ink border border-muted/20 p-8 hover:bg-off-white hover:text-ink transition-colors duration-500 ease-in-out cursor-default overflow-hidden"
+    >
+      <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+        <IconComponent className="w-12 h-12" />
+      </div>
+
+      <div className="relative z-10 h-full flex flex-col justify-between">
+        <div>
+          <h3 className="text-2xl font-bold font-display mb-2 flex items-center gap-2">
+            {item.name}
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <IconExternalLink className="w-5 h-5" />
+              </a>
+            )}
+          </h3>
+          {item.period && (
+            <p className="text-xs uppercase tracking-widest text-muted group-hover:text-gray-500 mb-3 font-mono">
+              {item.period}
+            </p>
+          )}
+          <div className="w-12 h-1 bg-white group-hover:bg-ink mb-6 transition-colors duration-500" />
+          <p className="text-gray-400 group-hover:text-gray-600 mb-4 font-light">
+            {item.description}
+          </p>
+        </div>
+
+        {item.stats && (
+          <div className="mt-4 pt-4 border-t border-muted/20 group-hover:border-muted">
+            <p className="font-mono text-xs uppercase tracking-wider">{item.stats}</p>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
 export const Portfolio: React.FC = () => {
+  // Merge consecutive unlabeled groups into one grid so single-item
+  // groups (award + community) sit side-by-side instead of stacking.
+  const sections = GROUP_ORDER.reduce<
+    { key: string; label: string | null; items: Project[] }[]
+  >((acc, group) => {
+    const items = CV_DATA.portfolio.filter((item) => (item.group ?? 'independent') === group);
+    if (items.length === 0) return acc;
+
+    const label = GROUP_LABELS[group];
+    const prev = acc[acc.length - 1];
+    if (prev && prev.label === null && label === null) {
+      prev.items.push(...items);
+      prev.key += `-${group}`;
+      return acc;
+    }
+
+    acc.push({ key: group, label, items: [...items] });
+    return acc;
+  }, []);
+
+  let cardIndex = 0;
+
   return (
     <section id="portfolio" className="py-24 bg-charcoal text-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -57,52 +152,26 @@ export const Portfolio: React.FC = () => {
                 <AnimatedHeading text="SELECTED WORKS" />
             </div>
             <p className="text-muted mt-4 md:mt-0 max-w-sm text-right hidden md:block">
-                A showcase of open source projects, awards, startups, and community work.
+                Awards, community work, and independent projects.
             </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CV_DATA.portfolio.map((item, index) => {
-                const IconComponent = iconMap[item.name.split(',')[0]] || IconStar;
-
-                return (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="group relative bg-ink border border-muted/20 p-8 hover:bg-off-white hover:text-ink transition-colors duration-500 ease-in-out cursor-default overflow-hidden"
-                    >
-                        <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-                           <IconComponent className="w-12 h-12" />
-                        </div>
-
-                        <div className="relative z-10 h-full flex flex-col justify-between">
-                            <div>
-                                <h3 className="text-2xl font-bold font-display mb-2 flex items-center gap-2">
-                                    {item.name}
-                                    {item.link && (
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <IconExternalLink className="w-5 h-5" />
-                                        </a>
-                                    )}
-                                </h3>
-                                <div className="w-12 h-1 bg-white group-hover:bg-ink mb-6 transition-colors duration-500" />
-                                <p className="text-gray-400 group-hover:text-gray-600 mb-4 font-light">
-                                    {item.description}
-                                </p>
-                            </div>
-
-                            {item.stats && (
-                                <div className="mt-4 pt-4 border-t border-muted/20 group-hover:border-muted">
-                                    <p className="font-mono text-xs uppercase tracking-wider">{item.stats}</p>
-                                </div>
-                            )}
-                        </div>
-                    </motion.div>
-                );
-            })}
+        <div className="space-y-16">
+          {sections.map((section) => (
+            <div key={section.key}>
+              {section.label && (
+                <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-6">
+                  {section.label}
+                </h3>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {section.items.map((item) => {
+                  const index = cardIndex++;
+                  return <ProjectCard key={item.name} item={item} index={index} />;
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -76,11 +76,8 @@ export const Contact: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-            <p className="mb-2 md:mb-0">
+            <p>
                 &copy; {new Date().getFullYear()} {CV_DATA.name}. All rights reserved.
-            </p>
-            <p className="text-center md:text-right max-w-lg">
-                I hereby consent to the processing of this CV and the personal data contained within, by anyone who receives this document for the sole purpose of considering my application for employment opportunities.
             </p>
         </div>
       </div>
