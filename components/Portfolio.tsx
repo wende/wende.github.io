@@ -3,6 +3,7 @@ import { CV_DATA } from '../constants';
 import { Project } from '../types';
 import { motion } from 'framer-motion';
 import { AnimatedHeading } from './AnimatedHeading';
+import { ArrowUpRight } from 'lucide-react';
 
 const IconCode: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter">
@@ -173,6 +174,14 @@ export const Portfolio: React.FC = () => {
             </div>
           ))}
         </div>
+        <a href="/experiments/" className="mt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border border-muted/30 p-8 hover:bg-ink transition-colors group">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-muted mb-3">The experimental side</p>
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">AI Gaming Experiments</h3>
+            <p className="text-gray-400">Small games, playable worlds, and real-time graphics. Explore the gallery.</p>
+          </div>
+          <ArrowUpRight className="w-8 h-8 shrink-0" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

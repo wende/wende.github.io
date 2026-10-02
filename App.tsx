@@ -9,6 +9,7 @@ import { BoringModeProvider } from './boringMode';
 import { TreeLocatorDemo } from './components/TreeLocatorDemo';
 import { AskAboutMe } from './components/AskAboutMe';
 import { trackPageView } from './analytics';
+import { Experiments } from './components/Experiments';
 
 function App() {
   // Handle GitHub Pages redirect for client-side routing
@@ -18,8 +19,7 @@ function App() {
     window.history.replaceState(null, '', redirect);
   }
 
-  // Simple routing: show TreeLocatorJS demo at /treelocatorjs/
-  const pathname = redirect || window.location.pathname;
+  const pathname = window.location.pathname;
 
   useEffect(() => {
     trackPageView(`${pathname}${window.location.search}${window.location.hash}`);
@@ -27,6 +27,10 @@ function App() {
 
   if (pathname.startsWith('/treelocatorjs')) {
     return <TreeLocatorDemo />;
+  }
+
+  if (pathname === '/experiments' || pathname === '/experiments/') {
+    return <BoringModeProvider><Experiments /></BoringModeProvider>;
   }
 
   return (
