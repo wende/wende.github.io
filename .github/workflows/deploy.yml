@@ -39,7 +39,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: wende/static-site-tools@582a493bbdeefe865b3ffef40790e1876547fe6b
+        uses: wende/static-site-tools@d8dbc3259da01cf84471c235dc73600ee9ce3cc2
         with:
           path: dist
           site-url: https://wende.github.io/
