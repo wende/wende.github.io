@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -39,9 +39,10 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: wende/static-site-tools@582a493bbdeefe865b3ffef40790e1876547fe6b
         with:
           path: dist
+          site-url: https://wende.github.io/
 
   deploy:
     environment:
